@@ -1,4 +1,5 @@
 from django.db import models
+import datetime
 
 class Person(models.Model):
     first_name = models.CharField(max_length=50)
@@ -13,8 +14,8 @@ class Person(models.Model):
     flickr_link = models.URLField(max_length=300)
     github_link = models.URLField(max_length=300)
     twitter_link = models.URLField(max_length=300)
-    skills_json = models.CharField(max_length=1000)
-    hobbies_json = models.CharField(max_length=1000)
+    skills_json = models.TextField(max_length=1000)
+    hobbies_json = models.TextField(max_length=1000)
 
     class Meta:
         verbose_name = "Person"
@@ -41,7 +42,7 @@ class Job(models.Model):
     position = models.CharField(max_length=300)
     start_date = models.DateField()
     end_date = models.DateField()
-    description_json = models.CharField(max_length=1000)
+    description_json = models.TextField(max_length=1000)
 
     class Meta:
         verbose_name = "Job"
@@ -49,6 +50,9 @@ class Job(models.Model):
 
     def __unicode__(self):
         return self.position
+
+    def workterm(self):
+        return self.end_date - self.start_date
 
 class Education(models.Model):
     person = models.ForeignKey(Person)
@@ -65,7 +69,7 @@ class Education(models.Model):
         verbose_name_plural = "Education"
 
     def __unicode__(self):
-        return ('%s at %s, %s') % self.degree, self.college, self.end_date
+        return '%s at %s, %s' % self.degree, self.college, self.end_date
 
 class OnlineCourse(models.Model):
     person = models.ForeignKey(Person)
