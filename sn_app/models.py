@@ -5,7 +5,7 @@ class Person(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=100)
     birthdate = models.DateField()
-    address = models.URLField(max_length=500)
+    address = models.CharField(max_length=500)
     email = models.EmailField()
     telephone = models.CharField(max_length=50)
     facebook_link = models.URLField(max_length=300)
@@ -42,7 +42,7 @@ class Job(models.Model):
     position = models.CharField(max_length=300)
     start_date = models.DateField()
     end_date = models.DateField()
-    description_json = models.TextField(max_length=1000)
+    achievements_json = models.TextField(max_length=1000)
 
     class Meta:
         verbose_name = "Job"
@@ -69,7 +69,7 @@ class Education(models.Model):
         verbose_name_plural = "Education"
 
     def __unicode__(self):
-        return '%s at %s, %s' % self.degree, self.college, self.end_date
+        return "%s at %s, %s" % (self.degree, self.college, self.end_date.year)
 
 class OnlineCourse(models.Model):
     person = models.ForeignKey(Person)

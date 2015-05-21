@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+{% load sn_app_extras %}
+<html>
+<head>
+    <title>Sergey Nikiforov</title>
+</head>
+<body>
+    <div id="bio">
+        {% if person %}
+            <h2>{{ person.first_name}} {{ person.last_name}}</h2>
+            <p>{{ person.address }}</p>
+            <p><a href="mailto:{{ person.email }}">{{ person.email }}</a></p>
+            <p>Born: {{ person.birthdate }}</p>
+            <p>{{ person.telephone }}</p>
+        {% else %}
+            <p>No info</p>
+        {% endif %}
+    </div>
+    <br/>
+    <div id="education">
+        {% if education %}
+            <h3>Education</h3>
+            {% for degree in education %}
+                <p><a href="{{ degree.website }}">{{ degree.college }}</a> - {{ degree.degree }}, {{ degree.location }}</p>
+                <p>Major: {{ degree.major }}, {{ degree.end_date.year }}</p>
+            {% endfor %}
+        {% else %}
+            <p>No education info</p>
+        {% endif %}
+    </div>
+    <br/>
+    <div id="jobs">
+        {% if jobs %}
+            <h3>Work Experience</h3>
+            {% for job in jobs %}
+                <p><a href="{{ job.employer.website }}">{{ job.employer }}</a></p>
+                <p><em>{{ job.position }}</em> -- {{ job.start_date }} - {{ job.end_date }}</p>
+                <p>{{ job.employer.location }}</p>
+                <ul>
+                    {% for item in achievements|key:job.position %}
+                        <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+            {% endfor %}
+        {% else %}
+            <p>No jobs info</p>
+        {% endif %}
+
+    </div>
+    <br/>
+    <div id="onlinecourses">
+        {% if onlinecourses %}
+            <h3>Online Courses</h3>
+            {% for course in onlinecourses %}
+                <p><a href="{{ course.url }}">{{ course.title }}</a></p>
+                <p>{{ course.school }}</p>
+                <p>{{ course.date.year }}</p>
+            {% endfor %}
+        {% else %}
+            <p>No online courses info</p>
+        {% endif %}
+    </div>
+    <br/>
+    <div id="personal">
+
+    </div>
+</body>
+</html>
