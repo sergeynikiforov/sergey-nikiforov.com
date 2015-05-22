@@ -84,3 +84,17 @@ class OnlineCourse(models.Model):
 
     def __unicode__(self):
         return self.title
+
+class ContactMe(models.Model):
+    sender_name = models.CharField(max_length=100)
+    sender_email = models.EmailField()
+    message = models.TextField(max_length=2000)
+    time_sent = models.TimeField()
+
+    class Meta:
+        verbose_name = "ContactMe message"
+        verbose_name_plural = "ContactMe messages"
+
+    def __str__(self):
+        return '%s at %s' % (self.sender_name, self.time_sent)
+

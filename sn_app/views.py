@@ -2,7 +2,10 @@ from django.shortcuts import render
 from models import Person, Education, Job, OnlineCourse
 import json
 
-def landing(request):
+def resume(request):
+    '''
+    view for resume page
+    '''
     # get data from db
     person = Person.objects.get(first_name='Sergey')
     jobs = Job.objects.filter(person=person).order_by('-end_date')
@@ -22,4 +25,20 @@ def landing(request):
         'onlinecourses': onlinecourses,
         'achievements': achievements_dict
         }
-    return render(request, 'sn_app/index.html', context_dict)
+    return render(request, 'sn_app/resume.html', context_dict)
+
+def landing(request):
+    '''
+    view for landing page
+    '''
+    # get personal data
+    person = Person.objects.get(first_name='Sergey')
+
+    # context dictionary to pass to template
+    context_dict = {
+        'person': person
+    }
+    return render(request, 'sn_app/landing.html', context_dict)
+
+def about(request):
+    pass

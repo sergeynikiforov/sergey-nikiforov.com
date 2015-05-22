@@ -2,6 +2,7 @@
 {% load sn_app_extras %}
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Sergey Nikiforov</title>
 </head>
 <body>
@@ -34,7 +35,7 @@
             <h3>Work Experience</h3>
             {% for job in jobs %}
                 <p><a href="{{ job.employer.website }}">{{ job.employer }}</a></p>
-                <p><em>{{ job.position }}</em> -- {{ job.start_date }} - {{ job.end_date }}</p>
+                <p><em>{{ job.position }}</em> -- {{ job.start_date|date:"M, Y" }} - {{ job.end_date|date:"M, Y" }}</p>
                 <p>{{ job.employer.location }}</p>
                 <ul>
                     {% for item in achievements|key:job.position %}
