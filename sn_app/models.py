@@ -95,6 +95,6 @@ class ContactMe(models.Model):
         verbose_name = "ContactMe message"
         verbose_name_plural = "ContactMe messages"
 
-    def __str__(self):
+    def __unicode__(self):
         return '%s at %s' % (self.sender_name, self.time_sent)
 

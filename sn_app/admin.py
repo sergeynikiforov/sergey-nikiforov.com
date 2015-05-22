@@ -1,8 +1,6 @@
 from django.contrib import admin
 import models
 
-# Register your models here.
-
 class PersonAdmin(admin.ModelAdmin):
     fieldsets = [
         ('Bio', {'fields': ['first_name', 'last_name', 'birthdate']}),
@@ -16,3 +14,4 @@ admin.site.register(models.Employer)
 admin.site.register(models.Job)
 admin.site.register(models.Education)
 admin.site.register(models.OnlineCourse)
+admin.site.register(models.ContactMe)

@@ -10,8 +10,8 @@
         <div id="header">
             <h2>{{ person.first_name }} {{ person.last_name }}</h2>
             <ul>
-                <li><a href="#">About</a></li>
-                <li><a href="{% url 'resume' %}">Resume</a></li>
+                <li><a href="{% url 'sn_app:about' %}">About</a></li>
+                <li><a href="{% url 'sn_app:resume' %}">Resume</a></li>
                 <li><a href="#">Photography</a></li>
                 <li><a href="#">Contact me</a></li>
             </ul>
