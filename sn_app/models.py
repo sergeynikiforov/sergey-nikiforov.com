@@ -66,8 +66,8 @@ class Education(models.Model):
     end_date = models.DateField()
 
     class Meta:
-        verbose_name = "Education"
-        verbose_name_plural = "Education"
+        verbose_name = "Education entry"
+        verbose_name_plural = "Education entries"
 
     def __unicode__(self):
         return "%s at %s, %s" % (self.degree, self.college, self.end_date.year)

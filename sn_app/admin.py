@@ -9,9 +9,12 @@ class PersonAdmin(admin.ModelAdmin):
         ('Other', {'fields': ['skills_json', 'hobbies_json']})
     ]
 
+class ContactMeAdmin(admin.ModelAdmin):
+    list_display = ('sender_name', 'sender_email', 'time_sent')
+
 admin.site.register(models.Person, PersonAdmin)
 admin.site.register(models.Employer)
 admin.site.register(models.Job)
 admin.site.register(models.Education)
 admin.site.register(models.OnlineCourse)
-admin.site.register(models.ContactMe)
+admin.site.register(models.ContactMe, ContactMeAdmin)
