@@ -1,51 +1,22 @@
-<!DOCTYPE html>
+{% extends "sn_app/base.html" %}
 {% load sn_app_extras %}
-<html>
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>About</title>
-</head>
-<body>
-    {% if person %}
-        <div id="header">
-            <h2>{{ person.first_name }} {{ person.last_name }}</h2>
-            <ul>
-                <li><a href="{% url 'sn_app:about' %}">About</a></li>
-                <li><a href="{% url 'sn_app:resume' %}">Resume</a></li>
-                <li><a href="#">Photography</a></li>
-                <li><a href="{% url 'sn_app:contact' %}">Contact me</a></li>
-            </ul>
-        </div>
-        <br/>
-        <div id="body">
-            <p>Hello, my name is Sergey, and I'm an aspiring web-developer.</p>
-            <div id="personal">
-                <h3>Personal</h3>
-                <p>Skills at a glance:</p>
-                <ul>
-                    {% for skill in personal.skills %}
-                        <li>{{ skill }}</li>
-                    {% endfor %}
-                </ul>
-                <p>Facts about me:</p>
-                <ul>
-                    {% for hobbie in personal.hobbies %}
-                        <li>{{ hobbie }}</li>
-                    {% endfor %}
-                </ul>
-            </div>
-            <p>Want to have a talk? <a href="{% url 'sn_app:contact' %}">Contact me</a></p>
-        </div>
-        <br/>
-        <div id="footer">
-            <p>Copyright (c) 2015 Sergey Nikiforov</p>
-            <p><a href="{{ person.facebook_link }}">Facebook</a></p>
-            <p><a href="{{ person.linkedin_link }}">LinkedIn</a></p>
-            <p><a href="{{ person.instagram_link }}">Instagram</a></p>
-            <p><a href="{{ person.flickr_link }}">flickr</a></p>
-        </div>
-    {% else %}
-        <p>Error retrieving data</p>
-    {% endif %}
-</body>
-</html>
+{% block title %}About{% endblock title %}
+{% block body %}
+<p>Hello, my name is Sergey, and I'm an aspiring web-developer.</p>
+<div id="personal">
+    <h3>Personal</h3>
+    <p>Skills at a glance:</p>
+    <ul>
+        {% for skill in personal.skills %}
+            <li>{{ skill }}</li>
+        {% endfor %}
+    </ul>
+    <p>Facts about me:</p>
+    <ul>
+        {% for hobbie in personal.hobbies %}
+            <li>{{ hobbie }}</li>
+        {% endfor %}
+    </ul>
+</div>
+<p>Want to have a talk? <a href="{% url 'sn_app:contact' %}">Contact me</a></p>
+{% endblock body %}

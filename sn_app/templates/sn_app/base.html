@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{% load sn_app_extras %}
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% block title %}Sergey Nikiforov{% endblock title %}</title>
+    </head>
+    <body>
+        <div id="header">
+            {% block header %}
+                {% if person %}
+                    <h2>{{ person.first_name }} {{ person.last_name }}</h2>
+                    <ul>
+                        <li><a href="{% url 'sn_app:landing' %}">Home</a></li>
+                        <li><a href="{% url 'sn_app:about' %}">About</a></li>
+                        <li><a href="{% url 'sn_app:resume' %}">Resume</a></li>
+                        <li><a href="#">Photography</a></li>
+                        <li><a href="{% url 'sn_app:contact' %}">Contact me</a></li>
+                    </ul>
+                {% else %}
+                    <p>no person info</p>
+                {% endif %}
+            {% endblock header %}
+        </div>
+        <br/>
+        <div id="body">
+        {% block body %}
+            <p>base.html</p>
+        {% endblock body %}
+        </div>
+        <br/>
+        <div id="footer">
+            {% block footer %}
+                {% if person %}
+                    <p>Copyright (c) 2015 Sergey Nikiforov</p>
+                    <p><a href="{{ person.facebook_link }}">Facebook</a></p>
+                    <p><a href="{{ person.linkedin_link }}">LinkedIn</a></p>
+                    <p><a href="{{ person.instagram_link }}">Instagram</a></p>
+                    <p><a href="{{ person.flickr_link }}">flickr</a></p>
+                {% else %}
+                    <p>Error retrieving data</p>
+                {% endif %}
+            {% endblock footer %}
+        </div>
+    </body>
+</html>
+

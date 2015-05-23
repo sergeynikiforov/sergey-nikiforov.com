@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
-from django.core.mail import send_mail, EmailMessage
+from django.core.mail import EmailMessage
 from models import Person, Education, Job, OnlineCourse
 from forms import ContactMeForm
 import json
@@ -89,6 +89,8 @@ def contact(request):
                                 )
             email.send()
             return redirect('sn_app:landing')
+        else:
+            print(form.errors)
     else:
         form = ContactMeForm()
 
