@@ -1,5 +1,8 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
+from django.contrib import messages
+from django.core.mail import send_mail, EmailMessage
 from models import Person, Education, Job, OnlineCourse
+from forms import ContactMeForm
 import json
 
 def resume(request):
@@ -59,3 +62,34 @@ def about(request):
         'personal': personal
     }
     return render(request, 'sn_app/about.html', context_dict)
+
+def contact(request):
+    '''
+    view to handle contact form
+    '''
+    person = get_object_or_404(Person, first_name='Sergey')
+    # if it's a POST request
+    if request.method == 'POST':
+        # create a form
+        form = ContactMeForm(request.POST)
+        # check validity
+        if form.is_valid():
+            # save the form
+            form.save()
+            # add success message
+            messages.add_message(request, messages.SUCCESS, 'Thank you for your message!')
+            # construct email for site owner (me)
+            body = "You've got a message from %s (%s):\n\n%s\n\n---END OF MESSAGE---\n" % (form.cleaned_data['sender_name'], form.cleaned_data['sender_email'], form.cleaned_data['message'])
+            reply_to = form.cleaned_data['sender_email']
+            email = EmailMessage(
+                                 subject='[Django] - You have 1 new message',
+                                 body=body,
+                                 to=('serge.a.nikiforov@gmail.com',),
+                                 reply_to=(reply_to,)
+                                )
+            email.send()
+            return redirect('sn_app:landing')
+    else:
+        form = ContactMeForm()
+
+    return render(request, 'sn_app/contact.html', {'form': form, 'person': person})

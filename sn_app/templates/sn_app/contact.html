@@ -18,23 +18,12 @@
         </div>
         <br/>
         <div id="body">
-            <p>Hello, my name is Sergey, and I'm an aspiring web-developer.</p>
-            <div id="personal">
-                <h3>Personal</h3>
-                <p>Skills at a glance:</p>
-                <ul>
-                    {% for skill in personal.skills %}
-                        <li>{{ skill }}</li>
-                    {% endfor %}
-                </ul>
-                <p>Facts about me:</p>
-                <ul>
-                    {% for hobbie in personal.hobbies %}
-                        <li>{{ hobbie }}</li>
-                    {% endfor %}
-                </ul>
-            </div>
-            <p>Want to have a talk? <a href="{% url 'sn_app:contact' %}">Contact me</a></p>
+            <h3>Contact me</h3>
+            <form action="{% url 'sn_app:contact' %}" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="Submit" />
+            </form>
         </div>
         <br/>
         <div id="footer">

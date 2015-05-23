@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 import datetime
 
 class Person(models.Model):
@@ -89,12 +90,13 @@ class ContactMe(models.Model):
     sender_name = models.CharField(max_length=100)
     sender_email = models.EmailField()
     message = models.TextField(max_length=2000)
-    time_sent = models.TimeField()
+    time_sent = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         verbose_name = "ContactMe message"
         verbose_name_plural = "ContactMe messages"
 
     def __unicode__(self):
-        return '%s at %s' % (self.sender_name, self.time_sent)
+        # localtime() to display time in current timezone
+        return '%s at %s' % (self.sender_name, timezone.localtime(self.time_sent))
 

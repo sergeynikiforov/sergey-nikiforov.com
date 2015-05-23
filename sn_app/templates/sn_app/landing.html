@@ -13,12 +13,18 @@
                 <li><a href="{% url 'sn_app:about' %}">About</a></li>
                 <li><a href="{% url 'sn_app:resume' %}">Resume</a></li>
                 <li><a href="#">Photography</a></li>
-                <li><a href="#">Contact me</a></li>
+                <li><a href="{% url 'sn_app:contact' %}">Contact me</a></li>
             </ul>
         </div>
         <br/>
         <div id="body">
-            <p>Hello, my name is Sergey, and I'm an aspiring web-developer</p>
+            {% if messages %}
+                 {% for message in messages %}
+                     <p>{{ message }}</p>
+                 {% endfor %}
+            {% else %}
+                <p>Hello, my name is Sergey, and I'm an aspiring web-developer</p>
+            {% endif %}
         </div>
         <br/>
         <div id="footer">
