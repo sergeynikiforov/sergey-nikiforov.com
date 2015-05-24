@@ -8,7 +8,8 @@ class ContactMeForm(forms.ModelForm):
                                                     attrs={
                                                     'placeholder': 'John Smith',
                                                     'name': 'name',
-                                                    'required autocomplete': 'name'
+                                                    'required autocomplete': 'name',
+                                                    'maxlength': '100'
                                                     }
                                                     )
                                 )
@@ -18,7 +19,8 @@ class ContactMeForm(forms.ModelForm):
                                                     attrs={
                                                     'placeholder':'johnsmith@example.com',
                                                     'name': 'email',
-                                                    'required autocomplete': 'email'
+                                                    'required autocomplete': 'email',
+                                                    'maxlength': '254'
                                                     }
                                                     )
                                 )
@@ -26,7 +28,8 @@ class ContactMeForm(forms.ModelForm):
                             label='Your message',
                             widget=forms.Textarea(
                                                 attrs={
-                                                'placeholder':'Your message goes here...'
+                                                'placeholder':'Your message goes here...',
+                                                'maxlength': '2000'
                                                 }
                                                 )
                             )

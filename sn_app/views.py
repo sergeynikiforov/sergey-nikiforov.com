@@ -97,3 +97,16 @@ def contact(request):
         form = ContactMeForm()
 
     return render(request, 'sn_app/contact.html', {'form': form, 'person': person})
+
+def photography(request):
+    '''
+    view for photography page
+    '''
+    # get personal data
+    person = get_object_or_404(Person, first_name='Sergey')
+
+    # context dictionary to pass to template
+    context_dict = {
+        'person': person
+    }
+    return render(request, 'sn_app/photography.html', context_dict)

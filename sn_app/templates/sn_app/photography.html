@@ -1,0 +1,8 @@
+{% extends "sn_app/base.html" %}
+{% load sn_app_extras %}
+{% load staticfiles %}
+{% block title %}About{% endblock title %}
+{% block body %}
+<img src='{% static "sn_app/images/default.jpg" %}' alt="Default image">
+<p>Want to have a talk? <a href="{% url 'sn_app:contact' %}">Contact me</a></p>
+{% endblock body %}
