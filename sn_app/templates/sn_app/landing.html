@@ -1,6 +1,6 @@
 {% extends "sn_app/base.html" %}
 {% load sn_app_extras %}
-{% block title %}About{% endblock title %}
+{% block title %}{% if person %}{{ person.first_name }} {{ person.last_name }}{% else %}Home{% endif %}{% endblock title %}
 {% block body %}
     {% if messages %}
          {% for message in messages %}

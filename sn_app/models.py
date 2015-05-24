@@ -87,8 +87,8 @@ class OnlineCourse(models.Model):
         return self.title
 
 class ContactMe(models.Model):
-    sender_name = models.CharField(max_length=100)
-    sender_email = models.EmailField()
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
     message = models.TextField(max_length=2000)
     time_sent = models.DateTimeField(auto_now_add=True)
 
@@ -98,5 +98,5 @@ class ContactMe(models.Model):
 
     def __unicode__(self):
         # localtime() to display time in current timezone
-        return '%s at %s' % (self.sender_name, timezone.localtime(self.time_sent))
+        return '%s at %s' % (self.name, timezone.localtime(self.time_sent))
 

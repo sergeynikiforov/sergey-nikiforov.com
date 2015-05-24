@@ -5,7 +5,9 @@
 <h3>Contact me</h3>
 <form action="{% url 'sn_app:contact' %}" method="post">
     {% csrf_token %}
-    {{ form.as_p }}
+    <table>
+        {{ form }}
+    </table>
     <input type="submit" value="Send" />
 </form>
 {% endblock body %}

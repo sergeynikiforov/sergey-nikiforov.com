@@ -10,7 +10,7 @@ class PersonAdmin(admin.ModelAdmin):
     ]
 
 class ContactMeAdmin(admin.ModelAdmin):
-    list_display = ('sender_name', 'sender_email', 'time_sent')
+    list_display = ('name', 'email', 'time_sent')
 
 admin.site.register(models.Person, PersonAdmin)
 admin.site.register(models.Employer)

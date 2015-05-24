@@ -79,8 +79,8 @@ def contact(request):
             # add success message
             messages.add_message(request, messages.SUCCESS, 'Thank you for your message!')
             # construct email for site owner (me)
-            body = "You've got a message from %s (%s):\n\n%s\n\n---END OF MESSAGE---\n" % (form.cleaned_data['sender_name'], form.cleaned_data['sender_email'], form.cleaned_data['message'])
-            reply_to = form.cleaned_data['sender_email']
+            body = "You've got a message from %s (%s):\n\n%s\n\n---END OF MESSAGE---\n" % (form.cleaned_data['name'], form.cleaned_data['email'], form.cleaned_data['message'])
+            reply_to = form.cleaned_data['email']
             email = EmailMessage(
                                  subject='[Django] - You have 1 new message',
                                  body=body,
@@ -90,8 +90,10 @@ def contact(request):
             email.send()
             return redirect('sn_app:landing')
         else:
+            # just print to terminal
             print(form.errors)
     else:
+        # GET request - create empty form
         form = ContactMeForm()
 
     return render(request, 'sn_app/contact.html', {'form': form, 'person': person})
