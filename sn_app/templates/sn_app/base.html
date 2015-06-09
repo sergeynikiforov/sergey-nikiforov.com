@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 {% load sn_app_extras %}
-<html lang="en">
+{% load static %}
+<html class="no-js" lang="en">
     <head>
+        <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{% block title %}Sergey Nikiforov{% endblock title %}</title>
+        <link rel="stylesheet" href="{% static 'sn_app/css/app.css' %}"/>
+        <script src="{% static 'modernizr/modernizr.js' %}"></script>
     </head>
     <body>
         <div id="header">
@@ -42,6 +46,9 @@
                 {% endif %}
             {% endblock footer %}
         </div>
+        <script src="{% static 'jquery/dist/jquery.min.js' %}"></script>
+        <script src="{% static 'foundation/js/foundation.min.js' %}"></script>
+        <script src="js/app.js"></script>
     </body>
 </html>
 
