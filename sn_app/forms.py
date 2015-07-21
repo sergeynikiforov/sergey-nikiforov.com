@@ -6,10 +6,11 @@ class ContactMeForm(forms.ModelForm):
                                 label='Your name',
                                 widget=forms.TextInput(
                                                     attrs={
-                                                    'placeholder': 'John Smith',
+                                                    'placeholder': 'your name',
                                                     'name': 'name',
                                                     'required autocomplete': 'name',
-                                                    'maxlength': '100'
+                                                    'maxlength': '100',
+                                                    'aria-label': 'Your name'
                                                     }
                                                     )
                                 )
@@ -17,10 +18,11 @@ class ContactMeForm(forms.ModelForm):
                                 label='Your e-mail',
                                 widget=forms.EmailInput(
                                                     attrs={
-                                                    'placeholder':'johnsmith@example.com',
+                                                    'placeholder':'email@example.com',
                                                     'name': 'email',
                                                     'required autocomplete': 'email',
-                                                    'maxlength': '254'
+                                                    'maxlength': '254',
+                                                    'aria-label': 'Your email'
                                                     }
                                                     )
                                 )
@@ -28,8 +30,9 @@ class ContactMeForm(forms.ModelForm):
                             label='Your message',
                             widget=forms.Textarea(
                                                 attrs={
-                                                'placeholder':'Your message goes here...',
-                                                'maxlength': '2000'
+                                                'placeholder':'your message...',
+                                                'maxlength': '2000',
+                                                'aria-label': 'Your message'
                                                 }
                                                 )
                             )

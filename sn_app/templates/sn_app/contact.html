@@ -1,17 +1,47 @@
 {% extends "sn_app/base.html" %}
 {% load sn_app_extras %}
+{% load staticfiles %}
 {% block title %}Contact me{% endblock title %}
 {% block body %}
-<form action="{% url 'sn_app:contact' %}" method="post">
-    <fieldset>
-        <legend>
-            <h3>Contact me</h3>
-        </legend>
-        {% csrf_token %}
-        <table>
-            {{ form }}
-        </table>
-        <input type="submit" value="Send" />
-    </fieldset>
-</form>
+<div class="row">
+    <div class="large-12 columns">
+        <section>
+            <header>
+                <h2>CONTACT ME</h2>
+            </header>
+            <figure>
+                <img src="{% static 'sn_app/images/correos.jpg' %}" alt="">
+            </figure>
+
+            <form action="{% url 'sn_app:contact' %}" method="post">
+                    <div class="row">
+                        <div class="large-12 columns">
+                            <legend>
+                                <h3>drop me a line</h3>
+                            </legend>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="large-12 columns">
+                            {% if person %}
+                                <p>{{ person.first_name }} {{ person.last_name}}</p>
+                                <p>{{ person.address }}</p>
+                                <p>{{ person.email }}</p>
+                                <p>{{ person.telephone }}</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="large-3 columns">
+                            {{ form.name }}
+                            {{ form.email }}
+                            {{ form.message }}
+                            <input type="submit" value="Send" class="button small" role="button" />
+                        </div>
+                    </div>
+            </form>
+        </section>
+    </div>
+</div>
 {% endblock body %}

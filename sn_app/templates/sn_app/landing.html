@@ -3,11 +3,16 @@
 {% load staticfiles %}
 {% block title %}{% if person %}{{ person.first_name }} {{ person.last_name }}{% else %}Home{% endif %}{% endblock title %}
 {% block body %}
+<div class="row">
+    <div class="large-12 columns">
     {% if messages %}
          {% for message in messages %}
              <p>{{ message }}</p>
          {% endfor %}
-    {% else %}
-        <img src="{% static 'sn_app/images/picasso.jpg' %}" alt="picasso street cadiz"/>
     {% endif %}
+    <figure>
+        <img src="{% static 'sn_app/images/picasso.jpg' %}" alt="picasso street cadiz"/>
+    </figure>
+    </div>
+</div>
 {% endblock body %}
