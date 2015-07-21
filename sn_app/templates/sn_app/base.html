@@ -10,45 +10,61 @@
         <script src="{% static 'modernizr/modernizr.js' %}"></script>
     </head>
     <body>
-        <div id="header">
+        <header>
             {% block header %}
                 {% if person %}
-                    <h2>{{ person.first_name }} {{ person.last_name }}</h2>
-                    <ul>
-                        <li><a href="{% url 'sn_app:landing' %}">Home</a></li>
-                        <li><a href="{% url 'sn_app:about' %}">About</a></li>
-                        <li><a href="{% url 'sn_app:resume' %}">Resume</a></li>
-                        <li><a href="{% url 'sn_app:photography' %}">Photography</a></li>
-                        <li><a href="{% url 'sn_app:contact' %}">Contact me</a></li>
-                    </ul>
+                    <div class="contain-to-grid">
+                        <nav class="top-bar" data-topbar role="navigation">
+                            <ul class="title-area">
+                                <li class="name">
+                                    <h1><a href="{% url 'sn_app:landing' %}">{{ person.first_name|upper }} {{ person.last_name|upper }}</a></h1>
+                                </li>
+                                <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+                            </ul>
+                            <section class="top-bar-section">
+                                <ul class="right">
+                                    <li><a href="{% url 'sn_app:landing' %}">home</a></li>
+                                    <li><a href="{% url 'sn_app:about' %}">about</a></li>
+                                </ul>
+                                <ul class="right">
+                                    <li><a href="{% url 'sn_app:resume' %}">resume</a></li>
+                                    <li><a href="{% url 'sn_app:photography' %}">photography</a></li>
+                                    <li><a href="{% url 'sn_app:contact' %}">contact me</a></li>
+                                </ul>
+                            </section>
+                        </nav>
+                    </div>
                 {% else %}
                     <p>no person info</p>
                 {% endif %}
             {% endblock header %}
-        </div>
+        </header>
+        <main>
+            {% block body %}
+                <p>base.html</p>
+            {% endblock body %}
+        </main>
         <br/>
-        <div id="body">
-        {% block body %}
-            <p>base.html</p>
-        {% endblock body %}
-        </div>
-        <br/>
-        <div id="footer">
+        <footer class="footer">
             {% block footer %}
-                {% if person %}
-                    <p>Copyright (c) 2015 Sergey Nikiforov</p>
-                    <p><a href="{{ person.facebook_link }}">Facebook</a></p>
-                    <p><a href="{{ person.linkedin_link }}">LinkedIn</a></p>
-                    <p><a href="{{ person.instagram_link }}">Instagram</a></p>
-                    <p><a href="{{ person.flickr_link }}">flickr</a></p>
-                {% else %}
-                    <p>Error retrieving data</p>
-                {% endif %}
+                <div class="row">
+                    <div class="small-12 columns">
+                        {% if person %}
+                            <ul class="inline-list">
+                                <li><a href="{% url 'sn_app:landing' %}">2015 © Sergey Nikiforov</a></li>
+                                <li><a href="{{ person.facebook_link }}">facebook</a></li>
+                                <li><a href="{{ person.linkedin_link }}">linkedin</a></li>
+                                <li><a href="{{ person.instagram_link }}">instagram</a></li>
+                                <li><a href="{{ person.flickr_link }}">flickr</a></li>
+                            </ul>
+                        {% else %}
+                            <p>Error retrieving data</p>
+                        {% endif %}
+                    </div>
+                </div>
             {% endblock footer %}
-        </div>
-        <script src="{% static 'jquery/dist/jquery.min.js' %}"></script>
-        <script src="{% static 'foundation/js/foundation.min.js' %}"></script>
-        <script src="js/app.js"></script>
+        </footer>
+        <script src="{% static 'sn_app/js/app.js' %}"></script>
     </body>
 </html>
 

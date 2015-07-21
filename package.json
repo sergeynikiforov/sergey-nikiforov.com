@@ -20,7 +20,9 @@
     "gulp": "~3.9.0",
     "gulp-gzip": "~1.1.0",
     "gulp-livereload": "~3.8.0",
-    "inherits": "~2.0.1"
+    "inherits": "~2.0.1",
+    "gulp-plumber": "~1.0.1",
+    "gulp-concat": "~2.5.2"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

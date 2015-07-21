@@ -5,6 +5,8 @@ var minifycss = require('gulp-minify-css');
 var rename = require('gulp-rename');
 var gzip = require('gulp-gzip');
 var livereload = require('gulp-livereload');
+var plumber = require('gulp-plumber');
+var concat = require('gulp-concat');
 
 var gzip_options = {
     threshold: '1kb',
@@ -13,21 +15,64 @@ var gzip_options = {
     }
 };
 
+// paths for bower and assets
+var paths = {
+    'bower': './bower_components',
+    'assets': './assets'
+}
+
+// error handler for plumber
+var onError = function (err) {
+  console.log(err);
+  this.emit('end');
+};
+
 gulp.task('sass', function() {
+    // get source
     return gulp.src([
-            './assets/styles/app.scss'
+            paths.assets + '/styles/app.scss'
                     ])
+    // plumber for error handling
+    .pipe(plumber({
+        errorHandler: onError
+    }))
+    // run through sass compiler, passing foundation scss in includePaths
     .pipe(sass({
           includePaths: [
-          './bower_components/foundation/scss'
+            paths.bower + '/foundation/scss'
           ]
     }))
+    // rename
     .pipe(rename('app.css'))
-    .pipe(gulp.dest('./sn_app/static/sn_app/css'));
+    // put into destination dir
+    .pipe(gulp.dest('./sn_app/static/sn_app/css'))
+    // run reload
+    .pipe(livereload());
 });
 
+// gulp task for js scripts
+gulp.task('scripts', function() {
+    // include all the needed js files
+    return gulp.src([
+            paths.bower + '/jquery/dist/jquery.js',
+            paths.bower + '/fastclick/lib/fastclick.js',
+            paths.bower + '/foundation/js/foundation.js',
+            paths.bower + '/foundation/js/foundation/foundation.alert.js',
+            paths.assets + '/scripts/app.js'
+             ])
+    // concat into 1 file
+    .pipe(concat('app.js'))
+    // put into dest dir
+    .pipe(gulp.dest('./sn_app/static/sn_app/js'))
+    // run reload
+    .pipe(livereload());
+});
+
+// watch task
 gulp.task('watch', function() {
-    gulp.watch('./assets/styles/**/*.scss', ['sass']);
+    livereload.listen();
+    gulp.watch(paths.assets + '/**/**/*.{scss,js}', ['sass', 'scripts']);
 });
 
-gulp.task('default', ['sass']);
+// default task
+gulp.task('default', ['sass', 'scripts']);
