@@ -1,59 +1,107 @@
 {% extends "sn_app/base.html" %}
 {% load sn_app_extras %}
-{% block title %}My Resume{% endblock title %}
+{% load staticfiles %}
+{% block title %}Resume{% endblock title %}
 {% block body %}
-<div id="bio">
-    {% if person %}
-        <h3>Contact details</h3>
-        <p>{{ person.address }}</p>
-        <p><a href="mailto:{{ person.email }}">{{ person.email }}</a></p>
-        <p>Born: {{ person.birthdate }}</p>
-        <p>{{ person.telephone }}</p>
-    {% else %}
-        <p>No info</p>
-    {% endif %}
-</div>
-<br/>
-<div id="education">
-    {% if education %}
-        <h3>Education</h3>
-        {% for degree in education %}
-            <p><a href="{{ degree.website }}">{{ degree.college }}</a> - {{ degree.degree }}, {{ degree.location }}</p>
-            <p>Major: {{ degree.major }}, {{ degree.end_date.year }}</p>
-        {% endfor %}
-    {% else %}
-        <p>No education info</p>
-    {% endif %}
-</div>
-<br/>
-<div id="jobs">
-    {% if jobs %}
-        <h3>Work Experience</h3>
-        {% for job in jobs %}
-            <p><a href="{{ job.employer.website }}">{{ job.employer }}</a></p>
-            <p><em>{{ job.position }}</em> -- {{ job.start_date|date:"M, Y" }} - {{ job.end_date|date:"M, Y" }}</p>
-            <p>{{ job.employer.location }}</p>
-            <ul>
-                {% for item in achievements|key:job.position %}
-                    <li>{{ item }}</li>
-                {% endfor %}
-            </ul>
-        {% endfor %}
-    {% else %}
-        <p>No jobs info</p>
-    {% endif %}
-</div>
-<br/>
-<div id="onlinecourses">
-    {% if onlinecourses %}
-        <h3>Online Courses</h3>
-        {% for course in onlinecourses %}
-            <p><a href="{{ course.url }}">{{ course.title }}</a></p>
-            <p>{{ course.school }}</p>
-            <p>{{ course.date.year }}</p>
-        {% endfor %}
-    {% else %}
-        <p>No online courses info</p>
-    {% endif %}
+<div class="row">
+    <div class="large-12 columns">
+        <section>
+            <header>
+                <h1>RESUME</h1>
+            </header>
+            <figure>
+                <img src="{% static 'sn_app/images/ladefense.jpg' %}" alt="La Defense, Paris">
+            </figure>
+            {% if person %}
+                <div class="row">
+                    <div class="large-12 columns">
+                        <section>
+                            <header>
+                                <h3>CONTACT DETAILS</h3>
+                            </header>
+                            <p>{{ person.first_name }} {{ person.last_name}}</p>
+                            <p>{{ person.address }}</p>
+                            <p>Born: {{ person.birthdate }}</p>
+                            <p><a href="mailto:{{ person.email }}">{{ person.email }}</a></p>
+                            <p>{{ person.telephone }}</p>
+                        </section>
+                    </div>
+                </div>
+            {% else %}
+                <p>No info</p>
+            {% endif %}
+            {% if education %}
+                <div class="row">
+                    <div class="large-12 columns">
+                        <section>
+                            <header>
+                                <h3>EDUCATION</h3>
+                            </header>
+                            <div class="row">
+                                <div class="large-8 columns">
+                                    <p><a href="{{ education.0.website }}">{{ education.0.college }}</a></p>
+                                </div>
+                                <div class="large-4 columns">
+                                    <p>{{ education.0.location }}</p>
+                                </div>
+                                <div class="row">
+                                    <div class="large-4 columns"></div>
+                                    <div class="large-8 columns">
+                                        <ul>
+                                            {% for degree in education %}
+                                                <li><p>{{ degree.degree }} in {{ degree.major }}, {{ degree.end_date.year }};</p></li>
+                                            {% endfor %}
+                                            <li><p>Diploma of Interpreter from English into Russian in 2011 (with excellence).</p></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            {% else %}
+                <p>No education info</p>
+            {% endif %}
+            {% if onlinecourses %}
+                <div class="row">
+                    <div class="large-12 columns">
+                        <section>
+                            <header>
+                                <h3>ONLINE COURSES</h3>
+                            </header>
+                            <div class="row">
+                                <div class="large-12 columns">
+                                    <ul>
+                                        {% for course in onlinecourses %}
+                                            <li><p><a href="{{ course.url }}">{{ course.title }}</a>, {{ course.school }}, {{ course.date.year }}</p></li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            {% endif %}
+
+
+            <div id="jobs">
+                {% if jobs %}
+                    <h3>Work Experience</h3>
+                    {% for job in jobs %}
+                        <p><a href="{{ job.employer.website }}">{{ job.employer }}</a></p>
+                        <p><em>{{ job.position }}</em> -- {{ job.start_date|date:"M, Y" }} - {{ job.end_date|date:"M, Y" }}</p>
+                        <p>{{ job.employer.location }}</p>
+                        <ul>
+                            {% for item in achievements|key:job.position %}
+                                <li>{{ item }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endfor %}
+                {% else %}
+                    <p>No jobs info</p>
+                {% endif %}
+            </div>
+        </section>
+    </div>
 </div>
 {% endblock body %}

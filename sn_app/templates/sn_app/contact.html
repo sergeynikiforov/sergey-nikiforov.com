@@ -12,7 +12,6 @@
             <figure>
                 <img src="{% static 'sn_app/images/correos.jpg' %}" alt="">
             </figure>
-
             <form action="{% url 'sn_app:contact' %}" method="post">
                     <div class="row">
                         <div class="large-12 columns">
@@ -37,7 +36,7 @@
                             {{ form.name }}
                             {{ form.email }}
                             {{ form.message }}
-                            <input type="submit" value="Send" class="button small" role="button" />
+                            <input type="submit" value="SEND" class="button small" role="button" />
                         </div>
                     </div>
             </form>

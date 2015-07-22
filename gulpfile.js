@@ -68,10 +68,16 @@ gulp.task('scripts', function() {
     .pipe(livereload());
 });
 
+// livereload task
+gulp.task('reload', function() {
+    return livereload.reload();
+});
+
 // watch task
 gulp.task('watch', function() {
     livereload.listen();
-    gulp.watch(paths.assets + '/**/**/*.{scss,js}', ['sass', 'scripts']);
+    gulp.watch(paths.assets + '/**/**/*.{scss,js,html}', ['sass', 'scripts']);
+    gulp.watch('sn_app/templates/sn_app/*.html', ['reload']);
 });
 
 // default task
