@@ -28,6 +28,7 @@ class Employer(models.Model):
     title = models.CharField(max_length=500)
     location = models.CharField(max_length=500)
     website = models.URLField(max_length=300)
+    description = models.TextField(max_length=1000)
     number_of_employees = models.IntegerField()
 
     class Meta:

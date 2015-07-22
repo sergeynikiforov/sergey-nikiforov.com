@@ -4,7 +4,7 @@
 {% block title %}Resume{% endblock title %}
 {% block body %}
 <div class="row">
-    <div class="large-12 columns">
+    <div class="small-12 columns">
         <section>
             <header>
                 <h1>RESUME</h1>
@@ -14,7 +14,7 @@
             </figure>
             {% if person %}
                 <div class="row">
-                    <div class="large-12 columns">
+                    <div class="small-12 columns">
                         <section>
                             <header>
                                 <h3>CONTACT DETAILS</h3>
@@ -32,21 +32,21 @@
             {% endif %}
             {% if education %}
                 <div class="row">
-                    <div class="large-12 columns">
+                    <div class="small-12 columns">
                         <section>
                             <header>
                                 <h3>EDUCATION</h3>
                             </header>
                             <div class="row">
-                                <div class="large-8 columns">
+                                <div class="small-8 columns">
                                     <p><a href="{{ education.0.website }}">{{ education.0.college }}</a></p>
                                 </div>
-                                <div class="large-4 columns">
+                                <div class="small-4 columns">
                                     <p>{{ education.0.location }}</p>
                                 </div>
                                 <div class="row">
-                                    <div class="large-4 columns"></div>
-                                    <div class="large-8 columns">
+                                    <div class="small-4 columns"></div>
+                                    <div class="small-8 columns">
                                         <ul>
                                             {% for degree in education %}
                                                 <li><p>{{ degree.degree }} in {{ degree.major }}, {{ degree.end_date.year }};</p></li>
@@ -64,13 +64,13 @@
             {% endif %}
             {% if onlinecourses %}
                 <div class="row">
-                    <div class="large-12 columns">
+                    <div class="small-12 columns">
                         <section>
                             <header>
                                 <h3>ONLINE COURSES</h3>
                             </header>
                             <div class="row">
-                                <div class="large-12 columns">
+                                <div class="small-12 columns">
                                     <ul>
                                         {% for course in onlinecourses %}
                                             <li><p><a href="{{ course.url }}">{{ course.title }}</a>, {{ course.school }}, {{ course.date.year }}</p></li>

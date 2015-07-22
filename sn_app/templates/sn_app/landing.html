@@ -4,7 +4,7 @@
 {% block title %}{% if person %}{{ person.first_name }} {{ person.last_name }}{% else %}Home{% endif %}{% endblock title %}
 {% block body %}
 <div class="row">
-    <div class="large-12 columns">
+    <div class="small-12 columns">
     {% if messages %}
          {% for message in messages %}
              <p>{{ message }}</p>
