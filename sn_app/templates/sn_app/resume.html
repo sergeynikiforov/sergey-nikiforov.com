@@ -4,6 +4,21 @@
 {% block title %}Resume{% endblock title %}
 {% block body %}
 <div class="row">
+    <div class="small-4 columns">
+        <aside id="sidenav">
+            <div data-magellan-expedition>
+              <dl class="side-nav">
+                <dd data-magellan-arrival="contact"><a href="#contact">contact details</a></dd>
+                <dd data-magellan-arrival="education"><a href="#education">education</a></dd>
+                <dd data-magellan-arrival="courses"><a href="#courses">online courses</a></dd>
+                <dd data-magellan-arrival="work"><a href="#work">work experience</a></dd>
+                <dd data-magellan-arrival="skills"><a href="#skills">skills</a></dd>
+              </dl>
+            </div>
+        </aside>
+    </div>
+</div>
+<div class="row">
     <div class="small-12 columns">
         <section>
             <header>
@@ -16,7 +31,7 @@
                 <div class="row">
                     <div class="small-12 columns">
                         <section>
-                            <header>
+                            <header name="contact" data-magellan-destination="contact" id="contact">
                                 <h3>CONTACT DETAILS</h3>
                             </header>
                             <p>{{ person.first_name }} {{ person.last_name}}</p>
@@ -34,7 +49,7 @@
                 <div class="row">
                     <div class="small-12 columns">
                         <section>
-                            <header>
+                            <header data-magellan-destination="education" id="education">
                                 <h3>EDUCATION</h3>
                             </header>
                             <div class="row">
@@ -66,7 +81,7 @@
                 <div class="row">
                     <div class="small-12 columns">
                         <section>
-                            <header>
+                            <header data-magellan-destination="courses" id="courses">
                                 <h3>ONLINE COURSES</h3>
                             </header>
                             <div class="row">
@@ -82,26 +97,79 @@
                     </div>
                 </div>
             {% endif %}
-
-
-            <div id="jobs">
-                {% if jobs %}
-                    <h3>Work Experience</h3>
-                    {% for job in jobs %}
-                        <p><a href="{{ job.employer.website }}">{{ job.employer }}</a></p>
-                        <p><em>{{ job.position }}</em> -- {{ job.start_date|date:"M, Y" }} - {{ job.end_date|date:"M, Y" }}</p>
-                        <p>{{ job.employer.location }}</p>
-                        <ul>
-                            {% for item in achievements|key:job.position %}
-                                <li>{{ item }}</li>
-                            {% endfor %}
-                        </ul>
-                    {% endfor %}
-                {% else %}
-                    <p>No jobs info</p>
-                {% endif %}
+            {% if jobs %}
+                <div class="row">
+                    <div class="small-12 columns">
+                        <section>
+                            <header data-magellan-destination="work" id="work">
+                                <h3>WORK EXPERIENCE</h3>
+                            </header>
+                            <div class="row">
+                                <div class="small-12 columns">
+                                    {% for job in jobs %}
+                                        <article>
+                                            {% ifchanged  %}
+                                                <div class="row">
+                                                    <div class="small-8 columns">
+                                                        <p><a href="{{ job.employer.website }}">{{ job.employer }}</a></p>
+                                                    </div>
+                                                    <div class="small-4 columns">
+                                                        <p>{{ job.employer.location }}</p>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="small-12 columns">
+                                                        <p>{{ job.employer.description }}</p>
+                                                    </div>
+                                                </div>
+                                            {% endifchanged %}
+                                            <div class="row">
+                                                <div class="small-12 columns">
+                                                    <h6>{{ job.position }}</h6>
+                                                    <p>{{ job.start_date|date:"M, Y" }} - {{ job.end_date|date:"M, Y" }}</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="small-4 columns"></div>
+                                                <div class="small-8 columns">
+                                                    <ul>
+                                                        {% for item in achievements|key:job.position %}
+                                                            <li>{{ item }}</li>
+                                                        {% endfor %}
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            {% endif %}
+            {% if skills %}
+                <div class="row">
+                    <div class="small-12 columns">
+                        <section>
+                            <header data-magellan-destination="skills" id="skills">
+                                <h3>SKILLS</h3>
+                            </header>
+                            <ul>
+                                {% for skill in skills %}
+                                    <li>{{ skill }}</li>
+                                {% endfor %}
+                            </ul>
+                        </section>
+                    </div>
+                </div>
+            {% endif %}
+            <div class="row">
+                <div class="small-4 small-centered columns">
+                    <a href="#" class="button small">Download CV in PDF</a>
+                </div>
             </div>
         </section>
+
     </div>
 </div>
 {% endblock body %}

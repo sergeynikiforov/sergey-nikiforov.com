@@ -21,13 +21,18 @@ def resume(request):
         for job in jobs:
             achievements_dict[job.position] = json.loads(job.achievements_json)
 
+    # get dict with skills
+    if person:
+        skills = json.loads(person.skills_json)
+
     # context dictionary to pass to template
     context_dict = {
         'person': person,
         'jobs': jobs,
         'education': education,
         'onlinecourses': onlinecourses,
-        'achievements': achievements_dict
+        'achievements': achievements_dict,
+        'skills': skills
         }
     return render(request, 'sn_app/resume.html', context_dict)
 

@@ -1,2 +1,7 @@
 @import 'foundation/settings';
 @import 'foundation';
+
+#sidenav {
+    position: fixed;
+    left: 1px;
+}
