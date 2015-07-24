@@ -6295,8 +6295,11 @@ main {
     display: table; }
   main:after {
     clear: both; }
-  main section {
+  main article {
     padding-left: 0.9375rem;
     padding-right: 0.9375rem;
-    width: 83.33333%;
+    width: 100%;
     float: left; }
+
+#contact_details {
+  text-align: right; }

@@ -8,7 +8,11 @@
 
 main {
     @include grid-row();
-    section {
-        @include grid-column($columns:10);
+    article {
+        @include grid-column($columns:12);
     }
+}
+
+#contact_details {
+    text-align: right;
 }
