@@ -1,32 +1,44 @@
 {% extends "sn_app/base.html" %}
 {% load sn_app_extras %}
+{% load staticfiles %}
 {% block title %}About{% endblock title %}
 {% block body %}
-
-<section>
-    <div class="row">
-        <article>
-            <header>
-                <h2>about me</h2>
-            </header>
-        </article>
-    </div>
-</section>
-<p>Hello, my name is Sergey, and I'm an aspiring web-developer.</p>
-<div id="personal">
-    <h3>Personal</h3>
-    <p>Skills at a glance:</p>
-    <ul>
-        {% for skill in personal.skills %}
-            <li>{{ skill }}</li>
-        {% endfor %}
-    </ul>
-    <p>Facts about me:</p>
-    <ul>
-        {% for hobbie in personal.hobbies %}
-            <li>{{ hobbie }}</li>
-        {% endfor %}
-    </ul>
-</div>
-<p>Want to have a talk? <a href="{% url 'sn_app:contact' %}">Contact me</a></p>
+<article>
+    <header>
+        <h1>about me</h1>
+    </header>
+    <section>
+        <p>Hello! I'm Sergey.</p>
+        <p>I like things that work flawlessly and look beautiful.</p>
+        <p>I like to build such things.</p>
+        <p>I like to contribute to the projects that have meaning and stand out.</p>
+        <p>I like to teach and learn.</p>
+        <p>I'm one of those who unites people into groups rather than divides them into ones.</p>
+        <p>I like to make this world a better place.</p>
+        <figure>
+            <img src="{% static 'sn_app/images/melombok.jpg' %}" alt="Pic of me">
+        </figure>
+    </section>
+    <section>
+        <h2>i take pictures...</h2>
+        <p>...since I was 13 or so when my parents bought me Olympus point-and-shoot 35-mm camera. Photography became my second nature since then and it’s my way of exploring the world.</p>
+        <figure>
+            <img src="{% static 'sn_app/images/selfie.jpg' %}" alt="Seville selfie">
+        </figure>
+    </section>
+    <section>
+        <h2>i travel</h2>
+        <p>Road is life. And it’s never enough.</p>
+        <figure>
+            <img src="{% static 'sn_app/images/road.jpg' %}" alt="Driving in the dark">
+        </figure>
+    </section>
+    <section>
+        <h2>i run</h2>
+        <p>This is how I meditate.</p>
+        <figure>
+            <img src="{% static 'sn_app/images/onarun.jpg' %}" alt="Running views">
+        </figure>
+    </section>
+</article>
 {% endblock body %}

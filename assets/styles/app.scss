@@ -16,3 +16,11 @@ main {
 #contact_details {
     text-align: right;
 }
+
+footer {
+    @include grid-row();
+}
+
+#location {
+    text-align: right;
+}

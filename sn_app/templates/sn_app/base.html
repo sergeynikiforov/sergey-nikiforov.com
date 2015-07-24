@@ -39,14 +39,14 @@
                 {% endif %}
             {% endblock header %}
         </header>
+        {% block sidenav %}{% endblock sidenav %}
         <main>
             {% block body %}
                 <p>base.html</p>
             {% endblock body %}
         </main>
-        <footer class="footer">
+        <footer>
             {% block footer %}
-                <div class="row">
                     <div class="small-12 columns">
                         {% if person %}
                         <address>
@@ -62,7 +62,6 @@
                             <p>Error retrieving data</p>
                         {% endif %}
                     </div>
-                </div>
             {% endblock footer %}
         </footer>
         <script src="{% static 'sn_app/js/app.js' %}"></script>

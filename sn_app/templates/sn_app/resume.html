@@ -2,7 +2,7 @@
 {% load sn_app_extras %}
 {% load staticfiles %}
 {% block title %}Resume{% endblock title %}
-{% block body %}
+{% block sidenav %}
 <div class="row">
     <div class="small-12 columns">
         <aside id="sidenav">
@@ -18,158 +18,108 @@
         </aside>
     </div>
 </div>
-<div class="row">
-    <div class="small-12 columns">
-        <section>
-            <header>
-                <h1>RESUME</h1>
+{% endblock sidenav %}
+{% block body %}
+<article>
+    <header>
+        <h1>RESUME</h1>
+    </header>
+    <figure>
+        <img src="{% static 'sn_app/images/ladefense.jpg' %}" alt="La Defense, Paris">
+    </figure>
+    {% if person %}
+        <article>
+            <header name="contact" data-magellan-destination="contact" id="contact">
+                <h2>CONTACT DETAILS</h2>
             </header>
-            <figure>
-                <img src="{% static 'sn_app/images/ladefense.jpg' %}" alt="La Defense, Paris">
-            </figure>
-            {% if person %}
-                <div class="row">
-                    <div class="small-12 columns">
-                        <section>
-                            <header name="contact" data-magellan-destination="contact" id="contact">
-                                <h3>CONTACT DETAILS</h3>
-                            </header>
-                            <p>{{ person.first_name }} {{ person.last_name}}</p>
-                            <p>{{ person.address }}</p>
-                            <p>Born: {{ person.birthdate }}</p>
-                            <p><a href="mailto:{{ person.email }}">{{ person.email }}</a></p>
-                            <p>{{ person.telephone }}</p>
-                        </section>
-                    </div>
-                </div>
-            {% else %}
-                <p>No info</p>
-            {% endif %}
-            {% if education %}
-                <div class="row">
-                    <div class="small-12 columns">
-                        <section>
-                            <header data-magellan-destination="education" id="education">
-                                <h3>EDUCATION</h3>
-                            </header>
-                            <div class="row">
-                                <div class="small-8 columns">
-                                    <p><a href="{{ education.0.website }}">{{ education.0.college }}</a></p>
-                                </div>
-                                <div class="small-4 columns">
-                                    <p>{{ education.0.location }}</p>
-                                </div>
-                                <div class="row">
-                                    <div class="small-4 columns"></div>
-                                    <div class="small-8 columns">
-                                        <ul>
-                                            {% for degree in education %}
-                                                <li><p>{{ degree.degree }} in {{ degree.major }}, {{ degree.end_date.year }};</p></li>
-                                            {% endfor %}
-                                            <li><p>Diploma of Interpreter from English into Russian in 2011 (with excellence).</p></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                    </div>
-                </div>
-            {% else %}
-                <p>No education info</p>
-            {% endif %}
-            {% if onlinecourses %}
-                <div class="row">
-                    <div class="small-12 columns">
-                        <section>
-                            <header data-magellan-destination="courses" id="courses">
-                                <h3>ONLINE COURSES</h3>
-                            </header>
-                            <div class="row">
-                                <div class="small-12 columns">
-                                    <ul>
-                                        {% for course in onlinecourses %}
-                                            <li><p><a href="{{ course.url }}">{{ course.title }}</a>, {{ course.school }}, {{ course.date.year }}</p></li>
-                                        {% endfor %}
-                                    </ul>
-                                </div>
-                            </div>
-                        </section>
-                    </div>
-                </div>
-            {% endif %}
-            {% if jobs %}
-                <div class="row">
-                    <div class="small-12 columns">
-                        <section>
-                            <header data-magellan-destination="work" id="work">
-                                <h3>WORK EXPERIENCE</h3>
-                            </header>
-                            <div class="row">
-                                <div class="small-12 columns">
-                                    {% for job in jobs %}
-                                        <article>
-                                            {% ifchanged  %}
-                                                <div class="row">
-                                                    <div class="small-8 columns">
-                                                        <p><a href="{{ job.employer.website }}">{{ job.employer }}</a></p>
-                                                    </div>
-                                                    <div class="small-4 columns">
-                                                        <p>{{ job.employer.location }}</p>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="small-12 columns">
-                                                        <p>{{ job.employer.description }}</p>
-                                                    </div>
-                                                </div>
-                                            {% endifchanged %}
-                                            <div class="row">
-                                                <div class="small-12 columns">
-                                                    <h6>{{ job.position }}</h6>
-                                                    <p>{{ job.start_date|date:"M, Y" }} - {{ job.end_date|date:"M, Y" }}</p>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="small-4 columns"></div>
-                                                <div class="small-8 columns">
-                                                    <ul>
-                                                        {% for item in achievements|key:job.position %}
-                                                            <li>{{ item }}</li>
-                                                        {% endfor %}
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </article>
-                                    {% endfor %}
-                                </div>
-                            </div>
-                        </section>
-                    </div>
-                </div>
-            {% endif %}
-            {% if skills %}
-                <div class="row">
-                    <div class="small-12 columns">
-                        <section>
-                            <header data-magellan-destination="skills" id="skills">
-                                <h3>SKILLS</h3>
-                            </header>
-                            <ul>
-                                {% for skill in skills %}
-                                    <li>{{ skill }}</li>
-                                {% endfor %}
-                            </ul>
-                        </section>
-                    </div>
-                </div>
-            {% endif %}
-            <div class="row">
-                <div class="small-4 small-centered columns">
-                    <a href="#" class="button small">Download CV in PDF</a>
-                </div>
-            </div>
-        </section>
-
-    </div>
-</div>
+            <section>
+                <p>{{ person.first_name }} {{ person.last_name}}</p>
+                <p>{{ person.address }}</p>
+                <p>Born: {{ person.birthdate }}</p>
+                <p><a href="mailto:{{ person.email }}">{{ person.email }}</a></p>
+                <p>{{ person.telephone }}</p>
+            </section>
+        </article>
+    {% endif %}
+    {% if education %}
+        <article>
+            <header data-magellan-destination="education" id="education">
+                <h2>EDUCATION</h2>
+            </header>
+            <section>
+                <p><a href="{{ education.0.website }}">{{ education.0.college }}</a></p>
+            </section>
+            <section>
+                <p><span id="location">{{ education.0.location }}</span></p>
+            </section>
+            <section>
+                <ul>
+                    {% for degree in education %}
+                        <li><p>{{ degree.degree }} in {{ degree.major }}, {{ degree.end_date.year }};</p></li>
+                    {% endfor %}
+                    <li><p>Diploma of Interpreter from English into Russian in 2011 (with excellence).</p></li>
+                </ul>
+            </section>
+        </article>
+    {% endif %}
+    {% if onlinecourses %}
+        <article>
+            <header data-magellan-destination="courses" id="courses">
+                <h2>ONLINE COURSES</h2>
+            </header>
+            <section>
+                <ul>
+                    {% for course in onlinecourses %}
+                        <li><p><a href="{{ course.url }}">{{ course.title }}</a>, {{ course.school }}, {{ course.date.year }}</p></li>
+                    {% endfor %}
+                </ul>
+            </section>
+        </article>
+    {% endif %}
+    {% if jobs %}
+        <article>
+            <header data-magellan-destination="work" id="work">
+                <h2>WORK EXPERIENCE</h2>
+            </header>
+            {% for job in jobs %}
+                {% ifchanged job.employer %}
+                    <section>
+                        <h5><a href="{{ job.employer.website }}">{{ job.employer }}</a> <span id="location">{{ job.employer.location }}</span></h5>
+                    </section>
+                    <section>
+                        <p>{{ job.employer.description }}</p>
+                    </section>
+                {% endifchanged %}
+                    <section>
+                        <h6>{{ job.position }}</h6>
+                        <p>{{ job.start_date|date:"M, Y" }} - {{ job.end_date|date:"M, Y" }}</p>
+                    </section>
+                    <section>
+                        <ul>
+                            {% for item in achievements|key:job.position %}
+                                <li>{{ item }}</li>
+                            {% endfor %}
+                        </ul>
+                    </section>
+            {% endfor %}
+        </article>
+    {% endif %}
+    {% if skills %}
+        <article>
+            <header data-magellan-destination="skills" id="skills">
+                <h2>SKILLS</h2>
+            </header>
+            <section>
+                <ul>
+                    {% for skill in skills %}
+                        <li>{{ skill }}</li>
+                    {% endfor %}
+                </ul>
+            </section>
+        </article>
+    {% endif %}
+    <section>
+        <a href="#" class="button small">Download CV in PDF</a>
+    </section>
+</article>
 {% endblock body %}
