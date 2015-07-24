@@ -6285,3 +6285,18 @@ th.hide-for-touch {
 #sidenav {
   position: fixed;
   left: 1px; }
+
+main {
+  margin: 0 auto;
+  max-width: 62.5rem;
+  width: 100%; }
+  main:before, main:after {
+    content: " ";
+    display: table; }
+  main:after {
+    clear: both; }
+  main section {
+    padding-left: 0.9375rem;
+    padding-right: 0.9375rem;
+    width: 83.33333%;
+    float: left; }

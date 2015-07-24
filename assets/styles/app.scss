@@ -5,3 +5,10 @@
     position: fixed;
     left: 1px;
 }
+
+main {
+    @include grid-row();
+    section {
+        @include grid-column($columns:10);
+    }
+}
