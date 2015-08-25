@@ -3,6 +3,15 @@
 {% load staticfiles %}
 {% block title %}About{% endblock title %}
 {% block body %}
-<img src="{% static 'sn_app/images/default.jpg' %}" alt="Default image">
+<img src="{{ photourl }}" alt="Default image">
 <p>Want to have a talk? <a href="{% url 'sn_app:contact' %}">Contact me</a></p>
+
+{% for image in albums|key:"Asia 2014" %}
+    {% if forloop.first %}
+        <figure>
+            <img src="{{image}}" alt="">
+        </figure>
+    {% endif %}
+
+{% endfor %}
 {% endblock body %}

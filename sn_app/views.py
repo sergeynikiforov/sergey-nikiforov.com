@@ -4,6 +4,7 @@ from django.core.mail import EmailMessage
 from models import Person, Education, Job, OnlineCourse
 from forms import ContactMeForm
 import json
+import flickr_api
 
 def resume(request):
     '''
@@ -107,11 +108,27 @@ def photography(request):
     '''
     view for photography page
     '''
+    # authenticate via flickr_api
+    flickr_api.set_auth_handler('auth.txt')
+
+    # get the authenticated user
+    user = flickr_api.test.login()
+
+    # get photos
+    albums = {}
+    photosets = user.getPhotosets()
+
+    albums[photosets[1].title] = [x.getSizes()['Large']['source'] for x in photosets[1].getPhotos()]
+
+    urlp = photosets[2].getPhotos()[7].getSizes()['Large']['source']
+
     # get personal data
     person = get_object_or_404(Person, first_name='Sergey')
 
     # context dictionary to pass to template
     context_dict = {
-        'person': person
+        'person': person,
+        'photourl': urlp,
+        'albums': albums
     }
     return render(request, 'sn_app/photography.html', context_dict)

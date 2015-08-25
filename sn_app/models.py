@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
-import datetime
+#import datetime
+
 
 class Person(models.Model):
     first_name = models.CharField(max_length=50)
@@ -24,6 +25,7 @@ class Person(models.Model):
     def __unicode__(self):
         return self.first_name + self.last_name
 
+
 class Employer(models.Model):
     title = models.CharField(max_length=500)
     location = models.CharField(max_length=500)
@@ -37,6 +39,7 @@ class Employer(models.Model):
 
     def __unicode__(self):
         return self.title
+
 
 class Job(models.Model):
     employer = models.ForeignKey(Employer)
@@ -56,6 +59,7 @@ class Job(models.Model):
     def workterm(self):
         return self.end_date - self.start_date
 
+
 class Education(models.Model):
     person = models.ForeignKey(Person)
     college = models.CharField(max_length=500)
@@ -73,6 +77,7 @@ class Education(models.Model):
     def __unicode__(self):
         return "%s at %s, %s" % (self.degree, self.college, self.end_date.year)
 
+
 class OnlineCourse(models.Model):
     person = models.ForeignKey(Person)
     title = models.CharField(max_length=500)
@@ -86,6 +91,7 @@ class OnlineCourse(models.Model):
 
     def __unicode__(self):
         return self.title
+
 
 class ContactMe(models.Model):
     name = models.CharField(max_length=100)
@@ -101,3 +107,29 @@ class ContactMe(models.Model):
         # localtime() to display time in current timezone
         return '%s at %s' % (self.name, timezone.localtime(self.time_sent))
 
+
+class Photoset(models.Model):
+    title = models.CharField(primary_key=True, max_length=200)
+    description = models.TextField(max_length=2000)
+    num_views = models.PositiveIntegerField(default=0)
+    num_photos = models.PositiveIntegerField(default=0)
+
+    def __unicode__(self):
+        return '"%s" photoset with %i photos, viewed %i time(s)' % (self.title, self.num_photos, self.num_views)
+
+
+class Photo(models.Model):
+    publicID = models.CharField(primary_key=True, max_length=200)  # Cloudinary photo publicID
+    title = models.CharField(max_length=200, default='Untitled')
+    description = models.TextField(max_length=2000, default='No description')
+    num_views = models.PositiveIntegerField(default=0)
+    photosets = models.ManyToManyField(Photoset, through='PhotoInPhotoset')
+
+    def __unicode__(self):
+        return '"%s" photo %s, viewed %i time(s)' % (self.title, self.publicID, self.num_views)
+
+
+class PhotoInPhotoset(models.Model):
+    photoset = models.ForeignKey(Photoset)
+    photo = models.ForeignKey(Photo)
+    order = models.PositiveIntegerField(unique=True)
