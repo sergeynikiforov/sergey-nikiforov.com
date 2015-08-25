@@ -14,7 +14,8 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Photo',
             fields=[
-                ('publicID', models.CharField(max_length=200, serialize=False, primary_key=True)),
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('publicID', models.CharField(max_length=200)),
                 ('title', models.CharField(default=b'Untitled', max_length=200)),
                 ('description', models.TextField(default=b'No description', max_length=2000)),
                 ('num_views', models.PositiveIntegerField(default=0)),
@@ -31,7 +32,8 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Photoset',
             fields=[
-                ('title', models.CharField(max_length=200, serialize=False, primary_key=True)),
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('title', models.CharField(max_length=200)),
                 ('description', models.TextField(max_length=2000)),
                 ('num_views', models.PositiveIntegerField(default=0)),
                 ('num_photos', models.PositiveIntegerField(default=0)),
@@ -44,7 +46,7 @@ class Migration(migrations.Migration):
         ),
         migrations.AddField(
             model_name='photo',
-            name='albums',
+            name='photosets',
             field=models.ManyToManyField(to='sn_app.Photoset', through='sn_app.PhotoInPhotoset'),
         ),
     ]

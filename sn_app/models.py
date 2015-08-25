@@ -109,7 +109,7 @@ class ContactMe(models.Model):
 
 
 class Photoset(models.Model):
-    title = models.CharField(primary_key=True, max_length=200)
+    title = models.CharField(max_length=200)
     description = models.TextField(max_length=2000)
     num_views = models.PositiveIntegerField(default=0)
     num_photos = models.PositiveIntegerField(default=0)
@@ -119,7 +119,7 @@ class Photoset(models.Model):
 
 
 class Photo(models.Model):
-    publicID = models.CharField(primary_key=True, max_length=200)  # Cloudinary photo publicID
+    publicID = models.CharField(max_length=200)  # Cloudinary photo publicID
     title = models.CharField(max_length=200, default='Untitled')
     description = models.TextField(max_length=2000, default='No description')
     num_views = models.PositiveIntegerField(default=0)
