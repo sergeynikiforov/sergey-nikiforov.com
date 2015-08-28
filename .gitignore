@@ -4,3 +4,4 @@ sn_project.sublime-workspace
 /sn_app/static/sn_app/images/*
 flickr_keys.py
 auth.txt
+cloudinaryconfig.py
