@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from django.template.defaultfilters import slugify
 #import datetime
 
 
@@ -113,6 +114,11 @@ class Photoset(models.Model):
     description = models.TextField(max_length=2000)
     num_views = models.PositiveIntegerField(default=0)
     num_photos = models.PositiveIntegerField(default=0)
+    slug = models.SlugField(unique=True)
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.title)
+        super(Photoset, self).save(*args, **kwargs)
 
     def __unicode__(self):
         return '"%s" photoset with %i photos, viewed %i time(s)' % (self.title, self.num_photos, self.num_views)
@@ -133,4 +139,4 @@ class Photo(models.Model):
 class PhotoInPhotoset(models.Model):
     photoset = models.ForeignKey(Photoset)
     photo = models.ForeignKey(Photo)
-    order = models.PositiveIntegerField(unique=True)
+    order = models.PositiveIntegerField()

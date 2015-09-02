@@ -23,7 +23,7 @@ cloudinary.config(
 )
 
 # path to dir containing photos
-photopath = '/home/sergeynikiforov/Dropbox/img_assets/test/'
+photopath = '/home/sergeynikiforov/Dropbox/img_assets/test2/'
 
 def populate(photos_path, photoset_title=None):
     # create photoset
@@ -49,8 +49,13 @@ def populate(photos_path, photoset_title=None):
         # add photo to photoset
         ps = PhotoInPhotoset(photoset=photoset, photo=photo_db_instance, order=order_counter)
         ps.save()
+
+        # increment counters
+        photoset.num_photos += 1
         order_counter += 1
 
+    # save changes to photoset
+    photoset.save()
     print('populate.py completed!')
     return
 

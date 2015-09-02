@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 {% load sn_app_extras %}
 {% load static %}
+{% load cloudinary %}
 <html class="no-js" lang="en">
     <head>
         <meta charset="utf-8" />
@@ -47,21 +48,21 @@
         </main>
         <footer>
             {% block footer %}
-                    <div class="small-12 columns">
-                        {% if person %}
-                        <address>
-                            <ul class="inline-list">
-                                    <li><a href="{% url 'sn_app:landing' %}">2015 © Sergey Nikiforov</a></li>
-                                    <li><a href="{{ person.facebook_link }}">facebook</a></li>
-                                    <li><a href="{{ person.linkedin_link }}">linkedin</a></li>
-                                    <li><a href="{{ person.instagram_link }}">instagram</a></li>
-                                    <li><a href="{{ person.flickr_link }}">flickr</a></li>
-                            </ul>
-                        </address>
-                        {% else %}
-                            <p>Error retrieving data</p>
-                        {% endif %}
-                    </div>
+                <div class="small-12 columns">
+                    {% if person %}
+                    <address>
+                        <ul class="inline-list">
+                            <li><a href="{% url 'sn_app:landing' %}">2015 © Sergey Nikiforov</a></li>
+                            <li><a href="{{ person.facebook_link }}">facebook</a></li>
+                            <li><a href="{{ person.linkedin_link }}">linkedin</a></li>
+                            <li><a href="{{ person.instagram_link }}">instagram</a></li>
+                            <li><a href="{{ person.flickr_link }}">flickr</a></li>
+                        </ul>
+                    </address>
+                    {% else %}
+                        <p>Error retrieving data</p>
+                    {% endif %}
+                </div>
             {% endblock footer %}
         </footer>
         <script src="{% static 'sn_app/js/app.js' %}"></script>

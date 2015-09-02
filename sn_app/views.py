@@ -1,10 +1,10 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
 from django.core.mail import EmailMessage
-from models import Person, Education, Job, OnlineCourse
+from models import Person, Education, Job, OnlineCourse, Photo, PhotoInPhotoset, Photoset
 from forms import ContactMeForm
 import json
-import flickr_api
+
 
 def resume(request):
     '''
@@ -104,9 +104,11 @@ def contact(request):
 
     return render(request, 'sn_app/contact.html', {'form': form, 'person': person})
 
-def photography(request):
+def photography(request, photoset_slug='test'):
     '''
     view for photography page
+    '''
+    # old flickr implementation
     '''
     # authenticate via flickr_api
     flickr_api.set_auth_handler('auth.txt')
@@ -121,14 +123,30 @@ def photography(request):
     albums[photosets[1].title] = [x.getSizes()['Large']['source'] for x in photosets[1].getPhotos()]
 
     urlp = photosets[2].getPhotos()[7].getSizes()['Large']['source']
+    '''
+    # create context dict
+    context_dict = {}
+
+    # get all photosets names
+    photosets = Photoset.objects.all().order_by('title')
+    context_dict['photosets'] = photosets
+
+    # get active photoset
+    try:
+        active_photoset = Photoset.objects.get(slug=photoset_slug)
+        context_dict['photoset_title'] = active_photoset.title
+
+        # retrieve photos for the active photoset
+        photos = Photo.objects.filter(photosets__title__exact=active_photoset.title)
+        context_dict['photos'] = photos
+
+        # add photoset to context dict
+        context_dict['active_photoset'] = active_photoset
+    except Photoset.DoesNotExist:
+        pass
 
     # get personal data
     person = get_object_or_404(Person, first_name='Sergey')
+    context_dict['person'] = person
 
-    # context dictionary to pass to template
-    context_dict = {
-        'person': person,
-        'photourl': urlp,
-        'albums': albums
-    }
     return render(request, 'sn_app/photography.html', context_dict)

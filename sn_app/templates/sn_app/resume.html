@@ -2,25 +2,20 @@
 {% load sn_app_extras %}
 {% load staticfiles %}
 {% block title %}Resume{% endblock title %}
-{% block sidenav %}
-<div class="row">
-    <div class="small-12 columns">
-        <aside id="sidenav">
-            <div data-magellan-expedition>
-              <dl class="side-nav">
-                <dd data-magellan-arrival="contact"><a href="#contact">contact details</a></dd>
-                <dd data-magellan-arrival="education"><a href="#education">education</a></dd>
-                <dd data-magellan-arrival="courses"><a href="#courses">online courses</a></dd>
-                <dd data-magellan-arrival="work"><a href="#work">work experience</a></dd>
-                <dd data-magellan-arrival="skills"><a href="#skills">skills</a></dd>
-              </dl>
-            </div>
-        </aside>
-    </div>
-</div>
-{% endblock sidenav %}
+
 {% block body %}
-<article>
+<div class="small-1 columns">
+
+          <dl class="side-nav">
+            <dd data-magellan-arrival="contact"><a href="#contact">contact details</a></dd>
+            <dd data-magellan-arrival="education"><a href="#education">education</a></dd>
+            <dd data-magellan-arrival="courses"><a href="#courses">online courses</a></dd>
+            <dd data-magellan-arrival="work"><a href="#work">work experience</a></dd>
+            <dd data-magellan-arrival="skills"><a href="#skills">skills</a></dd>
+          </dl>
+
+</div>
+<article class="small-10 columns">
     <header>
         <h1>RESUME</h1>
     </header>
@@ -122,4 +117,7 @@
         <a href="#" class="button small">Download CV in PDF</a>
     </section>
 </article>
+<div class="small-1 columns">
+    <p>right side</p>
+</div>
 {% endblock body %}
