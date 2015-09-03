@@ -6282,37 +6282,26 @@ th.hide-for-touch {
   .show-for-print {
     display: none !important; } }
 
-#sidenav {
-  position: fixed;
-  left: 1px; }
-
 main {
   margin: 0 auto;
-  max-width: 62.5rem;
+  max-width: 100rem;
   width: 100%; }
   main:before, main:after {
     content: " ";
     display: table; }
   main:after {
     clear: both; }
-  main article {
-    padding-left: 0.9375rem;
-    padding-right: 0.9375rem;
-    width: 100%;
-    float: left; }
+  main > article {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    width: 66.66667%;
+    float: left;
+    margin-left: auto;
+    margin-right: auto;
+    float: none; }
 
 #contact_details {
   text-align: right; }
-
-footer {
-  margin: 0 auto;
-  max-width: 62.5rem;
-  width: 100%; }
-  footer:before, footer:after {
-    content: " ";
-    display: table; }
-  footer:after {
-    clear: both; }
 
 #location {
   text-align: right; }

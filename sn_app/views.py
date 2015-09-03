@@ -127,7 +127,7 @@ def photography(request, photoset_slug='test'):
     # create context dict
     context_dict = {}
 
-    # get all photosets names
+    # get all photosets
     photosets = Photoset.objects.all().order_by('title')
     context_dict['photosets'] = photosets
 
@@ -142,6 +142,11 @@ def photography(request, photoset_slug='test'):
 
         # add photoset to context dict
         context_dict['active_photoset'] = active_photoset
+
+        # increment views counter
+        active_photoset.num_views += 1
+        active_photoset.save()
+
     except Photoset.DoesNotExist:
         pass
 

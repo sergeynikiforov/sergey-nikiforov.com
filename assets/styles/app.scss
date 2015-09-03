@@ -1,15 +1,13 @@
 @import 'foundation/settings';
 @import 'foundation';
 
-#sidenav {
-    position: fixed;
-    left: 1px;
-}
+$row-width: rem-calc(1600);
+$column-gutter: rem-calc(24);
 
 main {
     @include grid-row();
-    article {
-        @include grid-column($columns:12);
+    > article {
+        @include grid-column($columns:8, $center:true);
     }
 }
 
@@ -17,9 +15,7 @@ main {
     text-align: right;
 }
 
-footer {
-    @include grid-row();
-}
+
 
 #location {
     text-align: right;
