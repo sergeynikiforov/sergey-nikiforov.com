@@ -16517,6 +16517,9 @@ $(document).foundation({
  * Modification for old IE mutation events, since not supported uses polling
  */
 
+// get element by ID, not by tag name
+var elementID = 'landing_page';
+
 var MutationObserver = (function () {
     var prefixes = ['WebKit', 'Moz', 'O', 'Ms', '']
         for (var i=0; i < prefixes.length; i++) {
@@ -16561,7 +16564,7 @@ window.onresize = function() {
 //lets get the marginTop for the <footer>
 function getCSS(element, property) {
 
-  var elem = document.getElementsByTagName(element)[0];
+  var elem = document.getElementById(element);
   var css = null;
 
   if (elem.currentStyle) {
@@ -16582,23 +16585,23 @@ function stickyFooter() {
     }
     document.body.setAttribute("style","height:auto");
 
-    if (document.getElementsByTagName("footer")[0].getAttribute("style") != null) {
-        document.getElementsByTagName("footer")[0].removeAttribute("style");
+    if (document.getElementById(elementID).getAttribute("style") != null) {
+        document.getElementById(elementID).removeAttribute("style");
     }
 
     if (window.innerHeight != document.body.offsetHeight) {
         var offset = window.innerHeight - document.body.offsetHeight;
-        var current = getCSS("footer", "margin-top");
+        var current = getCSS(elementID, "margin-top");
 
         if (isNaN(current) == true) {
-            document.getElementsByTagName("footer")[0].setAttribute("style","margin-top:0px;");
+            document.getElementById(elementID).setAttribute("style","margin-top:0px;");
             current = 0;
         } else {
             current = parseInt(current);
         }
 
-        if (current+offset > parseInt(getCSS("footer", "margin-top"))) {
-            document.getElementsByTagName("footer")[0].setAttribute("style","margin-top:"+(current+offset)+"px;");
+        if (current+offset > parseInt(getCSS(elementID, "margin-top"))) {
+            document.getElementById(elementID).setAttribute("style","margin-top:"+(current+offset)+"px;");
         }
     }
 

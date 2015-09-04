@@ -1,8 +1,29 @@
 @import 'foundation/settings';
 @import 'foundation';
 
+// grid config
 $row-width: rem-calc(1600);
 $column-gutter: rem-calc(24);
+
+.landing {
+    font-size: rem-calc(15);
+    padding: 0px;
+    margin-bottom: 5px;
+    a {
+        color: $black;
+    }
+    a:hover {
+        color: $red;
+    }
+
+    h1 {
+        font-weight: $font-weight-bold;
+    }
+}
+
+.landing_wrapper {
+    margin-top: 3%;
+}
 
 main {
     @include grid-row();
@@ -11,12 +32,6 @@ main {
     }
 }
 
-#contact_details {
-    text-align: right;
-}
-
-
-
-#location {
-    text-align: right;
+#landing_pic {
+    padding: 0px;
 }
