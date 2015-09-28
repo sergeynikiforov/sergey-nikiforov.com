@@ -8,23 +8,39 @@
     <section class="landing small-12 medium-6 columns">
         <h1 class="landing"><a href="{% url 'sn_app:landing' %}">{{ person.first_name|upper }} {{ person.last_name|upper }}</a></h1>
     </section>
-    <nav class="landing small-12 medium-6 columns">
-        <p class="landing text-right"><a href="{% url 'sn_app:about' %}">about</a></p>
-        <p class="landing text-right"><a href="{% url 'sn_app:resume' %}">resume</a></p>
-        <p class="landing text-right"><a href="{% url 'sn_app:photography' %}">photography</a></p>
-        <p class="landing text-right"><a href="{% url 'sn_app:contact' %}">contact me</a></p>
+    <nav class="landing small-12 medium-6 columns text-right show-for-medium-up">
+        <p class="landing"><a href="{% url 'sn_app:about' %}">about</a></p>
+        <p class="landing"><a href="{% url 'sn_app:resume' %}">resume</a></p>
+        <p class="landing"><a href="{% url 'sn_app:photography' %}">photography</a></p>
+        <p class="landing"><a href="{% url 'sn_app:contact' %}">contact me</a></p>
     </nav>
 </article>
 {% endblock body %}
 {% block footer %}
 <footer id="landing_page">
     <section class="small-12 medium-10 large-8 small-centered columns">
-        {% if messages %}
-             {% for message in messages %}
-                 <p>{{ message }}</p>
-             {% endfor %}
-        {% endif %}
-        <img src="{% static 'sn_app/images/picasso.jpg' %}" alt="picasso street cadiz"/>
+        <div class="overlay_container">
+            {% if messages %}
+                 {% for message in messages %}
+                     <p>{{ message }}</p>
+                 {% endfor %}
+            {% endif %}
+            <div class="overlay">
+                <nav class="small-12 columns show-for-small-only ">
+                    <p><a href="{% url 'sn_app:about' %}">about</a></p>
+                    <p><a href="{% url 'sn_app:resume' %}">resume</a></p>
+                    <p><a href="{% url 'sn_app:photography' %}">photography</a></p>
+                    <p><a href="{% url 'sn_app:contact' %}">contact me</a></p>
+                </nav>
+            </div>
+            <picture >
+                <source media="(max-height: 500px) and (orientation: portrait)" srcset="http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,h_640,w_640/v1443435200/landing/3G4A3942-Edit.jpg">
+                <source media="(max-width: 640px) and (orientation: portrait)" srcset="http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,h_854,w_640/v1443435200/landing/3G4A3942-Edit.jpg">
+                <source media="(max-width: 640px) and (orientation: landscape)" srcset="http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,h_320,w_640,g_south/v1443435200/landing/3G4A3942-Edit.jpg">
+                <img src="{% static 'sn_app/images/picasso.jpg' %}" alt="picasso street cadiz">
+            </picture>
+
+        </div>
     </section>
 </footer>
 {% endblock footer %}

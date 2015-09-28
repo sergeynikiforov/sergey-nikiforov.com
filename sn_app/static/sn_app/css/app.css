@@ -6282,8 +6282,11 @@ th.hide-for-touch {
   .show-for-print {
     display: none !important; } }
 
+html, body {
+  -webkit-text-size-adjust: 100%; }
+
 .landing {
-  font-size: 0.9375rem;
+  font-size: 12px;
   padding: 0px;
   margin-bottom: 5px; }
   .landing a {
@@ -6292,6 +6295,28 @@ th.hide-for-touch {
     color: #FF2321; }
   .landing h1 {
     font-weight: bold; }
+
+.overlay p {
+  font-size: 12px; }
+
+.overlay a {
+  color: #FFFFFF; }
+
+.overlay a:hover {
+  color: #FF2321; }
+
+@media only screen and (max-width: 40em) {
+  #landing_page section {
+    padding: 0px;
+    margin: 0px; }
+  .overlay_container {
+    position: relative; }
+    .overlay_container .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding-top: 1rem; } }
 
 .landing_wrapper {
   margin-top: 3%; }
@@ -6313,6 +6338,3 @@ main {
     margin-left: auto;
     margin-right: auto;
     float: none; }
-
-#landing_pic {
-  padding: 0px; }

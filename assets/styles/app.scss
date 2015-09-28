@@ -5,8 +5,10 @@
 $row-width: rem-calc(1600);
 $column-gutter: rem-calc(24);
 
+html, body {-webkit-text-size-adjust: 100%;}
+
 .landing {
-    font-size: rem-calc(15);
+    font-size: 12px;
     padding: 0px;
     margin-bottom: 5px;
     a {
@@ -21,6 +23,38 @@ $column-gutter: rem-calc(24);
     }
 }
 
+.overlay {
+    p{
+        font-size: 12px;
+    }
+
+    a {
+        color: $white;
+    }
+    a:hover {
+        color: $red;
+    }
+}
+
+@media #{$small-only} {
+    #landing_page {
+        section {
+            padding: 0px;
+            margin: 0px;
+        }
+    }
+    .overlay_container {
+        position: relative;
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding-top: 1rem;
+        }
+    }
+}
+
 .landing_wrapper {
     margin-top: 3%;
 }
@@ -30,8 +64,4 @@ main {
     > article {
         @include grid-column($columns:8, $center:true);
     }
-}
-
-#landing_pic {
-    padding: 0px;
 }

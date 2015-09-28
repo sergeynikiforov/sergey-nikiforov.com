@@ -59,7 +59,14 @@ window.onresize = function() {
     stickyFooter();
 }
 
-//lets get the marginTop for the <footer>
+// check for orientation change
+$(window).on('orientationchange', function() {
+    stickyFooter();
+});
+
+
+
+//lets get the marginTop for the elementID
 function getCSS(element, property) {
 
   var elem = document.getElementById(element);
@@ -89,9 +96,10 @@ function stickyFooter() {
 
     if (window.innerHeight != document.body.offsetHeight) {
         var offset = window.innerHeight - document.body.offsetHeight;
+        console.log(offset);
         var current = getCSS(elementID, "margin-top");
 
-        if (isNaN(current) == true) {
+        if (isNaN(current)) {
             document.getElementById(elementID).setAttribute("style","margin-top:0px;");
             current = 0;
         } else {
@@ -101,6 +109,7 @@ function stickyFooter() {
         if (current+offset > parseInt(getCSS(elementID, "margin-top"))) {
             document.getElementById(elementID).setAttribute("style","margin-top:"+(current+offset)+"px;");
         }
+
     }
 
     document.body.setAttribute("style","height:100%");
