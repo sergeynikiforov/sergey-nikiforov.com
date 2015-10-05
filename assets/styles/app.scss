@@ -5,10 +5,15 @@
 $row-width: rem-calc(1600);
 $column-gutter: rem-calc(24);
 
-html, body {-webkit-text-size-adjust: 100%;}
+// no text size increase when orientation changes
+html, body {
+    -webkit-text-size-adjust: 100%;
+}
+
+
 
 .landing {
-    font-size: 12px;
+    font-size: 15px;
     padding: 0px;
     margin-bottom: 5px;
     a {
@@ -25,7 +30,7 @@ html, body {-webkit-text-size-adjust: 100%;}
 
 .overlay {
     p{
-        font-size: 12px;
+        font-size: 15px;
     }
 
     a {
@@ -60,8 +65,9 @@ html, body {-webkit-text-size-adjust: 100%;}
 }
 
 main {
-    @include grid-row();
-    > article {
-        @include grid-column($columns:8, $center:true);
+    div {
+        > article {
+            @include grid-column($columns:8, $center:true);
+        }
     }
 }

@@ -126,7 +126,7 @@ select {
 
 .row {
   margin: 0 auto;
-  max-width: 62.5rem;
+  max-width: 100rem;
   width: 100%; }
   .row:before, .row:after {
     content: " ";
@@ -141,7 +141,7 @@ select {
     margin-left: 0;
     margin-right: 0; }
   .row .row {
-    margin: 0 -0.9375rem;
+    margin: 0 -0.75rem;
     max-width: none;
     width: auto; }
     .row .row:before, .row .row:after {
@@ -161,8 +161,8 @@ select {
 
 .column,
 .columns {
-  padding-left: 0.9375rem;
-  padding-right: 0.9375rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
   width: 100%;
   float: left; }
 
@@ -274,8 +274,8 @@ select {
   .column,
   .columns {
     position: relative;
-    padding-left: 0.9375rem;
-    padding-right: 0.9375rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
     float: left; }
   .small-1 {
     width: 8.33333%; }
@@ -359,8 +359,8 @@ select {
     margin-right: 0; }
   .row.small-uncollapse > .column,
   .row.small-uncollapse > .columns {
-    padding-left: 0.9375rem;
-    padding-right: 0.9375rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
     float: left; } }
 
 @media only screen and (min-width: 40.0625em) {
@@ -463,8 +463,8 @@ select {
   .column,
   .columns {
     position: relative;
-    padding-left: 0.9375rem;
-    padding-right: 0.9375rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
     float: left; }
   .medium-1 {
     width: 8.33333%; }
@@ -548,8 +548,8 @@ select {
     margin-right: 0; }
   .row.medium-uncollapse > .column,
   .row.medium-uncollapse > .columns {
-    padding-left: 0.9375rem;
-    padding-right: 0.9375rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
     float: left; }
   .push-0 {
     position: relative;
@@ -748,8 +748,8 @@ select {
   .column,
   .columns {
     position: relative;
-    padding-left: 0.9375rem;
-    padding-right: 0.9375rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
     float: left; }
   .large-1 {
     width: 8.33333%; }
@@ -833,8 +833,8 @@ select {
     margin-right: 0; }
   .row.large-uncollapse > .column,
   .row.large-uncollapse > .columns {
-    padding-left: 0.9375rem;
-    padding-right: 0.9375rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
     float: left; }
   .push-0 {
     position: relative;
@@ -956,7 +956,7 @@ select {
         background: #e3e3e3; }
     .accordion .accordion-navigation > .content, .accordion dd > .content {
       display: none;
-      padding: 0.9375rem; }
+      padding: 0.75rem; }
       .accordion .accordion-navigation > .content.active, .accordion dd > .content.active {
         background: #FFFFFF;
         display: block; }
@@ -3963,7 +3963,7 @@ button:focus {
     .reveal-modal {
       left: 0;
       margin: 0 auto;
-      max-width: 62.5rem;
+      max-width: 100rem;
       right: 0;
       width: 80%; } }
   @media only screen and (min-width: 40.0625em) {
@@ -3979,35 +3979,35 @@ button:focus {
     .reveal-modal.tiny {
       left: 0;
       margin: 0 auto;
-      max-width: 62.5rem;
+      max-width: 100rem;
       right: 0;
       width: 30%; } }
   @media only screen and (min-width: 40.0625em) {
     .reveal-modal.small {
       left: 0;
       margin: 0 auto;
-      max-width: 62.5rem;
+      max-width: 100rem;
       right: 0;
       width: 40%; } }
   @media only screen and (min-width: 40.0625em) {
     .reveal-modal.medium {
       left: 0;
       margin: 0 auto;
-      max-width: 62.5rem;
+      max-width: 100rem;
       right: 0;
       width: 60%; } }
   @media only screen and (min-width: 40.0625em) {
     .reveal-modal.large {
       left: 0;
       margin: 0 auto;
-      max-width: 62.5rem;
+      max-width: 100rem;
       right: 0;
       width: 70%; } }
   @media only screen and (min-width: 40.0625em) {
     .reveal-modal.xlarge {
       left: 0;
       margin: 0 auto;
-      max-width: 62.5rem;
+      max-width: 100rem;
       right: 0;
       width: 95%; } }
   .reveal-modal.full {
@@ -4022,7 +4022,7 @@ button:focus {
       .reveal-modal.full {
         left: 0;
         margin: 0 auto;
-        max-width: 62.5rem;
+        max-width: 100rem;
         right: 0;
         width: 100%; } }
   .reveal-modal.toback {
@@ -4416,17 +4416,17 @@ table {
   .tabs-content > .content {
     display: none;
     float: left;
-    padding: 0.9375rem 0;
+    padding: 0.75rem 0;
     width: 100%; }
     .tabs-content > .content.active {
       display: block;
       float: none; }
     .tabs-content > .content.contained {
-      padding: 0.9375rem; }
+      padding: 0.75rem; }
   .tabs-content.vertical {
     display: block; }
     .tabs-content.vertical > .content {
-      padding: 0 0.9375rem; }
+      padding: 0 0.75rem; }
 
 @media only screen and (min-width: 40.0625em) {
   .tabs.vertical {
@@ -4946,7 +4946,7 @@ meta.foundation-mq-topbar {
   .contain-to-grid .top-bar {
     margin-bottom: 0;
     margin: 0 auto;
-    max-width: 62.5rem; }
+    max-width: 100rem; }
   .top-bar-section {
     transition: none 0 0;
     left: 0 !important; }
@@ -6286,7 +6286,7 @@ html, body {
   -webkit-text-size-adjust: 100%; }
 
 .landing {
-  font-size: 12px;
+  font-size: 15px;
   padding: 0px;
   margin-bottom: 5px; }
   .landing a {
@@ -6297,7 +6297,7 @@ html, body {
     font-weight: bold; }
 
 .overlay p {
-  font-size: 12px; }
+  font-size: 15px; }
 
 .overlay a {
   color: #FFFFFF; }
@@ -6321,20 +6321,11 @@ html, body {
 .landing_wrapper {
   margin-top: 3%; }
 
-main {
-  margin: 0 auto;
-  max-width: 100rem;
-  width: 100%; }
-  main:before, main:after {
-    content: " ";
-    display: table; }
-  main:after {
-    clear: both; }
-  main > article {
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
-    width: 66.66667%;
-    float: left;
-    margin-left: auto;
-    margin-right: auto;
-    float: none; }
+main div > article {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  width: 66.66667%;
+  float: left;
+  margin-left: auto;
+  margin-right: auto;
+  float: none; }

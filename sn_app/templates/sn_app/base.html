@@ -9,8 +9,8 @@
         <script src="{% static 'sn_app/js/picturefill.js' %}"></script>
     </head>
     <body>
-        <header>
-            {% block header %}
+        {% block header %}
+            <header>
                 {% if person %}
                     <div class="contain-to-grid">
                         <nav class="top-bar" data-topbar role="navigation">
@@ -34,11 +34,13 @@
                 {% else %}
                     <p>no person info</p>
                 {% endif %}
-            {% endblock header %}
-        </header>
+            </header>
+        {% endblock header %}
         {% block sidenav %}{% endblock sidenav %}
         <main>
+            <div class="row">
             {% block body %}{% endblock body %}
+            </div>
         </main>
         {% block footer %}
             <footer>

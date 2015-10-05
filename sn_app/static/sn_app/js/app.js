@@ -16490,17 +16490,6 @@ return jQuery;
 
 $(document).foundation();
 
-$(document).foundation({
-"magellan-expedition": {
-  active_class: 'active', // specify the class used for active sections
-  threshold: 0, // how many pixels until the magellan bar sticks, 0 = auto
-  destination_threshold: 20, // pixels from the top of destination for it to be considered active
-  throttle_delay: 50, // calculation throttling to increase framerate
-  fixed_top: 0, // top distance in pixels assigend to the fixed element on scroll
-  offset_by_height: false // whether to offset the destination by the expedition height. Usually you want this to be true, unless your expedition is on the side.
-}
-});
-
 /*!
  * jQuery Sticky Footer 2.1
  * Corey Snyder
@@ -16558,15 +16547,17 @@ function mutationObjectCallback(mutationRecordsList) {
 
 
 //check for resize event
-window.onresize = function() {
-    stickyFooter();
-}
-
-// check for orientation change
-$(window).on('orientationchange', function() {
+$(window).on('resize', function() {
     stickyFooter();
 });
 
+// check for orientation change
+$(window).on('orientationchange', function() {
+    //$(window).trigger('resize');
+    stickyFooter();
+});
+
+//var checkDOMInt = setInterval(stickyFooter, 500);
 
 
 //lets get the marginTop for the elementID
@@ -16579,8 +16570,7 @@ function getCSS(element, property) {
     css = elem.currentStyle[property];
 
   } else if (window.getComputedStyle) {
-    css = document.defaultView.getComputedStyle(elem, null).
-    getPropertyValue(property);
+    css = document.defaultView.getComputedStyle(elem, null).getPropertyValue(property);
   }
 
   return css;
@@ -16599,10 +16589,17 @@ function stickyFooter() {
 
     if (window.innerHeight != document.body.offsetHeight) {
         var offset = window.innerHeight - document.body.offsetHeight;
-        console.log(offset);
-        var current = getCSS(elementID, "margin-top");
+        //var offset = $(window).height() - $(document.body).height();
+        //console.log('offset: '+offset);
+        //console.log('innerHeight: '+window.innerHeight);
+        //console.log('jQuery window height: '+$(window).height());
+        //console.log('body.offsetHeight: '+document.body.offsetHeight);
+        //console.log('jQuery body height: '+$(document.body).height());
 
-        if (isNaN(current)) {
+        var current = getCSS(elementID, "margin-top");
+        //console.log('current margin-top: '+current);
+
+        if (isNaN(current)===true) {
             document.getElementById(elementID).setAttribute("style","margin-top:0px;");
             current = 0;
         } else {
@@ -16611,6 +16608,7 @@ function stickyFooter() {
 
         if (current+offset > parseInt(getCSS(elementID, "margin-top"))) {
             document.getElementById(elementID).setAttribute("style","margin-top:"+(current+offset)+"px;");
+            //console.log('current+offset>margin-top, value:'+(current+offset));
         }
 
     }

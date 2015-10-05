@@ -4,11 +4,11 @@
 {% block title %}{% if person %}{{ person.first_name }} {{ person.last_name }}{% else %}Home{% endif %}{% endblock title %}
 {% block header %}{% endblock header %}
 {% block body %}
-<article class="landing_wrapper small-12 medium-10 large-8 small-centered columns">
-    <section class="landing small-12 medium-6 columns">
+<article class="landing_wrapper small-12 large-8 small-centered columns">
+    <section class="landing small-12 medium-6 large-4 columns">
         <h1 class="landing"><a href="{% url 'sn_app:landing' %}">{{ person.first_name|upper }} {{ person.last_name|upper }}</a></h1>
     </section>
-    <nav class="landing small-12 medium-6 columns text-right show-for-medium-up">
+    <nav class="landing small-12 medium-6 large-4 columns text-right show-for-medium-up">
         <p class="landing"><a href="{% url 'sn_app:about' %}">about</a></p>
         <p class="landing"><a href="{% url 'sn_app:resume' %}">resume</a></p>
         <p class="landing"><a href="{% url 'sn_app:photography' %}">photography</a></p>
@@ -18,29 +18,45 @@
 {% endblock body %}
 {% block footer %}
 <footer id="landing_page">
-    <section class="small-12 medium-10 large-8 small-centered columns">
-        <div class="overlay_container">
-            {% if messages %}
-                 {% for message in messages %}
-                     <p>{{ message }}</p>
-                 {% endfor %}
-            {% endif %}
-            <div class="overlay">
-                <nav class="small-12 columns show-for-small-only ">
-                    <p><a href="{% url 'sn_app:about' %}">about</a></p>
-                    <p><a href="{% url 'sn_app:resume' %}">resume</a></p>
-                    <p><a href="{% url 'sn_app:photography' %}">photography</a></p>
-                    <p><a href="{% url 'sn_app:contact' %}">contact me</a></p>
-                </nav>
+    <div class="row">
+        <section class="small-12 large-8 small-centered columns">
+            <div class="overlay_container">
+                {% if messages %}
+                     {% for message in messages %}
+                         <p>{{ message }}</p>
+                     {% endfor %}
+                {% endif %}
+                <div class="overlay">
+                    <nav class="small-12 columns show-for-small-only ">
+                        <p><a href="{% url 'sn_app:about' %}">about</a></p>
+                        <p><a href="{% url 'sn_app:resume' %}">resume</a></p>
+                        <p><a href="{% url 'sn_app:photography' %}">photography</a></p>
+                        <p><a href="{% url 'sn_app:contact' %}">contact me</a></p>
+                    </nav>
+                </div>
+                <picture >
+                    <source media="(min-width: 1024px)"
+                            sizes="80vw"
+                            srcset="http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_200/v1443435200/landing/3G4A3942-Edit.jpg 200w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_400/v1443435200/landing/3G4A3942-Edit.jpg 400w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_600/v1443435200/landing/3G4A3942-Edit.jpg 600w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_800/v1443435200/landing/3G4A3942-Edit.jpg 800w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_1000/v1443435200/landing/3G4A3942-Edit.jpg 1000w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_1200/v1443435200/landing/3G4A3942-Edit.jpg 1200w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_1400/v1443435200/landing/3G4A3942-Edit.jpg 1400w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_1600/v1443435200/landing/3G4A3942-Edit.jpg 1600w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_2000/v1443435200/landing/3G4A3942-Edit.jpg 2000w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_2400/v1443435200/landing/3G4A3942-Edit.jpg 2400w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_3200/v1443435200/landing/3G4A3942-Edit.jpg 3200w">
+                    <source media="(orientation: portrait) and (max-height: 500px)"
+                            sizes="100vw"
+                            srcset="http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_200/v1444042962/landing/goya1x1.jpg 200w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_400/v1444042962/landing/goya1x1.jpg 400w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_600/v1444042962/landing/goya1x1.jpg 600w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_800/v1444042962/landing/goya1x1.jpg 800w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_1000/v1444042962/landing/goya1x1.jpg 1000w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_1200/v1444042962/landing/goya1x1.jpg 1200w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_1600/v1444042962/landing/goya1x1.jpg 1600w">
+                    <source media="(orientation: portrait)"
+                            sizes="100vw"
+                            srcset="http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_200/v1444042962/landing/goya3x4.jpg 200w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_400/v1444042962/landing/goya3x4.jpg 400w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_600/v1444042962/landing/goya3x4.jpg 600w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_800/v1444042962/landing/goya3x4.jpg 800w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_1000/v1444042962/landing/goya3x4.jpg 1000w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_1200/v1444042962/landing/goya3x4.jpg 1200w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_1600/v1444042962/landing/goya3x4.jpg 1600w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_2000/v1444042962/landing/goya3x4.jpg 2000w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_2400/v1444042962/landing/goya3x4.jpg 2400w">
+                    <source media="(orientation: landscape) and (max-width: 640px) and (max-height: 400px)"
+                            sizes="100vw"
+                            srcset="http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_200/v1444042963/landing/goya16x10.jpg 200w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_400/v1444042963/landing/goya16x10.jpg 400w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_600/v1444042963/landing/goya16x10.jpg 600w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_800/v1444042963/landing/goya16x10.jpg 800w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_1000/v1444042963/landing/goya16x10.jpg 1000w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_1200/v1444042963/landing/goya16x10.jpg 1200w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_1280/v1444042963/landing/goya16x10.jpg 1280w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_1920/v1444042963/landing/goya16x10.jpg 1920w">
+                    <img src="http://res.cloudinary.com/sergeynikiforov/image/upload/v1443435200/landing/3G4A3942-Edit.jpg" alt="Goya Street, Cadiz, Spain" sizes="80vw" srcset="http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_400/v1443435200/landing/3G4A3942-Edit.jpg 400w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_800/v1443435200/landing/3G4A3942-Edit.jpg 800w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_1200/v1443435200/landing/3G4A3942-Edit.jpg 1200w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_1600/v1443435200/landing/3G4A3942-Edit.jpg 1600w">
+                    <!--
+                    <source media="(max-height: 600px) and (orientation: portrait)" srcset="http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,h_640,w_640/v1443435200/landing/3G4A3942-Edit.jpg">
+                    <source media="(max-width: 640px) and (orientation: portrait)" srcset="http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,h_854,w_640/v1443435200/landing/3G4A3942-Edit.jpg">
+                    <source media="(max-width: 640px) and (orientation: landscape)" srcset="http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,h_320,w_640,g_south/v1443435200/landing/3G4A3942-Edit.jpg">
+                    <img src="{% static 'sn_app/images/picasso.jpg' %}" alt="picasso street cadiz">
+                    -->
+                </picture>
             </div>
-            <picture >
-                <source media="(max-height: 500px) and (orientation: portrait)" srcset="http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,h_640,w_640/v1443435200/landing/3G4A3942-Edit.jpg">
-                <source media="(max-width: 640px) and (orientation: portrait)" srcset="http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,h_854,w_640/v1443435200/landing/3G4A3942-Edit.jpg">
-                <source media="(max-width: 640px) and (orientation: landscape)" srcset="http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,h_320,w_640,g_south/v1443435200/landing/3G4A3942-Edit.jpg">
-                <img src="{% static 'sn_app/images/picasso.jpg' %}" alt="picasso street cadiz">
-            </picture>
-
-        </div>
-    </section>
+        </section>
+    </div>
 </footer>
 {% endblock footer %}

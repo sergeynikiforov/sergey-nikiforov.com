@@ -55,15 +55,17 @@ function mutationObjectCallback(mutationRecordsList) {
 
 
 //check for resize event
-window.onresize = function() {
-    stickyFooter();
-}
-
-// check for orientation change
-$(window).on('orientationchange', function() {
+$(window).on('resize', function() {
     stickyFooter();
 });
 
+// check for orientation change
+$(window).on('orientationchange', function() {
+    //$(window).trigger('resize');
+    stickyFooter();
+});
+
+//var checkDOMInt = setInterval(stickyFooter, 500);
 
 
 //lets get the marginTop for the elementID
@@ -76,8 +78,7 @@ function getCSS(element, property) {
     css = elem.currentStyle[property];
 
   } else if (window.getComputedStyle) {
-    css = document.defaultView.getComputedStyle(elem, null).
-    getPropertyValue(property);
+    css = document.defaultView.getComputedStyle(elem, null).getPropertyValue(property);
   }
 
   return css;
@@ -96,10 +97,17 @@ function stickyFooter() {
 
     if (window.innerHeight != document.body.offsetHeight) {
         var offset = window.innerHeight - document.body.offsetHeight;
-        console.log(offset);
-        var current = getCSS(elementID, "margin-top");
+        //var offset = $(window).height() - $(document.body).height();
+        //console.log('offset: '+offset);
+        //console.log('innerHeight: '+window.innerHeight);
+        //console.log('jQuery window height: '+$(window).height());
+        //console.log('body.offsetHeight: '+document.body.offsetHeight);
+        //console.log('jQuery body height: '+$(document.body).height());
 
-        if (isNaN(current)) {
+        var current = getCSS(elementID, "margin-top");
+        //console.log('current margin-top: '+current);
+
+        if (isNaN(current)===true) {
             document.getElementById(elementID).setAttribute("style","margin-top:0px;");
             current = 0;
         } else {
@@ -108,6 +116,7 @@ function stickyFooter() {
 
         if (current+offset > parseInt(getCSS(elementID, "margin-top"))) {
             document.getElementById(elementID).setAttribute("style","margin-top:"+(current+offset)+"px;");
+            //console.log('current+offset>margin-top, value:'+(current+offset));
         }
 
     }
