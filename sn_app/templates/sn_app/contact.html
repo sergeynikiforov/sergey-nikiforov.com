@@ -20,10 +20,10 @@
                 </legend>
                 {% if person %}
                 <div class="text-right">
-                    <p>{{ person.first_name }} {{ person.last_name}}<p>
+                    <p>{{ person.first_name }} {{ person.last_name }}<p>
                     <address>
                         <p>{{ person.address }}</p>
-                        <p>{{ person.email }}</p>
+                        <p><a href="mailto:{{ person.email }}">{{ person.email }}</a></p>
                         <p>{{ person.telephone }}</p>
                     </address>
                 </div>

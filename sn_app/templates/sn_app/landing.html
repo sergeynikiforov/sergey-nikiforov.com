@@ -3,6 +3,7 @@
 {% load staticfiles %}
 {% block title %}{% if person %}{{ person.first_name }} {{ person.last_name }}{% else %}Home{% endif %}{% endblock title %}
 {% block header %}{% endblock header %}
+{% block offcanvas_open %} {% endblock offcanvas_open %}
 {% block body %}
 <div class="row">
     <article class="landing_wrapper small-12 medium-10 large-8 small-centered columns">
@@ -65,3 +66,4 @@
     </div>
 </footer>
 {% endblock footer %}
+{% block offcanvas_close %} {% endblock offcanvas_close %}
