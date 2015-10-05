@@ -38,26 +38,26 @@
         {% endblock header %}
         {% block sidenav %}{% endblock sidenav %}
         <main>
-            <div class="row">
             {% block body %}{% endblock body %}
-            </div>
         </main>
         {% block footer %}
-            <footer>
-                <div class="small-12 large-8 large-centered columns">
-                    {% if person %}
-                    <address>
-                        <ul class="inline-list">
-                            <li><a href="{% url 'sn_app:landing' %}">2015 © Sergey Nikiforov</a></li>
-                            <li><a href="{{ person.facebook_link }}">facebook</a></li>
-                            <li><a href="{{ person.linkedin_link }}">linkedin</a></li>
-                            <li><a href="{{ person.instagram_link }}">instagram</a></li>
-                            <li><a href="{{ person.flickr_link }}">flickr</a></li>
-                        </ul>
-                    </address>
-                    {% else %}
-                        <p>Error retrieving data</p>
-                    {% endif %}
+            <footer id="sticky_footer">
+                <div class="row">
+                    <section class="small-12 large-8 large-centered columns">
+                        {% if person %}
+                        <address>
+                            <ul class="inline-list">
+                                <li><a href="{% url 'sn_app:landing' %}">2015 © Sergey Nikiforov</a></li>
+                                <li><a href="{{ person.facebook_link }}">facebook</a></li>
+                                <li><a href="{{ person.linkedin_link }}">linkedin</a></li>
+                                <li><a href="{{ person.instagram_link }}">instagram</a></li>
+                                <li><a href="{{ person.flickr_link }}">flickr</a></li>
+                            </ul>
+                        </address>
+                        {% else %}
+                            <p>Error retrieving data</p>
+                        {% endif %}
+                    </section>
                 </div>
             </footer>
         {% endblock footer %}

@@ -4,20 +4,22 @@
 {% block title %}{% if person %}{{ person.first_name }} {{ person.last_name }}{% else %}Home{% endif %}{% endblock title %}
 {% block header %}{% endblock header %}
 {% block body %}
-<article class="landing_wrapper small-12 medium-10 large-8 small-centered columns">
-    <section class="landing small-12 medium-6 large-4 columns">
-        <h1 class="landing"><a href="{% url 'sn_app:landing' %}">{{ person.first_name|upper }} {{ person.last_name|upper }}</a></h1>
-    </section>
-    <nav class="landing small-12 medium-6 large-4 columns text-right show-for-medium-up">
-        <p class="landing"><a href="{% url 'sn_app:about' %}">about</a></p>
-        <p class="landing"><a href="{% url 'sn_app:resume' %}">resume</a></p>
-        <p class="landing"><a href="{% url 'sn_app:photography' %}">photography</a></p>
-        <p class="landing"><a href="{% url 'sn_app:contact' %}">contact me</a></p>
-    </nav>
-</article>
+<div class="row">
+    <article class="landing_wrapper small-12 medium-10 large-8 small-centered columns">
+        <section class="landing small-12 medium-6 large-4 columns">
+            <h1 class="landing"><a href="{% url 'sn_app:landing' %}">{{ person.first_name|upper }} {{ person.last_name|upper }}</a></h1>
+        </section>
+        <nav class="landing small-12 medium-6 large-4 columns text-right show-for-medium-up">
+            <p class="landing"><a href="{% url 'sn_app:about' %}">about</a></p>
+            <p class="landing"><a href="{% url 'sn_app:resume' %}">resume</a></p>
+            <p class="landing"><a href="{% url 'sn_app:photography' %}">photography</a></p>
+            <p class="landing"><a href="{% url 'sn_app:contact' %}">contact me</a></p>
+        </nav>
+    </article>
+</div>
 {% endblock body %}
 {% block footer %}
-<footer id="landing_page">
+<footer id="sticky_footer">
     <div class="row">
         <section class="small-12 medium-10 large-8 small-centered columns">
             <div class="overlay_container">

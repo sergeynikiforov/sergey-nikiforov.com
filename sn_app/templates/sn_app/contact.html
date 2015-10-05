@@ -3,34 +3,42 @@
 {% load staticfiles %}
 {% block title %}Contact me{% endblock title %}
 {% block body %}
-<article>
-    <header>
-        <h2>CONTACT ME</h2>
-    </header>
-    <section>
-        <figure>
-            <img src="{% static 'sn_app/images/correos.jpg' %}" alt="Me sending a postcard">
-        </figure>
-    </section>
-    <section>
-        <form action="{% url 'sn_app:contact' %}" method="post">
-            <legend>
-                <h3>drop me a line</h3>
-            </legend>
-            {% if person %}
-                <p>{{ person.first_name }} {{ person.last_name}}<p>
-                <address>
-                    <p>{{ person.address }}</p>
-                    <p>{{ person.email }}</p>
-                    <p>{{ person.telephone }}</p>
-                </address>
-            {% endif %}
-            {% csrf_token %}
-            {{ form.name }}
-            {{ form.email }}
-            {{ form.message }}
-            <input type="submit" value="SEND" class="button small" role="button" />
-        </form>
-    </section>
-</article>
+<div class="row">
+    <article class="small-12 medium-10 large-8 small-centered columns">
+        <header>
+            <h2>CONTACT ME</h2>
+        </header>
+        <section>
+            <picture>
+                <img src="{% static 'sn_app/images/correos.jpg' %}" alt="Me sending a postcard">
+            </picture>
+        </section>
+        <section>
+            <form action="{% url 'sn_app:contact' %}" method="post">
+                <legend>
+                    <h3>drop me a line</h3>
+                </legend>
+                {% if person %}
+                <div class="text-right">
+                    <p>{{ person.first_name }} {{ person.last_name}}<p>
+                    <address>
+                        <p>{{ person.address }}</p>
+                        <p>{{ person.email }}</p>
+                        <p>{{ person.telephone }}</p>
+                    </address>
+                </div>
+                {% endif %}
+                {% csrf_token %}
+                <div class="small-12 medium-6 columns">
+                    {{ form.name }}
+                    {{ form.email }}
+                </div>
+                <div class="small-12 columns">
+                    {{ form.message }}
+                    <input type="submit" value="SEND" class="button small" role="button" />
+                </div>
+            </form>
+        </section>
+    </article>
+</div>
 {% endblock body %}

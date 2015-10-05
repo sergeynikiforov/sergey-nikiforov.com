@@ -16,7 +16,7 @@
  */
 
 // get element by ID, not by tag name
-var elementID = 'landing_page';
+var elementID = 'sticky_footer';
 
 var MutationObserver = (function () {
     var prefixes = ['WebKit', 'Moz', 'O', 'Ms', '']
