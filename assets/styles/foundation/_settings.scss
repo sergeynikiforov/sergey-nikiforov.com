@@ -440,7 +440,7 @@ $red         : #FF2321;
 
 // We use these to build padding for buttons.
 // $button-tny: rem-calc(10);
-// $button-sml: rem-calc(14);
+$button-sml: rem-calc(10);
 // $button-med: rem-calc(16);
 // $button-lrg: rem-calc(18);
 
@@ -453,19 +453,19 @@ $red         : #FF2321;
 // $button-font-color: $white;
 // $button-font-color-alt: $oil;
 // $button-font-tny: rem-calc(11);
-// $button-font-sml: rem-calc(13);
+// $button-font-sml: rem-calc(17);
 // $button-font-med: rem-calc(16);
 // $button-font-lrg: rem-calc(20);
 // $button-font-weight: $font-weight-normal;
 // $button-font-align: center;
 
 // We use these to control various hover effects.
-// $button-function-factor: -20%;
+$button-function-factor: +15%;
 
 // We use these to control button border styles.
 // $button-border-width: 0;
 // $button-border-style: solid;
-// $button-bg-color: $primary-color;
+$button-bg-color: $black;
 // $button-bg-hover: scale-color($button-bg-color, $lightness: $button-function-factor);
 // $button-border-color: $button-bg-hover;
 // $secondary-button-bg-hover: scale-color($secondary-color, $lightness: $button-function-factor);
@@ -650,8 +650,8 @@ $red         : #FF2321;
 // $input-font-size: rem-calc(14);
 // $input-bg-color: $white;
 // $input-focus-bg-color: scale-color($white, $lightness: -2%);
-// $input-border-color: scale-color($white, $lightness: -20%);
-// $input-focus-border-color: scale-color($white, $lightness: -40%);
+$input-border-color: scale-color($black, $lightness: +50%);
+$input-focus-border-color: scale-color($black, $lightness: -40%);
 // $input-border-style: solid;
 // $input-border-width: 1px;
 // $input-border-radius: $global-radius;
@@ -686,13 +686,13 @@ $red         : #FF2321;
 
 // We use these to style the error states for inputs and labels
 // $input-error-message-padding: rem-calc(6 9 9);
-// $input-error-message-top: -1px;
-// $input-error-message-font-size: rem-calc(12);
+$input-error-message-top: 1px;
+$input-error-message-font-size: 0.9rem;
 // $input-error-message-font-weight: $font-weight-normal;
-// $input-error-message-font-style: italic;
-// $input-error-message-font-color: $white;
-// $input-error-message-bg-color: $alert-color;
-// $input-error-message-font-color-alt: $oil;
+$input-error-message-font-style: none;
+$input-error-message-font-color: $red;
+$input-error-message-bg-color: $white;
+$input-error-message-font-color-alt: $red;
 
 // We use this to style the glowing effect of inputs when focused
 // $glowing-effect-fade-time: .45s;
@@ -836,7 +836,7 @@ $red         : #FF2321;
 // Off Canvas Tab Bar Variables
 // $include-html-off-canvas-classes: $include-html-classes;
 
-// $tabbar-bg: $oil;
+$tabbar-bg: $white;
 // $tabbar-height: rem-calc(45);
 // $tabbar-icon-width: $tabbar-height;
 // $tabbar-line-height: $tabbar-height;
@@ -844,35 +844,35 @@ $red         : #FF2321;
 // $tabbar-middle-padding: 0 rem-calc(10);
 
 // Off Canvas Divider Styles
-// $tabbar-left-section-border: solid 1px scale-color($tabbar-bg, $lightness: -50%);
+$tabbar-left-section-border: none;
 // $tabbar-right-section-border: $tabbar-left-section-border;
 
 
 // Off Canvas Tab Bar Headers
-// $tabbar-header-color: $white;
+$tabbar-header-color: $black;
 // $tabbar-header-weight: $font-weight-bold;
 // $tabbar-header-line-height: $tabbar-height;
 // $tabbar-header-margin: 0;
 
 // Off Canvas Menu Variables
 // $off-canvas-width: rem-calc(250);
-// $off-canvas-bg: $oil;
+$off-canvas-bg: $white;
 // $off-canvas-bg-hover: scale-color($tabbar-bg, $lightness: -30%);
 // $off-canvas-bg-active: scale-color($tabbar-bg, $lightness: -30%);
 
 // Off Canvas Menu List Variables
 // $off-canvas-label-padding: .3rem rem-calc(15);
-// $off-canvas-label-color: $aluminum;
+$off-canvas-label-color: $black;
 // $off-canvas-label-text-transform: uppercase;
 // $off-canvas-label-font-size: rem-calc(12);
 // $off-canvas-label-font-weight: $font-weight-bold;
-// $off-canvas-label-bg: $tuatara;
+$off-canvas-label-bg: $white;
 // $off-canvas-label-border-top: 1px solid scale-color($off-canvas-label-bg, $lightness: 14%);
 // $off-canvas-label-border-bottom: none;
 // $off-canvas-label-margin:0;
 // $off-canvas-link-padding: rem-calc(10, 15);
-// $off-canvas-link-color: rgba($white, .7);
-// $off-canvas-link-border-bottom: 1px solid scale-color($off-canvas-bg, $lightness: -25%);
+$off-canvas-link-color: $black;
+$off-canvas-link-border-bottom: 0px solid scale-color($off-canvas-bg, $lightness: -25%);
 // $off-canvas-back-bg: #444;
 // $off-canvas-back-border-top: $off-canvas-label-border-top;
 // $off-canvas-back-border-bottom: $off-canvas-label-border-bottom;
@@ -881,7 +881,7 @@ $red         : #FF2321;
 // $off-canvas-back-hover-border-bottom: none;
 
 // Off Canvas Menu Icon Variables
-// $tabbar-menu-icon-color: $white;
+$tabbar-menu-icon-color: $black;
 // $tabbar-menu-icon-hover: scale-color($tabbar-menu-icon-color, $lightness: -30%);
 
 // $tabbar-menu-icon-text-indent: rem-calc(35);
@@ -889,11 +889,11 @@ $red         : #FF2321;
 // $tabbar-menu-icon-height: $tabbar-height;
 // $tabbar-menu-icon-padding: 0;
 
-// $tabbar-hamburger-icon-width: rem-calc(16);
+$tabbar-hamburger-icon-width: rem-calc(14);
 // $tabbar-hamburger-icon-left: false;
 // $tabbar-hamburger-icon-top: false;
-// $tabbar-hamburger-icon-thickness: 1px;
-// $tabbar-hamburger-icon-gap: 6px;
+$tabbar-hamburger-icon-thickness: 1px;
+$tabbar-hamburger-icon-gap: 3px;
 
 // Off Canvas Back-Link Overlay
 // $off-canvas-overlay-transition: background 300ms ease;

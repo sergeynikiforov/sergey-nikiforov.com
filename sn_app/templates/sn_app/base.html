@@ -41,16 +41,17 @@
         {% block offcanvas_open %}
         <div class="off-canvas-wrap" data-offcanvas>
           <div class="inner-wrap">
-            <nav class="tab-bar hide-for-medium-up">
-              <section class="middle tab-bar-section">
+            <nav class="tab-bar hide-for-medium-up landing">
+              <section class="left tab-bar-section">
                 <h2 class="title"><a href="{% url 'sn_app:landing' %}">{{ person.first_name|upper }} {{ person.last_name|upper }}</a></h2>
               </section>
               <section class="right-small">
-                <a class="right-off-canvas-toggle" href="#"><span>Menu</span></a>
+                <a href="#idOfRightMenu" role="button" aria-controls="idOfRightMenu" aria-expanded="false" class="right-off-canvas-toggle menu-icon" ><span></span></a>
               </section>
             </nav>
             <aside class="right-off-canvas-menu">
               <ul class="off-canvas-list">
+                <li><label>{{ person.first_name|upper }} {{ person.last_name|upper }}</label></li>
                 <li><a href="{% url 'sn_app:landing' %}">home</a></li>
                 <li><a href="{% url 'sn_app:about' %}">about</a></li>
                 <li><a href="{% url 'sn_app:resume' %}">resume</a></li>
@@ -91,4 +92,3 @@
         <script src="{% static 'sn_app/js/app.js' %}"></script>
     </body>
 </html>
-

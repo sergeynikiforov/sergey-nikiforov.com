@@ -10,7 +10,19 @@ html, body {
     -webkit-text-size-adjust: 100%;
 }
 
+.page_header {
+    font-size: 2rem;
+    font-family: "Athena", times;
+    //padding: 10px;
+    font-weight: $font-weight-bold;
+}
 
+.contact_details {
+    p {
+        margin-bottom: 5px;
+    }
+    margin-bottom: 20px;
+}
 
 .landing {
     font-size: 15px;
@@ -25,6 +37,10 @@ html, body {
 
     h1 {
         font-weight: $font-weight-bold;
+    }
+    h2 {
+        font-size: 12px;
+        padding-left: 2px;
     }
 }
 
@@ -57,6 +73,10 @@ html, body {
             right: 0;
             padding-top: 1rem;
         }
+    }
+    .contact {
+    padding: 0px;
+    margin: 0px;
     }
 }
 

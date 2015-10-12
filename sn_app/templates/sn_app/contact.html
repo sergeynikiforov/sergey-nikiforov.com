@@ -5,37 +5,67 @@
 {% block body %}
 <div class="row">
     <article class="small-12 medium-10 large-8 small-centered columns">
-        <header>
-            <h2>CONTACT ME</h2>
-        </header>
+        <div class="row">
+            <div class="small-12 columns">
+                <header>
+                    <h2 class="page_header">CONTACT ME</h2>
+                </header>
+            </div>
+        </div>
+        <div class="row">
+            <div class="small-12 columns contact">
+            <section>
+                <picture>
+                    <source media="(orientation: portrait)"
+                            sizes="100vw"
+                            srcset="http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_200/v1444666884/contact/mail1x1.jpg 200w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_400/v1444666884/contact/mail1x1.jpg 400w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_600/v1444666884/contact/mail1x1.jpg 600w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_800/v1444666884/contact/mail1x1.jpg 800w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_1000/v1444666884/contact/mail1x1.jpg 1000w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_1200/v1444666884/contact/mail1x1.jpg 1200w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_1600/v1444666884/contact/mail1x1.jpg 1600w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_2000/v1444666884/contact/mail1x1.jpg 2000w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_2400/v1444666884/contact/mail1x1.jpg 2400w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_3200/v1444666884/contact/mail1x1.jpg 3200w">
+                    <img src="http://res.cloudinary.com/sergeynikiforov/image/upload/v1444666885/contact/mail3x2.jpg" sizes="100vw" alt="Me sending a postcard" srcset="http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_200/v1444666885/contact/mail3x2.jpg 200w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_400/v1444666885/contact/mail3x2.jpg 400w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_600/v1444666885/contact/mail3x2.jpg 600w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_800/v1444666885/contact/mail3x2.jpg 800w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_1000/v1444666885/contact/mail3x2.jpg 1000w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_1200/v1444666885/contact/mail3x2.jpg 1200w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_1600/v1444666885/contact/mail3x2.jpg 1600w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_2000/v1444666885/contact/mail3x2.jpg 2000w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_2400/v1444666885/contact/mail3x2.jpg 2400w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_3200/v1444666885/contact/mail3x2.jpg 3200w">
+                </picture>
+            </section>
+            </div>
+        </div>
         <section>
-            <picture>
-                <img src="{% static 'sn_app/images/correos.jpg' %}" alt="Me sending a postcard">
-            </picture>
-        </section>
-        <section>
-            <form action="{% url 'sn_app:contact' %}" method="post">
-                <legend>
-                    <h3>drop me a line</h3>
-                </legend>
+            <form action="{% url 'sn_app:contact' %}" method="post" data-abide>
+                <div class="row">
+                    <div class="small-12 columns text-left">
+                        <h3 class="page_header">drop me a line</h3>
+                    </div>
+                </div>
                 {% if person %}
-                <div class="text-right">
-                    <p>{{ person.first_name }} {{ person.last_name }}<p>
-                    <address>
-                        <p>{{ person.address }}</p>
-                        <p><a href="mailto:{{ person.email }}">{{ person.email }}</a></p>
-                        <p>{{ person.telephone }}</p>
-                    </address>
+                <div class="row">
+                    <div class="small-12 columns text-right">
+                        <div class="contact_details">
+                        <p>{{ person.first_name }} {{ person.last_name }}</p>
+                        <address>
+                            <p>{{ person.address }}</p>
+                            <p><a href="mailto:{{ person.email }}">{{ person.email }}</a></p>
+                            <p>{{ person.telephone }}</p>
+                        </address>
+                        </div>
+                    </div>
                 </div>
                 {% endif %}
                 {% csrf_token %}
-                <div class="small-12 medium-6 columns">
-                    {{ form.name }}
-                    {{ form.email }}
+                <div class="row">
+                    <div class="small-12 medium-6 columns">
+                        <div class="name_wrapper">
+                            {{ form.name }}
+                            <small class="error">Please, enter your name</small>
+                        </div>
+                        <div class="email_wrapper">
+                            {{ form.email }}
+                            <small class="error">Please, enter your valid e-mail</small>
+                        </div>
+                    </div>
                 </div>
-                <div class="small-12 columns">
-                    {{ form.message }}
-                    <input type="submit" value="SEND" class="button small" role="button" />
+                <div class="row">
+                    <div class="small-12 small-centered columns">
+                        <div class="message_wrapper">
+                            {{ form.message }}
+                            <small class="error">Please, enter your message</small>
+                        </div>
+                        <input type="submit" value="SEND" class="button small" role="button" />
+                    </div>
                 </div>
             </form>
         </section>
