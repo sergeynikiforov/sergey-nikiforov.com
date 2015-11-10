@@ -6290,7 +6290,7 @@ footer li {
   display: inline-block;
   margin-right: 1rem; }
   footer li a {
-    font-size: 0.9rem;
+    font-size: 0.8125rem;
     font-style: normal;
     color: #000000; }
   footer li a:hover {
@@ -6300,6 +6300,20 @@ footer li {
   #sticky_footer section {
     padding: 0px;
     margin: 0px; } }
+
+.top-bar .name h1 > a {
+  margin: 0px;
+  padding: 0px;
+  font-weight: bold;
+  font-size: 0.8125rem; }
+
+.top-bar .name a:hover {
+  color: #FF2321; }
+
+.top-bar .top-bar-section .right li a {
+  margin: 0px;
+  padding-right: 0px;
+  padding-left: 1.3rem; }
 
 .landing {
   font-size: 15px;

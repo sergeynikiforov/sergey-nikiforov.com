@@ -15,7 +15,6 @@ footer {
     ul {
      list-style-type:none;
      text-align: center;
-
     }
 
     li {
@@ -24,7 +23,7 @@ footer {
 
         // style links
         a {
-            font-size: 0.9rem;
+            font-size: 0.8125rem;
             font-style: normal;
             color: $black;
         }
@@ -44,6 +43,33 @@ footer {
     }
 }
 //-----------------------------------------------------
+
+//-----------------------------------------------------
+// TOP-BAR NAV SCSS
+//-----------------------------------------------------
+//
+.top-bar .name {
+    h1 > a {
+        margin: 0px;
+        padding: 0px;
+        font-weight: $font-weight-bold;
+        font-size: 0.8125rem;
+    }
+    a:hover {
+        color: $red;
+    }
+}
+
+.top-bar .top-bar-section .right {
+    li a {
+        margin: 0px;
+        padding-right: 0px;
+        padding-left: 1.3rem;
+    }
+}
+
+//-----------------------------------------------------
+
 
 
 //-----------------------------------------------------
