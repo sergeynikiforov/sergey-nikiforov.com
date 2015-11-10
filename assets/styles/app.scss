@@ -5,24 +5,51 @@
 //$row-width: rem-calc(1600);
 //$column-gutter: rem-calc(24);
 
-// no text size increase when orientation changes
-html, body {
-    -webkit-text-size-adjust: 100%;
-}
+//-----------------------------------------------------
+// FOOTER SCSS
+//-----------------------------------------------------
 
-.page_header {
-    font-size: 2rem;
-    font-family: "Athena", times;
-    //padding: 10px;
-    font-weight: $font-weight-bold;
-}
+// center list with social links in footer
+footer {
 
-.contact_details {
-    p {
-        margin-bottom: 5px;
+    ul {
+     list-style-type:none;
+     text-align: center;
+
     }
-    margin-bottom: 20px;
+
+    li {
+        display: inline-block;
+        margin-right: 1rem;
+
+        // style links
+        a {
+            font-size: 0.9rem;
+            font-style: normal;
+            color: $black;
+        }
+        a:hover {
+            color: $red;
+        }
+    }
 }
+
+// remove padding & margin for small screens
+@media #{$small-only} {
+    #sticky_footer {
+        section {
+            padding: 0px;
+            margin: 0px;
+        }
+    }
+}
+//-----------------------------------------------------
+
+
+//-----------------------------------------------------
+// HOME PAGE SCSS
+//-----------------------------------------------------
+//
 
 .landing {
     font-size: 15px;
@@ -44,6 +71,7 @@ html, body {
     }
 }
 
+// home page overlay menu
 .overlay {
     p{
         font-size: 15px;
@@ -58,12 +86,6 @@ html, body {
 }
 
 @media #{$small-only} {
-    #sticky_footer {
-        section {
-            padding: 0px;
-            margin: 0px;
-        }
-    }
     .overlay_container {
         position: relative;
         .overlay {
@@ -80,6 +102,29 @@ html, body {
     }
 }
 
+// add top-margin
 .landing_wrapper {
     margin-top: 3%;
+}
+//-----------------------------------------------------
+
+
+
+.page_header {
+    font-size: 2rem;
+    font-family: "Athenas", times;
+    //padding: 10px;
+    font-weight: $font-weight-bold;
+}
+
+.contact_details {
+    p {
+        margin-bottom: 5px;
+    }
+    margin-bottom: 20px;
+}
+
+// no text size increase when orientation changes
+html, body {
+    -webkit-text-size-adjust: 100%;
 }

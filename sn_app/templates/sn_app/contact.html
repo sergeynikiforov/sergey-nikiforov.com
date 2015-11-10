@@ -69,6 +69,20 @@
                 </div>
             </form>
         </section>
+        {% if messages %}
+            <section>
+                <div class="row">
+                    <div class="small-4 small-centered columns">
+                        <div data-alert class="alert-box success" tabindex="0" aria-live="assertive" role="alertdialog">
+                            {% for message in messages %}
+                                {{ message }}
+                            {% endfor %}
+                            <a href="#" tabindex="0" class="close" aria-label="Close Alert">&times;</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        {% endif %}
     </article>
 </div>
 {% endblock body %}

@@ -66,15 +66,15 @@
         {% block footer %}
             <footer id="sticky_footer">
                 <div class="row">
-                    <section class="small-12 large-8 large-centered columns">
+                    <section class="small-12 medium-10 large-8 small-centered columns">
                         {% if person %}
                         <address>
-                            <ul class="inline-list">
+                            <ul>
                                 <li><a href="{% url 'sn_app:landing' %}">2015 © Sergey Nikiforov</a></li>
                                 <li><a href="{{ person.facebook_link }}">facebook</a></li>
-                                <li><a href="{{ person.linkedin_link }}">linkedin</a></li>
-                                <li><a href="{{ person.instagram_link }}">instagram</a></li>
                                 <li><a href="{{ person.flickr_link }}">flickr</a></li>
+                                <li><a href="{{ person.instagram_link }}">instagram</a></li>
+                                <li><a href="{{ person.linkedin_link }}">linkedin</a></li>
                             </ul>
                         </address>
                         {% else %}

@@ -6282,18 +6282,24 @@ th.hide-for-touch {
   .show-for-print {
     display: none !important; } }
 
-html, body {
-  -webkit-text-size-adjust: 100%; }
+footer ul {
+  list-style-type: none;
+  text-align: center; }
 
-.page_header {
-  font-size: 2rem;
-  font-family: "Athena", times;
-  font-weight: bold; }
+footer li {
+  display: inline-block;
+  margin-right: 1rem; }
+  footer li a {
+    font-size: 0.9rem;
+    font-style: normal;
+    color: #000000; }
+  footer li a:hover {
+    color: #FF2321; }
 
-.contact_details {
-  margin-bottom: 20px; }
-  .contact_details p {
-    margin-bottom: 5px; }
+@media only screen and (max-width: 40em) {
+  #sticky_footer section {
+    padding: 0px;
+    margin: 0px; } }
 
 .landing {
   font-size: 15px;
@@ -6319,9 +6325,6 @@ html, body {
   color: #FF2321; }
 
 @media only screen and (max-width: 40em) {
-  #sticky_footer section {
-    padding: 0px;
-    margin: 0px; }
   .overlay_container {
     position: relative; }
     .overlay_container .overlay {
@@ -6336,3 +6339,16 @@ html, body {
 
 .landing_wrapper {
   margin-top: 3%; }
+
+.page_header {
+  font-size: 2rem;
+  font-family: "Athenas", times;
+  font-weight: bold; }
+
+.contact_details {
+  margin-bottom: 20px; }
+  .contact_details p {
+    margin-bottom: 5px; }
+
+html, body {
+  -webkit-text-size-adjust: 100%; }

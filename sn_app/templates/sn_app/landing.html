@@ -24,11 +24,6 @@
     <div class="row">
         <section class="small-12 medium-10 large-8 small-centered columns">
             <div class="overlay_container">
-                {% if messages %}
-                     {% for message in messages %}
-                         <p>{{ message }}</p>
-                     {% endfor %}
-                {% endif %}
                 <div class="overlay">
                     <nav class="small-12 columns show-for-small-only ">
                         <p><a href="{% url 'sn_app:about' %}">about</a></p>

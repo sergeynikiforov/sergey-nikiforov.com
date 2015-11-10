@@ -94,7 +94,7 @@ def contact(request):
                                  reply_to=(reply_to,)
                                 )
             email.send()
-            return redirect('sn_app:landing')
+            return redirect('sn_app:contact')
         else:
             # just print to terminal
             print(form.errors)
