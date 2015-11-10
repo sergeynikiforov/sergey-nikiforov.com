@@ -3,45 +3,96 @@
 {% load staticfiles %}
 {% block title %}About{% endblock title %}
 {% block body %}
-<article>
-    <header>
-        <h1>about me</h1>
-    </header>
-    <section>
-        <p>Hello! I'm Sergey.</p>
-        <p>I like things that work flawlessly and look beautiful.</p>
-        <p>I like to build such things.</p>
-        <p>I like to contribute to the projects that have meaning and stand out.</p>
-        <p>I like to teach and learn.</p>
-        <p>I'm one of those who unites people into groups rather than divides them into ones.</p>
-        <p>I like to make this world a better place.</p>
-        <figure>
-            <img src="{% static 'sn_app/images/melombok.jpg' %}" alt="Pic of me">
-        </figure>
-    </section>
-    <section>
-        <h2>i take pictures...</h2>
-        <p>...since I was 13 or so when my parents bought me Olympus point-and-shoot 35-mm camera. Photography became my second nature since then and it’s my way of exploring the world.</p>
-        <figure>
-            <img src="{% static 'sn_app/images/selfie.jpg' %}" alt="Seville selfie">
-        </figure>
-    </section>
-    <section>
-        <h2>i travel</h2>
-        <p>Road is life. And it’s never enough.</p>
-        <figure>
-            <img src="{% static 'sn_app/images/road.jpg' %}" alt="Driving in the dark">
-        </figure>
-    </section>
-    <section>
-        <h2>i run</h2>
-        <p>This is how I meditate.</p>
-        <figure>
-            <img src="{% static 'sn_app/images/onarun.jpg' %}" alt="Running views">
-        </figure>
-    </section>
-    <section>
-        <a href="{% url 'sn_app:contact' %}" class="button small">Contact me</a>
-    </section>
-</article>
+<div class="row">
+    <article class="small-12 medium-10 large-8 small-centered columns">
+        <div class="row">
+            <div class="small-12 columns">
+                <header>
+                    <h2 class="page_header">ABOUT ME</h2>
+                </header>
+            </div>
+        </div>
+        <div class="row">
+            <section class="small-12 medium-8 medium-offset-4 columns">
+                <p>Hello! I'm Sergey.</p>
+                <p>I like things that work flawlessly and look beautiful.</p>
+                <p>I like to build such things.</p>
+                <p>I like to contribute to the projects that have meaning and stand out.</p>
+                <p>I like to teach and learn.</p>
+                <p>I'm one of those who unites people into groups rather than divides them into ones.</p>
+                <p>I like to make this world a better place.</p>
+            </section>
+            <section class="small-12 columns small_screen_figure">
+                <figure>
+                    <img src="{% static 'sn_app/images/melombok.jpg' %}" alt="Pic of me">
+                </figure>
+            </section>
+        </div>
+        <div class="row">
+            <section class="small-12 columns">
+                <div class="row">
+                    <div class="small-12 columns">
+                        <h2 class="page_header">I take pictures...</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="small-12 medium-8 medium-offset-4 columns">
+                        <p>...since I was 13 or so when my parents bought me Olympus point-and-shoot 35-mm camera. Photography became my second nature since then and it’s my way of exploring the world.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="small-12 columns small_screen_figure">
+                        <figure>
+                            <img src="{% static 'sn_app/images/selfie.jpg' %}" alt="Seville selfie">
+                        </figure>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="row">
+            <section class="small-12 columns">
+                <div class="row">
+                    <div class="small-12 columns">
+                        <h2 class="page_header">I travel</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="small-8 small-offset-4 text-right columns">
+                        <p>Road is life. And it’s never enough.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="small-12 columns small_screen_figure">
+                        <figure>
+                            <img src="{% static 'sn_app/images/road.jpg' %}" alt="Driving in the dark">
+                        </figure>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="row">
+            <section class="small-12 columns">
+                <div class="row">
+                    <div class="small-12 columns">
+                        <h2 class="page_header">I run</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="small-8 small-offset-4 text-right columns">
+                        <p>This is how I meditate.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="small-12 columns small_screen_figure">
+                        <figure>
+                            <img src="{% static 'sn_app/images/onarun.jpg' %}" alt="Running views">
+                        </figure>
+                        <p></p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </article>
+</div>
 {% endblock body %}

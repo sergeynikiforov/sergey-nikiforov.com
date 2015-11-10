@@ -6354,6 +6354,14 @@ footer li {
 .landing_wrapper {
   margin-top: 3%; }
 
+figure {
+  margin: 0px; }
+
+@media only screen and (max-width: 40em) {
+  .small_screen_figure {
+    padding: 0px;
+    margin: 0px; } }
+
 .page_header {
   font-size: 2rem;
   font-family: "Athenas", times;
