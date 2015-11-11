@@ -6362,6 +6362,33 @@ figure {
     padding: 10px 0px;
     margin: 0px; } }
 
+.article_header_panel {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #d8d8d8;
+  margin-bottom: 1.25rem;
+  padding: 3px;
+  background: #000000;
+  color: #FFFFFF;
+  border: 0;
+  margin-bottom: 2rem;
+  margin-top: 6rem; }
+  .article_header_panel > :first-child {
+    margin-top: 0; }
+  .article_header_panel > :last-child {
+    margin-bottom: 0; }
+  .article_header_panel h1, .article_header_panel h2, .article_header_panel h3, .article_header_panel h4, .article_header_panel h5, .article_header_panel h6, .article_header_panel p, .article_header_panel li, .article_header_panel dl {
+    color: #FFFFFF; }
+  .article_header_panel h1, .article_header_panel h2, .article_header_panel h3, .article_header_panel h4, .article_header_panel h5, .article_header_panel h6 {
+    line-height: 1;
+    margin-bottom: 0.625rem; }
+    .article_header_panel h1.subheader, .article_header_panel h2.subheader, .article_header_panel h3.subheader, .article_header_panel h4.subheader, .article_header_panel h5.subheader, .article_header_panel h6.subheader {
+      line-height: 1.4; }
+  .article_header_panel header h2 {
+    font-style: normal;
+    font-size: 1.3rem;
+    margin: 3px; }
+
 .page_header {
   font-size: 2rem;
   font-family: "Athena", times;

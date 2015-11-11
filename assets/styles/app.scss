@@ -160,6 +160,29 @@ figure {
 // END ABOUT ME
 //-----------------------------------------------------
 
+// article header custom panel
+.article_header_panel {
+  @include panel(
+    // Sets the panel background color. Default: $panel-pg
+    $bg: $black,
+    // Sets the panel padding amount. Default: $panel-padding
+    $padding: 3px,
+    // Sets the font color based on the darkness of the bg & resets header line-heights for panels. Default: $panel-header-adjust
+    $adjust:true
+  );
+
+  border: 0;
+  margin-bottom: 2rem;
+  margin-top: 6rem;
+  header h2 {
+    font-style: normal;
+    font-size: 1.3rem;
+    margin: 3px;
+  }
+
+}
+
+
 .page_header {
     font-size: 2rem;
     font-family: "Athena", times;
