@@ -44,3 +44,16 @@ $(function() {
         }, 700);
     });
 });
+
+// owl carousel
+$(document).ready(function() {
+
+  $("#owl-example").owlCarousel({
+        navigation : true, // Show next and prev buttons
+        slideSpeed : 300,
+        pagination: false,
+        paginationSpeed : 400,
+        singleItem: true
+  });
+
+});

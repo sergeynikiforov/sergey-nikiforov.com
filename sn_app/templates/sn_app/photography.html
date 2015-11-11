@@ -4,32 +4,42 @@
 {% load cloudinary %}
 {% block title %}Photography - {% if photoset_title %}{{ photoset_title }}{% endif %}{% endblock title %}
 {% block body %}
-<div class="small-2 columns">
-    {% if photosets %}
-        <ul>
-            {% for photoset in photosets %}
-                <li><a href="{% url 'sn_app:photoset' photoset.slug %}">{{ photoset.title }}</a></li>
-            {% endfor %}
-        </ul>
-    {% endif %}
-</div>
-<article class="small-8 columns">
-    {% if active_photoset %}
-        <header>
-            <h1>{{ photoset_title }}</h1>
-        </header>
-        {% if photos %}
-            {% for photo in photos %}
-                <figure>
-                    <picture>
-                        {% cloudinary photo.publicID width=1024 crop="fit" %}
-                    </picture>
-                </figure>
-            {% endfor %}
+<article>
+    <div class="row">
+        {% if active_photoset %}
+            <div class="small-12 medium-10 large-8 small-centered columns">
+                <header>
+                    <h1 class="page_header">{{ photoset_title }}</h1>
+                </header>
+            </div>
         {% endif %}
-    {% endif %}
+    </div>
+    <div class="row">
+        <aside class="large-2 columns show-for-large-up">
+            {% if photosets %}
+                <nav class="side-nav text-right sticky" role="navigation" title="Albums">
+                    {% for photoset in photosets %}
+                        <p><a href="{% url 'sn_app:photoset' photoset.slug %}">{{ photoset.title }}</a></p>
+                    {% endfor %}
+                </nav>
+            {% endif %}
+        </aside>
+        <section class="small-12 medium-10 large-8 medium-centered large-uncentered columns small_screen_figure">
+            <div id="owl-example" class="owl-carousel">
+                {% if photos %}
+                    {% for photo in photos %}
+                        <figure>
+                            <picture>
+                                {% cloudinary photo.publicID width=1024 crop="fit" %}
+                            </picture>
+                        </figure>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </section>
+        <div class="large-2 columns show-for-large-up">
+            <p></p>
+        </div>
+    </div>
 </article>
-<div class="small-2 columns">
-    <p>DEF</p>
-</div>
 {% endblock body %}

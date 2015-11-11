@@ -7,6 +7,7 @@ var gzip = require('gulp-gzip');
 var livereload = require('gulp-livereload');
 var plumber = require('gulp-plumber');
 var concat = require('gulp-concat');
+var merge = require('merge-stream');
 
 var gzip_options = {
     threshold: '1kb',
@@ -28,8 +29,8 @@ var onError = function (err) {
 };
 
 gulp.task('sass', function() {
-    // get source
-    return gulp.src([
+    // get sass stream
+    var sassStream = gulp.src([
             paths.assets + '/styles/app.scss'
                     ])
     // plumber for error handling
@@ -41,9 +42,19 @@ gulp.task('sass', function() {
           includePaths: [
             paths.bower + '/foundation/scss'
           ]
-    }))
-    // rename
-    .pipe(rename('app.css'))
+    }));
+
+    // get css stream
+    var cssStream = gulp.src([
+          paths.assets + '/styles/owl.carousel.css',
+          paths.assets + '/styles/owl.theme.css',
+          paths.assets + '/styles/owl.transitions.css'
+          ]);
+
+    // merge two streams
+    return merge(sassStream, cssStream)
+    // concat css files
+    .pipe(concat('app.css'))
     // put into destination dir
     .pipe(gulp.dest('./sn_app/static/sn_app/css'))
     // run reload
@@ -59,7 +70,8 @@ gulp.task('scripts', function() {
             paths.bower + '/foundation/js/foundation.js',
             paths.bower + '/foundation/js/foundation/foundation.alert.js',
             paths.assets + '/scripts/app.js',
-            paths.assets + '/scripts/myStickyFooter.js'
+            paths.assets + '/scripts/myStickyFooter.js',
+            paths.assets + '/scripts/owl.carousel.js'
              ])
     // concat into 1 file
     .pipe(concat('app.js'))
