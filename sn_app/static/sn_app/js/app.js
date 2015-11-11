@@ -16490,7 +16490,11 @@ return jQuery;
 
 $(document).foundation();
 
-// smooth scroll
+/* smooth scroll
+ * snippet taken from
+ * https://css-tricks.com/snippets/jquery/smooth-scrolling/
+*/
+
 $(function() {
   $('a[href*=#]:not([href=#])').click(function() {
     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
@@ -16506,8 +16510,11 @@ $(function() {
   });
 });
 
-// smooth sticky sidebar
-(function($) {
+/* smooth sticky sidebar
+ * taken from
+ * http://stackoverflow.com/questions/2177983/how-to-make-div-follow-scrolling-smoothly-with-jquery
+*/
+$(function() {
     var element = $('.sticky'),
         originalY = element.offset().top;
 
@@ -16526,7 +16533,7 @@ $(function() {
                     : scrollTop - originalY + topMargin
         }, 700);
     });
-})(jQuery);
+});
 /*!
  * jQuery Sticky Footer 2.1
  * Corey Snyder

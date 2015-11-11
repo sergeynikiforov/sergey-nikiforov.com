@@ -41,6 +41,7 @@ footer {
         }
     }
 }
+
 // END FOOTER
 //-----------------------------------------------------
 
@@ -67,6 +68,7 @@ footer {
         padding-left: 1.3rem;
     }
 }
+
 // END TOP-BAR
 //-----------------------------------------------------
 
@@ -132,6 +134,7 @@ footer {
 .landing_wrapper {
     margin-top: 3%;
 }
+
 // END HOME PAGE
 //-----------------------------------------------------
 
@@ -149,7 +152,7 @@ figure {
 // remove margins & padding from pictures for small screens
 @media #{$small-only} {
     .small_screen_figure {
-        padding: 0px;
+        padding: 10px 0px;
         margin: 0px;
     }
 }
@@ -159,7 +162,7 @@ figure {
 
 .page_header {
     font-size: 2rem;
-    font-family: "Athenas", times;
+    font-family: "Athena", times;
     //padding: 10px;
     font-weight: $font-weight-bold;
 }
@@ -175,7 +178,4 @@ figure {
 html, body {
     -webkit-text-size-adjust: 100%;
 }
-
-// sticky sidebar
-
 
