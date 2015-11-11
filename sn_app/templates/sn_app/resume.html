@@ -4,120 +4,136 @@
 {% block title %}Resume{% endblock title %}
 
 {% block body %}
-<div class="small-2 columns">
-
-          <dl class="side-nav">
-            <dd data-magellan-arrival="contact"><a href="#contact">contact details</a></dd>
-            <dd data-magellan-arrival="education"><a href="#education">education</a></dd>
-            <dd data-magellan-arrival="courses"><a href="#courses">online courses</a></dd>
-            <dd data-magellan-arrival="work"><a href="#work">work experience</a></dd>
-            <dd data-magellan-arrival="skills"><a href="#skills">skills</a></dd>
-          </dl>
-
-</div>
-<article class="small-8 columns">
-    <header>
-        <h1>RESUME</h1>
-    </header>
-    <figure>
-        <img src="{% static 'sn_app/images/ladefense.jpg' %}" alt="La Defense, Paris">
-    </figure>
-    {% if person %}
-        <article>
-            <header name="contact" data-magellan-destination="contact" id="contact">
-                <h2>CONTACT DETAILS</h2>
+<article>
+    <div class="row">
+        <div class="small-12 medium-10 large-8 small-centered columns">
+            <header>
+                <h1 class="page_header">RESUME</h1>
             </header>
-            <section>
-                <p>{{ person.first_name }} {{ person.last_name}}</p>
-                <p>{{ person.address }}</p>
-                <p>Born: {{ person.birthdate }}</p>
-                <p><a href="mailto:{{ person.email }}">{{ person.email }}</a></p>
-                <p>{{ person.telephone }}</p>
-            </section>
-        </article>
-    {% endif %}
-    {% if education %}
-        <article>
-            <header data-magellan-destination="education" id="education">
-                <h2>EDUCATION</h2>
-            </header>
-            <section>
-                <p><a href="{{ education.0.website }}">{{ education.0.college }}</a></p>
-            </section>
-            <section>
-                <p><span id="location">{{ education.0.location }}</span></p>
-            </section>
-            <section>
-                <ul>
-                    {% for degree in education %}
-                        <li><p>{{ degree.degree }} in {{ degree.major }}, {{ degree.end_date.year }};</p></li>
-                    {% endfor %}
-                    <li><p>Diploma of Interpreter from English into Russian in 2011 (with excellence).</p></li>
-                </ul>
-            </section>
-        </article>
-    {% endif %}
-    {% if onlinecourses %}
-        <article>
-            <header data-magellan-destination="courses" id="courses">
-                <h2>ONLINE COURSES</h2>
-            </header>
-            <section>
-                <ul>
-                    {% for course in onlinecourses %}
-                        <li><p><a href="{{ course.url }}">{{ course.title }}</a>, {{ course.school }}, {{ course.date.year }}</p></li>
-                    {% endfor %}
-                </ul>
-            </section>
-        </article>
-    {% endif %}
-    {% if jobs %}
-        <article>
-            <header data-magellan-destination="work" id="work">
-                <h2>WORK EXPERIENCE</h2>
-            </header>
-            {% for job in jobs %}
-                {% ifchanged job.employer %}
+        </div>
+    </div>
+    <div class="row">
+        <aside class="large-2 columns show-for-large-up">
+            <nav class="side-nav text-right sticky" role="navigation" title="Resume Parts">
+                <p><a href="#contact">contact details</a></p>
+                <p><a href="#education">education</a></p>
+                <p><a href="#courses">online courses</a></p>
+                <p><a href="#work">work experience</a></p>
+                <p><a href="#skills">skills</a></p>
+            </nav>
+        </aside>
+        <div class="small-12 medium-10 large-8 medium-centered columns">
+            <figure>
+                <img src="{% static 'sn_app/images/ladefense.jpg' %}" alt="La Defense, Paris">
+            </figure>
+            {% if person %}
+                <article>
+                    <div class="panel text-center">
+                        <header id="contact">
+                            <h2>CONTACT DETAILS</h2>
+                        </header>
+                    </div>
                     <section>
-                        <h5><a href="{{ job.employer.website }}">{{ job.employer }}</a> <span id="location">{{ job.employer.location }}</span></h5>
+                        <p>{{ person.first_name }} {{ person.last_name}}</p>
+                        <p>{{ person.address }}</p>
+                        <p>Born: {{ person.birthdate }}</p>
+                        <p><a href="mailto:{{ person.email }}">{{ person.email }}</a></p>
+                        <p>{{ person.telephone }}</p>
+                    </section>
+                </article>
+            {% endif %}
+            {% if education %}
+                <article>
+                    <div class="panel text-center">
+                        <header id="education">
+                            <h2>EDUCATION</h2>
+                        </header>
+                    </div>
+                    <section>
+                        <p><a href="{{ education.0.website }}">{{ education.0.college }}</a></p>
                     </section>
                     <section>
-                        <p>{{ job.employer.description }}</p>
-                    </section>
-                {% endifchanged %}
-                    <section>
-                        <h6>{{ job.position }}</h6>
-                        <p>{{ job.start_date|date:"M, Y" }} - {{ job.end_date|date:"M, Y" }}</p>
+                        <p><span id="location">{{ education.0.location }}</span></p>
                     </section>
                     <section>
                         <ul>
-                            {% for item in achievements|key:job.position %}
-                                <li>{{ item }}</li>
+                            {% for degree in education %}
+                                <li><p>{{ degree.degree }} in {{ degree.major }}, {{ degree.end_date.year }};</p></li>
+                            {% endfor %}
+                            <li><p>Diploma of Interpreter from English into Russian in 2011 (with excellence).</p></li>
+                        </ul>
+                    </section>
+                </article>
+            {% endif %}
+            {% if onlinecourses %}
+                <article>
+                    <div class="panel text-center">
+                        <header id="courses">
+                            <h2>ONLINE COURSES</h2>
+                        </header>
+                    </div>
+                    <section>
+                        <ul>
+                            {% for course in onlinecourses %}
+                                <li><p><a href="{{ course.url }}">{{ course.title }}</a>, {{ course.school }}, {{ course.date.year }}</p></li>
                             {% endfor %}
                         </ul>
                     </section>
-            {% endfor %}
-        </article>
-    {% endif %}
-    {% if skills %}
-        <article>
-            <header data-magellan-destination="skills" id="skills">
-                <h2>SKILLS</h2>
-            </header>
-            <section>
-                <ul>
-                    {% for skill in skills %}
-                        <li>{{ skill }}</li>
+                </article>
+            {% endif %}
+            {% if jobs %}
+                <article>
+                    <div class="panel text-center">
+                        <header id="work">
+                            <h2>WORK EXPERIENCE</h2>
+                        </header>
+                    </div>
+                    {% for job in jobs %}
+                        {% ifchanged job.employer %}
+                            <section>
+                                <h5><a href="{{ job.employer.website }}">{{ job.employer }}</a> <span id="location">{{ job.employer.location }}</span></h5>
+                            </section>
+                            <section>
+                                <p>{{ job.employer.description }}</p>
+                            </section>
+                        {% endifchanged %}
+                            <section>
+                                <h6>{{ job.position }}</h6>
+                                <p>{{ job.start_date|date:"M, Y" }} - {{ job.end_date|date:"M, Y" }}</p>
+                            </section>
+                            <section>
+                                <ul>
+                                    {% for item in achievements|key:job.position %}
+                                        <li>{{ item }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </section>
                     {% endfor %}
-                </ul>
+                </article>
+            {% endif %}
+            {% if skills %}
+                <article>
+                    <div class="panel text-center">
+                        <header id="skills">
+                            <h2>SKILLS</h2>
+                        </header>
+                    </div>
+                    <section>
+                        <ul>
+                            {% for skill in skills %}
+                                <li>{{ skill }}</li>
+                            {% endfor %}
+                        </ul>
+                    </section>
+                </article>
+            {% endif %}
+            <section>
+                <a href="#" class="button small">Download CV in PDF</a>
             </section>
-        </article>
-    {% endif %}
-    <section>
-        <a href="#" class="button small">Download CV in PDF</a>
-    </section>
+        </div>
+        <div class="large-2 columns show-for-large-up">
+            <p></p>
+        </div>
+    </div>
 </article>
-<div class="small-2 columns">
-    <p></p>
-</div>
 {% endblock body %}
