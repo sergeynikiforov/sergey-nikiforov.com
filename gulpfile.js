@@ -89,7 +89,7 @@ gulp.task('reload', function() {
 // watch task
 gulp.task('watch', function() {
     livereload.listen();
-    gulp.watch(paths.assets + '/**/**/*.{scss,js,html}', ['sass', 'scripts']);
+    gulp.watch(paths.assets + '/**/**/*.{scss,js,css,html}', ['sass', 'scripts']);
     gulp.watch('sn_app/templates/sn_app/*.html', ['reload']);
 });
 

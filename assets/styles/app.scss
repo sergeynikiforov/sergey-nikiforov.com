@@ -186,7 +186,7 @@ figure {
 
 .page_header {
     font-size: 2rem;
-    font-family: "Athena", times;
+    font-family: $font-family-serif;
     //padding: 10px;
     font-weight: $font-weight-bold;
 }
@@ -203,3 +203,21 @@ html, body {
     -webkit-text-size-adjust: 100%;
 }
 
+// photoset description padding
+@media #{$small-only} {
+    .photoset-description {
+        padding: 0px 12px;
+    }
+}
+
+// line up photoset description and photos for large-up
+@media #{$large-up} {
+    .photo-large-line-up {
+        padding-right: 3rem;
+    }
+}
+
+// move sidebar farer from main content
+.sticky-sidebar {
+    margin-right: 1.5rem;
+}

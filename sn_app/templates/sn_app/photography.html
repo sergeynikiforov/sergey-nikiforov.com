@@ -3,43 +3,117 @@
 {% load staticfiles %}
 {% load cloudinary %}
 {% block title %}Photography - {% if photoset_title %}{{ photoset_title }}{% endif %}{% endblock title %}
+{% block offcanvas_open %}
+<div class="off-canvas-wrap" data-offcanvas>
+    <div class="inner-wrap">
+        <nav class="tab-bar hide-for-medium-up landing">
+          <section class="left tab-bar-section">
+            <h2 class="title"><a href="{% url 'sn_app:landing' %}">{{ person.first_name|upper }} {{ person.last_name|upper }}</a></h2>
+          </section>
+          <section class="right-small">
+            <a href="#idOfRightMenu" role="button" aria-controls="idOfRightMenu" aria-expanded="false" class="right-off-canvas-toggle menu-icon" ><span></span></a>
+          </section>
+        </nav>
+        <aside class="right-off-canvas-menu">
+          <ul class="off-canvas-list">
+            <li><label>{{ person.first_name|upper }} {{ person.last_name|upper }}</label></li>
+            <li><a href="{% url 'sn_app:landing' %}">home</a></li>
+            <li><a href="{% url 'sn_app:about' %}">about</a></li>
+            <li><a href="{% url 'sn_app:resume' %}">resume</a></li>
+            <li><a href="{% url 'sn_app:photography' %}">photography</a></li>
+            <li><a href="{% url 'sn_app:contact' %}">contact me</a></li>
+            {% if photosets %}
+            <li><label>PHOTO ALBUMS</label></li>
+            {% for photoset in photosets %}
+            <li><a href="{% url 'sn_app:photoset' photoset.slug %}">{{ photoset.title }}</a></li>
+            {% endfor %}
+            {% endif %}
+          </ul>
+        </aside>
+{% endblock offcanvas_open %}
 {% block body %}
 <article>
     <div class="row">
         {% if active_photoset %}
             <div class="small-12 medium-10 large-8 small-centered columns">
                 <header>
-                    <h1 class="page_header">{{ photoset_title }}</h1>
+                    <h1 class="page_header">{{ photoset_title|upper }}</h1>
                 </header>
+                <div class="show-for-medium-only">
+                    {% if photosets %}
+                        <nav class="breadcrumbs" role="navigation" title="Albums">
+                            {% for photoset in photosets %}
+                                <a href="{% url 'sn_app:photoset' photoset.slug %}">{{ photoset.title }}</a>
+                            {% endfor %}
+                        </nav>
+                    {% endif %}
+                </div>
             </div>
         {% endif %}
     </div>
     <div class="row">
         <aside class="large-2 columns show-for-large-up">
             {% if photosets %}
-                <nav class="side-nav text-right sticky" role="navigation" title="Albums">
+                <nav class="side-nav text-right sticky-sidebar" role="navigation" title="Albums">
                     {% for photoset in photosets %}
                         <p><a href="{% url 'sn_app:photoset' photoset.slug %}">{{ photoset.title }}</a></p>
                     {% endfor %}
                 </nav>
             {% endif %}
         </aside>
-        <section class="small-12 medium-10 large-8 medium-centered large-uncentered columns small_screen_figure">
-            <div id="owl-example" class="owl-carousel">
-                {% if photos %}
+        <section class="small-12 medium-10 medium-centered large-uncentered columns small_screen_figure">
+            {% if photoset_description %}
+                <div class="row photoset-description">
+                    <div class="small-12 large-10 columns photo-large-line-up text-justify">
+                        <p>{{ photoset_description }}</p>
+                    </div>
+                </div>
+            {% endif %}
+            <div class="row">
+                <div class="small-12 large-10 columns photo-large-line-up">
+                    <div class="show-for-medium-up">
+                        <div class="text-right show-for-medium-only">
+                            <a class="prev">prev</a> / <a class="next">next</a>
+                        </div>
+                        <div id="owl-example" class="owl-carousel">
+                            {% if photos %}
+                                {% for photo in photos %}
+                                    <figure>
+                                        <picture>
+                                            {% cloudinary photo.publicID width=1024 crop="fill" %}
+                                        </picture>
+                                        {% if photo.description or photo.title %}
+                                            <figcaption class="text-center">
+                                                <h5>{{ photo.title }}</h5>
+                                                <p>{{ photo.description }}</p>
+                                            </figcaption>
+                                        {% endif %}
+                                    </figure>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="show-for-small-only">
                     {% for photo in photos %}
                         <figure>
                             <picture>
-                                {% cloudinary photo.publicID width=1024 crop="fit" %}
+                                {% cloudinary photo.publicID width=1024 crop="fill" %}
                             </picture>
+                            {% if photo.description or photo.title %}
+                                <figcaption class="text-center">
+                                    <h5>{{ photo.title }}</h5>
+                                    <p>{{ photo.description }}</p>
+                                </figcaption>
+                            {% endif %}
                         </figure>
                     {% endfor %}
-                {% endif %}
+                    </div>
+                </div>
+                <div class="large-2 columns text-left show-for-large-up">
+                    <a class="prev">prev</a> / <a class="next">next</a>
+                </div>
             </div>
         </section>
-        <div class="large-2 columns show-for-large-up">
-            <p></p>
-        </div>
     </div>
 </article>
 {% endblock body %}

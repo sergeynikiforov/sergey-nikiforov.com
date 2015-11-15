@@ -136,6 +136,10 @@ def photography(request, photoset_slug='test'):
         active_photoset = Photoset.objects.get(slug=photoset_slug)
         context_dict['photoset_title'] = active_photoset.title
 
+        # get description if not none
+        if active_photoset.description != 'none':
+            context_dict['photoset_description'] = active_photoset.description
+
         # retrieve photos for the active photoset
         photos = Photo.objects.filter(photosets__title__exact=active_photoset.title)
         context_dict['photos'] = photos

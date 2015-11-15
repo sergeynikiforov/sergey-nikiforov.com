@@ -16515,7 +16515,7 @@ $(function() {
  * http://stackoverflow.com/questions/2177983/how-to-make-div-follow-scrolling-smoothly-with-jquery
 */
 $(function() {
-    var element = $('.sticky'),
+    var element = $('.sticky-sidebar'),
         originalY = element.offset().top;
 
     // Space between element and top of screen (when scrolling)
@@ -16538,13 +16538,28 @@ $(function() {
 // owl carousel
 $(document).ready(function() {
 
-  $("#owl-example").owlCarousel({
-        navigation : true, // Show next and prev buttons
+    var owl = $("#owl-example");
+
+    // carousel setup
+    owl.owlCarousel({
+        navigation : false, // Show next and prev buttons
         slideSpeed : 300,
         pagination: false,
         paginationSpeed : 400,
-        singleItem: true
-  });
+        singleItem: true,
+        transitionStyle:"fade",
+        mouseDrag: false,
+        touchDrag: true
+    });
+
+    // Custom Navigation Events
+    $(".next").click(function() {
+      owl.trigger('owl.next');
+    });
+
+    $(".prev").click(function() {
+      owl.trigger('owl.prev');
+    });
 
 });
 /*!

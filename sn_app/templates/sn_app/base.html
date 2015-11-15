@@ -10,33 +10,33 @@
     </head>
     <body>
         {% block header %}
-            <header>
-                <div class="row show-for-medium-up">
-                    <div class="small-12 medium-10 large-8 small-centered columns">
-                    {% if person %}
-                        <div class="contain-to-grid">
-                            <nav class="top-bar" data-topbar role="navigation">
-                                <ul class="title-area">
-                                    <li class="name">
-                                        <h1><a href="{% url 'sn_app:landing' %}">{{ person.first_name|upper }} {{ person.last_name|upper }}</a></h1>
-                                    </li>
-                                    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-                                </ul>
-                                <section class="top-bar-section">
-                                    <ul class="right">
-                                        <li><a href="{% url 'sn_app:landing' %}">home</a></li>
-                                        <li><a href="{% url 'sn_app:about' %}">about</a></li>
-                                        <li><a href="{% url 'sn_app:resume' %}">resume</a></li>
-                                        <li><a href="{% url 'sn_app:photography' %}">photography</a></li>
-                                        <li><a href="{% url 'sn_app:contact' %}">contact me</a></li>
+            {% if person %}
+                <div class="row">
+                    <div class="medium-10 large-8 medium-centered columns show-for-medium-up">
+                        <header>
+                            <div class="contain-to-grid">
+                                <nav class="top-bar" data-topbar role="navigation">
+                                    <ul class="title-area">
+                                        <li class="name">
+                                            <h1><a href="{% url 'sn_app:landing' %}">{{ person.first_name|upper }} {{ person.last_name|upper }}</a></h1>
+                                        </li>
+                                        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
                                     </ul>
-                                </section>
-                            </nav>
-                        </div>
-                    {% endif %}
+                                    <section class="top-bar-section">
+                                        <ul class="right">
+                                            <li><a href="{% url 'sn_app:landing' %}">home</a></li>
+                                            <li><a href="{% url 'sn_app:about' %}">about</a></li>
+                                            <li><a href="{% url 'sn_app:resume' %}">resume</a></li>
+                                            <li><a href="{% url 'sn_app:photography' %}">photography</a></li>
+                                            <li><a href="{% url 'sn_app:contact' %}">contact me</a></li>
+                                        </ul>
+                                    </section>
+                                </nav>
+                            </div>
+                        </header>
                     </div>
                 </div>
-            </header>
+            {% endif %}
         {% endblock header %}
         {% block offcanvas_open %}
         <div class="off-canvas-wrap" data-offcanvas>
