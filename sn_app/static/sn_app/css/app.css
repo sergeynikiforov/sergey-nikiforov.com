@@ -5926,7 +5926,7 @@ ul.off-canvas-list {
     padding: 0.3rem 0.9375rem;
     text-transform: uppercase; }
   ul.off-canvas-list li a {
-    border-bottom: 0px solid #bfbfbf;
+    border-bottom: 1px solid #bfbfbf;
     color: #000000;
     display: block;
     padding: 0.66667rem;
@@ -6622,6 +6622,42 @@ footer li {
   margin: 0px;
   padding-right: 0px;
   padding-left: 1.3rem; }
+
+.tab-bar .tab-bar-section {
+  padding: 0px; }
+  .tab-bar .tab-bar-section h2 {
+    padding: 0px; }
+
+.tab-bar h2 > a {
+  margin: 0px;
+  padding: 0px;
+  font-weight: bold;
+  font-size: 0.8125rem; }
+
+.tab-bar .right h2 a {
+  font-weight: normal; }
+
+.tab-bar a {
+  font-size: 0.8125rem; }
+
+.tab-bar a:hover {
+  color: #FF2321; }
+
+.right-off-canvas-menu .off-canvas-list {
+  margin: 0rem 0.7rem; }
+  .right-off-canvas-menu .off-canvas-list label {
+    padding-top: 0.7rem;
+    padding-left: 0.85rem;
+    padding-bottom: 0.8rem;
+    font-size: 1rem; }
+  .right-off-canvas-menu .off-canvas-list a {
+    margin: 0rem 0.7rem;
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+    font-size: 0.85rem; }
+
+#off-canvas-extra-label {
+  margin-top: 2.2rem; }
 
 .landing {
   font-size: 15px;

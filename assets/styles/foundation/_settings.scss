@@ -872,7 +872,7 @@ $off-canvas-label-bg: $white;
 // $off-canvas-label-margin:0;
 // $off-canvas-link-padding: rem-calc(10, 15);
 $off-canvas-link-color: $black;
-$off-canvas-link-border-bottom: 0px solid scale-color($off-canvas-bg, $lightness: -25%);
+$off-canvas-link-border-bottom: 1px solid scale-color($off-canvas-bg, $lightness: -25%);
 // $off-canvas-back-bg: #444;
 // $off-canvas-back-border-top: $off-canvas-label-border-top;
 // $off-canvas-back-border-bottom: $off-canvas-label-border-bottom;

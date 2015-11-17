@@ -12,7 +12,7 @@
         {% block header %}
             {% if person %}
                 <div class="row">
-                    <div class="medium-10 large-8 medium-centered columns show-for-medium-up">
+                    <div class="medium-10 large-8 medium-centered columns show-for-large-up">
                         <header>
                             <div class="contain-to-grid">
                                 <nav class="top-bar" data-topbar role="navigation">
@@ -40,25 +40,44 @@
         {% endblock header %}
         {% block offcanvas_open %}
         <div class="off-canvas-wrap" data-offcanvas>
-          <div class="inner-wrap">
-            <nav class="tab-bar hide-for-medium-up landing">
-              <section class="left tab-bar-section">
-                <h2 class="title"><a href="{% url 'sn_app:landing' %}">{{ person.first_name|upper }} {{ person.last_name|upper }}</a></h2>
-              </section>
-              <section class="right-small">
-                <a href="#idOfRightMenu" role="button" aria-controls="idOfRightMenu" aria-expanded="false" class="right-off-canvas-toggle menu-icon" ><span></span></a>
-              </section>
-            </nav>
-            <aside class="right-off-canvas-menu">
-              <ul class="off-canvas-list">
-                <li><label>{{ person.first_name|upper }} {{ person.last_name|upper }}</label></li>
-                <li><a href="{% url 'sn_app:landing' %}">home</a></li>
-                <li><a href="{% url 'sn_app:about' %}">about</a></li>
-                <li><a href="{% url 'sn_app:resume' %}">resume</a></li>
-                <li><a href="{% url 'sn_app:photography' %}">photography</a></li>
-                <li><a href="{% url 'sn_app:contact' %}">contact me</a></li>
-              </ul>
-            </aside>
+            <div class="inner-wrap">
+                <div class="row">
+                    <div class="small-12 medium-10 small-centered columns">
+                        <nav class="tab-bar hide-for-large-up landing">
+                          <section class="left tab-bar-section">
+                            <h2 class="title"><a href="{% url 'sn_app:landing' %}">{{ person.first_name|upper }} {{ person.last_name|upper }}</a></h2>
+                          </section>
+                          <section class="right text-right">
+                            <h2><a href="#idOfRightMenu" role="button" aria-controls="idOfRightMenu" aria-expanded="false" class="right-off-canvas-toggle">menu</a></h2>
+                          </section>
+                        </nav>
+                    </div>
+                </div>
+
+                <aside class="right-off-canvas-menu">
+                  <ul class="off-canvas-list">
+                    <li><label>{{ person.first_name|upper }} {{ person.last_name|upper }}</label></li>
+                    <li><a href="{% url 'sn_app:landing' %}">home</a></li>
+                    <li><a href="{% url 'sn_app:about' %}">about</a></li>
+                    <li><a href="{% url 'sn_app:resume' %}">resume</a></li>
+                    <li><a href="{% url 'sn_app:photography' %}">photography</a></li>
+                    <li><a href="{% url 'sn_app:contact' %}">contact me</a></li>
+                    {% if photosets %}
+                        <li><label id="off-canvas-extra-label">PHOTOGRAPHY</label></li>
+                        {% for photoset in photosets %}
+                            <li><a href="{% url 'sn_app:photoset' photoset.slug %}">{{ photoset.title }}</a></li>
+                        {% endfor %}
+                    {% endif %}
+                    {% if jobs %}
+                        <li><label id="off-canvas-extra-label">RESUME</label></li>
+                        <li><a class="exit-off-canvas-link" href="#contact">contact details</a></li>
+                        <li><a class="exit-off-canvas-link" href="#education">education</a></li>
+                        <li><a class="exit-off-canvas-link" href="#courses">online courses</a></li>
+                        <li><a class="exit-off-canvas-link" href="#work">work experience</a></li>
+                        <li><a class="exit-off-canvas-link" href="#skills">skills</a></li>
+                    {% endif %}
+                  </ul>
+                </aside>
         {% endblock offcanvas_open %}
         <main class="main-section">
             {% block body %}{% endblock body %}
