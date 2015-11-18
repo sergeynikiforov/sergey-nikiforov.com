@@ -6,6 +6,7 @@ from forms import ContactMeForm
 import json
 
 
+
 def resume(request):
     '''
     view for resume page
