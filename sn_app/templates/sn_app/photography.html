@@ -47,9 +47,7 @@
                                 {% if photos %}
                                     {% for photo in photos %}
                                         <figure>
-                                            <picture>
-                                                {% cloudinary photo.publicID width=1024 crop="fill" %}
-                                            </picture>
+                                            {% pictureCloudinary photo.publicID sizes="(min-width: 1025px) 80vw, (min-width: 641px) 90vw, 100vw" srcset="200w 400w 600w 800w 1000w 1200w 1400w 1600w 2000w 2400w 2800w 3200w" alt=photo.title %}
                                             {% if photo.description or photo.title %}
                                                 <figcaption class="text-center">
                                                     <h5>{{ photo.title }}</h5>
@@ -64,9 +62,7 @@
                         <div class="show-for-small-only">
                         {% for photo in photos %}
                             <figure>
-                                <picture>
-                                    {% cloudinary photo.publicID width=1024 crop="fill" %}
-                                </picture>
+                                {% pictureCloudinary photo.publicID sizes="(min-width: 1025px) 80vw, (min-width: 641px) 90vw, 100vw" srcset="200w 400w 600w 800w 1000w 1200w 1400w 1600w 2000w 2400w 2800w 3200w" alt=photo.title %}
                                 {% if photo.description or photo.title %}
                                     <figcaption class="text-center">
                                         <h5>{{ photo.title }}</h5>
