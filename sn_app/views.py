@@ -83,7 +83,7 @@ def contact(request):
             # save the form
             form.save()
             # add success message
-            messages.add_message(request, messages.SUCCESS, 'Thank you for your message!')
+            messages.add_message(request, messages.SUCCESS, 'Your message has been sent. Thank you!')
             # construct email for site owner (me)
             body = "You've got a message from %s (%s):\n\n%s\n\n---END OF MESSAGE---\n" % (form.cleaned_data['name'], form.cleaned_data['email'], form.cleaned_data['message'])
             reply_to = form.cleaned_data['email']

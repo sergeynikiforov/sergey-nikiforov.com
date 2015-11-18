@@ -220,7 +220,7 @@ figure {
 // END ABOUT ME
 //-----------------------------------------------------
 
-// article header custom panel
+// article header custom panel (for resume subheaders)
 .article_header_panel {
   @include panel(
     // Sets the panel background color. Default: $panel-pg
@@ -240,9 +240,27 @@ figure {
     font-size: 1.3rem;
     margin: 3px;
   }
-
 }
 
+// custom alert for contact_me success
+.my-alert-box {
+    @include alert(
+        $bg: $white,
+        $radius: false
+    );
+    .close {
+        @include alert-close();
+      }
+    &.alert-close {
+        opacity: 0;
+    }
+    color: $green;
+    font-size: 0.8rem;
+    border: 0px;
+    margin: 0px;
+    padding-top: 0.35rem;
+    padding-bottom: 0.35rem;
+}
 
 .page_header {
     font-size: 2rem;
