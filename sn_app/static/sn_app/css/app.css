@@ -1660,7 +1660,7 @@ button, .button {
   border-width: 0;
   cursor: pointer;
   font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-  font-weight: normal;
+  font-weight: 300;
   line-height: normal;
   margin: 0 0 1.25rem;
   position: relative;
@@ -1745,8 +1745,8 @@ button, .button {
     padding: 1.125rem 2.25rem 1.1875rem 2.25rem;
     font-size: 1.25rem; }
   button.small, .button.small {
-    padding: 0.625rem 1.25rem 0.6875rem 1.25rem;
-    font-size: 0.6875rem; }
+    padding: 0.5rem 1rem 0.5625rem 1rem;
+    font-size: 1rem; }
   button.tiny, .button.tiny {
     padding: 0.625rem 1.25rem 0.6875rem 1.25rem;
     font-size: 0.6875rem; }
@@ -2889,8 +2889,8 @@ label {
   border-width: 1px;
   display: block;
   font-size: 0.875rem;
-  height: 2.5375rem;
-  line-height: 2.5375rem;
+  height: 2.4875rem;
+  line-height: 2.4875rem;
   overflow: visible;
   padding-bottom: 0;
   padding-top: 0;
@@ -2964,8 +2964,8 @@ input[type="text"], input[type="password"], input[type="date"], input[type="date
   color: rgba(0, 0, 0, 0.75);
   display: block;
   font-family: inherit;
-  font-size: 1.1rem;
-  height: 2.5375rem;
+  font-size: 1.05rem;
+  height: 2.4875rem;
   margin: 0 0 1rem 0;
   padding: 0.5rem;
   width: 100%;
@@ -3129,11 +3129,11 @@ select {
   border-color: #9e8a7e;
   color: rgba(0, 0, 0, 0.75);
   font-family: inherit;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   line-height: normal;
   padding: 0.5rem;
   border-radius: 0;
-  height: 2.5375rem; }
+  height: 2.4875rem; }
   select::-ms-expand {
     display: none; }
   select.radius {
@@ -5546,13 +5546,13 @@ a {
 /* Default paragraph styles */
 p {
   font-family: inherit;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   font-weight: normal;
-  line-height: 1.5;
+  line-height: 1.4;
   margin-bottom: 1.25rem;
   text-rendering: optimizeLegibility; }
   p.lead {
-    font-size: 1.31875rem;
+    font-size: 1.26875rem;
     line-height: 1.6; }
   p aside {
     font-size: 0.875rem;
@@ -5571,7 +5571,7 @@ h1, h2, h3, h4, h5, h6 {
   text-rendering: optimizeLegibility; }
   h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
     color: #7b685d;
-    font-size: 60%;
+    font-size: 70%;
     line-height: 0; }
 
 h1 {
@@ -5618,7 +5618,7 @@ b {
   line-height: inherit; }
 
 small {
-  font-size: 60%;
+  font-size: 70%;
   line-height: inherit; }
 
 code {
@@ -5636,8 +5636,8 @@ ul,
 ol,
 dl {
   font-family: inherit;
-  font-size: 1.1rem;
-  line-height: 1.5;
+  font-size: 1.05rem;
+  line-height: 1.4;
   list-style-position: outside;
   margin-bottom: 1.25rem; }
 
@@ -5723,7 +5723,7 @@ blockquote {
 
 blockquote,
 blockquote p {
-  line-height: 1.5;
+  line-height: 1.4;
   color: #7b685d; }
 
 /* Microformats */
@@ -6611,6 +6611,14 @@ footer {
     padding: 0px;
     margin: 0px; } }
 
+@media only screen and (min-width: 40.0625em) {
+  #navigation-top-bar {
+    margin-top: 2.5rem; } }
+
+@media only screen and (max-width: 40em) {
+  #navigation-top-bar {
+    margin-top: 1.5rem; } }
+
 .top-bar .name h1 > a {
   margin: 0px;
   padding: 0px;
@@ -6707,7 +6715,7 @@ footer {
     margin: 0px; } }
 
 .landing_wrapper {
-  margin-top: 3%; }
+  margin-top: 2rem; }
 
 figure {
   margin: 0px; }
@@ -6726,7 +6734,7 @@ figure {
   background: #211C19;
   color: #FFFFFF;
   border: 0px;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   margin-top: 6rem; }
   .article_header_panel > :first-child {
     margin-top: 0; }
@@ -6744,14 +6752,34 @@ figure {
     font-size: 1.5rem;
     margin: 1px; }
 
-.institution-h5 {
+.institution section h5 {
+  margin-top: 0rem;
   font-family: "Athelas", Georgia, Cambria, "Times New Roman", Times, serif;
-  font-size: 1.4rem; }
+  font-size: 1.35rem; }
+
+.institution section p {
+  margin-top: 0.1rem; }
+
+@media only screen and (min-width: 40.0625em) {
+  .institution section {
+    margin-top: 0rem;
+    margin-bottom: 1.5rem; } }
+
+.achievements {
+  margin-bottom: 3rem; }
+
+.skills {
+  margin-top: 1rem;
+  margin-bottom: 2rem; }
+
+.download {
+  margin-top: 1rem;
+  margin-bottom: 2rem; }
 
 .position {
   font-family: "Athelas", Georgia, Cambria, "Times New Roman", Times, serif;
   font-style: italic;
-  font-size: 1.25rem; }
+  font-size: 1.2rem; }
 
 .my-alert-box {
   border-style: solid;
@@ -6767,7 +6795,7 @@ figure {
   border-color: #dbdbdb;
   color: #4f4f4f;
   color: #229422;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   border: 0px;
   margin: 0px;
   padding-top: 0.35rem;
@@ -6793,13 +6821,17 @@ figure {
   .page_header {
     font-size: 2.1875rem;
     font-family: "Athelas", Georgia, Cambria, "Times New Roman", Times, serif;
-    font-weight: bold; } }
+    font-weight: bold;
+    margin-top: 1.3rem;
+    margin-bottom: 1rem; } }
 
 @media only screen and (min-width: 40.0625em) {
   .page_header {
     font-size: 2.5rem;
     font-family: "Athelas", Georgia, Cambria, "Times New Roman", Times, serif;
-    font-weight: bold; } }
+    font-weight: bold;
+    margin-top: 1.5rem;
+    margin-bottom: 3rem; } }
 
 .contact_details {
   margin-bottom: 20px; }
@@ -6822,7 +6854,7 @@ figure {
   border-width: 0;
   cursor: pointer;
   font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-  font-weight: normal;
+  font-weight: 300;
   line-height: normal;
   margin: 0 0 1.25rem;
   position: relative;

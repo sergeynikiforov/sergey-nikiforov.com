@@ -56,9 +56,9 @@
                                 <h2>EDUCATION</h2>
                             </header>
                         </div>
-                        <div class="row">
-                            <section class="small-12 medium-8 columns">
-                                <h5 class="institution-h5"><a href="{{ education.0.website }}">{{ education.0.college }}</a></h5>
+                        <div class="row institution">
+                            <section class="small-12 medium-8 columns ">
+                                <h5><a href="{{ education.0.website }}">{{ education.0.college }}</a></h5>
                             </section>
                             <section class="small-12 medium-4 columns medium-text-right">
                                 <p><span id="location">{{ education.0.location }}</span></p>
@@ -88,7 +88,7 @@
                         <section>
                             <ul>
                                 {% for course in onlinecourses %}
-                                    <li><a href="{{ course.url }}">{{ course.title }}</a>, {{ course.school }}, {{ course.date.year }}</li>
+                                    <li><a href="{{ course.url }}">{{ course.title }}, {{ course.school }}, {{ course.date.year }}</a></li>
                                 {% endfor %}
                             </ul>
                         </section>
@@ -105,12 +105,12 @@
                         </div>
                         {% for job in jobs %}
                             {% ifchanged job.employer %}
-                                <div class="row">
+                                <div class="row institution">
                                     <section class="small-12 medium-8 columns">
-                                        <h5 class="institution-h5"><a href="{{ job.employer.website }}">{{ job.employer }}</a></h5>
+                                        <h5><a href="{{ job.employer.website }}">{{ job.employer }}</a></h5>
                                     </section>
                                     <section class="small-12 medium-4 columns medium-text-right">
-                                         <p>{{ job.employer.location }}</p>
+                                        <p>{{ job.employer.location }}</p>
                                     </section>
                                 </div>
                                 <div class="row">
@@ -127,7 +127,7 @@
                                 </div>
                                 <div class="row">
                                     <section class="small-12 medium-10 large-8 medium-offset-2 large-offset-4 columns">
-                                        <ul>
+                                        <ul class="achievements">
                                             {% for item in achievements|key:job.position %}
                                                 <li>{{ item }}</li>
                                             {% endfor %}
@@ -147,7 +147,7 @@
                             </header>
                         </div>
                         <section>
-                            <ul>
+                            <ul class="skills">
                                 {% for skill in skills %}
                                     <li>{{ skill }}</li>
                                 {% endfor %}
@@ -158,7 +158,7 @@
             {% endif %}
             <hr>
             <div class="row">
-                <section class="small-12 columns text-center">
+                <section class="small-12 columns text-center download">
                     <a href="#" class="button small">Download CV in PDF</a>
                 </section>
             </div>

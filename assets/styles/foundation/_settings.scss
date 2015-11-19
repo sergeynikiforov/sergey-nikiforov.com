@@ -245,14 +245,14 @@ $h5-font-size: rem-calc(20);
 // $subheader-bottom-margin: .5rem;
 
 // A general <small> styling
-// $small-font-size: 60%;
+$small-font-size: 70%;
 // $small-font-color: scale-color($header-font-color, $lightness: 35%);
 
 // We use these to style paragraphs
 // $paragraph-font-family: inherit;
 // $paragraph-font-weight: $font-weight-normal;
-$paragraph-font-size: 1.1rem;
-$paragraph-line-height: 1.5;
+$paragraph-font-size: 1.05rem;
+$paragraph-line-height: 1.4;
 // $paragraph-margin-bottom: rem-calc(20);
 // $paragraph-aside-font-size: rem-calc(14);
 // $paragraph-aside-line-height: 1.35;
@@ -441,7 +441,7 @@ $list-side-margin: 2rem;
 
 // We use these to build padding for buttons.
 // $button-tny: rem-calc(10);
-$button-sml: rem-calc(10);
+$button-sml: rem-calc(8);
 // $button-med: rem-calc(16);
 // $button-lrg: rem-calc(18);
 
@@ -454,10 +454,10 @@ $button-font-family: $font-family-sans-serif;
 // $button-font-color: $white;
 // $button-font-color-alt: $oil;
 // $button-font-tny: rem-calc(11);
-// $button-font-sml: rem-calc(17);
+$button-font-sml: 1rem;
 // $button-font-med: rem-calc(16);
 // $button-font-lrg: rem-calc(20);
-// $button-font-weight: $font-weight-normal;
+$button-font-weight: 300;
 // $button-font-align: center;
 
 // We use these to control various hover effects.

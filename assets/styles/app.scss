@@ -60,7 +60,21 @@ footer {
 // TOP-BAR NAV SCSS
 //-----------------------------------------------------
 //
+@media #{$medium-up} {
+    #navigation-top-bar {
+        margin-top: 2.5rem;
+    }
+}
+
+@media #{$small-only} {
+    #navigation-top-bar {
+        margin-top: 1.5rem;
+    }
+}
+
+
 .top-bar .name {
+
     h1 > a {
         margin: 0px;
         padding: 0px;
@@ -212,7 +226,7 @@ footer {
 
 // add top-margin
 .landing_wrapper {
-    margin-top: 3%;
+    margin-top: 2rem;
 }
 
 // END HOME PAGE
@@ -258,7 +272,7 @@ figure {
   );
 
   border: 0px;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   margin-top: 6rem;
 
   header h2 {
@@ -268,10 +282,37 @@ figure {
   }
 }
 
-// fonts for resume headers
-.institution-h5 {
-    font-family: $font-family-serif;
-    font-size: $paragraph-font-size + 0.3rem;
+// fonts & margins & padding for resume headers
+
+.institution {
+    section {
+        h5 {
+            margin-top: 0rem;
+            font-family: $font-family-serif;
+            font-size: $paragraph-font-size + 0.3rem;
+        }
+        p {
+            margin-top: 0.1rem;
+        }
+        @media #{$medium-up} {
+            margin-top: 0rem;
+            margin-bottom: 1.5rem;
+        }
+    }
+}
+
+.achievements {
+    margin-bottom: 3rem;
+}
+
+.skills {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.download {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
 }
 
 // job position
@@ -314,6 +355,8 @@ figure {
         font-size: $font-size-serif-page-header - rem-calc(5);
         font-family: $font-family-serif;
         font-weight: $font-weight-bold;
+        margin-top: 1.3rem;
+        margin-bottom: 1rem;
     }
 }
 
@@ -322,6 +365,8 @@ figure {
         font-size: $font-size-serif-page-header;
         font-family: $font-family-serif;
         font-weight: $font-weight-bold;
+        margin-top: 1.5rem;
+        margin-bottom: 3rem;
     }
 }
 
