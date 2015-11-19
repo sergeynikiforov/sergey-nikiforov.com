@@ -5,12 +5,21 @@
 //$row-width: rem-calc(1600);
 //$column-gutter: rem-calc(24);
 
+$font-weight-thin: 300;
+$font-size-sans-serif-nav: 0.9rem;
+$font-size-serif-page-header: 2.5rem;
+$font-size-custom-panel: 1.5rem;
+
 //-----------------------------------------------------
 // FOOTER SCSS
 //-----------------------------------------------------
 
 // center list with social links in footer
 footer {
+
+    font-family: $font-family-sans-serif;
+    font-weight: $font-weight-thin;
+
     ul {
         list-style-type:none;
         text-align: center;
@@ -20,10 +29,12 @@ footer {
         display: inline-block;
         margin-right: 1rem;
 
+
         // style links
         a {
-            font-size: 0.8125rem;
+            font-size: $font-size-sans-serif-nav - 0.1rem;
             font-style: normal;
+
             color: $black;
         }
         a:hover {
@@ -54,7 +65,8 @@ footer {
         margin: 0px;
         padding: 0px;
         font-weight: $font-weight-bold;
-        font-size: 0.8125rem;
+        font-family: $font-family-sans-serif;
+        font-size: $font-size-sans-serif-nav;
     }
     a:hover {
         color: $red;
@@ -66,6 +78,8 @@ footer {
         margin: 0px;
         padding-right: 0px;
         padding-left: 1.3rem;
+        font-family: $font-family-sans-serif;
+        font-size: $font-size-sans-serif-nav;
     }
 }
 
@@ -88,15 +102,15 @@ footer {
         margin: 0px;
         padding: 0px;
         font-weight: $font-weight-bold;
-        font-size: 0.8125rem;
+        font-size: $font-size-sans-serif-nav;
     }
     .right {
         h2 a {
-            font-weight: $font-weight-normal;
+            font-weight: $font-weight-thin;
         }
     }
     a {
-        font-size: 0.8125rem;
+        font-size: $font-size-sans-serif-nav;
     }
     a:hover {
         color: $red;
@@ -107,21 +121,22 @@ footer {
 .right-off-canvas-menu {
 
     .off-canvas-list {
-
+        font-family: $font-family-sans-serif;
         margin: 0rem 0.7rem;
 
         label {
             padding-top: 0.7rem;
             padding-left: 0.85rem;
             padding-bottom: 0.8rem;
-            font-size: 1rem;
+            font-size: $font-size-sans-serif-nav;
         }
 
         a {
             margin: 0rem 0.7rem;
             padding-left: 0.2rem;
             padding-right: 0.2rem;
-            font-size: 0.85rem;
+            font-size: $font-size-sans-serif-nav;
+            font-weight: $font-weight-thin;
         }
     }
 }
@@ -140,7 +155,9 @@ footer {
 //
 
 .landing {
-    font-size: 15px;
+    font-size: $font-size-sans-serif-nav;
+    font-family: $font-family-sans-serif;
+    font-weight: $font-weight-thin;
     padding: 0px;
     margin-bottom: 5px;
     a {
@@ -154,15 +171,18 @@ footer {
         font-weight: $font-weight-bold;
     }
     h2 {
-        font-size: 12px;
+        font-size: $font-size-sans-serif-nav;
         padding-left: 2px;
     }
 }
 
 // home page overlay menu
 .overlay {
+
     p{
-        font-size: 15px;
+        font-size: $font-size-sans-serif-nav;
+        font-family: $font-family-sans-serif;
+        font-weight: $font-weight-thin;
     }
 
     a {
@@ -220,27 +240,54 @@ figure {
 // END ABOUT ME
 //-----------------------------------------------------
 
+
+//-----------------------------------------------------
+// RESUME PAGE SCSS
+//-----------------------------------------------------
+//
+
 // article header custom panel (for resume subheaders)
 .article_header_panel {
   @include panel(
     // Sets the panel background color. Default: $panel-pg
     $bg: $black,
     // Sets the panel padding amount. Default: $panel-padding
-    $padding: 3px,
+    $padding: 2px,
     // Sets the font color based on the darkness of the bg & resets header line-heights for panels. Default: $panel-header-adjust
     $adjust:true
   );
 
-  border: 0;
+  border: 0px;
   margin-bottom: 2rem;
   margin-top: 6rem;
 
   header h2 {
-    font-style: normal;
-    font-size: 1.3rem;
-    margin: 3px;
+    font-weight: $font-weight-thin - 100;
+    font-size: $font-size-custom-panel;
+    margin: 1px;
   }
 }
+
+// fonts for resume headers
+.institution-h5 {
+    font-family: $font-family-serif;
+    font-size: $paragraph-font-size + 0.3rem;
+}
+
+// job position
+.position {
+    font-family: $font-family-serif;
+    font-style: italic;
+    font-size: $paragraph-font-size + 0.15rem;
+}
+
+// END RESUME
+//-----------------------------------------------------
+
+//-----------------------------------------------------
+// CONTACT ME PAGE SCSS
+//-----------------------------------------------------
+//
 
 // custom alert for contact_me success
 .my-alert-box {
@@ -255,19 +302,29 @@ figure {
         opacity: 0;
     }
     color: $green;
-    font-size: 0.8rem;
+    font-size: $paragraph-font-size;
     border: 0px;
     margin: 0px;
     padding-top: 0.35rem;
     padding-bottom: 0.35rem;
 }
 
-.page_header {
-    font-size: 2rem;
-    font-family: $font-family-serif;
-    //padding: 10px;
-    font-weight: $font-weight-bold;
+@media #{$small-only} {
+    .page_header {
+        font-size: $font-size-serif-page-header - rem-calc(5);
+        font-family: $font-family-serif;
+        font-weight: $font-weight-bold;
+    }
 }
+
+@media #{$medium-up} {
+    .page_header {
+        font-size: $font-size-serif-page-header;
+        font-family: $font-family-serif;
+        font-weight: $font-weight-bold;
+    }
+}
+
 
 .contact_details {
     p {
@@ -276,10 +333,13 @@ figure {
     margin-bottom: 20px;
 }
 
-// no text size increase when orientation changes
-html, body {
-    -webkit-text-size-adjust: 100%;
-}
+// END RESUME
+//-----------------------------------------------------
+
+//-----------------------------------------------------
+// PHOTOGRAPHY PAGE SCSS
+//-----------------------------------------------------
+//
 
 // photoset description padding
 @media #{$small-only} {
@@ -295,7 +355,48 @@ html, body {
     }
 }
 
+
+// custom prev/next buttons for medium
+.transparent-button-small {
+    @include button(
+                    $bg: false,
+                    $padding: rem-calc(10)
+                    );
+    margin-bottom: 0px;
+    font-size: $font-size-sans-serif-nav;
+    font-family: $font-family-sans-serif;
+    font-weight: $font-weight-thin;
+}
+.prev-next-nav p {
+    font-size: $font-size-sans-serif-nav;
+    font-family: $font-family-sans-serif;
+    font-weight: $font-weight-thin;
+}
+
+// END PHOTOGRAPHY
+//-----------------------------------------------------
+
+//-----------------------------------------------------
+// STICKY SIDEBAR SCSS
+//-----------------------------------------------------
+//
+
 // move sidebar farer from main content
 .sticky-sidebar {
+    font-family: $font-family-sans-serif;
+    font-weight: $font-weight-thin;
+
     margin-right: 1.5rem;
+    p {
+        margin-bottom: 0.7rem;
+        font-size: $font-size-sans-serif-nav;
+    }
+}
+
+// END STICKY SIDEBAR
+//-----------------------------------------------------
+
+// no text size increase when orientation changes
+html, body {
+    -webkit-text-size-adjust: 100%;
 }

@@ -16571,7 +16571,7 @@ $(document).ready(function() {
         singleItem: true,
         transitionStyle:"fade",
         mouseDrag: false,
-        touchDrag: true
+        touchDrag: false
     });
 
     // Custom Navigation Events

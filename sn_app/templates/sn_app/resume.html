@@ -38,10 +38,12 @@
                             </header>
                         </div>
                         <section>
-                            <p>{{ person.first_name }} {{ person.last_name}}</p>
-                            <p>{{ person.address }}</p>
-                            <p><a href="mailto:{{ person.email }}">{{ person.email }}</a></p>
-                            <p>{{ person.telephone }}</p>
+                            <ul class="no-bullet">
+                                <li>{{ person.first_name }} {{ person.last_name}}</li>
+                                <li>{{ person.address }}</li>
+                                <li><a href="mailto:{{ person.email }}">{{ person.email }}</a></li>
+                                <li>{{ person.telephone }}</li>
+                            </ul>
                         </section>
                     </article>
                 </div>
@@ -56,7 +58,7 @@
                         </div>
                         <div class="row">
                             <section class="small-12 medium-8 columns">
-                                <p><a href="{{ education.0.website }}">{{ education.0.college }}</a></p>
+                                <h5 class="institution-h5"><a href="{{ education.0.website }}">{{ education.0.college }}</a></h5>
                             </section>
                             <section class="small-12 medium-4 columns medium-text-right">
                                 <p><span id="location">{{ education.0.location }}</span></p>
@@ -66,9 +68,9 @@
                             <section class="small-12 medium-10 large-8 medium-offset-2 large-offset-4 columns">
                                 <ul>
                                     {% for degree in education %}
-                                        <li><p>{{ degree.degree }} in {{ degree.major }}, {{ degree.end_date.year }};</p></li>
+                                        <li>{{ degree.degree }} in {{ degree.major }}, {{ degree.end_date.year }};</li>
                                     {% endfor %}
-                                    <li><p>Diploma of Interpreter from English into Russian in 2011 (with excellence).</p></li>
+                                    <li>Diploma of Interpreter from English into Russian in 2011 (with excellence).</li>
                                 </ul>
                             </section>
                         </div>
@@ -86,7 +88,7 @@
                         <section>
                             <ul>
                                 {% for course in onlinecourses %}
-                                    <li><p><a href="{{ course.url }}">{{ course.title }}</a>, {{ course.school }}, {{ course.date.year }}</p></li>
+                                    <li><a href="{{ course.url }}">{{ course.title }}</a>, {{ course.school }}, {{ course.date.year }}</li>
                                 {% endfor %}
                             </ul>
                         </section>
@@ -105,7 +107,7 @@
                             {% ifchanged job.employer %}
                                 <div class="row">
                                     <section class="small-12 medium-8 columns">
-                                        <h5><a href="{{ job.employer.website }}">{{ job.employer }}</a></h5>
+                                        <h5 class="institution-h5"><a href="{{ job.employer.website }}">{{ job.employer }}</a></h5>
                                     </section>
                                     <section class="small-12 medium-4 columns medium-text-right">
                                          <p>{{ job.employer.location }}</p>
@@ -119,8 +121,8 @@
                             {% endifchanged %}
                                 <div class="row">
                                     <section class="small-12 columns">
-                                        <h6>{{ job.position }}</h6>
-                                        <p>{{ job.start_date|date:"M, Y" }} - {{ job.end_date|date:"M, Y" }}</p>
+                                        <h6 class="position">{{ job.position }}</h6>
+                                        <p class="position">{{ job.start_date|date:"M, Y" }} - {{ job.end_date|date:"M, Y" }}</p>
                                     </section>
                                 </div>
                                 <div class="row">

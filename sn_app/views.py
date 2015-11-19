@@ -38,6 +38,7 @@ def resume(request):
         }
     return render(request, 'sn_app/resume.html', context_dict)
 
+
 def landing(request):
     '''
     view for landing page
@@ -50,6 +51,7 @@ def landing(request):
         'person': person
     }
     return render(request, 'sn_app/landing.html', context_dict)
+
 
 def about(request):
     '''
@@ -69,6 +71,7 @@ def about(request):
         'personal': personal
     }
     return render(request, 'sn_app/about.html', context_dict)
+
 
 def contact(request):
     '''
@@ -105,25 +108,10 @@ def contact(request):
 
     return render(request, 'sn_app/contact.html', {'form': form, 'person': person})
 
+
 def photography(request, photoset_slug='test'):
     '''
     view for photography page
-    '''
-    # old flickr implementation
-    '''
-    # authenticate via flickr_api
-    flickr_api.set_auth_handler('auth.txt')
-
-    # get the authenticated user
-    user = flickr_api.test.login()
-
-    # get photos
-    albums = {}
-    photosets = user.getPhotosets()
-
-    albums[photosets[1].title] = [x.getSizes()['Large']['source'] for x in photosets[1].getPhotos()]
-
-    urlp = photosets[2].getPhotos()[7].getSizes()['Large']['source']
     '''
     # create context dict
     context_dict = {}
