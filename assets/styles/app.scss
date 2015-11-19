@@ -109,7 +109,7 @@ footer {
     .tab-bar-section {
         padding: 0px;
         h2 {
-            padding: 0px;
+            padding: 1px 0px 0px 0px;
         }
     }
     h2 > a {
@@ -119,8 +119,14 @@ footer {
         font-size: $font-size-sans-serif-nav;
     }
     .right {
-        h2 a {
+        a {
             font-weight: $font-weight-thin;
+            @media #{$medium-up} {
+                padding-right: 0;
+                padding-left: 0;
+            }
+            padding-right: 7px;
+            padding-left: 7px;
         }
     }
     a {
@@ -155,6 +161,7 @@ footer {
     }
 }
 
+// offcanvas menu section labels
 #off-canvas-extra-label {
     margin-top: 2.2rem;
 }
@@ -249,6 +256,10 @@ figure {
         padding: 10px 0px;
         margin: 0px;
     }
+}
+
+.spiel {
+    margin: 4rem 0rem 5rem 0rem;
 }
 
 // END ABOUT ME
@@ -358,6 +369,13 @@ figure {
         margin-top: 1.3rem;
         margin-bottom: 1rem;
     }
+    .page_subheader {
+        font-size: $font-size-serif-page-header - rem-calc(5);
+        font-family: $font-family-serif;
+        font-weight: $font-weight-bold;
+        margin-top: 3.5rem;
+        margin-bottom: 1rem;
+    }
 }
 
 @media #{$medium-up} {
@@ -367,6 +385,13 @@ figure {
         font-weight: $font-weight-bold;
         margin-top: 1.5rem;
         margin-bottom: 3rem;
+    }
+    .page_subheader {
+        font-size: $font-size-serif-page-header;
+        font-family: $font-family-serif;
+        font-weight: $font-weight-bold;
+        margin-top: 5rem;
+        margin-bottom: 0.5rem;
     }
 }
 
@@ -411,6 +436,11 @@ figure {
     font-size: $font-size-sans-serif-nav;
     font-family: $font-family-sans-serif;
     font-weight: $font-weight-thin;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.transparent-button-small.prev {
+    margin-right: 3rem;
 }
 .prev-next-nav p {
     font-size: $font-size-sans-serif-nav;
