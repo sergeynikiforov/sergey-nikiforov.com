@@ -1,3 +1,4 @@
+import sys
 from django.utils.html import format_html
 from django.utils.safestring import mark_safe
 import cloudinary
@@ -47,7 +48,8 @@ def pictureElement(publicID, sizes, srcset, alt):
 
     return format_html('<picture> {} {} </picture>', mark_safe(sourceElement), mark_safe(imgElement))
 
-if __name__=='__main__':
+
+def main():
     from cloudinaryconfig import cloud_name, api_key, api_secret
     cloudinary.config(
       cloud_name = cloud_name,
@@ -58,3 +60,7 @@ if __name__=='__main__':
     )
     print 'Sample output:'
     print pictureElement('123asd',"(min-width: 640px) 60vw, 100vw",('200w', '400w'),'opera house')
+    return 0
+
+if __name__=='__main__':
+    sys.exit(main())

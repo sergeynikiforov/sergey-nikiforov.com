@@ -369,7 +369,7 @@ body {
   background: #fff;
   color: #211C19;
   cursor: auto;
-  font-family: "Athelas", Georgia, Cambria, "Times New Roman", Times, serif;
+  font-family: "Athelas", "adobe-garamond-pro", Georgia, Cambria, "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
   line-height: 1.5;
@@ -1257,7 +1257,7 @@ select {
       background: #EFEFEF;
       color: #222222;
       display: block;
-      font-family: "Athelas", Georgia, Cambria, "Times New Roman", Times, serif;
+      font-family: "Athelas", "adobe-garamond-pro", Georgia, Cambria, "Times New Roman", Times, serif;
       font-size: 1rem;
       padding: 1rem; }
       .accordion .accordion-navigation > a:hover, .accordion dd > a:hover {
@@ -1659,7 +1659,7 @@ button, .button {
   border-style: solid;
   border-width: 0;
   cursor: pointer;
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
   font-weight: 300;
   line-height: normal;
   margin: 0 0 1.25rem;
@@ -2889,8 +2889,8 @@ label {
   border-width: 1px;
   display: block;
   font-size: 0.875rem;
-  height: 2.4875rem;
-  line-height: 2.4875rem;
+  height: 2.5375rem;
+  line-height: 2.5375rem;
   overflow: visible;
   padding-bottom: 0;
   padding-top: 0;
@@ -2964,8 +2964,8 @@ input[type="text"], input[type="password"], input[type="date"], input[type="date
   color: rgba(0, 0, 0, 0.75);
   display: block;
   font-family: inherit;
-  font-size: 1.05rem;
-  height: 2.4875rem;
+  font-size: 1.1rem;
+  height: 2.5375rem;
   margin: 0 0 1rem 0;
   padding: 0.5rem;
   width: 100%;
@@ -3129,11 +3129,11 @@ select {
   border-color: #9e8a7e;
   color: rgba(0, 0, 0, 0.75);
   font-family: inherit;
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   line-height: normal;
   padding: 0.5rem;
   border-radius: 0;
-  height: 2.4875rem; }
+  height: 2.5375rem; }
   select::-ms-expand {
     display: none; }
   select.radius {
@@ -3694,7 +3694,7 @@ kbd {
 
 .label {
   display: inline-block;
-  font-family: "Athelas", Georgia, Cambria, "Times New Roman", Times, serif;
+  font-family: "Athelas", "adobe-garamond-pro", Georgia, Cambria, "Times New Roman", Times, serif;
   font-weight: normal;
   line-height: 1;
   margin-bottom: auto;
@@ -4085,7 +4085,7 @@ button:focus {
   .pricing-table .title {
     background-color: #333333;
     color: #EEEEEE;
-    font-family: "Athelas", Georgia, Cambria, "Times New Roman", Times, serif;
+    font-family: "Athelas", "adobe-garamond-pro", Georgia, Cambria, "Times New Roman", Times, serif;
     font-size: 1rem;
     font-weight: normal;
     padding: 0.9375rem 1.25rem;
@@ -4093,7 +4093,7 @@ button:focus {
   .pricing-table .price {
     background-color: #F6F6F6;
     color: #333333;
-    font-family: "Athelas", Georgia, Cambria, "Times New Roman", Times, serif;
+    font-family: "Athelas", "adobe-garamond-pro", Georgia, Cambria, "Times New Roman", Times, serif;
     font-size: 2rem;
     font-weight: normal;
     padding: 0.9375rem 1.25rem;
@@ -4347,7 +4347,7 @@ button:focus {
 
 .side-nav {
   display: block;
-  font-family: "Athelas", Georgia, Cambria, "Times New Roman", Times, serif;
+  font-family: "Athelas", "adobe-garamond-pro", Georgia, Cambria, "Times New Roman", Times, serif;
   list-style-position: outside;
   list-style-type: none;
   margin: 0;
@@ -4369,7 +4369,7 @@ button:focus {
         color: #1cc7ff; }
     .side-nav li.active > a:first-child:not(.button) {
       color: #1cc7ff;
-      font-family: "Athelas", Georgia, Cambria, "Times New Roman", Times, serif;
+      font-family: "Athelas", "adobe-garamond-pro", Georgia, Cambria, "Times New Roman", Times, serif;
       font-weight: normal; }
     .side-nav li.divider {
       border-top: 1px solid;
@@ -4489,7 +4489,7 @@ button:focus {
   .sub-nav li {
     color: #999999;
     float: left;
-    font-family: "Athelas", Georgia, Cambria, "Times New Roman", Times, serif;
+    font-family: "Athelas", "adobe-garamond-pro", Georgia, Cambria, "Times New Roman", Times, serif;
     font-size: 0.875rem;
     font-weight: normal;
     margin-left: 1rem;
@@ -4684,7 +4684,7 @@ table {
       display: block;
       background-color: #EFEFEF;
       color: #222222;
-      font-family: "Athelas", Georgia, Cambria, "Times New Roman", Times, serif;
+      font-family: "Athelas", "adobe-garamond-pro", Georgia, Cambria, "Times New Roman", Times, serif;
       font-size: 1rem;
       padding: 1rem 2rem; }
       .tabs dd > a:hover,
@@ -5000,7 +5000,7 @@ meta.foundation-mq-topbar {
     .top-bar-section ul li > a {
       color: #211C19;
       display: block;
-      font-family: "Athelas", Georgia, Cambria, "Times New Roman", Times, serif;
+      font-family: "Athelas", "adobe-garamond-pro", Georgia, Cambria, "Times New Roman", Times, serif;
       font-size: 0.8125rem;
       font-weight: normal;
       padding-left: 0.9375rem;
@@ -5546,13 +5546,13 @@ a {
 /* Default paragraph styles */
 p {
   font-family: inherit;
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   font-weight: normal;
   line-height: 1.4;
   margin-bottom: 1.25rem;
   text-rendering: optimizeLegibility; }
   p.lead {
-    font-size: 1.26875rem;
+    font-size: 1.31875rem;
     line-height: 1.6; }
   p aside {
     font-size: 0.875rem;
@@ -5562,7 +5562,7 @@ p {
 /* Default header styles */
 h1, h2, h3, h4, h5, h6 {
   color: #211C19;
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
   font-style: normal;
   font-weight: bold;
   line-height: 1.4;
@@ -5636,7 +5636,7 @@ ul,
 ol,
 dl {
   font-family: inherit;
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   line-height: 1.4;
   list-style-position: outside;
   margin-bottom: 1.25rem; }
@@ -6591,7 +6591,7 @@ th.hide-for-touch {
     display: none !important; } }
 
 footer {
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
   font-weight: 300; }
   footer ul {
     list-style-type: none;
@@ -6600,7 +6600,7 @@ footer {
     display: inline-block;
     margin-right: 1rem; }
     footer li a {
-      font-size: 0.8rem;
+      font-size: 0.9rem;
       font-style: normal;
       color: #211C19; }
     footer li a:hover {
@@ -6623,8 +6623,8 @@ footer {
   margin: 0px;
   padding: 0px;
   font-weight: bold;
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-  font-size: 0.9rem; }
+  font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
+  font-size: 1rem; }
 
 .top-bar .name a:hover {
   color: #C8280A; }
@@ -6633,8 +6633,8 @@ footer {
   margin: 0px;
   padding-right: 0px;
   padding-left: 1.3rem;
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-  font-size: 0.9rem; }
+  font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
+  font-size: 1rem; }
 
 .tab-bar .tab-bar-section {
   padding: 0px; }
@@ -6645,7 +6645,7 @@ footer {
   margin: 0px;
   padding: 0px;
   font-weight: bold;
-  font-size: 0.9rem; }
+  font-size: 1rem; }
 
 .tab-bar .right a {
   font-weight: 300;
@@ -6657,32 +6657,32 @@ footer {
       padding-left: 0; } }
 
 .tab-bar a {
-  font-size: 0.9rem; }
+  font-size: 1rem; }
 
 .tab-bar a:hover {
   color: #C8280A; }
 
 .right-off-canvas-menu .off-canvas-list {
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
   margin: 0rem 0.7rem; }
   .right-off-canvas-menu .off-canvas-list label {
     padding-top: 0.7rem;
     padding-left: 0.85rem;
     padding-bottom: 0.8rem;
-    font-size: 0.9rem; }
+    font-size: 1rem; }
   .right-off-canvas-menu .off-canvas-list a {
     margin: 0rem 0.7rem;
     padding-left: 0.2rem;
     padding-right: 0.2rem;
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-weight: 300; }
 
 #off-canvas-extra-label {
   margin-top: 2.2rem; }
 
 .landing {
-  font-size: 0.9rem;
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-size: 1rem;
+  font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
   font-weight: 300;
   padding: 0px;
   margin-bottom: 5px; }
@@ -6693,12 +6693,12 @@ footer {
   .landing h1 {
     font-weight: bold; }
   .landing h2 {
-    font-size: 0.9rem;
+    font-size: 1rem;
     padding-left: 2px; }
 
 .overlay p {
-  font-size: 0.9rem;
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-size: 1rem;
+  font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
   font-weight: 300; }
 
 .overlay a {
@@ -6763,8 +6763,8 @@ figure {
 
 .institution section h5 {
   margin-top: 0rem;
-  font-family: "Athelas", Georgia, Cambria, "Times New Roman", Times, serif;
-  font-size: 1.35rem; }
+  font-family: "Athelas", "adobe-garamond-pro", Georgia, Cambria, "Times New Roman", Times, serif;
+  font-size: 1.4rem; }
 
 .institution section p {
   margin-top: 0.1rem; }
@@ -6786,9 +6786,9 @@ figure {
   margin-bottom: 2rem; }
 
 .position {
-  font-family: "Athelas", Georgia, Cambria, "Times New Roman", Times, serif;
+  font-family: "Athelas", "adobe-garamond-pro", Georgia, Cambria, "Times New Roman", Times, serif;
   font-style: italic;
-  font-size: 1.2rem; }
+  font-size: 1.25rem; }
 
 .my-alert-box {
   border-style: solid;
@@ -6804,7 +6804,7 @@ figure {
   border-color: #dbdbdb;
   color: #4f4f4f;
   color: #229422;
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   border: 0px;
   margin: 0px;
   padding-top: 0.35rem;
@@ -6829,13 +6829,13 @@ figure {
 @media only screen and (max-width: 40em) {
   .page_header {
     font-size: 2.1875rem;
-    font-family: "Athelas", Georgia, Cambria, "Times New Roman", Times, serif;
+    font-family: "Athelas", "adobe-garamond-pro", Georgia, Cambria, "Times New Roman", Times, serif;
     font-weight: bold;
     margin-top: 1.3rem;
     margin-bottom: 1rem; }
   .page_subheader {
     font-size: 2.1875rem;
-    font-family: "Athelas", Georgia, Cambria, "Times New Roman", Times, serif;
+    font-family: "Athelas", "adobe-garamond-pro", Georgia, Cambria, "Times New Roman", Times, serif;
     font-weight: bold;
     margin-top: 3.5rem;
     margin-bottom: 1rem; } }
@@ -6843,13 +6843,13 @@ figure {
 @media only screen and (min-width: 40.0625em) {
   .page_header {
     font-size: 2.5rem;
-    font-family: "Athelas", Georgia, Cambria, "Times New Roman", Times, serif;
+    font-family: "Athelas", "adobe-garamond-pro", Georgia, Cambria, "Times New Roman", Times, serif;
     font-weight: bold;
     margin-top: 1.5rem;
     margin-bottom: 3rem; }
   .page_subheader {
     font-size: 2.5rem;
-    font-family: "Athelas", Georgia, Cambria, "Times New Roman", Times, serif;
+    font-family: "Athelas", "adobe-garamond-pro", Georgia, Cambria, "Times New Roman", Times, serif;
     font-weight: bold;
     margin-top: 5rem;
     margin-bottom: 0.5rem; } }
@@ -6874,7 +6874,7 @@ figure {
   border-style: solid;
   border-width: 0;
   cursor: pointer;
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
   font-weight: 300;
   line-height: normal;
   margin: 0 0 1.25rem;
@@ -6886,8 +6886,8 @@ figure {
   font-size: 0.6875rem;
   transition: background-color 300ms ease-out;
   margin-bottom: 0px;
-  font-size: 0.9rem;
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-size: 1rem;
+  font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
   font-weight: 300;
   padding-left: 0px;
   padding-right: 0px; }
@@ -6896,17 +6896,17 @@ figure {
   margin-right: 3rem; }
 
 .prev-next-nav p {
-  font-size: 0.9rem;
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-size: 1rem;
+  font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
   font-weight: 300; }
 
 .sticky-sidebar {
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
   font-weight: 300;
   margin-right: 1.5rem; }
   .sticky-sidebar p {
     margin-bottom: 0.7rem;
-    font-size: 0.9rem; }
+    font-size: 1rem; }
 
 html, body {
   -webkit-text-size-adjust: 100%; }

@@ -23,7 +23,7 @@ cloudinary.config(
 )
 
 # path to dir containing photos
-photopath = '/home/sergeynikiforov/Dropbox/img_assets/test2/'
+PHOTOPATH = '/home/sergeynikiforov/Dropbox/img_assets/test2/'
 
 def populate(photos_path, photoset_title=None):
     # create photoset
@@ -31,7 +31,7 @@ def populate(photos_path, photoset_title=None):
         photoset, created = Photoset.objects.get_or_create(title=photoset_title, description='none')
 
     # get a list of photos
-    photos = [os.path.join(photopath, f) for f in os.listdir(photopath) if os.path.isfile(os.path.join(photopath, f))]
+    photos = [os.path.join(PHOTOPATH, f) for f in os.listdir(PHOTOPATH) if os.path.isfile(os.path.join(PHOTOPATH, f))]
 
     # set order counter
     order_counter = 0
@@ -60,10 +60,14 @@ def populate(photos_path, photoset_title=None):
     return
 
 
-if __name__ == '__main__':
+def main():
     if len(sys.argv) != 2:
-        print('usage: populate.py photoset_name')
-        exit(1)
+        sys.exit('usage: populate.py photoset_name')
     else:
         print('Starting populate.py...')
-        populate(photopath, sys.argv[1])
+        populate(PHOTOPATH, sys.argv[1])
+        return 0
+
+
+if __name__ == '__main__':
+    sys.exit(main())

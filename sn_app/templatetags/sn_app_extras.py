@@ -32,6 +32,6 @@ def pictureCloudinary(publicID, sizes, srcset, alt):
                 srcset="opera-200.jpg 200w, ...">
         </picture>
     """
-    # construct tuple from srcset string
+    # generator expr from srcset string
     srcset = (i for i in srcset.split())
     return cloudinaryResponsive.pictureElement(publicID, sizes, srcset, alt)
