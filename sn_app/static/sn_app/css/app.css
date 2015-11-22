@@ -6881,7 +6881,7 @@ figure {
 */
 @media only screen and (max-width: 40em) {
   .photoset-description div {
-    padding: 0px 10px; } }
+    padding: 0px 18px; } }
 
 @media only screen and (min-width: 64.0625em) {
   .photo-large-line-up {

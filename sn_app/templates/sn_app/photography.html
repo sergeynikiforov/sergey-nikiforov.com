@@ -16,16 +16,22 @@
         <div class="small-12 medium-10 large-8 small-centered columns">
             {% if photosets %}
                 {% for photoset in photosets %}
-                    <section class="row ">
-                        <div class="small-10 columns">
-                            <h6><a href="{% url 'sn_app:photoset' photoset.slug %}">{{ photoset.title }}</a></h6>
+                    <section>
+                        <div class="row">
+                            <div class="small-10 columns">
+                                <h6><a href="{% url 'sn_app:photoset' photoset.slug %}">{{ photoset.title }}</a></h6>
+                            </div>
+                            <div class="small-2 columns text-right">
+                                <p></p>
+                            </div>
                         </div>
-                        <div class="small-2 columns text-right">
-                            <p></p>
+                        <div class="row">
+                            <div class="small-12 columns">
+                                <figure>
+                                    {% pictureCloudinary photoset.cover sizes="(min-width: 1025px) 80vw, (min-width: 641px) 90vw, 100vw" srcset="200w 400w 600w 800w 1000w 1200w 1400w 1600w 2000w 2400w 2800w 3200w" alt=photoset.title %}
+                                </figure>
+                            </div>
                         </div>
-                        <figure>
-                            {% pictureCloudinary photoset.cover sizes="(min-width: 1025px) 80vw, (min-width: 641px) 90vw, 100vw" srcset="200w 400w 600w 800w 1000w 1200w 1400w 1600w 2000w 2400w 2800w 3200w" alt=photoset.title %}
-                        </figure>
                     </section>
                 {% endfor %}
             {% endif %}

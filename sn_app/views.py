@@ -116,7 +116,7 @@ def photoset(request, photoset_slug='test'):
     # create context dict
     context_dict = {}
 
-    # get all photosets
+    # get all photosets for navigation
     photosets = Photoset.objects.all().order_by('title')
     context_dict['photosets'] = photosets
 
