@@ -37,7 +37,7 @@
                     {% if photos %}
                         <ul class="medium-block-grid-2 large-block-grid-3">
                             {% for photo in photos %}
-                                <li><a href="#">{% pictureCloudinary photo.publicID sizes="(min-width: 1025px) 33vw, (min-width: 641px) 35vw, 100vw" srcset="200w 400w 600w 800w 1000w 1200w 1400w 1600w 2000w 2400w 2800w 3200w" alt=photo.title %}</a></li>
+                                <li><a href="{% url 'sn_app:photo' active_photoset.slug photo.publicID %}">{% pictureCloudinary photo.publicID sizes="(min-width: 1025px) 33vw, (min-width: 641px) 35vw, 100vw" srcset="200w 400w 600w 800w 1000w 1200w 1400w 1600w 2000w 2400w 2800w 3200w" alt=photo.title %}</a></li>
                             {% endfor %}
                         </ul>
                     {% endif %}

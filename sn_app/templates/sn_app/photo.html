@@ -1,0 +1,53 @@
+{% extends "sn_app/base.html" %}
+{% load sn_app_extras %}
+{% load staticfiles %}
+{% load cloudinary %}
+{% block title %}{% if active_photoset %}{{ active_photoset.title }}{% endif %} - {% if current_photo %} {{ current_photo.title }}{% endif %}{% endblock title %}
+{% block header %} {% endblock header %}
+{% block body %}
+<article>
+    <div class="row">
+        {% if active_photoset %}
+            <div class="large-2 columns">
+                <p></p>
+            </div>
+            <div class="small-12 medium-10 large-8 medium-centered large-uncentered columns text-center">
+                <header>
+                    <h1 class="page_header">{{ active_photoset.title|upper }}</h1>
+                </header>
+            </div>
+            <div class="large-2 columns">
+                <p><a href="{% url 'sn_app:photoset' active_photoset.slug %}">close</a></p>
+            </div>
+        {% endif %}
+    </div>
+    <div class="row">
+        <aside class="large-2 columns show-for-large-up">
+            {% if photosets %}
+                <nav class="side-nav text-right sticky-sidebar" role="navigation" title="Albums">
+                    {% for photoset in photosets %}
+                        <p><a href="{% url 'sn_app:photoset' photoset.slug %}">{{ photoset.title }}</a></p>
+                    {% endfor %}
+                </nav>
+            {% endif %}
+        </aside>
+        <section class="small-12 medium-10 large-8 small-centered large-uncentered columns">
+            <figure>
+                {% pictureCloudinary current_photo.publicID sizes="(min-width: 1025px) 80vw, (min-width: 641px) 90vw, 100vw" srcset="200w 400w 600w 800w 1000w 1200w 1400w 1600w 2000w 2400w 2800w 3200w" alt=photo.title %}
+                {% if current_photo.description or current_photo.title %}
+                    <figcaption class="text-center">
+                        <h5>{{ current_photo.title }}</h5>
+                        <p>{{ current_photo.description }}</p>
+                    </figcaption>
+                {% endif %}
+            </figure>
+        </section>
+        <div class="large-2 columns">
+            <div class="text-center show-for-large-up">
+                <p><a href="{% url 'sn_app:photo' active_photoset.slug prev_photoID %}" class="transparent-button-small prev">prev</a><a href="{% url 'sn_app:photo' active_photoset.slug next_photoID %}" class="transparent-button-small next">next</a></p>
+            </div>
+        </div>
+    </div>
+</article>
+{% endblock body %}
+{% block footer %} {% endblock footer %}

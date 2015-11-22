@@ -111,7 +111,7 @@ def contact(request):
 
 def photoset(request, photoset_slug='test'):
     '''
-    view for photography page
+    view for a particular photoset page (thumbnails view)
     '''
     # create context dict
     context_dict = {}
@@ -150,10 +150,9 @@ def photoset(request, photoset_slug='test'):
     return render(request, 'sn_app/photoset.html', context_dict)
 
 
-
 def photography(request):
     '''
-    view for photography page
+    view for photography page (with thumbs for photosets)
     '''
     # create context dict
     context_dict = {}
@@ -167,3 +166,46 @@ def photography(request):
     context_dict['person'] = person
 
     return render(request, 'sn_app/photography.html', context_dict)
+
+
+def photo(request, photoset_slug='', photoID=''):
+    '''
+    view for a particular photograph
+    '''
+
+    context_dict = {}
+
+    # pass chosen photo
+    context_dict['photoID'] = photoID
+
+    # increment photo views counter
+    current_photo = Photo.objects.get(publicID=photoID)
+    context_dict['current_photo'] = current_photo
+    current_photo.num_views += 1
+    current_photo.save()
+
+    # get relevant photoset
+    try:
+        # add photoset to context dict
+        active_photoset = Photoset.objects.get(slug=photoset_slug)
+        context_dict['active_photoset'] = active_photoset
+
+        # retrieve prev/next photoID's for the current photo
+        photos = Photo.objects.filter(photosets__title__exact=active_photoset.title).values_list('id', 'publicID').order_by('id')
+        photos = [i[1] for i in photos]
+        qty = len(photos)
+        context_dict['prev_photoID'] = photos[(photos.index(photoID) - 1) % qty]
+        context_dict['next_photoID'] = photos[(photos.index(photoID) + 1) % qty]
+
+    except Photoset.DoesNotExist, Photo.DoesNotExist:
+        pass
+
+    # get all photosets
+    photosets = Photoset.objects.all().order_by('title')
+    context_dict['photosets'] = photosets
+
+    # get personal data
+    person = get_object_or_404(Person, first_name='Sergey')
+    context_dict['person'] = person
+
+    return render(request, 'sn_app/photo.html', context_dict)

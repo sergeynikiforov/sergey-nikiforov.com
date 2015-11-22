@@ -119,7 +119,7 @@ class Photoset(models.Model):
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
-        self.cover = Photo.objects.filter(photosets__title__exact=self.title)[0].publicID
+        #self.cover = Photo.objects.filter(photosets__title__exact=self.title)[0].publicID
         super(Photoset, self).save(*args, **kwargs)
 
     def __unicode__(self):
