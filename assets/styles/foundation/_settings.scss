@@ -88,7 +88,7 @@ $column-gutter: rem-calc(36);
 
 // We use these to define default font stacks
 $font-family-sans-serif: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
-$font-family-serif: "Athelas", "adobe-garamond-pro", Georgia, Cambria, "Times New Roman", Times, serif;
+$font-family-serif: "Athelas", "adobe-garamond-pro", Garamond, Times, serif;
 // $font-family-monospace: Consolas, "Liberation Mono", Courier, monospace;
 
 // We use these to define default font weights
@@ -105,7 +105,7 @@ $white       : #FFFFFF;
 // $gainsboro   : #DDDDDD;
 // $iron        : #CCCCCC;
 // $base        : #AAAAAA;
-// $aluminum    : #999999;
+$aluminum    : #999999;
 // $jumbo       : #888888;
 // $monsoon     : #777777;
 // $steel       : #666666;
@@ -126,7 +126,7 @@ $green       : #229422;
 // $info-color: #a0d3e8;
 
 // We use these to control various global styles
-// $body-bg: $white;
+//$body-bg: #FFF6F6;
 $body-font-color: $black;
 $body-font-family: $font-family-serif;
 // $body-font-weight: $font-weight-normal;
@@ -251,7 +251,7 @@ $small-font-size: 70%;
 // We use these to style paragraphs
 // $paragraph-font-family: inherit;
 // $paragraph-font-weight: $font-weight-normal;
-$paragraph-font-size: 1.1rem;
+$paragraph-font-size: 1.2rem;
 $paragraph-line-height: 1.4;
 // $paragraph-margin-bottom: rem-calc(20);
 // $paragraph-aside-font-size: rem-calc(14);

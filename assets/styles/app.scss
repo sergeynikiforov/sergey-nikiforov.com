@@ -6,9 +6,9 @@
 //$column-gutter: rem-calc(24);
 
 $font-weight-thin: 300;
-$font-size-sans-serif-nav: 1rem;
+$font-size-sans-serif-nav: 0.9rem;
 $font-size-serif-page-header: 2.5rem;
-$font-size-custom-panel: 1.5rem;
+$font-size-custom-panel: 2rem;
 
 //-----------------------------------------------------
 // FOOTER SCSS
@@ -227,8 +227,12 @@ footer {
     }
     .contact {
     padding: 0px;
-    margin: 0px;
+    margin: 0rem 0rem 1.5rem 0rem;
     }
+}
+
+.contact {
+    margin: 0rem 0rem 1.5rem 0rem;
 }
 
 // add top-margin
@@ -253,7 +257,7 @@ figure {
 // remove margins & padding from pictures for small screens
 @media #{$small-only} {
     .small_screen_figure {
-        padding: 10px 0px;
+        padding: 0px;
         margin: 0px;
     }
 }
@@ -287,9 +291,12 @@ figure {
   margin-top: 6rem;
 
   header h2 {
-    font-weight: $font-weight-thin - 100;
+    font-weight: $font-weight-thin;
     font-size: $font-size-custom-panel;
     margin: 1px;
+    @media #{$small-only} {
+        font-size: $font-size-custom-panel - 0.5rem;
+    }
   }
 }
 
@@ -367,7 +374,7 @@ figure {
         font-family: $font-family-serif;
         font-weight: $font-weight-bold;
         margin-top: 1.3rem;
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
     }
     .page_subheader {
         font-size: $font-size-serif-page-header - rem-calc(5);
@@ -383,8 +390,8 @@ figure {
         font-size: $font-size-serif-page-header;
         font-family: $font-family-serif;
         font-weight: $font-weight-bold;
-        margin-top: 1.5rem;
-        margin-bottom: 3rem;
+        margin-top: 3.5rem;
+        margin-bottom: 1.5rem;
     }
     .page_subheader {
         font-size: $font-size-serif-page-header;
@@ -411,10 +418,26 @@ figure {
 //-----------------------------------------------------
 //
 
+// drop caps for description
+/*
+.photoset-description {
+    p:first-child:first-letter {
+        float: left;
+        //color: $red;
+        font-size: 3.5rem;
+        line-height: 2.8rem;
+        padding-top: 4px;
+        padding-right: 8px;
+        padding-left: 3px;
+        padding-bottom: 0px;
+    }
+}
+*/
+
 // photoset description padding
 @media #{$small-only} {
-    .photoset-description {
-        padding: 0px 12px;
+    .photoset-description div {
+        padding: 0px 10px;
     }
 }
 

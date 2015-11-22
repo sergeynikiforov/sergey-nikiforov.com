@@ -2,83 +2,34 @@
 {% load sn_app_extras %}
 {% load staticfiles %}
 {% load cloudinary %}
-{% block title %}Photography - {% if photoset_title %}{{ photoset_title }}{% endif %}{% endblock title %}
-
+{% block title %}Photography{% endblock title %}
 {% block body %}
 <article>
     <div class="row">
-        {% if active_photoset %}
-            <div class="small-12 medium-10 large-8 small-centered columns">
-                <header>
-                    <h1 class="page_header">{{ photoset_title|upper }}</h1>
-                </header>
-
-            </div>
-        {% endif %}
+        <div class="small-12 medium-10 large-8 small-centered columns">
+            <header>
+                <h1 class="page_header">PHOTOGRAPHY</h1>
+            </header>
+        </div>
     </div>
     <div class="row">
-        <aside class="large-2 columns show-for-large-up">
+        <div class="small-12 medium-10 large-8 small-centered columns">
             {% if photosets %}
-                <nav class="side-nav text-right sticky-sidebar" role="navigation" title="Albums">
-                    {% for photoset in photosets %}
-                        <p><a href="{% url 'sn_app:photoset' photoset.slug %}">{{ photoset.title }}</a></p>
-                    {% endfor %}
-                </nav>
+                {% for photoset in photosets %}
+                    <section class="row ">
+                        <div class="small-10 columns">
+                            <h6><a href="{% url 'sn_app:photoset' photoset.slug %}">{{ photoset.title }}</a></h6>
+                        </div>
+                        <div class="small-2 columns text-right">
+                            <p></p>
+                        </div>
+                        <figure>
+                            {% pictureCloudinary photoset.cover sizes="(min-width: 1025px) 80vw, (min-width: 641px) 90vw, 100vw" srcset="200w 400w 600w 800w 1000w 1200w 1400w 1600w 2000w 2400w 2800w 3200w" alt=photoset.title %}
+                        </figure>
+                    </section>
+                {% endfor %}
             {% endif %}
-        </aside>
-        <section class="small-12 medium-10 medium-centered large-uncentered columns small_screen_figure">
-            {% if photoset_description %}
-                <div class="row photoset-description">
-                    <div class="photo-large-line-up ">
-                        <div class="small-12 large-10 columns text-justify">
-                            <p>{{ photoset_description }}</p>
-                        </div>
-                    </div>
-                </div>
-            {% endif %}
-            <div class="row">
-                <div class="photo-large-line-up">
-                    <div class="small-12 large-10 columns ">
-                        <div class="show-for-medium-up">
-                            <div class="text-right show-for-medium-only">
-                                <p><a class="transparent-button-small prev">prev</a><a class="transparent-button-small next">next</a></p>
-                            </div>
-                            <div id="owl-example" class="owl-carousel">
-                                {% if photos %}
-                                    {% for photo in photos %}
-                                        <figure>
-                                            {% pictureCloudinary photo.publicID sizes="(min-width: 1025px) 80vw, (min-width: 641px) 90vw, 100vw" srcset="200w 400w 600w 800w 1000w 1200w 1400w 1600w 2000w 2400w 2800w 3200w" alt=photo.title %}
-                                            {% if photo.description or photo.title %}
-                                                <figcaption class="text-center">
-                                                    <h5>{{ photo.title }}</h5>
-                                                    <p>{{ photo.description }}</p>
-                                                </figcaption>
-                                            {% endif %}
-                                        </figure>
-                                    {% endfor %}
-                                {% endif %}
-                            </div>
-                        </div>
-                        <div class="show-for-small-only">
-                        {% for photo in photos %}
-                            <figure>
-                                {% pictureCloudinary photo.publicID sizes="(min-width: 1025px) 80vw, (min-width: 641px) 90vw, 100vw" srcset="200w 400w 600w 800w 1000w 1200w 1400w 1600w 2000w 2400w 2800w 3200w" alt=photo.title %}
-                                {% if photo.description or photo.title %}
-                                    <figcaption class="text-center">
-                                        <h5>{{ photo.title }}</h5>
-                                        <p>{{ photo.description }}</p>
-                                    </figcaption>
-                                {% endif %}
-                            </figure>
-                        {% endfor %}
-                        </div>
-                    </div>
-                </div>
-                <div class="large-2 columns text-left show-for-large-up prev-next-nav">
-                    <p><a class="prev">prev</a> / <a class="next">next</a></p>
-                </div>
-            </div>
-        </section>
+        </div>
     </div>
 </article>
 {% endblock body %}

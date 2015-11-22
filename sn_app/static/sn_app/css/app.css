@@ -369,7 +369,7 @@ body {
   background: #fff;
   color: #211C19;
   cursor: auto;
-  font-family: "Athelas", "adobe-garamond-pro", Georgia, Cambria, "Times New Roman", Times, serif;
+  font-family: "Athelas", "adobe-garamond-pro", Garamond, Times, serif;
   font-style: normal;
   font-weight: normal;
   line-height: 1.5;
@@ -1257,7 +1257,7 @@ select {
       background: #EFEFEF;
       color: #222222;
       display: block;
-      font-family: "Athelas", "adobe-garamond-pro", Georgia, Cambria, "Times New Roman", Times, serif;
+      font-family: "Athelas", "adobe-garamond-pro", Garamond, Times, serif;
       font-size: 1rem;
       padding: 1rem; }
       .accordion .accordion-navigation > a:hover, .accordion dd > a:hover {
@@ -2889,8 +2889,8 @@ label {
   border-width: 1px;
   display: block;
   font-size: 0.875rem;
-  height: 2.5375rem;
-  line-height: 2.5375rem;
+  height: 2.6375rem;
+  line-height: 2.6375rem;
   overflow: visible;
   padding-bottom: 0;
   padding-top: 0;
@@ -2964,8 +2964,8 @@ input[type="text"], input[type="password"], input[type="date"], input[type="date
   color: rgba(0, 0, 0, 0.75);
   display: block;
   font-family: inherit;
-  font-size: 1.1rem;
-  height: 2.5375rem;
+  font-size: 1.2rem;
+  height: 2.6375rem;
   margin: 0 0 1rem 0;
   padding: 0.5rem;
   width: 100%;
@@ -3129,11 +3129,11 @@ select {
   border-color: #9e8a7e;
   color: rgba(0, 0, 0, 0.75);
   font-family: inherit;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   line-height: normal;
   padding: 0.5rem;
   border-radius: 0;
-  height: 2.5375rem; }
+  height: 2.6375rem; }
   select::-ms-expand {
     display: none; }
   select.radius {
@@ -3694,7 +3694,7 @@ kbd {
 
 .label {
   display: inline-block;
-  font-family: "Athelas", "adobe-garamond-pro", Georgia, Cambria, "Times New Roman", Times, serif;
+  font-family: "Athelas", "adobe-garamond-pro", Garamond, Times, serif;
   font-weight: normal;
   line-height: 1;
   margin-bottom: auto;
@@ -4085,7 +4085,7 @@ button:focus {
   .pricing-table .title {
     background-color: #333333;
     color: #EEEEEE;
-    font-family: "Athelas", "adobe-garamond-pro", Georgia, Cambria, "Times New Roman", Times, serif;
+    font-family: "Athelas", "adobe-garamond-pro", Garamond, Times, serif;
     font-size: 1rem;
     font-weight: normal;
     padding: 0.9375rem 1.25rem;
@@ -4093,7 +4093,7 @@ button:focus {
   .pricing-table .price {
     background-color: #F6F6F6;
     color: #333333;
-    font-family: "Athelas", "adobe-garamond-pro", Georgia, Cambria, "Times New Roman", Times, serif;
+    font-family: "Athelas", "adobe-garamond-pro", Garamond, Times, serif;
     font-size: 2rem;
     font-weight: normal;
     padding: 0.9375rem 1.25rem;
@@ -4347,7 +4347,7 @@ button:focus {
 
 .side-nav {
   display: block;
-  font-family: "Athelas", "adobe-garamond-pro", Georgia, Cambria, "Times New Roman", Times, serif;
+  font-family: "Athelas", "adobe-garamond-pro", Garamond, Times, serif;
   list-style-position: outside;
   list-style-type: none;
   margin: 0;
@@ -4369,7 +4369,7 @@ button:focus {
         color: #1cc7ff; }
     .side-nav li.active > a:first-child:not(.button) {
       color: #1cc7ff;
-      font-family: "Athelas", "adobe-garamond-pro", Georgia, Cambria, "Times New Roman", Times, serif;
+      font-family: "Athelas", "adobe-garamond-pro", Garamond, Times, serif;
       font-weight: normal; }
     .side-nav li.divider {
       border-top: 1px solid;
@@ -4489,7 +4489,7 @@ button:focus {
   .sub-nav li {
     color: #999999;
     float: left;
-    font-family: "Athelas", "adobe-garamond-pro", Georgia, Cambria, "Times New Roman", Times, serif;
+    font-family: "Athelas", "adobe-garamond-pro", Garamond, Times, serif;
     font-size: 0.875rem;
     font-weight: normal;
     margin-left: 1rem;
@@ -4684,7 +4684,7 @@ table {
       display: block;
       background-color: #EFEFEF;
       color: #222222;
-      font-family: "Athelas", "adobe-garamond-pro", Georgia, Cambria, "Times New Roman", Times, serif;
+      font-family: "Athelas", "adobe-garamond-pro", Garamond, Times, serif;
       font-size: 1rem;
       padding: 1rem 2rem; }
       .tabs dd > a:hover,
@@ -5000,7 +5000,7 @@ meta.foundation-mq-topbar {
     .top-bar-section ul li > a {
       color: #211C19;
       display: block;
-      font-family: "Athelas", "adobe-garamond-pro", Georgia, Cambria, "Times New Roman", Times, serif;
+      font-family: "Athelas", "adobe-garamond-pro", Garamond, Times, serif;
       font-size: 0.8125rem;
       font-weight: normal;
       padding-left: 0.9375rem;
@@ -5546,13 +5546,13 @@ a {
 /* Default paragraph styles */
 p {
   font-family: inherit;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: normal;
   line-height: 1.4;
   margin-bottom: 1.25rem;
   text-rendering: optimizeLegibility; }
   p.lead {
-    font-size: 1.31875rem;
+    font-size: 1.41875rem;
     line-height: 1.6; }
   p aside {
     font-size: 0.875rem;
@@ -5636,7 +5636,7 @@ ul,
 ol,
 dl {
   font-family: inherit;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   line-height: 1.4;
   list-style-position: outside;
   margin-bottom: 1.25rem; }
@@ -6600,7 +6600,7 @@ footer {
     display: inline-block;
     margin-right: 1rem; }
     footer li a {
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       font-style: normal;
       color: #211C19; }
     footer li a:hover {
@@ -6624,7 +6624,7 @@ footer {
   padding: 0px;
   font-weight: bold;
   font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
-  font-size: 1rem; }
+  font-size: 0.9rem; }
 
 .top-bar .name a:hover {
   color: #C8280A; }
@@ -6634,7 +6634,7 @@ footer {
   padding-right: 0px;
   padding-left: 1.3rem;
   font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
-  font-size: 1rem; }
+  font-size: 0.9rem; }
 
 .tab-bar .tab-bar-section {
   padding: 0px; }
@@ -6645,7 +6645,7 @@ footer {
   margin: 0px;
   padding: 0px;
   font-weight: bold;
-  font-size: 1rem; }
+  font-size: 0.9rem; }
 
 .tab-bar .right a {
   font-weight: 300;
@@ -6657,7 +6657,7 @@ footer {
       padding-left: 0; } }
 
 .tab-bar a {
-  font-size: 1rem; }
+  font-size: 0.9rem; }
 
 .tab-bar a:hover {
   color: #C8280A; }
@@ -6669,19 +6669,19 @@ footer {
     padding-top: 0.7rem;
     padding-left: 0.85rem;
     padding-bottom: 0.8rem;
-    font-size: 1rem; }
+    font-size: 0.9rem; }
   .right-off-canvas-menu .off-canvas-list a {
     margin: 0rem 0.7rem;
     padding-left: 0.2rem;
     padding-right: 0.2rem;
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 300; }
 
 #off-canvas-extra-label {
   margin-top: 2.2rem; }
 
 .landing {
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
   font-weight: 300;
   padding: 0px;
@@ -6693,11 +6693,11 @@ footer {
   .landing h1 {
     font-weight: bold; }
   .landing h2 {
-    font-size: 1rem;
+    font-size: 0.9rem;
     padding-left: 2px; }
 
 .overlay p {
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
   font-weight: 300; }
 
@@ -6718,7 +6718,10 @@ footer {
       padding-top: 1rem; }
   .contact {
     padding: 0px;
-    margin: 0px; } }
+    margin: 0rem 0rem 1.5rem 0rem; } }
+
+.contact {
+  margin: 0rem 0rem 1.5rem 0rem; }
 
 .landing_wrapper {
   margin-top: 2rem; }
@@ -6728,7 +6731,7 @@ figure {
 
 @media only screen and (max-width: 40em) {
   .small_screen_figure {
-    padding: 10px 0px;
+    padding: 0px;
     margin: 0px; } }
 
 .spiel {
@@ -6757,14 +6760,17 @@ figure {
     .article_header_panel h1.subheader, .article_header_panel h2.subheader, .article_header_panel h3.subheader, .article_header_panel h4.subheader, .article_header_panel h5.subheader, .article_header_panel h6.subheader {
       line-height: 1.4; }
   .article_header_panel header h2 {
-    font-weight: 200;
-    font-size: 1.5rem;
+    font-weight: 300;
+    font-size: 2rem;
     margin: 1px; }
+    @media only screen and (max-width: 40em) {
+      .article_header_panel header h2 {
+        font-size: 1.5rem; } }
 
 .institution section h5 {
   margin-top: 0rem;
-  font-family: "Athelas", "adobe-garamond-pro", Georgia, Cambria, "Times New Roman", Times, serif;
-  font-size: 1.4rem; }
+  font-family: "Athelas", "adobe-garamond-pro", Garamond, Times, serif;
+  font-size: 1.5rem; }
 
 .institution section p {
   margin-top: 0.1rem; }
@@ -6786,9 +6792,9 @@ figure {
   margin-bottom: 2rem; }
 
 .position {
-  font-family: "Athelas", "adobe-garamond-pro", Georgia, Cambria, "Times New Roman", Times, serif;
+  font-family: "Athelas", "adobe-garamond-pro", Garamond, Times, serif;
   font-style: italic;
-  font-size: 1.25rem; }
+  font-size: 1.35rem; }
 
 .my-alert-box {
   border-style: solid;
@@ -6804,7 +6810,7 @@ figure {
   border-color: #dbdbdb;
   color: #4f4f4f;
   color: #229422;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   border: 0px;
   margin: 0px;
   padding-top: 0.35rem;
@@ -6829,13 +6835,13 @@ figure {
 @media only screen and (max-width: 40em) {
   .page_header {
     font-size: 2.1875rem;
-    font-family: "Athelas", "adobe-garamond-pro", Georgia, Cambria, "Times New Roman", Times, serif;
+    font-family: "Athelas", "adobe-garamond-pro", Garamond, Times, serif;
     font-weight: bold;
     margin-top: 1.3rem;
-    margin-bottom: 1rem; }
+    margin-bottom: 2rem; }
   .page_subheader {
     font-size: 2.1875rem;
-    font-family: "Athelas", "adobe-garamond-pro", Georgia, Cambria, "Times New Roman", Times, serif;
+    font-family: "Athelas", "adobe-garamond-pro", Garamond, Times, serif;
     font-weight: bold;
     margin-top: 3.5rem;
     margin-bottom: 1rem; } }
@@ -6843,13 +6849,13 @@ figure {
 @media only screen and (min-width: 40.0625em) {
   .page_header {
     font-size: 2.5rem;
-    font-family: "Athelas", "adobe-garamond-pro", Georgia, Cambria, "Times New Roman", Times, serif;
+    font-family: "Athelas", "adobe-garamond-pro", Garamond, Times, serif;
     font-weight: bold;
-    margin-top: 1.5rem;
-    margin-bottom: 3rem; }
+    margin-top: 3.5rem;
+    margin-bottom: 1.5rem; }
   .page_subheader {
     font-size: 2.5rem;
-    font-family: "Athelas", "adobe-garamond-pro", Georgia, Cambria, "Times New Roman", Times, serif;
+    font-family: "Athelas", "adobe-garamond-pro", Garamond, Times, serif;
     font-weight: bold;
     margin-top: 5rem;
     margin-bottom: 0.5rem; } }
@@ -6859,9 +6865,23 @@ figure {
   .contact_details p {
     margin-bottom: 5px; }
 
+/*
+.photoset-description {
+    p:first-child:first-letter {
+        float: left;
+        //color: $red;
+        font-size: 3.5rem;
+        line-height: 2.8rem;
+        padding-top: 4px;
+        padding-right: 8px;
+        padding-left: 3px;
+        padding-bottom: 0px;
+    }
+}
+*/
 @media only screen and (max-width: 40em) {
-  .photoset-description {
-    padding: 0px 12px; } }
+  .photoset-description div {
+    padding: 0px 10px; } }
 
 @media only screen and (min-width: 64.0625em) {
   .photo-large-line-up {
@@ -6886,7 +6906,7 @@ figure {
   font-size: 0.6875rem;
   transition: background-color 300ms ease-out;
   margin-bottom: 0px;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
   font-weight: 300;
   padding-left: 0px;
@@ -6896,7 +6916,7 @@ figure {
   margin-right: 3rem; }
 
 .prev-next-nav p {
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
   font-weight: 300; }
 
@@ -6906,7 +6926,7 @@ figure {
   margin-right: 1.5rem; }
   .sticky-sidebar p {
     margin-bottom: 0.7rem;
-    font-size: 1rem; }
+    font-size: 0.9rem; }
 
 html, body {
   -webkit-text-size-adjust: 100%; }

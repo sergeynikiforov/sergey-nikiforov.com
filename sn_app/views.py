@@ -109,7 +109,7 @@ def contact(request):
     return render(request, 'sn_app/contact.html', {'form': form, 'person': person})
 
 
-def photography(request, photoset_slug='test'):
+def photoset(request, photoset_slug='test'):
     '''
     view for photography page
     '''
@@ -142,6 +142,25 @@ def photography(request, photoset_slug='test'):
 
     except Photoset.DoesNotExist:
         pass
+
+    # get personal data
+    person = get_object_or_404(Person, first_name='Sergey')
+    context_dict['person'] = person
+
+    return render(request, 'sn_app/photoset.html', context_dict)
+
+
+
+def photography(request):
+    '''
+    view for photography page
+    '''
+    # create context dict
+    context_dict = {}
+
+    # get all photosets
+    photosets = Photoset.objects.all().order_by('title')
+    context_dict['photosets'] = photosets
 
     # get personal data
     person = get_object_or_404(Person, first_name='Sergey')

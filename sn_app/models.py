@@ -112,12 +112,14 @@ class ContactMe(models.Model):
 class Photoset(models.Model):
     title = models.CharField(max_length=200, unique=True)
     description = models.TextField(max_length=2000)
+    cover = models.CharField(max_length=200, default='choose_coverID_plz') # Cloudinary photo ID for album cover
     num_views = models.PositiveIntegerField(default=0)
     num_photos = models.PositiveIntegerField(default=0)
     slug = models.SlugField(unique=True)
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
+        self.cover = Photo.objects.filter(photosets__title__exact=self.title)[0].publicID
         super(Photoset, self).save(*args, **kwargs)
 
     def __unicode__(self):
