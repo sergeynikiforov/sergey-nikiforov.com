@@ -6,6 +6,7 @@ class ContactMeForm(forms.ModelForm):
                                 label='Your name',
                                 widget=forms.TextInput(
                                                     attrs={
+                                                    'id': 'post-name',
                                                     'placeholder': 'your name',
                                                     'name': 'name',
                                                     'required autocomplete': 'name',
@@ -18,6 +19,7 @@ class ContactMeForm(forms.ModelForm):
                                 label='Your e-mail',
                                 widget=forms.EmailInput(
                                                     attrs={
+                                                    'id': 'post-email',
                                                     'placeholder':'email@example.com',
                                                     'name': 'email',
                                                     'required autocomplete': 'email',
@@ -30,6 +32,7 @@ class ContactMeForm(forms.ModelForm):
                             label='Your message',
                             widget=forms.Textarea(
                                                 attrs={
+                                                'id': 'post-message',
                                                 'placeholder':'your message...',
                                                 'maxlength': '2000',
                                                 'aria-label': 'Your message',

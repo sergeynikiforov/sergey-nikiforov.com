@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.http import JsonResponse
 from django.contrib import messages
 from django.core.mail import EmailMessage
 from models import Person, Education, Job, OnlineCourse, Photo, PhotoInPhotoset, Photoset
@@ -75,19 +76,25 @@ def about(request):
 
 def contact(request):
     '''
-    view to handle contact form
+    view to handle ajax contact form
     '''
     person = get_object_or_404(Person, first_name='Sergey')
     # if it's a POST request
     if request.method == 'POST':
+
         # create a form
         form = ContactMeForm(request.POST)
+        # for response json
+        response_data = {}
+
         # check validity
         if form.is_valid():
             # save the form
             form.save()
+
             # add success message
-            messages.add_message(request, messages.SUCCESS, 'Your message has been sent. Thank you!')
+            #messages.add_message(request, messages.SUCCESS, 'Your message has been sent. Thank you!')
+
             # construct email for site owner (me)
             body = "You've got a message from %s (%s):\n\n%s\n\n---END OF MESSAGE---\n" % (form.cleaned_data['name'], form.cleaned_data['email'], form.cleaned_data['message'])
             reply_to = form.cleaned_data['email']
@@ -98,10 +105,15 @@ def contact(request):
                                  reply_to=(reply_to,)
                                 )
             email.send()
-            return redirect('sn_app:contact')
+            #return redirect('sn_app:contact')
+            response_data['result'] = 'Your message has been sent. Thank you!'
+
+            return JsonResponse(response_data)
         else:
             # just print to terminal
+            response_data['result'] = form.errors
             print(form.errors)
+            return JsonResponse(response_data)
     else:
         # GET request - create empty form
         form = ContactMeForm()

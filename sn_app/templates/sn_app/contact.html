@@ -25,7 +25,7 @@
             </div>
         </div>
         <section>
-            <form action="{% url 'sn_app:contact' %}" method="post" data-abide>
+            <form id="post-form" method="post" data-abide="ajax">
                 <div class="row">
                     <div class="small-12 columns text-left">
                         <h3 class="page_header">drop me a line</h3>
@@ -71,15 +71,8 @@
                     <div class="small-3 medium-2 columns ">
                         <input type="submit" value="SEND" class="button small" role="button" />
                     </div>
-                    <div class="small-9 medium-6 columns end">
-                        {% if messages %}
-                            <div data-alert class="my-alert-box" tabindex="0" aria-live="assertive" role="alertdialog">
-                                {% for message in messages %}
-                                    {{ message }}
-                                {% endfor %}
-                                <a href="#" tabindex="0" class="close" aria-label="Close Alert">&times;</a>
-                            </div>
-                        {% endif %}
+                    <div id="post-result" class="small-9 medium-6 columns end">
+
                     </div>
                 </div>
             </form>
