@@ -7197,6 +7197,31 @@ figure {
   font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
   font-weight: 300; }
 
+/*
+html, body, .off-canvas-wrap, .inner-wrap, .main-section, article, .photo-wrap {
+    height: 100%;
+    #photo-wrapper{
+        height: 100%;
+        figure {
+            height: 100%;
+            picture {
+                height: 100%;
+                img {
+                    width:auto;
+                    height:auto;
+                    max-width:100%;
+                    max-height:60%;
+                }
+            }
+        }
+    }
+}
+*/
+#photo-wrapper figure {
+  height: 70vh; }
+  #photo-wrapper figure img {
+    max-height: 68vh; }
+
 .sticky-sidebar {
   font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
   font-weight: 300;

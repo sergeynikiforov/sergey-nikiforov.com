@@ -470,6 +470,36 @@ figure {
     font-family: $font-family-sans-serif;
     font-weight: $font-weight-thin;
 }
+/*
+html, body, .off-canvas-wrap, .inner-wrap, .main-section, article, .photo-wrap {
+    height: 100%;
+    #photo-wrapper{
+        height: 100%;
+        figure {
+            height: 100%;
+            picture {
+                height: 100%;
+                img {
+                    width:auto;
+                    height:auto;
+                    max-width:100%;
+                    max-height:60%;
+                }
+            }
+        }
+    }
+}
+*/
+#photo-wrapper {
+    figure{
+        height: 70vh;
+        img {
+        //height: auto;
+        max-height: 68vh;
+    }
+    }
+
+}
 
 // END PHOTOGRAPHY
 //-----------------------------------------------------

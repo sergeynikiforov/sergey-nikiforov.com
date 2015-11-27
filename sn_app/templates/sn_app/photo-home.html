@@ -6,7 +6,7 @@
 {% block header %} {% endblock header %}
 {% block body %}
 <article>
-    <div class="row">
+    <div class="row show-for-large-up">
         {% if active_photoset %}
             <div class="large-2 columns show-for-large-up">
                 <p></p>
@@ -31,8 +31,7 @@
                 </nav>
             {% endif %}
         </aside>
-        <section class="small-12 medium-10 large-8 small-centered large-uncentered columns">
-            <figure id="photo-wrapper"></figure>
+        <section id="photo-wrapper" class="small-12 medium-10 large-8 small-centered large-uncentered columns text-center">
         </section>
         <div class="large-2 columns">
             <div id="photo-description-wrapper" class="show-for-large-up"></div>
@@ -46,7 +45,7 @@
             <div id="photo-title-wrapper" class="text-center"></div>
         </div>
         <div class="large-2 columns">
-            <div class="text-center show-for-large-up">
+            <div class="show-for-large-up">
                 <p><a id="prev" class="transparent-button-small prev">prev</a><a id="next" class="transparent-button-small next">next</a></p>
             </div>
         </div>
@@ -60,13 +59,16 @@
     </div>
 </article>
 {% endblock body %}
-{% block footer %}{% endblock footer %}
+{% block footer %}
+{% endblock footer %}
 {% block templates %}
 <script type="text/template" id="photo-item-tmpl">
-    <picture>
-        <source sizes="<%= sizes %>" srcset="<%= srcsetWebp %>" type="image/webp">
-        <img src="<%= imgSrc %>" alt="<%= title %>" sizes="<%= sizes %>" srcset="<%= srcsetJpg %>">
-    </picture>
+    <figure >
+        <picture>
+            <source sizes="<%= sizes %>" srcset="<%= srcsetWebp %>" type="image/webp">
+            <img src="<%= imgSrc %>" alt="<%= title %>" sizes="<%= sizes %>" srcset="<%= srcsetJpg %>">
+        </picture>
+    </figure>
 </script>
 <script type="text/template" id="photo-description-tmpl">
     <p><%= description %></p>

@@ -25264,7 +25264,7 @@ App.PhotoView = Backbone.View.extend({
     template: _.template($('#photo-item-tmpl').html()),
     initialize: function() {
         this.listenTo(this.model, 'sync change', this.render);
-        this.model.fetch();
+        //this.model.fetch();
         this.render();
     },
     render: function() {
@@ -25283,7 +25283,12 @@ App.DescriptionView = Backbone.View.extend({
         this.render();
     },
     render: function() {
-        var html = this.template(this.model.toJSON());
+        if (this.model.toJSON().description != 'No description') {
+            var html = this.template(this.model.toJSON());
+        }
+        else {
+            var html = '';
+        }
         this.$el.html(html);
         return this;
     }
@@ -25298,7 +25303,12 @@ App.TitleView = Backbone.View.extend({
         this.render();
     },
     render: function() {
-        var html = this.template(this.model.toJSON());
+        if (this.model.toJSON().title != 'Untitled') {
+            var html = this.template(this.model.toJSON());
+        }
+        else {
+            var html = '';
+        }
         this.$el.html(html);
         return this;
     }
@@ -25315,12 +25325,11 @@ App.GeneralView = Backbone.View.extend({
         'click #prev': 'changePhoto'
     },
     changePhoto: function(event) {
-        event.preventDefault();
         if (event.target.id == 'next') {
             this.router.navigate(App.photo.attributes.next_photoID, true);
         } else {
             this.router.navigate(App.photo.attributes.prev_photoID, true);
-        };
+        }
     }
 });
 
@@ -25331,9 +25340,13 @@ App.PhotoRouter = Backbone.Router.extend({
     },
     showPhoto: function(id) {
         App.photo = new App.PhotoModel(id);
-        App.photoView = new App.PhotoView({model: App.photo});
-        App.photoDescrView = new App.DescriptionView({model: App.photo});
-        App.photoTitleView = new App.TitleView({model: App.photo});
+        App.photo.fetch({
+            success: function() {
+                App.photoView = new App.PhotoView({model: App.photo});
+                App.photoTitleView = new App.TitleView({model: App.photo});
+                App.photoDescrView = new App.DescriptionView({model: App.photo});
+                }
+            });
     }
 });
 
