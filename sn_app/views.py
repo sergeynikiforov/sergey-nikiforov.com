@@ -213,10 +213,10 @@ def photoset_api(request, photoset_slug=''):
     photos = Photo.objects.filter(photosets__title__exact=active_photoset.title).order_by('id')
     result = [photo_dict(photoset_slug=photoset_slug, photoID=x.publicID) for x in photos]
 
-    return JsonResponse(result, safe=False)
+    return JsonResponse({'models': result})
 
 
-def photoset(request, photoset_slug='test'):
+def photoset(request, photoset_slug=''):
     '''
     view for a particular photoset page (thumbnails view)
     '''
@@ -273,75 +273,3 @@ def photography(request):
     context_dict['person'] = person
 
     return render(request, 'sn_app/photography.html', context_dict)
-
-
-def photo(request, photoset_slug='', photoID=''):
-    '''
-    view for a particular photograph
-    '''
-
-    context_dict = {}
-
-    # pass chosen photo
-    context_dict['photoID'] = photoID
-
-    # increment photo views counter
-    current_photo = Photo.objects.get(publicID=photoID)
-    context_dict['current_photo'] = current_photo
-    current_photo.num_views += 1
-    current_photo.save()
-
-    # get relevant photoset
-    try:
-        # add photoset to context dict
-        active_photoset = Photoset.objects.get(slug=photoset_slug)
-        context_dict['active_photoset'] = active_photoset
-
-        # retrieve prev/next photoID's for the current photo
-        photos = Photo.objects.filter(photosets__title__exact=active_photoset.title).values_list('id', 'publicID').order_by('id')
-        photos = [i[1] for i in photos]
-        qty = len(photos)
-        context_dict['prev_photoID'] = photos[(photos.index(photoID) - 1) % qty]
-        context_dict['next_photoID'] = photos[(photos.index(photoID) + 1) % qty]
-
-    except Photoset.DoesNotExist, Photo.DoesNotExist:
-        pass
-
-    """
-    if request.is_ajax():
-        response_data = {}
-        response_data['publicID'] = photoID
-        response_data['photoset'] = photoset_slug
-        response_data['title'] = current_photo.title
-        response_data['description'] = current_photo.description
-
-        srcsetWebp = ''
-        srcsetJpg = ''
-        srcset = "200w 400w 600w 800w 1000w 1200w 1400w 1600w 2000w 2400w 2800w 3200w".split()
-
-        # construct srcset for Webp & jpeg images
-        for src in srcset:
-            width = int(src[:-1])
-            srcsetWebp += '{photo_url} {src_width}, '.format(photo_url=cloudinary.CloudinaryImage(photoID).build_url(format="webp", width=width, crop="fill", quality=85), src_width=src)
-            srcsetJpg += '{photo_url} {src_width}, '.format(photo_url=cloudinary.CloudinaryImage(photoID).build_url(format="jpg", width=width, crop="fill", quality=85), src_width=src)
-
-        # remove trailing commas
-        srcsetWebp = srcsetWebp[:-2]
-        srcsetJpg = srcsetJpg[:-2]
-        imgSrc = cloudinary.CloudinaryImage(photoID).build_url(format="jpg", width=1024, crop="fill")
-        response_data['srcsetWebp'] = srcsetWebp
-        response_data['srcsetJpg'] = srcsetJpg
-        response_data['imgSrc'] = imgSrc
-
-        return JsonResponse(response_data)
-    """
-
-    # get all photosets
-    photosets = Photoset.objects.all().order_by('title')
-    context_dict['photosets'] = photosets
-
-    # get personal data
-    person = get_object_or_404(Person, first_name='Sergey')
-    context_dict['person'] = person
-
-    return render(request, 'sn_app/photo.html', context_dict)

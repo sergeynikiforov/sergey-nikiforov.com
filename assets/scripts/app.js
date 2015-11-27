@@ -95,31 +95,6 @@ $(document).ready(function() {
 });
 
 
-// ajax for photo
-/*
-$('a.photo-api').on('click', function(event){
-    event.preventDefault();
-    console.log(event.target.id);
-    show_image(event.target.id, window.location.pathname);
-});
-
-function show_image(publicID, current_photoset_url) {
-    $.ajax({
-        url : current_photoset_url + 'photo',
-        type: 'GET',
-        dataType: 'html',
-        data: {
-            publicID: publicID
-        },
-        success: function(json) {
-            console.log(json);
-        },
-        error: function(xhr,errmsg,err) {
-            console.log(xhr.status + ": " + xhr.responseText);
-        }
-    });
-};
-*/
 /*
  * AJAX contact me post
  * from https://realpython.com/blog/python/django-and-ajax-form-submissions/

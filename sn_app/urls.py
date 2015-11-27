@@ -11,8 +11,7 @@ urlpatterns = [
     # start page for photo view - serve html
     url(r'^photography/(?P<photoset_slug>[\w\-]+)/photo/$', views.photo_home, name='photo_home'),
     # get all photos for the album in json
-    url(r'^photography/(?P<photoset_slug>[\w\-]+)/photo/api/photos$', views.photoset_api, name='photoset_api'),
+    url(r'^photography/(?P<photoset_slug>[\w\-]+)/photo/api/photos/$', views.photoset_api, name='photoset_api'),
     # get photo info in json
-    url(r'^photography/(?P<photoset_slug>[\w\-]+)/photo/api/photos/(?P<photoID>[\w\-]+)$', views.photo_api, name='photo_api'),
-    #url(r'^photography/(?P<photoset_slug>[\w\-]+)/(?P<photoID>[\w\-]+)/$', views.photo, name='photo')
+    url(r'^photography/(?P<photoset_slug>[\w\-]+)/photo/api/photos/(?P<photoID>[\w\-]+)$', views.photo_api, name='photo_api')
 ]
