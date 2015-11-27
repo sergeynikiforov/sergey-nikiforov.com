@@ -1,10 +1,11 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import JsonResponse
-from django.contrib import messages
 from django.core.mail import EmailMessage
+from django.template.loader import get_template
 from models import Person, Education, Job, OnlineCourse, Photo, PhotoInPhotoset, Photoset
 from forms import ContactMeForm
 import json
+import cloudinary
 
 
 
@@ -92,9 +93,6 @@ def contact(request):
             # save the form
             form.save()
 
-            # add success message
-            #messages.add_message(request, messages.SUCCESS, 'Your message has been sent. Thank you!')
-
             # construct email for site owner (me)
             body = "You've got a message from %s (%s):\n\n%s\n\n---END OF MESSAGE---\n" % (form.cleaned_data['name'], form.cleaned_data['email'], form.cleaned_data['message'])
             reply_to = form.cleaned_data['email']
@@ -119,6 +117,103 @@ def contact(request):
         form = ContactMeForm()
 
     return render(request, 'sn_app/contact.html', {'form': form, 'person': person})
+
+
+def photo_home(request, photoset_slug):
+    '''
+    view for home page photo_api
+    '''
+
+    context_dict = {}
+
+    # add photoset to context dict
+    active_photoset = get_object_or_404(Photoset, slug=photoset_slug)
+    context_dict['active_photoset'] = active_photoset
+
+    # get all photosets
+    photosets = Photoset.objects.all().order_by('title')
+    context_dict['photosets'] = photosets
+
+    # get personal data
+    person = get_object_or_404(Person, first_name='Sergey')
+    context_dict['person'] = person
+
+    return render(request, 'sn_app/photo-home.html', context_dict)
+
+
+def photo_dict(photoset_slug='', photoID='', srcset="200w 400w 600w 800w 1000w 1200w 1400w 1600w 2000w 2400w 2800w 3200w"):
+    '''
+    returns dict photo info
+    '''
+    context_dict = {}
+
+    # pass chosen photo
+    context_dict['id'] = photoID
+
+    # increment photo views counter & populate context
+    current_photo = Photo.objects.get(publicID=photoID)
+
+    context_dict['photoset'] = photoset_slug
+    context_dict['title'] = current_photo.title
+    context_dict['description'] = current_photo.description
+
+    current_photo.num_views += 1
+    current_photo.save()
+
+    # get prev/next photoID
+    try:
+        active_photoset = Photoset.objects.get(slug=photoset_slug)
+        photos = Photo.objects.filter(photosets__title__exact=active_photoset.title).values_list('id', 'publicID').order_by('id')
+        photos = [i[1] for i in photos]
+        qty = len(photos)
+        context_dict['prev_photoID'] = photos[(photos.index(photoID) - 1) % qty]
+        context_dict['next_photoID'] = photos[(photos.index(photoID) + 1) % qty]
+
+    except Photoset.DoesNotExist, Photo.DoesNotExist:
+        pass
+
+    # populate with info for <picture> elt
+    srcsetWebp = ''
+    srcsetJpg = ''
+    srcset = srcset.split()
+
+    # construct srcset for Webp & jpeg images
+    for src in srcset:
+        width = int(src[:-1])
+        srcsetWebp += '{photo_url} {src_width}, '.format(photo_url=cloudinary.CloudinaryImage(photoID).build_url(format="webp", width=width, crop="fill", quality=85), src_width=src)
+        srcsetJpg += '{photo_url} {src_width}, '.format(photo_url=cloudinary.CloudinaryImage(photoID).build_url(format="jpg", width=width, crop="fill", quality=85), src_width=src)
+
+    srcsetWebp = srcsetWebp[:-2]
+    srcsetJpg = srcsetJpg[:-2]
+    imgSrc = cloudinary.CloudinaryImage(photoID).build_url(format="jpg", width=1024, crop="fill")
+
+    context_dict['srcsetWebp'] = srcsetWebp
+    context_dict['srcsetJpg'] = srcsetJpg
+    context_dict['imgSrc'] = imgSrc
+
+    return context_dict
+
+
+def photo_api(request, photoset_slug='', photoID=''):
+    '''
+    view for a single photo response
+    '''
+
+    context_dict = photo_dict(photoset_slug=photoset_slug, photoID=photoID)
+
+    return JsonResponse(context_dict)
+
+
+def photoset_api(request, photoset_slug=''):
+    '''
+    view for a photoset response
+    '''
+    # get all photos for the photoset
+    active_photoset = Photoset.objects.get(slug=photoset_slug)
+    photos = Photo.objects.filter(photosets__title__exact=active_photoset.title).order_by('id')
+    result = [photo_dict(photoset_slug=photoset_slug, photoID=x.publicID) for x in photos]
+
+    return JsonResponse(result, safe=False)
 
 
 def photoset(request, photoset_slug='test'):
@@ -164,7 +259,7 @@ def photoset(request, photoset_slug='test'):
 
 def photography(request):
     '''
-    view for photography page (with thumbs for photosets)
+    view for a general photography page (with thumbs for photosets)
     '''
     # create context dict
     context_dict = {}
@@ -211,6 +306,35 @@ def photo(request, photoset_slug='', photoID=''):
 
     except Photoset.DoesNotExist, Photo.DoesNotExist:
         pass
+
+    """
+    if request.is_ajax():
+        response_data = {}
+        response_data['publicID'] = photoID
+        response_data['photoset'] = photoset_slug
+        response_data['title'] = current_photo.title
+        response_data['description'] = current_photo.description
+
+        srcsetWebp = ''
+        srcsetJpg = ''
+        srcset = "200w 400w 600w 800w 1000w 1200w 1400w 1600w 2000w 2400w 2800w 3200w".split()
+
+        # construct srcset for Webp & jpeg images
+        for src in srcset:
+            width = int(src[:-1])
+            srcsetWebp += '{photo_url} {src_width}, '.format(photo_url=cloudinary.CloudinaryImage(photoID).build_url(format="webp", width=width, crop="fill", quality=85), src_width=src)
+            srcsetJpg += '{photo_url} {src_width}, '.format(photo_url=cloudinary.CloudinaryImage(photoID).build_url(format="jpg", width=width, crop="fill", quality=85), src_width=src)
+
+        # remove trailing commas
+        srcsetWebp = srcsetWebp[:-2]
+        srcsetJpg = srcsetJpg[:-2]
+        imgSrc = cloudinary.CloudinaryImage(photoID).build_url(format="jpg", width=1024, crop="fill")
+        response_data['srcsetWebp'] = srcsetWebp
+        response_data['srcsetJpg'] = srcsetJpg
+        response_data['imgSrc'] = imgSrc
+
+        return JsonResponse(response_data)
+    """
 
     # get all photosets
     photosets = Photoset.objects.all().order_by('title')

@@ -95,20 +95,44 @@ $(document).ready(function() {
 });
 
 
+// ajax for photo
+/*
+$('a.photo-api').on('click', function(event){
+    event.preventDefault();
+    console.log(event.target.id);
+    show_image(event.target.id, window.location.pathname);
+});
+
+function show_image(publicID, current_photoset_url) {
+    $.ajax({
+        url : current_photoset_url + 'photo',
+        type: 'GET',
+        dataType: 'html',
+        data: {
+            publicID: publicID
+        },
+        success: function(json) {
+            console.log(json);
+        },
+        error: function(xhr,errmsg,err) {
+            console.log(xhr.status + ": " + xhr.responseText);
+        }
+    });
+};
+*/
 /*
  * AJAX contact me post
  * from https://realpython.com/blog/python/django-and-ajax-form-submissions/
- *
+ * + the code to handle csrf token
  */
 
 $('#post-form').on('valid.fndtn.abide', function(event){
     event.preventDefault();
-    console.log("form submitted!")  // sanity check
     contact_post();
 });
 
 function contact_post() {
-    console.log("create post is working!") // sanity check
+
     $.ajax({
         url : "/sn_app/contact", // the endpoint
         type : "POST", // http method
@@ -123,11 +147,9 @@ function contact_post() {
             $('#post-message').val(''); // remove the value from the input
             $('#post-name').val('');
             $('#post-email').val('');
-            console.log(json); // log the returned json to the console
             $('#post-result').prepend('<div data-alert id="post-result" class="my-alert-box" tabindex="0" aria-live="assertive" role="alertdialog">' + json.result + '<a tabindex="0" class="close" aria-label="Close Alert">&times;</a></div>');
             // reapply fndn listeners to alerts
             $(document).foundation('alert', 'reflow');
-            console.log("success"); // another sanity check
         },
 
         // handle a non-successful response

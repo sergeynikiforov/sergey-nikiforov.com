@@ -44,7 +44,7 @@ def pictureElement(publicID, sizes, srcset, alt):
 
     # construct <img> element
     imgSrc = cloudinary.CloudinaryImage(publicID).build_url(format="jpg", width=1024, crop="fill")
-    imgElement = format_html('<img src="{}" alt="{}" sizes="{}" srcset="{}">', mark_safe(imgSrc), alt, mark_safe(sizes), mark_safe(srcsetJpg))
+    imgElement = format_html('<img id="{}" src="{}" alt="{}" sizes="{}" srcset="{}">', mark_safe(publicID), mark_safe(imgSrc), alt, mark_safe(sizes), mark_safe(srcsetJpg))
 
     return format_html('<picture> {} {} </picture>', mark_safe(sourceElement), mark_safe(imgElement))
 

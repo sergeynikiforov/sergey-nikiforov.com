@@ -69,9 +69,13 @@ gulp.task('scripts', function() {
             paths.bower + '/fastclick/lib/fastclick.js',
             paths.bower + '/foundation/js/foundation.js',
             paths.bower + '/foundation/js/foundation/foundation.alert.js',
+            paths.bower + '/underscore/underscore.js',
+            paths.bower + '/backbone/backbone.js',
+            paths.bower + '/cloudinary-jquery/cloudinary-jquery.js',
             paths.assets + '/scripts/app.js',
             paths.assets + '/scripts/myStickyFooter.js',
-            paths.assets + '/scripts/owl.carousel.js'
+            paths.assets + '/scripts/owl.carousel.js',
+            paths.assets + '/scripts/photoApp.js'
              ])
     // concat into 1 file
     .pipe(concat('app.js'))

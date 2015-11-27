@@ -29,13 +29,15 @@ var MutationObserver = (function () {
 }());
 
 window.onload = function() {
-    stickyFooter();
+    if (document.getElementById(elementID)) {
+        stickyFooter();
 
-    if (MutationObserver) {
-        observer.observe(target, config);
-    } else {
-        //old IE
-        setInterval(stickyFooter, 500);
+        if (MutationObserver) {
+            observer.observe(target, config);
+        } else {
+            //old IE
+            setInterval(stickyFooter, 500);
+        }
     }
 };
 
@@ -56,13 +58,17 @@ function mutationObjectCallback(mutationRecordsList) {
 
 //check for resize event
 $(window).on('resize', function() {
-    stickyFooter();
+    if (document.getElementById(elementID)) {
+        stickyFooter();
+    }
 });
 
 // check for orientation change
 $(window).on('orientationchange', function() {
     //$(window).trigger('resize');
-    stickyFooter();
+    if (document.getElementById(elementID)) {
+        stickyFooter();
+    }
 });
 
 //var checkDOMInt = setInterval(stickyFooter, 500);
@@ -89,39 +95,43 @@ function stickyFooter() {
     if (MutationObserver) {
         observer.disconnect();
     }
-    document.body.setAttribute("style","height:auto");
 
-    if (document.getElementById(elementID).getAttribute("style") != null) {
-        document.getElementById(elementID).removeAttribute("style");
-    }
+    if (document.getElementById(elementID)) {
 
-    if (window.innerHeight != document.body.offsetHeight) {
-        var offset = window.innerHeight - document.body.offsetHeight;
-        //var offset = $(window).height() - $(document.body).height();
-        //console.log('offset: '+offset);
-        //console.log('innerHeight: '+window.innerHeight);
-        //console.log('jQuery window height: '+$(window).height());
-        //console.log('body.offsetHeight: '+document.body.offsetHeight);
-        //console.log('jQuery body height: '+$(document.body).height());
+        document.body.setAttribute("style","height:auto");
 
-        var current = getCSS(elementID, "margin-top");
-        //console.log('current margin-top: '+current);
-
-        if (isNaN(current)===true) {
-            document.getElementById(elementID).setAttribute("style","margin-top:0px;");
-            current = 0;
-        } else {
-            current = parseInt(current);
+        if (document.getElementById(elementID).getAttribute("style") != null) {
+            document.getElementById(elementID).removeAttribute("style");
         }
 
-        if (current+offset > parseInt(getCSS(elementID, "margin-top"))) {
-            document.getElementById(elementID).setAttribute("style","margin-top:"+(current+offset)+"px;");
-            //console.log('current+offset>margin-top, value:'+(current+offset));
+        if (window.innerHeight != document.body.offsetHeight) {
+            var offset = window.innerHeight - document.body.offsetHeight;
+            //var offset = $(window).height() - $(document.body).height();
+            //console.log('offset: '+offset);
+            //console.log('innerHeight: '+window.innerHeight);
+            //console.log('jQuery window height: '+$(window).height());
+            //console.log('body.offsetHeight: '+document.body.offsetHeight);
+            //console.log('jQuery body height: '+$(document.body).height());
+
+            var current = getCSS(elementID, "margin-top");
+            //console.log('current margin-top: '+current);
+
+            if (isNaN(current)===true) {
+                document.getElementById(elementID).setAttribute("style","margin-top:0px;");
+                current = 0;
+            } else {
+                current = parseInt(current);
+            }
+
+            if (current+offset > parseInt(getCSS(elementID, "margin-top"))) {
+                document.getElementById(elementID).setAttribute("style","margin-top:"+(current+offset)+"px;");
+                //console.log('current+offset>margin-top, value:'+(current+offset));
+            }
+
         }
 
+        document.body.setAttribute("style","height:100%");
     }
-
-    document.body.setAttribute("style","height:100%");
 
     //reconnect
     if (MutationObserver) {
