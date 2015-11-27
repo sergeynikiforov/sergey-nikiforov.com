@@ -141,33 +141,29 @@ def photo_home(request, photoset_slug):
     return render(request, 'sn_app/photo-home.html', context_dict)
 
 
-def photo_dict(photoset_slug='', photoID='', srcset="200w 400w 600w 800w 1000w 1200w 1400w 1600w 2000w 2400w 2800w 3200w"):
+def photo_dict(photoset, photo, srcset="200w 400w 600w 800w 1000w 1200w 1400w 1600w 2000w 2400w 2800w 3200w"):
     '''
     returns dict photo info
+
+    photoset: current photoset from django ORM
+    photo: current photo from django ORM
     '''
     context_dict = {}
 
     # pass chosen photo
-    context_dict['id'] = photoID
+    context_dict['id'] = photo.publicID
 
-    # increment photo views counter & populate context
-    current_photo = Photo.objects.get(publicID=photoID)
-
-    context_dict['photoset'] = photoset_slug
-    context_dict['title'] = current_photo.title
-    context_dict['description'] = current_photo.description
-
-    current_photo.num_views += 1
-    current_photo.save()
+    context_dict['photoset'] = photoset.title
+    context_dict['title'] = photo.title
+    context_dict['description'] = photo.description
 
     # get prev/next photoID
     try:
-        active_photoset = Photoset.objects.get(slug=photoset_slug)
-        photos = Photo.objects.filter(photosets__title__exact=active_photoset.title).values_list('id', 'publicID').order_by('id')
+        photos = Photo.objects.filter(photosets__title__exact=photoset.title).values_list('id', 'publicID').order_by('id')
         photos = [i[1] for i in photos]
         qty = len(photos)
-        context_dict['prev_photoID'] = photos[(photos.index(photoID) - 1) % qty]
-        context_dict['next_photoID'] = photos[(photos.index(photoID) + 1) % qty]
+        context_dict['prev_photoID'] = photos[(photos.index(photo.publicID) - 1) % qty]
+        context_dict['next_photoID'] = photos[(photos.index(photo.publicID) + 1) % qty]
 
     except Photoset.DoesNotExist, Photo.DoesNotExist:
         pass
@@ -180,12 +176,12 @@ def photo_dict(photoset_slug='', photoID='', srcset="200w 400w 600w 800w 1000w 1
     # construct srcset for Webp & jpeg images
     for src in srcset:
         width = int(src[:-1])
-        srcsetWebp += '{photo_url} {src_width}, '.format(photo_url=cloudinary.CloudinaryImage(photoID).build_url(format="webp", width=width, crop="fill", quality=85), src_width=src)
-        srcsetJpg += '{photo_url} {src_width}, '.format(photo_url=cloudinary.CloudinaryImage(photoID).build_url(format="jpg", width=width, crop="fill", quality=85), src_width=src)
+        srcsetWebp += '{photo_url} {src_width}, '.format(photo_url=cloudinary.CloudinaryImage(photo.publicID).build_url(format="webp", width=width, crop="fill", quality=85), src_width=src)
+        srcsetJpg += '{photo_url} {src_width}, '.format(photo_url=cloudinary.CloudinaryImage(photo.publicID).build_url(format="jpg", width=width, crop="fill", quality=85), src_width=src)
 
     srcsetWebp = srcsetWebp[:-2]
     srcsetJpg = srcsetJpg[:-2]
-    imgSrc = cloudinary.CloudinaryImage(photoID).build_url(format="jpg", width=1024, crop="fill")
+    imgSrc = cloudinary.CloudinaryImage(photo.publicID).build_url(format="jpg", width=1024, crop="fill")
 
     context_dict['srcsetWebp'] = srcsetWebp
     context_dict['srcsetJpg'] = srcsetJpg
@@ -199,7 +195,13 @@ def photo_api(request, photoset_slug='', photoID=''):
     view for a single photo response
     '''
 
-    context_dict = photo_dict(photoset_slug=photoset_slug, photoID=photoID)
+    current_photo = Photo.objects.get(publicID=photoID)
+    current_photo.num_views += 1
+    current_photo.save()
+
+    active_photoset = Photoset.objects.get(slug=photoset_slug)
+
+    context_dict = photo_dict(active_photoset, current_photo)
 
     return JsonResponse(context_dict)
 
@@ -211,7 +213,8 @@ def photoset_api(request, photoset_slug=''):
     # get all photos for the photoset
     active_photoset = Photoset.objects.get(slug=photoset_slug)
     photos = Photo.objects.filter(photosets__title__exact=active_photoset.title).order_by('id')
-    result = [photo_dict(photoset_slug=photoset_slug, photoID=x.publicID) for x in photos]
+
+    result = [photo_dict(active_photoset, photo) for photo in photos]
 
     return JsonResponse({'models': result})
 
