@@ -7197,30 +7197,46 @@ figure {
   font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
   font-weight: 300; }
 
-/*
-html, body, .off-canvas-wrap, .inner-wrap, .main-section, article, .photo-wrap {
-    height: 100%;
-    #photo-wrapper{
-        height: 100%;
-        figure {
-            height: 100%;
-            picture {
-                height: 100%;
-                img {
-                    width:auto;
-                    height:auto;
-                    max-width:100%;
-                    max-height:60%;
-                }
-            }
-        }
-    }
-}
-*/
 #photo-wrapper figure {
   height: 70vh; }
+  @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
+    #photo-wrapper figure {
+      height: 716.8px; } }
+  @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: landscape) {
+    #photo-wrapper figure {
+      height: 537.6px; } }
+  @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: portrait) {
+    #photo-wrapper figure {
+      height: 336px; } }
+  @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: landscape) {
+    #photo-wrapper figure {
+      height: 224px; } }
+  @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: portrait) {
+    #photo-wrapper figure {
+      height: 397.6px; } }
+  @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: landscape) {
+    #photo-wrapper figure {
+      height: 224px; } }
   #photo-wrapper figure img {
     max-height: 68vh; }
+    @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
+      #photo-wrapper figure img {
+        max-height: 696.32px; } }
+    @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: landscape) {
+      #photo-wrapper figure img {
+        max-height: 522.24px; } }
+    @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: portrait) {
+      #photo-wrapper figure img {
+        max-height: 326.4px; } }
+    @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: landscape) {
+      #photo-wrapper figure img {
+        max-height: 217.6px; } }
+    @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: portrait) {
+      #photo-wrapper figure img {
+        max-height: 386.24px; } }
+    @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: landscape) {
+      #photo-wrapper figure img {
+        max-height: 217.6px; } }
 
 .sticky-sidebar {
   font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;

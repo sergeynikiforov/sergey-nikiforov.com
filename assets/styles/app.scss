@@ -1,6 +1,51 @@
 @import 'foundation/settings';
 @import 'foundation';
 
+// mixin to address iOS 7 issue with vh, vmin
+//
+@mixin viewport-unit($property, $value) {
+  #{$property}: $value;
+
+  $unit: unit($value);
+
+  @if (index((vw, vh, vmin, vmax), $unit) != null) {
+    $devices: (
+      (768px, 1024px), // iPad (all versions)
+      (320px, 480px),  // iPhone 4
+      (320px, 568px)   // iPhone 5, 5C, 5S
+    );
+
+    @each $device in $devices {
+      $device-width: nth($device, 1);
+      $device-height: nth($device, 2);
+
+      $device-query: "only screen and (-webkit-min-device-pixel-ratio: 1)";
+      $device-query: "#{$device-query} and (device-width: #{$device-width})";
+      $device-query: "#{$device-query} and (device-height: #{$device-height})";
+
+      $percent: $value / ($value * 0 + 1); // see https://github.com/sass/sass/issues/533
+
+      $percent-width: $device-width * $percent / 100;
+      $percent-height: $device-height * $percent / 100;
+
+      @if ($unit == vmin or $unit == vmax) {
+        @media #{$device-query} {
+          #{$property}: if($unit == vmin, $percent-width, $percent-height);
+        }
+      }
+      @else {
+        @media #{$device-query} and (orientation: portrait) {
+          #{$property}: if($unit == vw, $percent-width, $percent-height);
+        }
+
+        @media #{$device-query} and (orientation: landscape) {
+          #{$property}: if($unit == vw, $percent-height, $percent-width);
+        }
+      }
+    }
+  }
+}
+
 // grid config
 //$row-width: rem-calc(1600);
 //$column-gutter: rem-calc(24);
@@ -470,36 +515,17 @@ figure {
     font-family: $font-family-sans-serif;
     font-weight: $font-weight-thin;
 }
-/*
-html, body, .off-canvas-wrap, .inner-wrap, .main-section, article, .photo-wrap {
-    height: 100%;
-    #photo-wrapper{
-        height: 100%;
-        figure {
-            height: 100%;
-            picture {
-                height: 100%;
-                img {
-                    width:auto;
-                    height:auto;
-                    max-width:100%;
-                    max-height:60%;
-                }
-            }
+
+
+#photo-wrapper {
+    figure{
+        @include viewport-unit(height, 70vh);
+        img {
+        @include viewport-unit(max-height, 68vh);
         }
     }
 }
-*/
-#photo-wrapper {
-    figure{
-        height: 70vh;
-        img {
-        //height: auto;
-        max-height: 68vh;
-    }
-    }
 
-}
 
 // END PHOTOGRAPHY
 //-----------------------------------------------------
