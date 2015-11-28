@@ -1,3 +1,4 @@
+require('es6-promise').polyfill();
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var watch = require('gulp-watch');
@@ -8,6 +9,7 @@ var livereload = require('gulp-livereload');
 var plumber = require('gulp-plumber');
 var concat = require('gulp-concat');
 var merge = require('merge-stream');
+var autoprefixer = require('gulp-autoprefixer');
 
 var gzip_options = {
     threshold: '1kb',
@@ -55,6 +57,8 @@ gulp.task('sass', function() {
     return merge(sassStream, cssStream)
     // concat css files
     .pipe(concat('app.css'))
+    // run through autoprefixer
+    .pipe(autoprefixer())
     // put into destination dir
     .pipe(gulp.dest('./sn_app/static/sn_app/css'))
     // run reload
