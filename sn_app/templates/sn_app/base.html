@@ -26,7 +26,6 @@
                                     </ul>
                                     <section class="top-bar-section">
                                         <ul class="right">
-                                            <li><a href="{% url 'sn_app:landing' %}">home</a></li>
                                             <li><a href="{% url 'sn_app:about' %}">about</a></li>
                                             <li><a href="{% url 'sn_app:resume' %}">resume</a></li>
                                             <li><a href="{% url 'sn_app:photography' %}">photography</a></li>
@@ -86,7 +85,7 @@
                 <div class="row">
                     <div class="small-12 medium-10 medium-centered columns">
                         <header>
-                            <h2 class="page_header">{% block page_header %}{% endblock page_header %}</h2>
+                            <h2 class="page_header" id="page-top">{% block page_header %}{% endblock page_header %}</h2>
                         </header>
                     </div>
                 </div>
@@ -96,7 +95,7 @@
         {% block footer %}
             <footer id="sticky_footer">
                 <div class="row">
-                    <section class="small-12 medium-10 large-8 small-centered columns">
+                    <div class="small-12 medium-10 large-8 small-centered columns">
                         {% if person %}
                         <address>
                             <ul>
@@ -110,7 +109,7 @@
                         {% else %}
                             <p>Error retrieving data</p>
                         {% endif %}
-                    </section>
+                    </div>
                 </div>
             </footer>
         {% endblock footer %}

@@ -5430,10 +5430,10 @@ h4 {
   font-size: 1.125rem; }
 
 h5 {
-  font-size: 1.25rem; }
+  font-size: 1.3125rem; }
 
 h6 {
-  font-size: 1rem; }
+  font-size: 1.125rem; }
 
 .subheader {
   line-height: 1.4;
@@ -5601,7 +5601,7 @@ blockquote p {
   h4 {
     font-size: 1.4375rem; }
   h5 {
-    font-size: 1.25rem; }
+    font-size: 1.125rem; }
   h6 {
     font-size: 1rem; } }
 
@@ -5687,7 +5687,7 @@ blockquote p {
     line-height: 2.8125rem;
     margin: 0; }
   .tab-bar h1, .tab-bar h2, .tab-bar h3, .tab-bar h4 {
-    font-size: 1.25rem; }
+    font-size: 1.125rem; }
 
 .left-small {
   height: 2.8125rem;
@@ -6627,7 +6627,7 @@ footer {
     display: inline-block;
     margin-right: 1rem; }
     footer li a {
-      font-size: 0.8rem;
+      font-size: 0.81rem;
       font-style: normal;
       color: #211C19; }
     footer li a:hover {
@@ -6651,17 +6651,22 @@ footer {
   padding: 0px;
   font-weight: bold;
   font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
-  font-size: 0.9rem; }
+  font-size: 0.91rem; }
+  @media only screen and (max-width: 40em) {
+    .top-bar .name h1 > a {
+      font-size: 0.81rem; } }
 
 .top-bar .name a:hover {
   color: #C8280A; }
 
 .top-bar .top-bar-section .right li a {
-  margin: 0px;
-  padding-right: 0px;
-  padding-left: 1.3rem;
+  padding: 0px;
+  margin-left: 1.5rem;
   font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
-  font-size: 0.9rem; }
+  font-size: 0.91rem; }
+  @media only screen and (max-width: 40em) {
+    .top-bar .top-bar-section .right li a {
+      font-size: 0.81rem; } }
 
 .tab-bar .tab-bar-section {
   padding: 0px; }
@@ -6672,7 +6677,10 @@ footer {
   margin: 0px;
   padding: 0px;
   font-weight: bold;
-  font-size: 0.9rem; }
+  font-size: 0.91rem; }
+  @media only screen and (max-width: 40em) {
+    .tab-bar h2 > a {
+      font-size: 0.81rem; } }
 
 .tab-bar .right a {
   font-weight: 300;
@@ -6684,7 +6692,10 @@ footer {
       padding-left: 0; } }
 
 .tab-bar a {
-  font-size: 0.9rem; }
+  font-size: 0.91rem; }
+  @media only screen and (max-width: 40em) {
+    .tab-bar a {
+      font-size: 0.81rem; } }
 
 .tab-bar a:hover {
   color: #C8280A; }
@@ -6696,19 +6707,19 @@ footer {
     padding-top: 0.7rem;
     padding-left: 0.85rem;
     padding-bottom: 0.8rem;
-    font-size: 0.9rem; }
+    font-size: 0.91rem; }
   .right-off-canvas-menu .off-canvas-list a {
     margin: 0rem 0.7rem;
     padding-left: 0.2rem;
     padding-right: 0.2rem;
-    font-size: 0.9rem;
+    font-size: 0.91rem;
     font-weight: 300; }
 
 #off-canvas-extra-label {
   margin-top: 2.2rem; }
 
 .landing {
-  font-size: 0.9rem;
+  font-size: 0.91rem;
   font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
   font-weight: 300;
   padding: 0px;
@@ -6720,11 +6731,11 @@ footer {
   .landing h1 {
     font-weight: bold; }
   .landing h2 {
-    font-size: 0.9rem;
+    font-size: 0.91rem;
     padding-left: 2px; }
 
 .overlay p {
-  font-size: 0.9rem;
+  font-size: 0.91rem;
   font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
   font-weight: 300; }
 
@@ -6764,6 +6775,9 @@ figure {
 .spiel {
   margin: 4rem 0rem 5rem 0rem; }
 
+.about_me_section {
+  margin-bottom: 4rem; }
+
 .article_header_panel {
   border-style: solid;
   border-width: 1px;
@@ -6786,24 +6800,30 @@ figure {
     margin-bottom: 0.625rem; }
     .article_header_panel h1.subheader, .article_header_panel h2.subheader, .article_header_panel h3.subheader, .article_header_panel h4.subheader, .article_header_panel h5.subheader, .article_header_panel h6.subheader {
       line-height: 1.4; }
+  @media only screen and (max-width: 40em) {
+    .article_header_panel {
+      margin-left: -18px;
+      margin-right: -18px; } }
   .article_header_panel header h2 {
-    font-weight: 300;
+    font-weight: 200;
     font-size: 2rem;
     margin: 1px; }
     @media only screen and (max-width: 40em) {
       .article_header_panel header h2 {
         font-size: 1.5rem; } }
 
-.institution section h5 {
+.institution div h5 {
   margin-top: 0rem;
-  font-family: "Athelas", "adobe-garamond-pro", Garamond, Times, serif;
-  font-size: 1.5rem; }
+  font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif; }
+  @media only screen and (min-width: 40.0625em) {
+    .institution div h5 {
+      font-size: 1.6rem; } }
 
-.institution section p {
+.institution div p {
   margin-top: 0.1rem; }
 
 @media only screen and (min-width: 40.0625em) {
-  .institution section {
+  .institution div {
     margin-top: 0rem;
     margin-bottom: 1.5rem; } }
 
@@ -6819,9 +6839,20 @@ figure {
   margin-bottom: 2rem; }
 
 .position {
-  font-family: "Athelas", "adobe-garamond-pro", Garamond, Times, serif;
-  font-style: italic;
-  font-size: 1.35rem; }
+  font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
+  font-style: italic; }
+  .position h6 {
+    font-style: italic;
+    margin-bottom: 0px;
+    font-weight: 700; }
+    @media only screen and (min-width: 40.0625em) {
+      .position h6 {
+        font-size: 1.1rem; } }
+  .position p {
+    font-size: 1rem; }
+    @media only screen and (min-width: 40.0625em) {
+      .position p {
+        font-size: 1.1rem; } }
 
 .my-alert-box {
   border-style: solid;
@@ -6861,13 +6892,13 @@ figure {
 
 @media only screen and (max-width: 40em) {
   .page_header {
-    font-size: 3.6875rem;
+    font-size: 2.2rem;
     font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
     font-weight: bold;
     margin-top: 1.3rem;
     margin-bottom: 2rem; }
   .page_subheader {
-    font-size: 3.6875rem;
+    font-size: 2.7rem;
     font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
     font-weight: bold;
     margin-top: 3.5rem;
@@ -6875,13 +6906,13 @@ figure {
 
 @media only screen and (min-width: 40.0625em) {
   .page_header {
-    font-size: 4rem;
+    font-size: 4.5rem;
     font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
     font-weight: bold;
     margin-top: 3.5rem;
     margin-bottom: 4rem; }
   .page_subheader {
-    font-size: 4rem;
+    font-size: 4.5rem;
     font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
     font-weight: bold;
     margin-top: 5rem;
@@ -6934,7 +6965,7 @@ figure {
   -webkit-transition: background-color 300ms ease-out;
   transition: background-color 300ms ease-out;
   margin-bottom: 0px;
-  font-size: 0.9rem;
+  font-size: 0.91rem;
   font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
   font-weight: 300;
   padding-left: 0px;
@@ -6944,7 +6975,7 @@ figure {
   margin-right: 3rem; }
 
 .prev-next-nav p {
-  font-size: 0.9rem;
+  font-size: 0.91rem;
   font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
   font-weight: 300; }
 
@@ -7008,8 +7039,14 @@ figure {
   font-weight: 300;
   margin-right: 1.5rem; }
   .sticky-sidebar p {
-    margin-bottom: 0.7rem;
-    font-size: 0.9rem; }
+    margin-bottom: 1.2rem;
+    font-size: 0.91rem; }
+  .sticky-sidebar #sticky-sidebar-label {
+    font-weight: bold;
+    margin-bottom: 1.7rem; }
+    .sticky-sidebar #sticky-sidebar-label a {
+      border-bottom: 1px solid #211C19;
+      padding-bottom: 3px; }
 
 html, body {
   -webkit-text-size-adjust: 100%; }

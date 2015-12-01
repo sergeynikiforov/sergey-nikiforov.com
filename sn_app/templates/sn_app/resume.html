@@ -6,21 +6,22 @@
 {% block body %}
     <div class="row">
         <div class="large-2 columns show-for-large-up">
-            <nav class="side-nav text-right sticky-sidebar" role="navigation" title="Resume Parts">
-                <p><a href="#contact">contact details</a></p>
-                <p><a href="#education">education</a></p>
-                <p><a href="#courses">online courses</a></p>
-                <p><a href="#work">work experience</a></p>
-                <p><a href="#skills">skills</a></p>
+            <nav class="side-nav text-right sticky-sidebar" role="navigation" title="Resume">
+                <header><h6 id="sticky-sidebar-label"><a href="#page-top">/RESUME</a></h6></header>
+                <p><a href="#contact">Contact Details</a></p>
+                <p><a href="#education">Education</a></p>
+                <p><a href="#courses">Online Courses</a></p>
+                <p><a href="#work">Work Experience</a></p>
+                <p><a href="#skills">Skills</a></p>
             </nav>
         </div>
         <div class="small-12 medium-10 large-8 medium-centered large-uncentered columns">
             <div class="row">
-                <section class="small-12 columns small_screen_figure">
+                <div class="small-12 columns small_screen_figure">
                     <figure>
                         <img src="{% static 'sn_app/images/ladefense.jpg' %}" alt="La Defense, Paris">
                     </figure>
-                </section>
+                </div>
             </div>
             {% if person %}
                 <div class="row">
@@ -30,14 +31,12 @@
                                 <h2>CONTACT DETAILS</h2>
                             </header>
                         </div>
-                        <section>
                             <ul class="no-bullet">
                                 <li>{{ person.first_name }} {{ person.last_name}}</li>
                                 <li>{{ person.address }}</li>
                                 <li><a href="mailto:{{ person.email }}">{{ person.email }}</a></li>
                                 <li>{{ person.telephone }}</li>
                             </ul>
-                        </section>
                     </article>
                 </div>
             {% endif %}
@@ -50,22 +49,22 @@
                             </header>
                         </div>
                         <div class="row institution">
-                            <section class="small-12 medium-8 columns ">
+                            <div class="small-12 medium-8 columns ">
                                 <h5><a href="{{ education.0.website }}">{{ education.0.college }}</a></h5>
-                            </section>
-                            <section class="small-12 medium-4 columns medium-text-right">
+                            </div>
+                            <div class="small-12 medium-4 columns medium-text-right">
                                 <p><span id="location">{{ education.0.location }}</span></p>
-                            </section>
+                            </div>
                         </div>
                         <div class="row">
-                            <section class="small-12 medium-10 large-8 medium-offset-2 large-offset-4 columns">
+                            <div class="small-12 medium-10 large-8 medium-offset-2 large-offset-4 columns">
                                 <ul>
                                     {% for degree in education %}
                                         <li>{{ degree.degree }} in {{ degree.major }}, {{ degree.end_date.year }};</li>
                                     {% endfor %}
                                     <li>Diploma of Interpreter from English into Russian in 2011 (with excellence).</li>
                                 </ul>
-                            </section>
+                            </div>
                         </div>
                     </article>
                 </div>
@@ -78,13 +77,13 @@
                                 <h2>ONLINE COURSES</h2>
                             </header>
                         </div>
-                        <section>
+                        <div>
                             <ul>
                                 {% for course in onlinecourses %}
                                     <li><a href="{{ course.url }}">{{ course.title }}, {{ course.school }}, {{ course.date.year }}</a></li>
                                 {% endfor %}
                             </ul>
-                        </section>
+                        </div>
                     </article>
                 </div>
             {% endif %}
@@ -99,33 +98,33 @@
                         {% for job in jobs %}
                             {% ifchanged job.employer %}
                                 <div class="row institution">
-                                    <section class="small-12 medium-8 columns">
+                                    <div class="small-12 medium-8 columns">
                                         <h5><a href="{{ job.employer.website }}">{{ job.employer }}</a></h5>
-                                    </section>
-                                    <section class="small-12 medium-4 columns medium-text-right">
+                                    </div>
+                                    <div class="small-12 medium-4 columns medium-text-right">
                                         <p>{{ job.employer.location }}</p>
-                                    </section>
+                                    </div>
                                 </div>
                                 <div class="row">
-                                    <section class="small-12 columns">
+                                    <div class="small-12 columns">
                                         <p>{{ job.employer.description }}</p>
-                                    </section>
+                                    </div>
                                 </div>
                             {% endifchanged %}
                                 <div class="row">
-                                    <section class="small-12 columns">
-                                        <h6 class="position">{{ job.position }}</h6>
-                                        <p class="position">{{ job.start_date|date:"M, Y" }} - {{ job.end_date|date:"M, Y" }}</p>
-                                    </section>
+                                    <div class="small-12 columns position">
+                                        <h6>{{ job.position }}</h6>
+                                        <p>{{ job.start_date|date:"M, Y" }} - {{ job.end_date|date:"M, Y" }}</p>
+                                    </div>
                                 </div>
                                 <div class="row">
-                                    <section class="small-12 medium-10 large-8 medium-offset-2 large-offset-4 columns">
+                                    <div class="small-12 medium-10 large-8 medium-offset-2 large-offset-4 columns">
                                         <ul class="achievements">
                                             {% for item in achievements|key:job.position %}
                                                 <li>{{ item }}</li>
                                             {% endfor %}
                                         </ul>
-                                    </section>
+                                    </div>
                                 </div>
                         {% endfor %}
                     </article>
@@ -139,21 +138,19 @@
                                 <h2>SKILLS</h2>
                             </header>
                         </div>
-                        <section>
-                            <ul class="skills">
-                                {% for skill in skills %}
-                                    <li>{{ skill }}</li>
-                                {% endfor %}
-                            </ul>
-                        </section>
+                        <ul class="skills">
+                            {% for skill in skills %}
+                                <li>{{ skill }}</li>
+                            {% endfor %}
+                        </ul>
                     </article>
                 </div>
             {% endif %}
             <hr>
             <div class="row">
-                <section class="small-12 columns text-center download">
+                <div class="small-12 columns text-center download">
                     <a href="#" class="button small">Download CV in PDF</a>
-                </section>
+                </div>
             </div>
         </div>
         <div class="large-2 columns show-for-large-up">
