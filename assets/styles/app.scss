@@ -516,7 +516,7 @@ figure {
     font-weight: $font-weight-thin;
 }
 
-
+// max height of an image
 #photo-wrapper {
     figure{
         @include viewport-unit(height, 70vh);
@@ -526,6 +526,21 @@ figure {
     }
 }
 
+.row.photoset-cover {
+    padding-bottom: 30px;
+
+    &:hover {
+
+        outline: solid 1px $black;
+        img {
+            transition:all 0.3s ease;
+            transform: scale(0.97);
+        }
+    }
+    img {
+        transition:all 0.3s ease;
+    }
+}
 
 // END PHOTOGRAPHY
 //-----------------------------------------------------

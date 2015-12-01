@@ -14,7 +14,7 @@
         {% block header %}
             {% if person %}
                 <div class="row">
-                    <div class="medium-10 large-8 medium-centered columns show-for-large-up">
+                    <div class="medium-10 large-8 medium-centered columns show-for-medium-up">
                         <header>
                             <div class="contain-to-grid">
                                 <nav id="navigation-top-bar" class="top-bar" data-topbar role="navigation">
@@ -45,7 +45,7 @@
             <div class="inner-wrap">
                 <div class="row">
                     <div class="small-12 medium-10 small-centered columns">
-                        <nav id="navigation-top-bar" class="tab-bar hide-for-large-up landing">
+                        <nav id="navigation-top-bar" class="tab-bar hide-for-medium-up landing">
                           <section class="left tab-bar-section">
                             <h2 class="title"><a href="{% url 'sn_app:landing' %}">{{ person.first_name|upper }} {{ person.last_name|upper }}</a></h2>
                           </section>

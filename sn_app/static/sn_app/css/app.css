@@ -6989,6 +6989,20 @@ figure {
       #photo-wrapper figure img {
         max-height: 217.6px; } }
 
+.row.photoset-cover {
+  padding-bottom: 30px; }
+  .row.photoset-cover:hover {
+    outline: solid 1px #211C19; }
+    .row.photoset-cover:hover img {
+      -webkit-transition: all 0.3s ease;
+      transition: all 0.3s ease;
+      -webkit-transform: scale(0.97);
+          -ms-transform: scale(0.97);
+              transform: scale(0.97); }
+  .row.photoset-cover img {
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease; }
+
 .sticky-sidebar {
   font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
   font-weight: 300;

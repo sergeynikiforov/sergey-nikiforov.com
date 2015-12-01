@@ -17,21 +17,21 @@
             {% if photosets %}
                 {% for photoset in photosets %}
                     <section>
-                        <div class="row">
-                            <div class="small-10 columns">
-                                <h6><a href="{% url 'sn_app:photoset' photoset.slug %}">{{ photoset.title }}</a></h6>
-                            </div>
-                            <div class="small-2 columns text-right">
-                                <p></p>
-                            </div>
-                        </div>
-                        <div class="row">
+
+                        <div class="row photoset-cover">
                             <div class="small-12 columns">
-                                <figure>
-                                    {% pictureCloudinary photoset.cover sizes="(min-width: 1025px) 80vw, (min-width: 641px) 90vw, 100vw" srcset="200w 400w 600w 800w 1000w 1200w 1400w 1600w 2000w 2400w 2800w 3200w" alt=photoset.title %}
-                                </figure>
+                                <a href="{% url 'sn_app:photoset' photoset.slug %}" class="">
+                                    <figure>
+                                        <figcaption>
+                                            <h6>{{ photoset.title|upper }}</h6>
+                                        </figcaption>
+                                        {% pictureCloudinary photoset.cover sizes="(min-width: 1025px) 80vw, (min-width: 641px) 90vw, 100vw" srcset="200w 400w 600w 800w 1000w 1200w 1400w 1600w 2000w 2400w 2800w 3200w" alt=photoset.title %}
+                                    </figure>
+                                </a>
                             </div>
+
                         </div>
+                        <p></p>
                     </section>
                 {% endfor %}
             {% endif %}

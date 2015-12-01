@@ -8,6 +8,8 @@ def pictureElement(publicID, sizes, srcset, alt):
     constructs HTML5 <picture> element with passed
     sizes, srcset and alt parameters from Cloudinary publicID image
 
+    https://dev.opera.com/articles/responsive-images/
+
     typical form of the returned result:
         <picture>
             <source
