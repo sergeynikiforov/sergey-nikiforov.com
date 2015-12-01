@@ -381,7 +381,7 @@ select {
 
 .row {
   margin: 0 auto;
-  max-width: 100rem;
+  max-width: 90rem;
   width: 100%; }
   .row:before, .row:after {
     content: " ";
@@ -4140,7 +4140,7 @@ ul.pagination {
     .reveal-modal {
       left: 0;
       margin: 0 auto;
-      max-width: 100rem;
+      max-width: 90rem;
       right: 0;
       width: 80%; } }
   @media only screen and (min-width: 40.0625em) {
@@ -4159,35 +4159,35 @@ ul.pagination {
     .reveal-modal.tiny {
       left: 0;
       margin: 0 auto;
-      max-width: 100rem;
+      max-width: 90rem;
       right: 0;
       width: 30%; } }
   @media only screen and (min-width: 40.0625em) {
     .reveal-modal.small {
       left: 0;
       margin: 0 auto;
-      max-width: 100rem;
+      max-width: 90rem;
       right: 0;
       width: 40%; } }
   @media only screen and (min-width: 40.0625em) {
     .reveal-modal.medium {
       left: 0;
       margin: 0 auto;
-      max-width: 100rem;
+      max-width: 90rem;
       right: 0;
       width: 60%; } }
   @media only screen and (min-width: 40.0625em) {
     .reveal-modal.large {
       left: 0;
       margin: 0 auto;
-      max-width: 100rem;
+      max-width: 90rem;
       right: 0;
       width: 70%; } }
   @media only screen and (min-width: 40.0625em) {
     .reveal-modal.xlarge {
       left: 0;
       margin: 0 auto;
-      max-width: 100rem;
+      max-width: 90rem;
       right: 0;
       width: 95%; } }
   .reveal-modal.full {
@@ -4202,7 +4202,7 @@ ul.pagination {
       .reveal-modal.full {
         left: 0;
         margin: 0 auto;
-        max-width: 100rem;
+        max-width: 90rem;
         right: 0;
         width: 100%; } }
   .reveal-modal.toback {
@@ -5097,7 +5097,7 @@ meta.foundation-mq-topbar {
   .contain-to-grid .top-bar {
     margin: 0 auto;
     margin-bottom: 0;
-    max-width: 100rem; }
+    max-width: 90rem; }
   .top-bar-section {
     -webkit-transition: none 0 0;
     transition: none 0 0;
@@ -6861,28 +6861,28 @@ figure {
 
 @media only screen and (max-width: 40em) {
   .page_header {
-    font-size: 2.1875rem;
-    font-family: "Athelas", "adobe-garamond-pro", Garamond, Times, serif;
+    font-size: 3.6875rem;
+    font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
     font-weight: bold;
     margin-top: 1.3rem;
     margin-bottom: 2rem; }
   .page_subheader {
-    font-size: 2.1875rem;
-    font-family: "Athelas", "adobe-garamond-pro", Garamond, Times, serif;
+    font-size: 3.6875rem;
+    font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
     font-weight: bold;
     margin-top: 3.5rem;
     margin-bottom: 1rem; } }
 
 @media only screen and (min-width: 40.0625em) {
   .page_header {
-    font-size: 2.5rem;
-    font-family: "Athelas", "adobe-garamond-pro", Garamond, Times, serif;
+    font-size: 4rem;
+    font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
     font-weight: bold;
     margin-top: 3.5rem;
-    margin-bottom: 1.5rem; }
+    margin-bottom: 4rem; }
   .page_subheader {
-    font-size: 2.5rem;
-    font-family: "Athelas", "adobe-garamond-pro", Garamond, Times, serif;
+    font-size: 4rem;
+    font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
     font-weight: bold;
     margin-top: 5rem;
     margin-bottom: 0.5rem; } }

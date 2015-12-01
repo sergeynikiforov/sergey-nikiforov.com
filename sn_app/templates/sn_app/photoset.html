@@ -3,17 +3,8 @@
 {% load staticfiles %}
 {% load cloudinary %}
 {% block title %}Photography - {% if photoset_title %}{{ photoset_title }}{% endif %}{% endblock title %}
+{% block page_header %}/{{ photoset_title|upper }}{% endblock page_header %}
 {% block body %}
-<article>
-    <div class="row">
-        {% if active_photoset %}
-            <div class="small-12 medium-10 large-8 small-centered columns">
-                <header>
-                    <h1 class="page_header">{{ photoset_title|upper }}</h1>
-                </header>
-            </div>
-        {% endif %}
-    </div>
     <div class="row">
         <aside class="large-2 columns show-for-large-up">
             {% if photosets %}
@@ -48,5 +39,4 @@
             <p></p>
         </div>
     </div>
-</article>
 {% endblock body %}

@@ -82,7 +82,16 @@
                 </aside>
         {% endblock offcanvas_open %}
         <main class="main-section">
-            {% block body %}{% endblock body %}
+            <article>
+                <div class="row">
+                    <div class="small-12 medium-10 medium-centered columns">
+                        <header>
+                            <h2 class="page_header">{% block page_header %}{% endblock page_header %}</h2>
+                        </header>
+                    </div>
+                </div>
+                {% block body %}{% endblock body %}
+            </article>
         </main>
         {% block footer %}
             <footer id="sticky_footer">

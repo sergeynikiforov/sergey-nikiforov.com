@@ -3,15 +3,8 @@
 {% load staticfiles %}
 {% load cloudinary %}
 {% block title %}Photography{% endblock title %}
+{% block page_header %}/PHOTOGRAPHY{% endblock page_header %}
 {% block body %}
-<article>
-    <div class="row">
-        <div class="small-12 medium-10 large-8 small-centered columns">
-            <header>
-                <h1 class="page_header">PHOTOGRAPHY</h1>
-            </header>
-        </div>
-    </div>
     <div class="row">
         <div class="small-12 medium-10 large-8 small-centered columns">
             {% if photosets %}
@@ -37,5 +30,4 @@
             {% endif %}
         </div>
     </div>
-</article>
 {% endblock body %}
