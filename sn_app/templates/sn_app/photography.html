@@ -5,29 +5,25 @@
 {% block title %}Photography{% endblock title %}
 {% block page_header %}/PHOTOGRAPHY{% endblock page_header %}
 {% block body %}
-    <div class="row">
-        <div class="small-12 medium-10 large-8 small-centered columns">
+
             {% if photosets %}
                 {% for photoset in photosets %}
-                    <section>
 
-                        <div class="row photoset-cover">
-                            <div class="small-12 columns">
+                        <div class="row">
+                            <div class="small-12 columns photoset-thumbnail text-center">
                                 <a href="{% url 'sn_app:photoset' photoset.slug %}" class="">
                                     <figure>
                                         <figcaption>
                                             <h6>{{ photoset.title|upper }}</h6>
                                         </figcaption>
-                                        {% pictureCloudinary photoset.cover sizes="(min-width: 1025px) 80vw, (min-width: 641px) 90vw, 100vw" srcset="200w 400w 600w 800w 1000w 1200w 1400w 1600w 2000w 2400w 2800w 3200w" alt=photoset.title %}
+                                        {% pictureCloudinary photoset.cover sizes="100vw" srcset="200w 400w 600w 800w 1000w 1200w 1400w 1600w 2000w 2400w 2800w 3200w" alt=photoset.title %}
                                     </figure>
                                 </a>
                             </div>
-
                         </div>
                         <p></p>
-                    </section>
+
                 {% endfor %}
             {% endif %}
-        </div>
-    </div>
+
 {% endblock body %}

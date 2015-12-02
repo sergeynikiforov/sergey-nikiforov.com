@@ -52,8 +52,21 @@
 
 $font-weight-thin: 300;
 $font-size-sans-serif-nav: 0.91rem;
-$font-size-serif-page-header: 4.5rem;
+$font-size-serif-page-header: 2.8rem;
 $font-size-custom-panel: 2rem;
+
+@media #{$medium-up} {
+    .vh-style {
+        //@include viewport-unit(height, 85vh);
+        figure{
+            @include viewport-unit(height, 70vh);
+            img {
+            @include viewport-unit(max-height, 70vh);
+            }
+        }
+    }
+}
+
 
 //-----------------------------------------------------
 // FOOTER SCSS
@@ -94,9 +107,15 @@ footer {
         section {
             padding: 0px;
             margin: 0px;
+            figure {
+                padding: 0px;
+                margin: 0px;
+            }
         }
     }
 }
+
+
 
 // END FOOTER
 //-----------------------------------------------------
@@ -107,7 +126,7 @@ footer {
 //
 @media #{$medium-up} {
     #navigation-top-bar {
-        margin-top: 2.5rem;
+        margin-top: 2rem;
     }
 }
 
@@ -137,12 +156,13 @@ footer {
 
 .top-bar .top-bar-section .right {
     li a {
-        padding: 0px;
+        //padding: 0px;
         //margin-right: 1rem;
-        margin-left: 1.5rem;
+        //margin-left: 1.5rem;
         //margin: auto;
         font-family: $font-family-sans-serif;
         font-size: $font-size-sans-serif-nav;
+        font-style: italic;
         @media #{$small-only} {
             font-size: $font-size-sans-serif-nav - 0.1rem;
         }
@@ -176,6 +196,7 @@ footer {
     .right {
         a {
             font-weight: $font-weight-thin;
+            font-style: italic;
             @media #{$medium-up} {
                 padding-right: 0;
                 padding-left: 0;
@@ -215,6 +236,7 @@ footer {
             padding-right: 0.2rem;
             font-size: $font-size-sans-serif-nav;
             font-weight: $font-weight-thin;
+            font-style: italic;
         }
     }
 }
@@ -234,11 +256,11 @@ footer {
 //
 
 .landing {
-    font-size: $font-size-sans-serif-nav;
+    font-size: $font-size-sans-serif-nav + 0.3rem;
     font-family: $font-family-sans-serif;
+    font-style: italic;
     font-weight: $font-weight-thin;
-    padding: 0px;
-    margin-bottom: 5px;
+    margin-bottom: 0px;
     a {
         color: $black;
     }
@@ -251,7 +273,7 @@ footer {
     }
     h2 {
         font-size: $font-size-sans-serif-nav;
-        padding-left: 2px;
+        //padding-left: 2px;
     }
 }
 
@@ -295,7 +317,7 @@ footer {
 
 // add top-margin
 .landing_wrapper {
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 
 // END HOME PAGE
@@ -454,16 +476,18 @@ figure {
     padding-bottom: 0.35rem;
 }
 
+
+// control sizes of headers/subheaders for small & the rest breakpoints
 @media #{$small-only} {
     .page_header {
         font-size: $font-size-serif-page-header - 2.3rem;
         font-family: $font-family-sans-serif;
         font-weight: $font-weight-bold;
         margin-top: 1.3rem;
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
     }
     .page_subheader {
-        font-size: $font-size-serif-page-header - 1.8rem;
+        font-size: $font-size-serif-page-header - 2rem;
         font-family: $font-family-sans-serif;
         font-weight: $font-weight-bold;
         margin-top: 3.5rem;
@@ -476,11 +500,11 @@ figure {
         font-size: $font-size-serif-page-header;
         font-family: $font-family-sans-serif;
         font-weight: $font-weight-bold;
-        margin-top: 3.5rem;
-        margin-bottom: 4rem;
+        margin-top: 0rem;
+        margin-bottom: 0rem;
     }
     .page_subheader {
-        font-size: $font-size-serif-page-header;
+        font-size: $font-size-serif-page-header - 1rem;
         font-family: $font-family-sans-serif;
         font-weight: $font-weight-bold;
         margin-top: 5rem;
@@ -566,7 +590,7 @@ figure {
         }
     }
 }
-
+// animation 0.1=)
 .row.photoset-cover {
     padding-bottom: 30px;
 
@@ -581,6 +605,18 @@ figure {
     img {
         transition:all 0.3s ease;
     }
+}
+
+.photoset-thumbnail {
+    padding: 0px;
+    //margin-left: auto;
+    //margin-right: auto;
+    img {
+        //max-height: 100vh;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
 }
 
 // END PHOTOGRAPHY

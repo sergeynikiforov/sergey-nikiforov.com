@@ -4738,13 +4738,13 @@ meta.foundation-mq-topbar {
       width: 100%;
       z-index: 99; }
     .fixed.expanded:not(.top-bar) .top-bar-section {
-      margin-top: 2.8125rem;
+      margin-top: 1.875rem;
       z-index: 98; }
 
 .top-bar {
   background: #FFFFFF;
-  height: 2.8125rem;
-  line-height: 2.8125rem;
+  height: 1.875rem;
+  line-height: 1.875rem;
   margin-bottom: 0;
   overflow: hidden;
   position: relative; }
@@ -4777,17 +4777,17 @@ meta.foundation-mq-topbar {
     position: relative; }
   .top-bar .name {
     font-size: 16px;
-    height: 2.8125rem;
+    height: 1.875rem;
     margin: 0; }
     .top-bar .name h1, .top-bar .name h2, .top-bar .name h3, .top-bar .name h4, .top-bar .name p, .top-bar .name span {
       font-size: 1.0625rem;
-      line-height: 2.8125rem;
+      line-height: 1.875rem;
       margin: 0; }
       .top-bar .name h1 a, .top-bar .name h2 a, .top-bar .name h3 a, .top-bar .name h4 a, .top-bar .name p a, .top-bar .name span a {
         color: #211C19;
         display: block;
         font-weight: normal;
-        padding: 0 0.9375rem;
+        padding: 0 0.625rem;
         width: 75%; }
   .top-bar .toggle-topbar {
     position: absolute;
@@ -4798,9 +4798,9 @@ meta.foundation-mq-topbar {
       display: block;
       font-size: 0.8125rem;
       font-weight: normal;
-      height: 2.8125rem;
-      line-height: 2.8125rem;
-      padding: 0 0.9375rem;
+      height: 1.875rem;
+      line-height: 1.875rem;
+      padding: 0 0.625rem;
       position: relative;
       text-transform: uppercase; }
     .top-bar .toggle-topbar.menu-icon {
@@ -4810,7 +4810,7 @@ meta.foundation-mq-topbar {
         color: #211C19;
         height: 34px;
         line-height: 33px;
-        padding: 0 2.5rem 0 0.9375rem;
+        padding: 0 2.1875rem 0 0.625rem;
         position: relative; }
         .top-bar .toggle-topbar.menu-icon a span::after {
           content: "";
@@ -4819,7 +4819,7 @@ meta.foundation-mq-topbar {
           position: absolute;
           margin-top: -8px;
           top: 50%;
-          right: 0.9375rem;
+          right: 0.625rem;
           box-shadow: 0 0 0 1px #211C19, 0 7px 0 1px #211C19, 0 14px 0 1px #211C19;
           width: 16px; }
         .top-bar .toggle-topbar.menu-icon a span:hover:after {
@@ -4867,14 +4867,14 @@ meta.foundation-mq-topbar {
       font-family: "Athelas", "adobe-garamond-pro", Garamond, Times, serif;
       font-size: 0.8125rem;
       font-weight: normal;
-      padding-left: 0.9375rem;
-      padding: 12px 0 12px 0.9375rem;
+      padding-left: 0.625rem;
+      padding: 12px 0 12px 0.625rem;
       text-transform: none;
       width: 100%; }
       .top-bar-section ul li > a.button {
         font-size: 0.8125rem;
-        padding-left: 0.9375rem;
-        padding-right: 0.9375rem;
+        padding-left: 0.625rem;
+        padding-right: 0.625rem;
         background-color: #008CBA;
         border-color: #00b1eb;
         color: #FFFFFF; }
@@ -4924,8 +4924,8 @@ meta.foundation-mq-topbar {
           color: #333333; }
     .top-bar-section ul li > button {
       font-size: 0.8125rem;
-      padding-left: 0.9375rem;
-      padding-right: 0.9375rem;
+      padding-left: 0.625rem;
+      padding-right: 0.625rem;
       background-color: #008CBA;
       border-color: #00b1eb;
       color: #FFFFFF; }
@@ -4984,7 +4984,7 @@ meta.foundation-mq-topbar {
         background: #0078a0;
         color: #FFFFFF; }
   .top-bar-section .has-form {
-    padding: 0.9375rem; }
+    padding: 0.625rem; }
   .top-bar-section .has-dropdown {
     position: relative; }
     .top-bar-section .has-dropdown > a:after {
@@ -4995,7 +4995,7 @@ meta.foundation-mq-topbar {
       width: 0;
       border-color: transparent transparent transparent rgba(33, 28, 25, 0.4);
       border-left-style: solid;
-      margin-right: 0.9375rem;
+      margin-right: 0.625rem;
       margin-top: -4.5px;
       position: absolute;
       top: 50%;
@@ -5030,7 +5030,7 @@ meta.foundation-mq-topbar {
       width: 100%; }
       .top-bar-section .dropdown li a {
         font-weight: normal;
-        padding: 8px 0.9375rem; }
+        padding: 8px 0.625rem; }
         .top-bar-section .dropdown li a.parent-link {
           font-weight: normal; }
       .top-bar-section .dropdown li.title h5, .top-bar-section .dropdown li.parent-link {
@@ -5043,7 +5043,7 @@ meta.foundation-mq-topbar {
           .top-bar-section .dropdown li.title h5 a:hover, .top-bar-section .dropdown li.parent-link a:hover {
             background: none; }
       .top-bar-section .dropdown li.has-form {
-        padding: 8px 0.9375rem; }
+        padding: 8px 0.625rem; }
       .top-bar-section .dropdown li .button,
       .top-bar-section .dropdown li button {
         top: auto; }
@@ -5052,7 +5052,7 @@ meta.foundation-mq-topbar {
       font-size: 0.625rem;
       font-weight: normal;
       margin-bottom: 0;
-      padding: 8px 0.9375rem 2px;
+      padding: 8px 0.625rem 2px;
       text-transform: uppercase; }
 
 .js-generated {
@@ -5085,13 +5085,13 @@ meta.foundation-mq-topbar {
       font-size: 0.875rem;
       height: 1.75rem;
       position: relative;
-      top: 0.53125rem; }
+      top: 0.0625rem; }
     .top-bar .has-form > .button,
     .top-bar .has-form > button {
       font-size: 0.875rem;
       height: 1.75rem;
       position: relative;
-      top: 0.53125rem; }
+      top: 0.0625rem; }
     .top-bar.expanded {
       background: #FFFFFF; }
   .contain-to-grid .top-bar {
@@ -5116,21 +5116,21 @@ meta.foundation-mq-topbar {
       color: #C8280A; }
     .top-bar-section li:not(.has-form) a:not(.button) {
       background: #FFFFFF;
-      line-height: 2.8125rem;
-      padding: 0 0.9375rem; }
+      line-height: 1.875rem;
+      padding: 0 0.625rem; }
       .top-bar-section li:not(.has-form) a:not(.button):hover {
         background-color: #555555;
         background: #FFFFFF; }
     .top-bar-section li.active:not(.has-form) a:not(.button) {
       background: #008CBA;
       color: #C8280A;
-      line-height: 2.8125rem;
-      padding: 0 0.9375rem; }
+      line-height: 1.875rem;
+      padding: 0 0.625rem; }
       .top-bar-section li.active:not(.has-form) a:not(.button):hover {
         background: #0078a0;
         color: #FFFFFF; }
     .top-bar-section .has-dropdown > a {
-      padding-right: 2.1875rem !important; }
+      padding-right: 1.875rem !important; }
       .top-bar-section .has-dropdown > a:after {
         border: inset 5px;
         content: "";
@@ -5140,7 +5140,7 @@ meta.foundation-mq-topbar {
         border-color: rgba(33, 28, 25, 0.4) transparent transparent transparent;
         border-top-style: solid;
         margin-top: -2.5px;
-        top: 1.40625rem; }
+        top: 0.9375rem; }
     .top-bar-section .has-dropdown.moved {
       position: relative; }
       .top-bar-section .has-dropdown.moved > .dropdown {
@@ -5179,8 +5179,8 @@ meta.foundation-mq-topbar {
       .top-bar-section .dropdown li a {
         background: #333333;
         color: #211C19;
-        line-height: 2.8125rem;
-        padding: 12px 0.9375rem;
+        line-height: 1.875rem;
+        padding: 12px 0.625rem;
         white-space: nowrap; }
       .top-bar-section .dropdown li:not(.has-form):not(.active) > a:not(.button) {
         background: #333333;
@@ -5201,12 +5201,12 @@ meta.foundation-mq-topbar {
       border-bottom: none;
       border-top: none;
       clear: none;
-      height: 2.8125rem;
+      height: 1.875rem;
       width: 0; }
     .top-bar-section .has-form {
       background: #FFFFFF;
-      height: 2.8125rem;
-      padding: 0 0.9375rem; }
+      height: 1.875rem;
+      padding: 0 0.625rem; }
     .top-bar-section .right li .dropdown {
       left: auto;
       right: 0; }
@@ -6617,6 +6617,50 @@ th.hide-for-touch {
   th.show-for-print {
     display: table-cell !important; } }
 
+@media only screen and (min-width: 40.0625em) {
+  .vh-style figure {
+    height: 70vh; } }
+  @media only screen and (min-width: 40.0625em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
+    .vh-style figure {
+      height: 716.8px; } }
+  @media only screen and (min-width: 40.0625em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: landscape) {
+    .vh-style figure {
+      height: 537.6px; } }
+  @media only screen and (min-width: 40.0625em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: portrait) {
+    .vh-style figure {
+      height: 336px; } }
+  @media only screen and (min-width: 40.0625em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: landscape) {
+    .vh-style figure {
+      height: 224px; } }
+  @media only screen and (min-width: 40.0625em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: portrait) {
+    .vh-style figure {
+      height: 397.6px; } }
+  @media only screen and (min-width: 40.0625em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: landscape) {
+    .vh-style figure {
+      height: 224px; } }
+
+@media only screen and (min-width: 40.0625em) {
+    .vh-style figure img {
+      max-height: 70vh; } }
+    @media only screen and (min-width: 40.0625em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
+      .vh-style figure img {
+        max-height: 716.8px; } }
+    @media only screen and (min-width: 40.0625em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: landscape) {
+      .vh-style figure img {
+        max-height: 537.6px; } }
+    @media only screen and (min-width: 40.0625em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: portrait) {
+      .vh-style figure img {
+        max-height: 336px; } }
+    @media only screen and (min-width: 40.0625em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: landscape) {
+      .vh-style figure img {
+        max-height: 224px; } }
+    @media only screen and (min-width: 40.0625em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: portrait) {
+      .vh-style figure img {
+        max-height: 397.6px; } }
+    @media only screen and (min-width: 40.0625em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: landscape) {
+      .vh-style figure img {
+        max-height: 224px; } }
+
 footer {
   font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
   font-weight: 300; }
@@ -6636,11 +6680,14 @@ footer {
 @media only screen and (max-width: 40em) {
   #sticky_footer section {
     padding: 0px;
-    margin: 0px; } }
+    margin: 0px; }
+    #sticky_footer section figure {
+      padding: 0px;
+      margin: 0px; } }
 
 @media only screen and (min-width: 40.0625em) {
   #navigation-top-bar {
-    margin-top: 2.5rem; } }
+    margin-top: 2rem; } }
 
 @media only screen and (max-width: 40em) {
   #navigation-top-bar {
@@ -6660,10 +6707,9 @@ footer {
   color: #C8280A; }
 
 .top-bar .top-bar-section .right li a {
-  padding: 0px;
-  margin-left: 1.5rem;
   font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
-  font-size: 0.91rem; }
+  font-size: 0.91rem;
+  font-style: italic; }
   @media only screen and (max-width: 40em) {
     .top-bar .top-bar-section .right li a {
       font-size: 0.81rem; } }
@@ -6684,6 +6730,7 @@ footer {
 
 .tab-bar .right a {
   font-weight: 300;
+  font-style: italic;
   padding-right: 7px;
   padding-left: 7px; }
   @media only screen and (min-width: 40.0625em) {
@@ -6713,17 +6760,18 @@ footer {
     padding-left: 0.2rem;
     padding-right: 0.2rem;
     font-size: 0.91rem;
-    font-weight: 300; }
+    font-weight: 300;
+    font-style: italic; }
 
 #off-canvas-extra-label {
   margin-top: 2.2rem; }
 
 .landing {
-  font-size: 0.91rem;
+  font-size: 1.21rem;
   font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
+  font-style: italic;
   font-weight: 300;
-  padding: 0px;
-  margin-bottom: 5px; }
+  margin-bottom: 0px; }
   .landing a {
     color: #211C19; }
   .landing a:hover {
@@ -6731,8 +6779,7 @@ footer {
   .landing h1 {
     font-weight: bold; }
   .landing h2 {
-    font-size: 0.91rem;
-    padding-left: 2px; }
+    font-size: 0.91rem; }
 
 .overlay p {
   font-size: 0.91rem;
@@ -6762,7 +6809,7 @@ footer {
   margin: 0rem 0rem 1.5rem 0rem; }
 
 .landing_wrapper {
-  margin-top: 2rem; }
+  margin-top: 1rem; }
 
 figure {
   margin: 0px; }
@@ -6892,13 +6939,13 @@ figure {
 
 @media only screen and (max-width: 40em) {
   .page_header {
-    font-size: 2.2rem;
+    font-size: 0.5rem;
     font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
     font-weight: bold;
     margin-top: 1.3rem;
-    margin-bottom: 2rem; }
+    margin-bottom: 1rem; }
   .page_subheader {
-    font-size: 2.7rem;
+    font-size: 0.8rem;
     font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
     font-weight: bold;
     margin-top: 3.5rem;
@@ -6906,13 +6953,13 @@ figure {
 
 @media only screen and (min-width: 40.0625em) {
   .page_header {
-    font-size: 4.5rem;
+    font-size: 2.8rem;
     font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
     font-weight: bold;
-    margin-top: 3.5rem;
-    margin-bottom: 4rem; }
+    margin-top: 0rem;
+    margin-bottom: 0rem; }
   .page_subheader {
-    font-size: 4.5rem;
+    font-size: 1.8rem;
     font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
     font-weight: bold;
     margin-top: 5rem;
@@ -7033,6 +7080,12 @@ figure {
   .row.photoset-cover img {
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease; }
+
+.photoset-thumbnail {
+  padding: 0px; }
+  .photoset-thumbnail img {
+    margin-left: auto;
+    margin-right: auto; }
 
 .sticky-sidebar {
   font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
