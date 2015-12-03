@@ -1281,7 +1281,7 @@ select {
 [class*="block-grid-"] {
   display: block;
   padding: 0;
-  margin: 0 -0.625rem; }
+  margin: 0 -1.75rem; }
   [class*="block-grid-"]:before, [class*="block-grid-"]:after {
     content: " ";
     display: table; }
@@ -1291,7 +1291,7 @@ select {
     display: block;
     float: left;
     height: auto;
-    padding: 0 0.625rem 1.25rem; }
+    padding: 0 1.75rem 3.5rem; }
 
 @media only screen {
   .small-block-grid-1 > li {
@@ -6619,47 +6619,50 @@ th.hide-for-touch {
 
 @media only screen and (min-width: 64.0625em) {
   .vh-style figure {
-    height: 70vh; } }
+    height: 75vh; } }
   @media only screen and (min-width: 64.0625em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
     .vh-style figure {
-      height: 716.8px; } }
+      height: 768px; } }
   @media only screen and (min-width: 64.0625em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: landscape) {
     .vh-style figure {
-      height: 537.6px; } }
+      height: 576px; } }
   @media only screen and (min-width: 64.0625em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: portrait) {
     .vh-style figure {
-      height: 336px; } }
+      height: 360px; } }
   @media only screen and (min-width: 64.0625em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: landscape) {
     .vh-style figure {
-      height: 224px; } }
+      height: 240px; } }
   @media only screen and (min-width: 64.0625em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: portrait) {
     .vh-style figure {
-      height: 397.6px; } }
+      height: 426px; } }
   @media only screen and (min-width: 64.0625em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: landscape) {
     .vh-style figure {
-      height: 224px; } }
+      height: 240px; } }
 
 @media only screen and (min-width: 64.0625em) {
     .vh-style figure img {
-      max-height: 70vh; } }
+      max-height: 75vh; } }
     @media only screen and (min-width: 64.0625em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
       .vh-style figure img {
-        max-height: 716.8px; } }
+        max-height: 768px; } }
     @media only screen and (min-width: 64.0625em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: landscape) {
       .vh-style figure img {
-        max-height: 537.6px; } }
+        max-height: 576px; } }
     @media only screen and (min-width: 64.0625em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: portrait) {
       .vh-style figure img {
-        max-height: 336px; } }
+        max-height: 360px; } }
     @media only screen and (min-width: 64.0625em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: landscape) {
       .vh-style figure img {
-        max-height: 224px; } }
+        max-height: 240px; } }
     @media only screen and (min-width: 64.0625em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: portrait) {
       .vh-style figure img {
-        max-height: 397.6px; } }
+        max-height: 426px; } }
     @media only screen and (min-width: 64.0625em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: landscape) {
       .vh-style figure img {
-        max-height: 224px; } }
+        max-height: 240px; } }
+
+.hero-image {
+  margin-top: 7rem; }
 
 footer {
   font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
@@ -6671,7 +6674,7 @@ footer {
     display: inline-block;
     margin-right: 1rem; }
     footer li a {
-      font-size: 0.81rem;
+      font-size: 0.9rem;
       font-style: normal;
       color: #211C19; }
     footer li a:hover {
@@ -6698,21 +6701,21 @@ footer {
   padding: 0px;
   font-weight: bold;
   font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
-  font-size: 0.91rem; }
+  font-size: 1rem; }
   @media only screen and (max-width: 40em) {
     .top-bar .name h1 > a {
-      font-size: 0.81rem; } }
+      font-size: 0.9rem; } }
 
 .top-bar .name a:hover {
   color: #C8280A; }
 
 .top-bar .top-bar-section .right li a {
   font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
-  font-size: 0.91rem;
+  font-size: 1rem;
   font-style: italic; }
   @media only screen and (max-width: 40em) {
     .top-bar .top-bar-section .right li a {
-      font-size: 0.81rem; } }
+      font-size: 0.9rem; } }
 
 .tab-bar .tab-bar-section {
   padding: 0px; }
@@ -6723,10 +6726,10 @@ footer {
   margin: 0px;
   padding: 0px;
   font-weight: bold;
-  font-size: 0.91rem; }
+  font-size: 1rem; }
   @media only screen and (max-width: 40em) {
     .tab-bar h2 > a {
-      font-size: 0.81rem; } }
+      font-size: 0.9rem; } }
 
 .tab-bar .right a {
   font-weight: 300;
@@ -6739,10 +6742,10 @@ footer {
       padding-left: 0; } }
 
 .tab-bar a {
-  font-size: 0.91rem; }
+  font-size: 1rem; }
   @media only screen and (max-width: 40em) {
     .tab-bar a {
-      font-size: 0.81rem; } }
+      font-size: 0.9rem; } }
 
 .tab-bar a:hover {
   color: #C8280A; }
@@ -6754,12 +6757,12 @@ footer {
     padding-top: 0.7rem;
     padding-left: 0.85rem;
     padding-bottom: 0.8rem;
-    font-size: 0.91rem; }
+    font-size: 1rem; }
   .right-off-canvas-menu .off-canvas-list a {
     margin: 0rem 0.7rem;
     padding-left: 0.2rem;
     padding-right: 0.2rem;
-    font-size: 0.91rem;
+    font-size: 0.9rem;
     font-weight: 300;
     font-style: italic; }
 
@@ -6767,7 +6770,7 @@ footer {
   margin-top: 2.2rem; }
 
 .landing {
-  font-size: 1.21rem;
+  font-size: 1.3rem;
   font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
   font-style: italic;
   font-weight: 300;
@@ -6779,10 +6782,10 @@ footer {
   .landing h1 {
     font-weight: bold; }
   .landing h2 {
-    font-size: 0.91rem; }
+    font-size: 1rem; }
 
 .overlay p {
-  font-size: 0.91rem;
+  font-size: 1rem;
   font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
   font-weight: 300; }
 
@@ -6818,6 +6821,12 @@ figure {
   .small_screen_figure {
     padding: 0px;
     margin: 0px; } }
+
+@media only screen and (min-width: 40.0625em) and (max-width: 64em) {
+  .medium_screen_figure {
+    padding: 0px;
+    margin-left: 0px;
+    margin-right: 0px; } }
 
 .spiel {
   margin: 4rem 0rem 5rem 0rem; }
@@ -6940,29 +6949,44 @@ figure {
 
 @media only screen and (max-width: 40em) {
   .page_header {
-    font-size: 2.3rem;
+    font-size: 2.5rem;
     font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
     font-weight: bold;
     line-height: 0.9;
-    margin-top: 0rem;
+    margin-top: -0.5rem;
     margin-bottom: 1rem; }
   .page_subheader {
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
     font-weight: bold;
     margin-top: 1.5rem;
     margin-bottom: 1rem; } }
 
-@media only screen and (min-width: 40.0625em) {
+@media only screen and (min-width: 40.0625em) and (max-width: 64em) {
   .page_header {
-    font-size: 2.8rem;
+    font-size: 3rem;
+    font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
+    font-weight: bold;
+    line-height: 1;
+    margin-top: -0.75rem;
+    margin-bottom: 0rem; }
+  .page_subheader {
+    font-size: 2rem;
+    font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
+    font-weight: bold;
+    margin-top: 5rem;
+    margin-bottom: 0.5rem; } }
+
+@media only screen and (min-width: 64.0625em) {
+  .page_header {
+    font-size: 3rem;
     font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
     font-weight: bold;
     line-height: 1;
     margin-top: 0rem;
     margin-bottom: 0rem; }
   .page_subheader {
-    font-size: 1.8rem;
+    font-size: 2.1rem;
     font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
     font-weight: bold;
     margin-top: 5rem;
@@ -6987,8 +7011,11 @@ figure {
     }
 }
 */
+.photoset-description {
+  margin-bottom: 3rem; }
+
 @media only screen and (max-width: 40em) {
-  .photoset-description div {
+  .photoset-description p {
     padding: 0px 18px; } }
 
 @media only screen and (min-width: 64.0625em) {
@@ -7015,7 +7042,7 @@ figure {
   -webkit-transition: background-color 300ms ease-out;
   transition: background-color 300ms ease-out;
   margin-bottom: 0px;
-  font-size: 0.91rem;
+  font-size: 1rem;
   font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
   font-weight: 300;
   padding-left: 0px;
@@ -7025,7 +7052,7 @@ figure {
   margin-right: 3rem; }
 
 .prev-next-nav p {
-  font-size: 0.91rem;
+  font-size: 1rem;
   font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
   font-weight: 300; }
 
@@ -7085,18 +7112,66 @@ figure {
     transition: all 0.3s ease; }
 
 .photoset-thumbnail {
-  padding: 0px; }
-  .photoset-thumbnail img {
-    margin-left: auto;
-    margin-right: auto; }
+  margin-bottom: 9rem; }
+  @media only screen and (max-width: 40em) {
+    .photoset-thumbnail {
+      margin-bottom: 5rem; } }
+
+.photoset-thumbs {
+  margin-top: 11rem; }
+
+.sticky-photosets {
+  margin-top: 3rem; }
+
+.photoset-title {
+  font-style: italic;
+  font-weight: 300;
+  margin-top: 3rem;
+  margin-bottom: 2rem; }
+
+.photo-captions h6 {
+  font-style: italic;
+  font-weight: 300;
+  margin-top: 1rem; }
+
+.photo-captions p {
+  font-style: italic;
+  font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
+  font-size: 1rem;
+  margin-bottom: 2.5rem; }
+
+.photoset-thumbs-block-grid {
+  display: block;
+  padding: 0;
+  margin: 0 -2.5rem; }
+  .photoset-thumbs-block-grid:before, .photoset-thumbs-block-grid:after {
+    content: " ";
+    display: table; }
+  .photoset-thumbs-block-grid:after {
+    clear: both; }
+  .photoset-thumbs-block-grid > li {
+    display: block;
+    float: left;
+    height: auto;
+    padding: 0 2.5rem 5rem; }
+  .photoset-thumbs-block-grid > li {
+    list-style: none;
+    padding: 0 2.5rem 5rem;
+    width: 50%; }
+    .photoset-thumbs-block-grid > li:nth-of-type(1n) {
+      clear: none; }
+    .photoset-thumbs-block-grid > li:nth-of-type(2n+1) {
+      clear: both; }
 
 .sticky-sidebar {
   font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
   font-weight: 300;
+  font-style: italic;
+  margin-top: 7rem;
   margin-right: 1.5rem; }
   .sticky-sidebar p {
     margin-bottom: 1.2rem;
-    font-size: 0.91rem; }
+    font-size: 1rem; }
   .sticky-sidebar #sticky-sidebar-label {
     font-weight: bold;
     margin-bottom: 1.7rem; }

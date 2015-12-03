@@ -46,25 +46,25 @@
   }
 }
 
-// grid config
-//$row-width: rem-calc(1600);
-//$column-gutter: rem-calc(24);
-
 $font-weight-thin: 300;
-$font-size-sans-serif-nav: 0.91rem;
-$font-size-serif-page-header: 2.8rem;
+$font-size-sans-serif-nav: 1rem;
+$font-size-serif-page-header: 3rem;
 $font-size-custom-panel: 2rem;
 
 @media #{$large-up} {
     .vh-style {
         //@include viewport-unit(height, 85vh);
         figure{
-            @include viewport-unit(height, 70vh);
+            @include viewport-unit(height, 75vh);
             img {
-            @include viewport-unit(max-height, 70vh);
+            @include viewport-unit(max-height, 75vh);
             }
         }
     }
+}
+
+.hero-image {
+    margin-top: 7rem;
 }
 
 
@@ -233,7 +233,7 @@ footer {
             margin: 0rem 0.7rem;
             padding-left: 0.2rem;
             padding-right: 0.2rem;
-            font-size: $font-size-sans-serif-nav;
+            font-size: $font-size-sans-serif-nav - 0.1rem;
             font-weight: $font-weight-thin;
             font-style: italic;
         }
@@ -293,6 +293,7 @@ footer {
     }
 }
 
+// old design of home page for small screens
 @media #{$small-only} {
     .overlay_container {
         position: relative;
@@ -338,6 +339,15 @@ figure {
     .small_screen_figure {
         padding: 0px;
         margin: 0px;
+    }
+}
+
+// remove margins & padding from pictures for medium screens
+@media #{$medium-only} {
+    .medium_screen_figure {
+        padding: 0px;
+        margin-left: 0px;
+        margin-right: 0px;
     }
 }
 
@@ -477,14 +487,14 @@ figure {
 }
 
 
-// control sizes of headers/subheaders for small & the rest breakpoints
+// control sizes/position of headers/subheaders for the breakpoints
 @media #{$small-only} {
     .page_header {
         font-size: $font-size-serif-page-header - 0.5rem;
         font-family: $font-family-sans-serif;
         font-weight: $font-weight-bold;
         line-height: 0.9;
-        margin-top: 0rem;
+        margin-top: -0.5rem;
         margin-bottom: 1rem;
     }
     .page_subheader {
@@ -496,7 +506,25 @@ figure {
     }
 }
 
-@media #{$medium-up} {
+@media #{$medium-only} {
+    .page_header {
+        font-size: $font-size-serif-page-header;
+        font-family: $font-family-sans-serif;
+        font-weight: $font-weight-bold;
+        line-height: 1;
+        margin-top: -0.75rem;
+        margin-bottom: 0rem;
+    }
+    .page_subheader {
+        font-size: $font-size-serif-page-header - 1rem;
+        font-family: $font-family-sans-serif;
+        font-weight: $font-weight-bold;
+        margin-top: 5rem;
+        margin-bottom: 0.5rem;
+    }
+}
+
+@media #{$large-up} {
     .page_header {
         font-size: $font-size-serif-page-header;
         font-family: $font-family-sans-serif;
@@ -506,7 +534,7 @@ figure {
         margin-bottom: 0rem;
     }
     .page_subheader {
-        font-size: $font-size-serif-page-header - 1rem;
+        font-size: $font-size-serif-page-header - 0.9rem;
         font-family: $font-family-sans-serif;
         font-weight: $font-weight-bold;
         margin-top: 5rem;
@@ -546,9 +574,13 @@ figure {
 }
 */
 
+.photoset-description {
+    margin-bottom: 3rem;
+}
+
 // photoset description padding
 @media #{$small-only} {
-    .photoset-description div {
+    .photoset-description p {
         padding: 0px 18px;
     }
 }
@@ -610,15 +642,46 @@ figure {
 }
 
 .photoset-thumbnail {
-    padding: 0px;
-    //margin-left: auto;
-    //margin-right: auto;
-    img {
-        //max-height: 100vh;
-        margin-left: auto;
-        margin-right: auto;
+    margin-bottom: 9rem;
+    @media #{$small-only} {
+        margin-bottom: 5rem;
     }
+}
 
+.photoset-thumbs {
+    margin-top: 11rem;
+}
+.sticky-photosets {
+    margin-top: 3rem;
+}
+
+.photoset-title {
+    font-style: italic;
+    font-weight: $font-weight-thin;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
+
+.photo-captions {
+    h6 {
+        font-style: italic;
+        font-weight: $font-weight-thin;
+        margin-top: 1rem;
+    }
+    p {
+        font-style: italic;
+        font-family: $font-family-sans-serif;
+        font-size: 1rem;
+        margin-bottom: 2.5rem;
+    }
+}
+
+.photoset-thumbs-block-grid {
+    @include block-grid(
+            $per-row: 2,
+            $spacing: 5rem,
+            $base-style: true
+    );
 }
 
 // END PHOTOGRAPHY
@@ -631,9 +694,11 @@ figure {
 
 // move sidebar farer from main content
 .sticky-sidebar {
+
     font-family: $font-family-sans-serif;
     font-weight: $font-weight-thin;
-
+    font-style: italic;
+    margin-top: 7rem;
     margin-right: 1.5rem;
     p {
         margin-bottom: 1.2rem;
@@ -648,6 +713,8 @@ figure {
         }
     }
 }
+
+
 
 // END STICKY SIDEBAR
 //-----------------------------------------------------

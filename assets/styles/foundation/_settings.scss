@@ -395,7 +395,7 @@ $list-side-margin: 2rem;
 
 // We use this to control the maximum number of block grid elements per row
 // $block-grid-elements: 12;
-// $block-grid-default-spacing: rem-calc(20);
+$block-grid-default-spacing: rem-calc(56);
 
 // $align-block-grid-to-grid: false;
 // @if $align-block-grid-to-grid {$block-grid-default-spacing: $column-gutter;}
@@ -838,7 +838,7 @@ $input-error-message-font-color-alt: $red;
 // $include-html-off-canvas-classes: $include-html-classes;
 
 $tabbar-bg: $white;
-// $tabbar-height: rem-calc(45);
+//$tabbar-height: rem-calc(45);
 // $tabbar-icon-width: $tabbar-height;
 // $tabbar-line-height: $tabbar-height;
 // $tabbar-color: $white;

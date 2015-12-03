@@ -5,25 +5,24 @@
 {% block title %}Photography{% endblock title %}
 {% block page_header %}/PHOTOGRAPHY{% endblock page_header %}
 {% block body %}
-
-            {% if photosets %}
-                {% for photoset in photosets %}
-
-                        <div class="row">
-                            <div class="small-12 columns photoset-thumbnail text-center">
-                                <a href="{% url 'sn_app:photoset' photoset.slug %}" class="">
-                                    <figure>
-                                        <figcaption>
-                                            <h6>{{ photoset.title|upper }}</h6>
-                                        </figcaption>
-                                        {% pictureCloudinary photoset.cover sizes="100vw" srcset="200w 400w 600w 800w 1000w 1200w 1400w 1600w 2000w 2400w 2800w 3200w" alt=photoset.title %}
-                                    </figure>
-                                </a>
-                            </div>
-                        </div>
-                        <p></p>
-
-                {% endfor %}
-            {% endif %}
-
+    {% if photosets %}
+        {% for photoset in photosets %}
+            <section class="photoset-thumbnail">
+                <div class="row">
+                    <div class="small-10 medium-8 large-6 small-centered columns">
+                        <h4 class="photoset-title"><a href="{% url 'sn_app:photoset' photoset.slug %}">{{ photoset.title|upper }}</a></h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="small-12 medium-12 large-8 medium-centered columns text-center small_screen_figure medium_screen_figure">
+                        <a href="{% url 'sn_app:photoset' photoset.slug %}" class="vh-style">
+                            <figure>
+                                {% pictureCloudinary photoset.cover sizes="(min-width: 1025px) 80vw, (min-width: 641px) 100vw, 100vw" srcset="200w 400w 600w 800w 1000w 1200w 1400w 1600w 2000w 2400w 2800w 3200w" alt=photoset.title %}
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        {% endfor %}
+    {% endif %}
 {% endblock body %}

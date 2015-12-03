@@ -4,6 +4,13 @@
 {% block title %}Resume{% endblock title %}
 {% block page_header %}/RESUME{% endblock page_header %}
 {% block body %}
+    <div class="row hide-for-large-up">
+        <div class="small-12 columns small_screen_figure medium_screen_figure hero-image">
+            <figure>
+                <img src="{% static 'sn_app/images/ladefense.jpg' %}" alt="La Defense, Paris">
+            </figure>
+        </div>
+    </div>
     <div class="row">
         <div class="large-2 columns show-for-large-up">
             <nav class="side-nav text-right sticky-sidebar" role="navigation" title="Resume">
@@ -16,8 +23,8 @@
             </nav>
         </div>
         <div class="small-12 medium-10 large-8 medium-centered large-uncentered columns">
-            <div class="row">
-                <div class="small-12 columns small_screen_figure">
+            <div class="row show-for-large-up">
+                <div class="small-12 columns small_screen_figure medium_screen_figure hero-image">
                     <figure>
                         <img src="{% static 'sn_app/images/ladefense.jpg' %}" alt="La Defense, Paris">
                     </figure>
