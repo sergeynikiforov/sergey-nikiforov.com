@@ -1,6 +1,14 @@
 @import 'foundation/settings';
 @import 'foundation';
 
+
+
+.top-bar.expanded .title-area, .fixed, .top-bar, .top-bar-section ul, .top-bar-section ul li, .top-bar-section li:not(.has-form) a:not(.button), .top-bar-section .dropdown li a, .top-bar-section .dropdown li:not(.has-form) a:not(.button), .top-bar-section li:not(.has-form) a:not(.button):hover {
+background:transparent ;
+}
+
+
+
 // mixin to address iOS 7 issue with vh, vmin
 //
 @mixin viewport-unit($property, $value) {
@@ -47,7 +55,7 @@
 }
 
 $font-weight-thin: 300;
-$font-size-sans-serif-nav: 1rem;
+$font-size-sans-serif-nav: 1.1rem;
 $font-size-serif-page-header: 3rem;
 $font-size-custom-panel: 2rem;
 
@@ -55,9 +63,9 @@ $font-size-custom-panel: 2rem;
     .vh-style {
         //@include viewport-unit(height, 85vh);
         figure{
-            @include viewport-unit(height, 75vh);
+            @include viewport-unit(height, 70vh);
             img {
-            @include viewport-unit(max-height, 75vh);
+            @include viewport-unit(max-height, 70vh);
             }
         }
     }
@@ -129,13 +137,6 @@ footer {
     }
 }
 
-@media #{$small-only} {
-    #navigation-top-bar {
-        margin-top: 1.5rem;
-    }
-}
-
-
 .top-bar .name {
 
     h1 > a {
@@ -156,8 +157,8 @@ footer {
 .top-bar .top-bar-section .right {
     li a {
         //padding: 0px;
-        //margin-right: 1rem;
-        //margin-left: 1.5rem;
+        margin-right: 0.4rem;
+        margin-left: 0.4rem;
         //margin: auto;
         font-family: $font-family-sans-serif;
         font-size: $font-size-sans-serif-nav;
@@ -616,14 +617,16 @@ figure {
 }
 
 // max height of an image
+
 #photo-wrapper {
     figure{
-        @include viewport-unit(height, 70vh);
+        @include viewport-unit(height, 75vh);
         img {
-        @include viewport-unit(max-height, 68vh);
+        @include viewport-unit(max-height, 75vh);
         }
     }
 }
+
 // animation 0.1=)
 .row.photoset-cover {
     padding-bottom: 30px;
@@ -658,21 +661,27 @@ figure {
 .photoset-title {
     font-style: italic;
     font-weight: $font-weight-thin;
-    margin-top: 3rem;
-    margin-bottom: 2rem;
+    font-size: 1.3rem;
+    margin-top: 5rem;
+    margin-bottom: 3rem;
 }
 
 .photo-captions {
     h6 {
-        font-style: italic;
-        font-weight: $font-weight-thin;
-        margin-top: 1rem;
+        font-style: normal;
+        font-family: $font-family-serif;
+        font-weight: 400;
+        font-size: 1.2rem;
+        margin-top: 0.5rem;
+        margin-bottom: 0rem;
     }
     p {
         font-style: italic;
         font-family: $font-family-sans-serif;
         font-size: 1rem;
-        margin-bottom: 2.5rem;
+        margin-top: 0rem;
+        padding-top: 0rem;
+        margin-bottom: 7.5rem;
     }
 }
 

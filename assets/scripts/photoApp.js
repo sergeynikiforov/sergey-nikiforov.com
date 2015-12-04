@@ -60,7 +60,7 @@ App.DescriptionView = Backbone.View.extend({
             var html = this.template(this.model.toJSON());
         }
         else {
-            var html = '';
+            var html = '<p> </p>';
         }
         this.$el.html(html);
         return this;
@@ -76,12 +76,16 @@ App.TitleView = Backbone.View.extend({
         this.render();
     },
     render: function() {
+        /*
         if (this.model.toJSON().title != 'Untitled') {
             var html = this.template(this.model.toJSON());
         }
         else {
             var html = '';
         }
+        */
+        this.model.attributes.title = this.model.attributes.title.toUpperCase();
+        var html = this.template(this.model.toJSON());
         this.$el.html(html);
         return this;
     }
@@ -118,6 +122,7 @@ App.PhotoRouter = Backbone.Router.extend({
                 App.photoView = new App.PhotoView({model: App.photo});
                 App.photoTitleView = new App.TitleView({model: App.photo});
                 App.photoDescrView = new App.DescriptionView({model: App.photo});
+                stickyFooter();
                 }
             });
     }

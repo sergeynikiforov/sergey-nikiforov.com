@@ -13,30 +13,35 @@
     <body>
         {% block header %}
             {% if person %}
+            <div class="fixed">
                 <div class="row">
-                    <div class="medium-10 large-9 medium-centered large-uncentered large-offset-1 columns show-for-large-up">
+                    <div class="medium-10 large-11 medium-centered large-uncentered large-offset-1 columns show-for-large-up">
                         <header>
-                            <div class="contain-to-grid">
+                            <div class=" ">
                                 <nav id="navigation-top-bar" class="top-bar" data-topbar role="navigation">
                                     <ul class="title-area">
                                         <li class="name">
                                             <h1>{% block top_bar_title %}<a  id="page-top" href="{% url 'sn_app:landing' %}">{{ person.first_name|upper }} {{ person.last_name|upper }}</a>{% endblock top_bar_title %}</h1>
                                         </li>
+                                        <li><h2 class="page_header">{% block page_header %}{% endblock page_header %}</h2></li>
                                         <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
                                     </ul>
-                                    <section class="top-bar-section">
-                                        <ul class="right">
-                                            <li><a href="{% url 'sn_app:landing' %}">HOME</a></li>
-                                            <li><a href="{% url 'sn_app:about' %}">ABOUT</a></li>
-                                            <li><a href="{% url 'sn_app:resume' %}">RESUME</a></li>
-                                            <li><a href="{% url 'sn_app:photography' %}">PHOTOGRAPHY</a></li>
-                                            <li><a href="{% url 'sn_app:contact' %}">CONTACT ME</a></li>
-                                        </ul>
-                                    </section>
+                                    {% block top_bar_section %}
+                                        <section class="top-bar-section">
+                                            <ul class="right">
+                                                <li><a href="{% url 'sn_app:landing' %}">HOME</a></li>
+                                                <li><a href="{% url 'sn_app:about' %}">ABOUT</a></li>
+                                                <li><a href="{% url 'sn_app:resume' %}">RESUME</a></li>
+                                                <li><a href="{% url 'sn_app:photography' %}">PHOTOGRAPHY</a></li>
+                                                <li><a href="{% url 'sn_app:contact' %}">CONTACT ME</a></li>
+                                            </ul>
+                                        </section>
+                                    {% endblock top_bar_section %}
                                 </nav>
                             </div>
                         </header>
                     </div>
+                </div>
                 </div>
             {% endif %}
         {% endblock header %}
@@ -83,13 +88,6 @@
         {% endblock offcanvas_open %}
         <main class="main-section">
             <article>
-                <div class="row">
-                    <div class="small-12 medium-10 medium-centered columns">
-                        <header>
-                            <h2 class="page_header">{% block page_header %}{% endblock page_header %}</h2>
-                        </header>
-                    </div>
-                </div>
                 {% block body %}{% endblock body %}
             </article>
         </main>

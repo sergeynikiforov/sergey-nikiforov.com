@@ -395,7 +395,7 @@ $list-side-margin: 2rem;
 
 // We use this to control the maximum number of block grid elements per row
 // $block-grid-elements: 12;
-$block-grid-default-spacing: rem-calc(56);
+$block-grid-default-spacing: rem-calc(0);
 
 // $align-block-grid-to-grid: false;
 // @if $align-block-grid-to-grid {$block-grid-default-spacing: $column-gutter;}
@@ -1406,7 +1406,7 @@ $topbar-bg-color: $white;
 $topbar-bg: $topbar-bg-color;
 
 // Height and margin
-$topbar-height: 1rem;
+$topbar-height: 1.1rem;
 // $topbar-margin-bottom: 0;
 
 // Controlling the styles for the title in the top bar

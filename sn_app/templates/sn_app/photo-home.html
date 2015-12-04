@@ -3,50 +3,30 @@
 {% load staticfiles %}
 {% load cloudinary %}
 {% block title %}{% if active_photoset %}{{ active_photoset.title }}{% endif %}{% endblock title %}
-{% block header %} {% endblock header %}
+
+{% block top_bar_title %}
+<a id="page-top" href="{% url 'sn_app:photoset' active_photoset.slug %}">{{ active_photoset.title|upper }}</a>
+{% endblock top_bar_title %}
+
+{% block top_bar_section %} {% endblock top_bar_section %}
+
+{% block tab_bar_title %}{{ active_photoset.title|upper }}{% endblock tab_bar_title %}
+
+{% block page_header %}<span id="photo-title-wrapper"></span>{% endblock page_header %}
+
 {% block body %}
-    <div class="row show-for-large-up">
-        {% if active_photoset %}
-            <div class="large-2 columns show-for-large-up">
-                <p></p>
-            </div>
-            <div class="small-12 medium-10 large-8 medium-centered large-uncentered columns text-center">
-                <header>
-                    <h1 class="page_header">{{ active_photoset.title|upper }}</h1>
-                </header>
-            </div>
-            <div class="large-2 columns show-for-large-up">
-                <p><a href="{% url 'sn_app:photoset' active_photoset.slug %}">close</a></p>
-            </div>
-        {% endif %}
-    </div>
     <div class="row">
-        <aside class="large-2 columns show-for-large-up">
-            {% if photosets %}
-                <nav class="side-nav text-right sticky-sidebar" role="navigation" title="Albums">
-                    {% for photoset in photosets %}
-                        <p><a href="{% url 'sn_app:photoset' photoset.slug %}">{{ photoset.title }}</a></p>
-                    {% endfor %}
-                </nav>
-            {% endif %}
-        </aside>
-        <section id="photo-wrapper" class="small-12 medium-10 large-8 small-centered large-uncentered columns text-center">
-        </section>
-        <div class="large-2 columns">
-            <div id="photo-description-wrapper" class="show-for-large-up"></div>
+        <div class="small-12 medium-10 medium-centered columns">
+            <h5>2014</h5>
         </div>
     </div>
-    <div class="row">
+    <div id="sticky_footer">
+        <div class="large-2 columns show-for-large-up text-right">
+            <div id="photo-description-wrapper"></div>
+        </div>
+        <section id="photo-wrapper" class="small-12 medium-10 large-8 small-centered large-uncentered columns text-center"></section>
         <div class="large-2 columns show-for-large-up">
-            <p></p>
-        </div>
-        <div class="small-12 medium-10 large-8 small-centered large-uncentered columns">
-            <div id="photo-title-wrapper" class="text-center"></div>
-        </div>
-        <div class="large-2 columns">
-            <div class="show-for-large-up">
                 <p><a id="prev" class="transparent-button-small prev">prev</a><a id="next" class="transparent-button-small next">next</a></p>
-            </div>
         </div>
     </div>
     <div class="row hide-for-large-up">
@@ -69,9 +49,9 @@
     </figure>
 </script>
 <script type="text/template" id="photo-description-tmpl">
-    <p><%= description %></p>
+    <p><%= description %></p><p> </p>
 </script>
 <script type="text/template" id="photo-title-tmpl">
-    <h6><%= title %></h6>
+/<%= title %>
 </script>
 {% endblock templates %}

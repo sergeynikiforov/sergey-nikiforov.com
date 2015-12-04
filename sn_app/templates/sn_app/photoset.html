@@ -17,13 +17,13 @@
                 <nav class="side-nav text-right sticky-sidebar " role="navigation" title="Albums">
                     <header><h6 id="sticky-sidebar-label"><a href="{% url 'sn_app:photography' %}">/ALBUMS</a></h6></header>
                     {% for photoset in photosets %}
-                        <p><a href="{% url 'sn_app:photoset' photoset.slug %}">{{ photoset.title|upper }}</a></p>
+                        <p><a href="{% url 'sn_app:photoset' photoset.slug %}">{{ photoset.title }}</a></p>
                     {% endfor %}
-                    <p><a href="#page-top">TOP OF THE PAGE</a></p>
+                    <p><a href="#page-top">Top of the page</a></p>
                 </nav>
             {% endif %}
         </aside>
-        <section class="small-12 medium-10 large-8 small-centered large-uncentered columns small_screen_figure photoset-thumbs">
+        <section class="small-12 medium-10 large-10 small-centered large-uncentered columns small_screen_figure photoset-thumbs">
             {% if photoset_description %}
                 <div class="row ">
                     <div class="small-12 columns photoset-description ">
@@ -34,12 +34,12 @@
             <div class="row">
                 <div class="small-12 columns">
                     {% if photos %}
-                        <ul class="small-block-grid-1 medium-block-grid-2 ">
+                        <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3">
                             {% for photo in photos %}
                                 <li>
-                                    <a class="text-right" href="{% url 'sn_app:photo_home' active_photoset.slug %}#{{photo.publicID}}">
-                                        <figure>{% pictureCloudinary photo.publicID sizes="(min-width: 1025px) 50vw, (min-width: 641px) 40vw, 100vw" srcset="200w 400w 600w 800w 1000w 1200w 1400w 1600w 2000w 2400w 2800w 3200w" alt=photo.title %}
-                                            <figcaption class="photo-captions"><h6>{{ photo.title|upper }}</h6><p>2014</p></figcaption>
+                                    <a class="text-left" href="{% url 'sn_app:photo_home' active_photoset.slug %}#{{photo.publicID}}">
+                                        <figure>{% pictureCloudinary photo.publicID sizes="(min-width: 1025px) 70vw, (min-width: 641px) 40vw, 100vw" srcset="200w 400w 600w 800w 1000w 1200w 1400w 1600w 2000w 2400w 2800w 3200w" alt=photo.title %}
+                                            <figcaption class="photo-captions"><h6>{{ photo.title }}</h6><p>2014</p></figcaption>
                                         </figure>
                                     </a>
                                 </li>
@@ -49,8 +49,6 @@
                 </div>
             </div>
         </section>
-        <div class="large-2 columns">
-            <p></p>
-        </div>
+
     </div>
 {% endblock body %}
