@@ -1,14 +1,6 @@
 @import 'foundation/settings';
 @import 'foundation';
 
-
-
-.top-bar.expanded .title-area, .fixed, .top-bar, .top-bar-section ul, .top-bar-section ul li, .top-bar-section li:not(.has-form) a:not(.button), .top-bar-section .dropdown li a, .top-bar-section .dropdown li:not(.has-form) a:not(.button), .top-bar-section li:not(.has-form) a:not(.button):hover {
-background:transparent ;
-}
-
-
-
 // mixin to address iOS 7 issue with vh, vmin
 //
 @mixin viewport-unit($property, $value) {
@@ -63,16 +55,16 @@ $font-size-custom-panel: 2rem;
     .vh-style {
         //@include viewport-unit(height, 85vh);
         figure{
-            @include viewport-unit(height, 70vh);
+            @include viewport-unit(height, 99vh);
             img {
-            @include viewport-unit(max-height, 70vh);
+            @include viewport-unit(max-height, 99vh);
             }
         }
     }
 }
 
 .hero-image {
-    margin-top: 7rem;
+    //margin-top: 2rem;
 }
 
 
@@ -131,15 +123,23 @@ footer {
 // TOP-BAR NAV SCSS
 //-----------------------------------------------------
 //
+
+// transparency
+
+.fixed, .top-bar, .top-bar-section ul, .top-bar-section ul li, .top-bar-section li:not(.has-form) a:not(.button), .top-bar-section .dropdown li a, .top-bar-section .dropdown li:not(.has-form) a:not(.button), .top-bar-section li:not(.has-form) a:not(.button):hover, .tab-bar, .left .tab-bar-section, .right-off-canvas-toggle {
+    background:transparent !important;
+}
+
 @media #{$medium-up} {
     #navigation-top-bar {
         margin-top: 2rem;
     }
 }
 
-.top-bar .name {
+.top-bar .title-area {
 
     h1 > a {
+        color: $white;
         margin: 0px;
         padding: 0px;
         font-weight: $font-weight-bold;
@@ -149,6 +149,9 @@ footer {
             font-size: $font-size-sans-serif-nav - 0.1rem;
         }
     }
+    h2, p > a {
+        color: $white;
+    }
     a:hover {
         color: $red;
     }
@@ -157,6 +160,7 @@ footer {
 .top-bar .top-bar-section .right {
     li a {
         //padding: 0px;
+        color: $white;
         margin-right: 0.4rem;
         margin-left: 0.4rem;
         //margin: auto;
@@ -203,6 +207,7 @@ footer {
             }
             padding-right: 7px;
             padding-left: 7px;
+            padding-top: 14px;
         }
     }
     a {
@@ -255,14 +260,41 @@ footer {
 //-----------------------------------------------------
 //
 
+#home-nav {
+    margin-top: 2rem;
+}
+
+.home-wrapper {
+    padding-top: 1.5rem;
+    height: 95vh;
+    width: 100%;
+
+}
+.image-wrap {
+    height: 100%;
+    width: 100%;
+    margin-top: 1.5rem;
+}
+
+.image {
+    background-image: url("https://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_1600/v1443435200/landing/3G4A3942-Edit.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 100%;
+    width:100%;
+    height:100%;
+}
+
+
 .landing {
+
     font-size: $font-size-sans-serif-nav + 0.3rem;
     font-family: $font-family-sans-serif;
     font-style: italic;
     font-weight: $font-weight-thin;
     margin-bottom: 0px;
     a {
-        color: $black;
+        color: $white;
     }
     a:hover {
         color: $red;
@@ -294,16 +326,21 @@ footer {
     }
 }
 
+
 // old design of home page for small screens
 @media #{$small-only} {
     .overlay_container {
         position: relative;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
         .overlay {
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
-            padding-top: 1rem;
+            margin-top: 1rem;
+            margin-left: 18px;
+            margin-right: 18px;
         }
     }
     .contact {
@@ -491,6 +528,16 @@ figure {
 // control sizes/position of headers/subheaders for the breakpoints
 @media #{$small-only} {
     .page_header {
+        color: $white;
+        font-size: $font-size-serif-page-header - 0.5rem;
+        font-family: $font-family-sans-serif;
+        font-weight: $font-weight-bold;
+        line-height: 0.9;
+        margin-top: -0.5rem;
+        margin-bottom: 1rem;
+    }
+    h2.page_header {
+        color: $white;
         font-size: $font-size-serif-page-header - 0.5rem;
         font-family: $font-family-sans-serif;
         font-weight: $font-weight-bold;
@@ -509,6 +556,7 @@ figure {
 
 @media #{$medium-only} {
     .page_header {
+        color: $white;
         font-size: $font-size-serif-page-header;
         font-family: $font-family-sans-serif;
         font-weight: $font-weight-bold;
@@ -527,6 +575,7 @@ figure {
 
 @media #{$large-up} {
     .page_header {
+        color: $white;
         font-size: $font-size-serif-page-header;
         font-family: $font-family-sans-serif;
         font-weight: $font-weight-bold;

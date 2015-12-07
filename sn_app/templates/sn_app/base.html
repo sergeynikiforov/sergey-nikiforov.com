@@ -15,30 +15,27 @@
             {% if person %}
             <div class="fixed">
                 <div class="row">
-                    <div class="medium-10 large-11 medium-centered large-uncentered large-offset-1 columns show-for-large-up">
+                    <div class="medium-10 large-10 medium-centered columns show-for-large-up">
                         <header>
-                            <div class=" ">
-                                <nav id="navigation-top-bar" class="top-bar" data-topbar role="navigation">
-                                    <ul class="title-area">
-                                        <li class="name">
-                                            <h1>{% block top_bar_title %}<a  id="page-top" href="{% url 'sn_app:landing' %}">{{ person.first_name|upper }} {{ person.last_name|upper }}</a>{% endblock top_bar_title %}</h1>
-                                        </li>
-                                        <li><h2 class="page_header">{% block page_header %}{% endblock page_header %}</h2></li>
-                                        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-                                    </ul>
-                                    {% block top_bar_section %}
-                                        <section class="top-bar-section">
-                                            <ul class="right">
-                                                <li><a href="{% url 'sn_app:landing' %}">HOME</a></li>
-                                                <li><a href="{% url 'sn_app:about' %}">ABOUT</a></li>
-                                                <li><a href="{% url 'sn_app:resume' %}">RESUME</a></li>
-                                                <li><a href="{% url 'sn_app:photography' %}">PHOTOGRAPHY</a></li>
-                                                <li><a href="{% url 'sn_app:contact' %}">CONTACT ME</a></li>
-                                            </ul>
-                                        </section>
-                                    {% endblock top_bar_section %}
-                                </nav>
-                            </div>
+                            <nav id="navigation-top-bar" class="top-bar" data-topbar role="navigation">
+                                <ul class="title-area">
+                                    <li class="name">
+                                        <h1>{% block top_bar_title %}<a  id="page-top" href="{% url 'sn_app:landing' %}">{{ person.first_name|upper }} {{ person.last_name|upper }}</a>{% endblock top_bar_title %}</h1>
+                                    </li>
+                                    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+                                </ul>
+                                {% block top_bar_section %}
+                                    <section class="top-bar-section">
+                                        <ul class="right">
+                                            <li><a href="{% url 'sn_app:landing' %}">HOME</a></li>
+                                            <li><a href="{% url 'sn_app:about' %}">ABOUT</a></li>
+                                            <li><a href="{% url 'sn_app:resume' %}">RESUME</a></li>
+                                            <li><a href="{% url 'sn_app:photography' %}">PHOTOGRAPHY</a></li>
+                                            <li><a href="{% url 'sn_app:contact' %}">CONTACT ME</a></li>
+                                        </ul>
+                                    </section>
+                                {% endblock top_bar_section %}
+                            </nav>
                         </header>
                     </div>
                 </div>
@@ -49,15 +46,27 @@
         <div class="off-canvas-wrap" data-offcanvas>
             <div class="inner-wrap">
                 <div class="row">
-                    <div class="small-12 medium-10 small-centered columns">
-                        <nav id="navigation-top-bar" class="tab-bar {% block offcanvas_visibility %} hide-for-large-up {% endblock offcanvas_visibility %} ">
-                          <section class="left tab-bar-section">
-                            <h2 class="title">{% block tab_bar_title %}<a href="{% url 'sn_app:landing' %}">{{ person.first_name|upper }} {{ person.last_name|upper }}</a>{% endblock tab_bar_title %}</h2>
-                          </section>
-                          <section class="right">
-                            <a href="#idOfRightMenu" role="button" aria-controls="idOfRightMenu" aria-expanded="false" class="right-off-canvas-toggle transparent-button-small">MENU</a>
-                          </section>
-                        </nav>
+                    <div class="small-12 medium-10 small-centered columns small_screen_figure">
+                        <div class="overlay_container {% block offcanvas_visibility %} show-for-small-only {% endblock offcanvas_visibility %}">
+                            <div class="overlay">
+                                <nav id="navigation-top-bar" class="tab-bar">
+                                  <section class="left tab-bar-section">
+                                    <h2 class="title">{% block tab_bar_title %}<a href="{% url 'sn_app:landing' %}">/{{ person.first_name|upper }} {{ person.last_name|upper }}</a>{% endblock tab_bar_title %}</h2>
+                                    {% block off_canvas_tab_bar_page_header %}
+                                    <h2 class="page_header">/SPAM</h2>
+                                    {% endblock off_canvas_tab_bar_page_header %}
+                                  </section>
+                                  <section class="right">
+                                    <a href="#idOfRightMenu" role="button" aria-controls="idOfRightMenu" aria-expanded="false" class="right-off-canvas-toggle transparent-button-small">MENU</a>
+                                  </section>
+                                </nav>
+                            </div>
+                            {% block off_canvas_tab_bar_image %}
+                                <figure>
+                                    {% pictureCloudinary '000078160033_shjhht' sizes="100vw" srcset="200w 400w 600w 800w 1000w 1200w 1400w 1600w 2000w 2400w 2800w 3200w" alt='autoportrait' %}
+                                </figure>
+                            {% endblock off_canvas_tab_bar_image %}
+                        </div>
                     </div>
                 </div>
 
