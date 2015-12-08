@@ -2,26 +2,74 @@
 {% load sn_app_extras %}
 {% load staticfiles %}
 {% block title %}Contact me{% endblock title %}
-{% block page_header %}/CONTACT-ME{% endblock page_header %}
+
+{% block off_canvas_tab_bar_page_header %}
+<h2 class="page_header">/CONTACT_ME</h2>
+{% endblock off_canvas_tab_bar_page_header %}
+
+{% block off_canvas_tab_bar_image %}
+<figure>
+    <picture>
+        <source media="(orientation: portrait)"
+                sizes="100vw"
+                srcset="http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_200/v1444666884/contact/mail1x1.jpg 200w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_400/v1444666884/contact/mail1x1.jpg 400w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_600/v1444666884/contact/mail1x1.jpg 600w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_800/v1444666884/contact/mail1x1.jpg 800w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_1000/v1444666884/contact/mail1x1.jpg 1000w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_1200/v1444666884/contact/mail1x1.jpg 1200w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_1600/v1444666884/contact/mail1x1.jpg 1600w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_2000/v1444666884/contact/mail1x1.jpg 2000w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_2400/v1444666884/contact/mail1x1.jpg 2400w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_3200/v1444666884/contact/mail1x1.jpg 3200w">
+        <img src="http://res.cloudinary.com/sergeynikiforov/image/upload/v1444666885/contact/mail3x2.jpg" sizes="100vw" alt="Me sending a postcard" srcset="http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_200/v1444666885/contact/mail3x2.jpg 200w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_400/v1444666885/contact/mail3x2.jpg 400w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_600/v1444666885/contact/mail3x2.jpg 600w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_800/v1444666885/contact/mail3x2.jpg 800w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_1000/v1444666885/contact/mail3x2.jpg 1000w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_1200/v1444666885/contact/mail3x2.jpg 1200w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_1600/v1444666885/contact/mail3x2.jpg 1600w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_2000/v1444666885/contact/mail3x2.jpg 2000w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_2400/v1444666885/contact/mail3x2.jpg 2400w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_3200/v1444666885/contact/mail3x2.jpg 3200w">
+    </picture>
+</figure>
+{% endblock off_canvas_tab_bar_image %}
+
+{% block page_header %}/ CONTACT_ME /{% endblock page_header %}
+
 {% block body %}
 <div class="row">
-    <div class="small-12 large-8 small-centered columns small_screen_figure medium_screen_figure text-center hero-image">
-        <figure>
-            <picture>
-                <source media="(orientation: portrait)"
-                        sizes="100vw"
-                        srcset="http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_200/v1444666884/contact/mail1x1.jpg 200w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_400/v1444666884/contact/mail1x1.jpg 400w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_600/v1444666884/contact/mail1x1.jpg 600w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_800/v1444666884/contact/mail1x1.jpg 800w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_1000/v1444666884/contact/mail1x1.jpg 1000w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_1200/v1444666884/contact/mail1x1.jpg 1200w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_1600/v1444666884/contact/mail1x1.jpg 1600w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_2000/v1444666884/contact/mail1x1.jpg 2000w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_2400/v1444666884/contact/mail1x1.jpg 2400w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_3200/v1444666884/contact/mail1x1.jpg 3200w">
-                <img src="http://res.cloudinary.com/sergeynikiforov/image/upload/v1444666885/contact/mail3x2.jpg" sizes="100vw" alt="Me sending a postcard" srcset="http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_200/v1444666885/contact/mail3x2.jpg 200w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_400/v1444666885/contact/mail3x2.jpg 400w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_600/v1444666885/contact/mail3x2.jpg 600w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_800/v1444666885/contact/mail3x2.jpg 800w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_1000/v1444666885/contact/mail3x2.jpg 1000w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_1200/v1444666885/contact/mail3x2.jpg 1200w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_1600/v1444666885/contact/mail3x2.jpg 1600w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_2000/v1444666885/contact/mail3x2.jpg 2000w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_2400/v1444666885/contact/mail3x2.jpg 2400w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_3200/v1444666885/contact/mail3x2.jpg 3200w">
-            </picture>
-        </figure>
-    </div>
+    <section class="small-12 medium_screen_figure large-centered columns">
+        <div class="contact-wrapper show-for-large-up">
+            <div class="image-wrap">
+                <div class="contact-image">
+                    <div class="row">
+                        <div class="small-12 medium-10 small-centered columns show-for-large-up page_header_wrapper_large">
+                            <nav id="contact-nav" role="navigation">
+                                <h2 class="page_header">/ CONTACT_ME /</h2>
+                                <p class="landing"><a href="#drop_me_a_line">DROP ME A LINE</a></p>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </div>
 <div class="row">
-    <section class="small-12 medium-10 large-8 medium-centered columns">
+    <div class="small-12 large-10 small-centered columns medium_screen_figure hero-image show-for-medium-only">
+        <div class="overlay_container">
+            <figure>
+                <picture>
+                    <source media="(orientation: portrait)"
+                            sizes="100vw"
+                            srcset="http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_200/v1444666884/contact/mail1x1.jpg 200w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_400/v1444666884/contact/mail1x1.jpg 400w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_600/v1444666884/contact/mail1x1.jpg 600w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_800/v1444666884/contact/mail1x1.jpg 800w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_1000/v1444666884/contact/mail1x1.jpg 1000w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_1200/v1444666884/contact/mail1x1.jpg 1200w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_1600/v1444666884/contact/mail1x1.jpg 1600w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_2000/v1444666884/contact/mail1x1.jpg 2000w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_2400/v1444666884/contact/mail1x1.jpg 2400w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_3200/v1444666884/contact/mail1x1.jpg 3200w">
+                    <img src="http://res.cloudinary.com/sergeynikiforov/image/upload/v1444666885/contact/mail3x2.jpg" sizes="100vw" alt="Me sending a postcard" srcset="http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_200/v1444666885/contact/mail3x2.jpg 200w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_400/v1444666885/contact/mail3x2.jpg 400w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_600/v1444666885/contact/mail3x2.jpg 600w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_800/v1444666885/contact/mail3x2.jpg 800w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_1000/v1444666885/contact/mail3x2.jpg 1000w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_1200/v1444666885/contact/mail3x2.jpg 1200w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_1600/v1444666885/contact/mail3x2.jpg 1600w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_2000/v1444666885/contact/mail3x2.jpg 2000w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_2400/v1444666885/contact/mail3x2.jpg 2400w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_3200/v1444666885/contact/mail3x2.jpg 3200w">
+                </picture>
+            </figure>
+            <div class="overlay">
+                <div class="row">
+                    <div class="medium-10 small-centered columns">
+                        <nav id="contact-nav" role="navigation">
+                            <h2 class="page_header">/ CONTACT_ME /</h2>
+                            <p class="landing"><a href="#drop_me_a_line">DROP ME A LINE</a></p>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <section class="small-12 medium-10 medium-centered columns">
         <form id="post-form" method="post" data-abide="ajax">
             <div class="row">
                 <div class="small-12 columns text-left">
-                    <h3 class="page_subheader">Drop me a line</h3>
+                    <h3 id="drop_me_a_line"class="page_subheader">Drop me a line</h3>
                 </div>
             </div>
             {% if person %}

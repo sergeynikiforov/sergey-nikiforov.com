@@ -154,13 +154,13 @@ $body-font-family: $font-family-serif;
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 // $small-breakpoint:  em-calc(640);
-// $medium-breakpoint: em-calc(1024);
-// $large-breakpoint:  em-calc(1440);
+$medium-breakpoint: em-calc(1024);
+$large-breakpoint:  em-calc(1440);
 // $xlarge-breakpoint: em-calc(1920);
 
 // $small-range:   (0, $small-breakpoint);
 // $medium-range:  ($small-breakpoint  + em-calc(1), $medium-breakpoint);
-// $large-range:   ($medium-breakpoint + em-calc(1), $large-breakpoint);
+$large-range:   ($medium-breakpoint + em-calc(1), $large-breakpoint);
 // $xlarge-range:  ($large-breakpoint  + em-calc(1), $xlarge-breakpoint);
 // $xxlarge-range: ($xlarge-breakpoint + em-calc(1), em-calc(99999999));
 
@@ -1402,7 +1402,7 @@ $tabbar-hamburger-icon-gap: 3px;
 // $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-$topbar-bg-color: $white;
+$topbar-bg-color: transparent;
 $topbar-bg: $topbar-bg-color;
 
 // Height and margin
@@ -1464,7 +1464,7 @@ $topbar-menu-icon-color: $black;
 // Transitions and breakpoint styles
 // $topbar-transition-speed: 300ms;
 // Using rem-calc for the below breakpoint causes issues with top bar
-// $topbar-breakpoint: #{lower-bound($medium-range)}; // Change to 9999px for always mobile layout
+$topbar-breakpoint: #{lower-bound($large-range)}; // Change to 9999px for always mobile layout
 // $topbar-media-query: "#{$screen} and (min-width:#{lower-bound($topbar-breakpoint)})";
 
 // Top-bar input styles

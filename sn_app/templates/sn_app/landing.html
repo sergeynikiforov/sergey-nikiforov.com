@@ -4,6 +4,7 @@
 {% block title %}{% if person %}{{ person.first_name }} {{ person.last_name }}{% else %}Home{% endif %}{% endblock title %}
 {% block header %} {% endblock header %}
 {% block offcanvas_visibility %} show-for-small-only {% endblock offcanvas_visibility %}
+{% block off_canvas_tab_bar_page_header %}{% endblock off_canvas_tab_bar_page_header %}
 {% block off_canvas_tab_bar_image %}
 <figure>
     <picture >
@@ -25,7 +26,7 @@
 {% endblock off_canvas_tab_bar_image %}
 {% block body %}
     <div class="row">
-        <section class="small-12 medium-11 small-centered columns">
+        <section class="small-12 small-centered columns">
             <div class="home-wrapper show-for-medium-up">
                 <div class="image-wrap">
                     <div class="image">

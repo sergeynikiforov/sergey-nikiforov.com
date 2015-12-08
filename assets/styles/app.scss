@@ -126,13 +126,13 @@ footer {
 
 // transparency
 
-.fixed, .top-bar, .top-bar-section ul, .top-bar-section ul li, .top-bar-section li:not(.has-form) a:not(.button), .top-bar-section .dropdown li a, .top-bar-section .dropdown li:not(.has-form) a:not(.button), .top-bar-section li:not(.has-form) a:not(.button):hover, .tab-bar, .left .tab-bar-section, .right-off-canvas-toggle {
+.fixed, .top-bar, .top-bar-section ul, .top-bar-section ul li, .top-bar-section li:not(.has-form) a:not(.button), .top-bar-section .dropdown li a, .top-bar-section .dropdown li:not(.has-form) a:not(.button), .top-bar-section li:not(.has-form) a:not(.button):hover, .toggle-topbar, .tab-bar, .left .tab-bar-section, .right-off-canvas-toggle {
     background:transparent !important;
 }
 
 @media #{$medium-up} {
     #navigation-top-bar {
-        margin-top: 2rem;
+        margin-top: 3rem;
     }
 }
 
@@ -145,8 +145,8 @@ footer {
         font-weight: $font-weight-bold;
         font-family: $font-family-sans-serif;
         font-size: $font-size-sans-serif-nav;
-        @media #{$small-only} {
-            font-size: $font-size-sans-serif-nav - 0.1rem;
+        @media #{$medium-only} {
+            font-size: $font-size-sans-serif-nav - 0.2rem;
         }
     }
     h2, p > a {
@@ -155,20 +155,40 @@ footer {
     a:hover {
         color: $red;
     }
+    .toggle-topbar a {
+        color: $white;
+        font-family: $font-family-sans-serif;
+        font-weight: $font-weight-thin;
+        font-style: italic;
+        font-size: $font-size-sans-serif-nav;
+        @media #{$medium-only} {
+            font-size: $font-size-sans-serif-nav - 0.2rem;
+        }
+        &:hover {
+            color: $red;
+        }
+    }
+}
+
+#navigation-top-bar.top-bar {
+    .expanded .top-bar-section ul.right.text-right {
+    padding-top: 1rem;
+    }
 }
 
 .top-bar .top-bar-section .right {
     li a {
-        //padding: 0px;
+        padding-right: 0.7rem;
         color: $white;
         margin-right: 0.4rem;
         margin-left: 0.4rem;
         //margin: auto;
         font-family: $font-family-sans-serif;
         font-size: $font-size-sans-serif-nav;
+        font-weight: $font-weight-thin;
         font-style: italic;
-        @media #{$small-only} {
-            font-size: $font-size-sans-serif-nav - 0.1rem;
+        @media #{$medium-only} {
+            font-size: $font-size-sans-serif-nav - 0.2rem;
         }
     }
 }
@@ -194,7 +214,7 @@ footer {
         font-weight: $font-weight-bold;
         font-size: $font-size-sans-serif-nav;
         @media #{$small-only} {
-            font-size: $font-size-sans-serif-nav - 0.1rem;
+            font-size: $font-size-sans-serif-nav - 0.3rem;
         }
     }
     .right {
@@ -207,13 +227,13 @@ footer {
             }
             padding-right: 7px;
             padding-left: 7px;
-            padding-top: 14px;
+            padding-top: 17px;
         }
     }
     a {
         font-size: $font-size-sans-serif-nav;
         @media #{$small-only} {
-            font-size: $font-size-sans-serif-nav - 0.1rem;
+            font-size: $font-size-sans-serif-nav - 0.3rem;
         }
     }
     a:hover {
@@ -260,20 +280,41 @@ footer {
 //-----------------------------------------------------
 //
 
+
 #home-nav {
     margin-top: 2rem;
 }
 
-.home-wrapper {
-    padding-top: 1.5rem;
-    height: 95vh;
-    width: 100%;
-
+#contact-nav {
+    margin-top: 2.7rem;
+    p {
+        font-weight: $font-weight-thin;
+    }
 }
+
+.home-wrapper {
+    height: 100vh;
+    width: 100%;
+    padding: 1.5rem;
+    @media #{$medium-only} {
+        padding: 2rem 1.5rem 6rem 1.5rem;
+    }
+}
+
+.contact-wrapper {
+    height: 100vh;
+    width: 100%;
+    @media #{$large-up} {
+        padding: 1.5rem;
+    }
+    @media #{$medium-only} {
+        padding: 2rem 0rem 6rem 0rem;
+    }
+}
+
 .image-wrap {
     height: 100%;
     width: 100%;
-    margin-top: 1.5rem;
 }
 
 .image {
@@ -285,10 +326,22 @@ footer {
     height:100%;
 }
 
+.contact-image {
+    background-image: url("https://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_1600/v1444666885/contact/mail3x2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 100%;
+    width:100%;
+    height:100%;
+}
+
 
 .landing {
 
     font-size: $font-size-sans-serif-nav + 0.3rem;
+    @media #{$medium-only} {
+        font-size: $font-size-sans-serif-nav;
+    }
     font-family: $font-family-sans-serif;
     font-style: italic;
     font-weight: $font-weight-thin;
@@ -327,7 +380,29 @@ footer {
 }
 
 
-// old design of home page for small screens
+// overlay for medium screens
+@media #{$medium-only} {
+    .overlay_container {
+        position: relative;
+        //margin-top: 2rem;
+        //margin-bottom: 2rem;
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            margin-top: 2rem;
+            margin-left: rem-calc(18);
+            //margin-right: 18px;
+        }
+    }
+    .contact {
+    padding: 0px;
+    margin: 0rem 0rem 1.5rem 0rem;
+    }
+}
+
+// overlay for tab-bar (small screens only)
 @media #{$small-only} {
     .overlay_container {
         position: relative;
@@ -338,8 +413,8 @@ footer {
             top: 0;
             left: 0;
             right: 0;
-            margin-top: 1rem;
-            margin-left: 18px;
+            margin-top: 0.5rem;
+            margin-left: rem-calc(18);
             margin-right: 18px;
         }
     }
@@ -526,6 +601,11 @@ figure {
 
 
 // control sizes/position of headers/subheaders for the breakpoints
+
+.page_header_wrapper_large {
+    padding: 0px;
+}
+
 @media #{$small-only} {
     .page_header {
         color: $white;
@@ -536,17 +616,17 @@ figure {
         margin-top: -0.5rem;
         margin-bottom: 1rem;
     }
-    h2.page_header {
+    .tab-bar .page_header {
         color: $white;
-        font-size: $font-size-serif-page-header - 0.5rem;
+        font-size: $font-size-serif-page-header - 1.3rem;
         font-family: $font-family-sans-serif;
         font-weight: $font-weight-bold;
         line-height: 0.9;
-        margin-top: -0.5rem;
+        margin-top: -0.9rem;
         margin-bottom: 1rem;
     }
     .page_subheader {
-        font-size: $font-size-serif-page-header - 1rem;
+        font-size: $font-size-serif-page-header - 1.1rem;
         font-family: $font-family-sans-serif;
         font-weight: $font-weight-bold;
         margin-top: 1.5rem;
@@ -557,7 +637,7 @@ figure {
 @media #{$medium-only} {
     .page_header {
         color: $white;
-        font-size: $font-size-serif-page-header;
+        font-size: $font-size-serif-page-header - 0.5rem;
         font-family: $font-family-sans-serif;
         font-weight: $font-weight-bold;
         line-height: 1;
