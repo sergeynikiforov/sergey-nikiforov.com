@@ -51,9 +51,9 @@ $font-size-sans-serif-nav: 1.1rem;
 $font-size-serif-page-header: 3rem;
 $font-size-custom-panel: 2rem;
 
-@media #{$large-up} {
+@media #{$small-up} {
     .vh-style {
-        //@include viewport-unit(height, 85vh);
+        @include viewport-unit(height, 100vh);
         figure{
             @include viewport-unit(height, 99vh);
             img {
@@ -312,12 +312,23 @@ footer {
     }
 }
 
+.about-wrapper {
+    height: 100vh;
+    width: 100%;
+    @media #{$large-up} {
+        padding: 1.5rem;
+    }
+    @media #{$medium-only} {
+        padding: 2rem 0rem 6rem 0rem;
+    }
+}
+
 .image-wrap {
     height: 100%;
     width: 100%;
 }
 
-.image {
+.home-image {
     background-image: url("https://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_1600/v1443435200/landing/3G4A3942-Edit.jpg");
     background-size: cover;
     background-repeat: no-repeat;
@@ -328,6 +339,51 @@ footer {
 
 .contact-image {
     background-image: url("https://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_1600/v1444666885/contact/mail3x2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 100%;
+    width:100%;
+    height:100%;
+}
+
+.about-image {
+    background-image: url("https://res.cloudinary.com/sergeynikiforov/image/upload/v1449071680/000078160033_shjhht.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 100%;
+    width:100%;
+    height:100%;
+}
+
+.about-image-lombok {
+    background-image: url("/static/sn_app/images/melombok.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 100%;
+    width:100%;
+    height:100%;
+}
+
+.about-image-selfie {
+    background-image: url("/static/sn_app/images/selfie.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 100%;
+    width:100%;
+    height:100%;
+}
+
+.about-image-road {
+    background-image: url("/static/sn_app/images/road.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 100%;
+    width:100%;
+    height:100%;
+}
+
+.about-image-onarun {
+    background-image: url("/static/sn_app/images/onarun.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 100%;
@@ -468,9 +524,13 @@ figure {
     margin: 4rem 0rem 5rem 0rem;
 }
 
-.about_me_section {
-    margin-top: 7rem;
-    margin-bottom: 2rem;
+// center content inside div
+.container-center {
+    display: table;
+}
+.content-center {
+    display: table-cell;
+    vertical-align: middle;
 }
 
 // END ABOUT ME
@@ -629,7 +689,7 @@ figure {
         font-size: $font-size-serif-page-header - 1.1rem;
         font-family: $font-family-sans-serif;
         font-weight: $font-weight-bold;
-        margin-top: 1.5rem;
+        margin-top: 1rem;
         margin-bottom: 1rem;
     }
 }
@@ -648,7 +708,7 @@ figure {
         font-size: $font-size-serif-page-header - 1rem;
         font-family: $font-family-sans-serif;
         font-weight: $font-weight-bold;
-        margin-top: 5rem;
+        margin-top: 1.5rem;
         margin-bottom: 0.5rem;
     }
 }
@@ -667,7 +727,7 @@ figure {
         font-size: $font-size-serif-page-header - 0.9rem;
         font-family: $font-family-sans-serif;
         font-weight: $font-weight-bold;
-        margin-top: 5rem;
+        margin-top: 2rem;
         margin-bottom: 0.5rem;
     }
 }

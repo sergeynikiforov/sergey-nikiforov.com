@@ -6617,49 +6617,71 @@ th.hide-for-touch {
   th.show-for-print {
     display: table-cell !important; } }
 
-@media only screen and (min-width: 64.0625em) {
-  .vh-style figure {
-    height: 99vh; } }
-  @media only screen and (min-width: 64.0625em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
-    .vh-style figure {
-      height: 1013.76px; } }
-  @media only screen and (min-width: 64.0625em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: landscape) {
-    .vh-style figure {
-      height: 760.32px; } }
-  @media only screen and (min-width: 64.0625em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: portrait) {
-    .vh-style figure {
-      height: 475.2px; } }
-  @media only screen and (min-width: 64.0625em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: landscape) {
-    .vh-style figure {
-      height: 316.8px; } }
-  @media only screen and (min-width: 64.0625em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: portrait) {
-    .vh-style figure {
-      height: 562.32px; } }
-  @media only screen and (min-width: 64.0625em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: landscape) {
-    .vh-style figure {
-      height: 316.8px; } }
+@media only screen {
+  .vh-style {
+    height: 100vh; } }
+  @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
+    .vh-style {
+      height: 1024px; } }
+  @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: landscape) {
+    .vh-style {
+      height: 768px; } }
+  @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: portrait) {
+    .vh-style {
+      height: 480px; } }
+  @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: landscape) {
+    .vh-style {
+      height: 320px; } }
+  @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: portrait) {
+    .vh-style {
+      height: 568px; } }
+  @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: landscape) {
+    .vh-style {
+      height: 320px; } }
 
-@media only screen and (min-width: 64.0625em) {
-    .vh-style figure img {
-      max-height: 99vh; } }
-    @media only screen and (min-width: 64.0625em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
+@media only screen {
+    .vh-style figure {
+      height: 99vh; } }
+    @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
+      .vh-style figure {
+        height: 1013.76px; } }
+    @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: landscape) {
+      .vh-style figure {
+        height: 760.32px; } }
+    @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: portrait) {
+      .vh-style figure {
+        height: 475.2px; } }
+    @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: landscape) {
+      .vh-style figure {
+        height: 316.8px; } }
+    @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: portrait) {
+      .vh-style figure {
+        height: 562.32px; } }
+    @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: landscape) {
+      .vh-style figure {
+        height: 316.8px; } }
+
+@media only screen {
       .vh-style figure img {
-        max-height: 1013.76px; } }
-    @media only screen and (min-width: 64.0625em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: landscape) {
-      .vh-style figure img {
-        max-height: 760.32px; } }
-    @media only screen and (min-width: 64.0625em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: portrait) {
-      .vh-style figure img {
-        max-height: 475.2px; } }
-    @media only screen and (min-width: 64.0625em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: landscape) {
-      .vh-style figure img {
-        max-height: 316.8px; } }
-    @media only screen and (min-width: 64.0625em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: portrait) {
-      .vh-style figure img {
-        max-height: 562.32px; } }
-    @media only screen and (min-width: 64.0625em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: landscape) {
-      .vh-style figure img {
-        max-height: 316.8px; } }
+        max-height: 99vh; } }
+      @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
+        .vh-style figure img {
+          max-height: 1013.76px; } }
+      @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: landscape) {
+        .vh-style figure img {
+          max-height: 760.32px; } }
+      @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: portrait) {
+        .vh-style figure img {
+          max-height: 475.2px; } }
+      @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: landscape) {
+        .vh-style figure img {
+          max-height: 316.8px; } }
+      @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: portrait) {
+        .vh-style figure img {
+          max-height: 562.32px; } }
+      @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: landscape) {
+        .vh-style figure img {
+          max-height: 316.8px; } }
 
 footer {
   font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
@@ -6816,11 +6838,21 @@ footer {
     .contact-wrapper {
       padding: 2rem 0rem 6rem 0rem; } }
 
+.about-wrapper {
+  height: 100vh;
+  width: 100%; }
+  @media only screen and (min-width: 64.0625em) {
+    .about-wrapper {
+      padding: 1.5rem; } }
+  @media only screen and (min-width: 40.0625em) and (max-width: 64em) {
+    .about-wrapper {
+      padding: 2rem 0rem 6rem 0rem; } }
+
 .image-wrap {
   height: 100%;
   width: 100%; }
 
-.image {
+.home-image {
   background-image: url("https://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_1600/v1443435200/landing/3G4A3942-Edit.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -6830,6 +6862,46 @@ footer {
 
 .contact-image {
   background-image: url("https://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_1600/v1444666885/contact/mail3x2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 100%;
+  width: 100%;
+  height: 100%; }
+
+.about-image {
+  background-image: url("https://res.cloudinary.com/sergeynikiforov/image/upload/v1449071680/000078160033_shjhht.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 100%;
+  width: 100%;
+  height: 100%; }
+
+.about-image-lombok {
+  background-image: url("/static/sn_app/images/melombok.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 100%;
+  width: 100%;
+  height: 100%; }
+
+.about-image-selfie {
+  background-image: url("/static/sn_app/images/selfie.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 100%;
+  width: 100%;
+  height: 100%; }
+
+.about-image-road {
+  background-image: url("/static/sn_app/images/road.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 100%;
+  width: 100%;
+  height: 100%; }
+
+.about-image-onarun {
+  background-image: url("/static/sn_app/images/onarun.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 100%;
@@ -6919,9 +6991,12 @@ figure {
 .spiel {
   margin: 4rem 0rem 5rem 0rem; }
 
-.about_me_section {
-  margin-top: 7rem;
-  margin-bottom: 2rem; }
+.container-center {
+  display: table; }
+
+.content-center {
+  display: table-cell;
+  vertical-align: middle; }
 
 .article_header_panel {
   border-style: solid;
@@ -7059,7 +7134,7 @@ figure {
     font-size: 1.9rem;
     font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
     font-weight: bold;
-    margin-top: 1.5rem;
+    margin-top: 1rem;
     margin-bottom: 1rem; } }
 
 @media only screen and (min-width: 40.0625em) and (max-width: 64em) {
@@ -7075,7 +7150,7 @@ figure {
     font-size: 2rem;
     font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
     font-weight: bold;
-    margin-top: 5rem;
+    margin-top: 1.5rem;
     margin-bottom: 0.5rem; } }
 
 @media only screen and (min-width: 64.0625em) {
@@ -7091,7 +7166,7 @@ figure {
     font-size: 2.1rem;
     font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
     font-weight: bold;
-    margin-top: 5rem;
+    margin-top: 2rem;
     margin-bottom: 0.5rem; } }
 
 .contact_details {
