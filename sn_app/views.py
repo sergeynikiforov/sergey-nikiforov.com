@@ -143,7 +143,7 @@ def photo_home(request, photoset_slug):
 
 def photo_dict(photoset, photo, srcset="200w 400w 600w 800w 1000w 1200w 1400w 1600w 2000w 2400w 2800w 3200w"):
     '''
-    returns dict photo info
+    helper function, returns dict photo info
 
     photoset: current photoset from django ORM
     photo: current photo from django ORM

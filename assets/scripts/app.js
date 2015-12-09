@@ -39,22 +39,22 @@ $(function() {
  */
 $(function() {
 
-    var element = $('.sticky-sidebar');
+    var sidebar = $('.sticky-sidebar');
 
     // check if element is present
-    if (element.length > 0) {
-        var originalY = element.offset().top;
+    if (sidebar.length > 0) {
+        var originalY = sidebar.offset().top;
 
         // Space between element and top of screen (when scrolling)
         var topMargin = 90;
 
         // Should probably be set in CSS; but here just for emphasis
-        element.css('position', 'relative');
+        sidebar.css('position', 'relative');
 
         $(window).on('scroll', function(event) {
             var scrollTop = $(window).scrollTop();
 
-            element.stop(false, false).animate({
+            sidebar.stop(false, false).animate({
                 top: scrollTop < originalY
                         ? 0
                         : scrollTop - originalY + topMargin
@@ -189,3 +189,17 @@ $.ajaxSetup({
         }
     }
 });
+
+// change hero-image on photography page on hover
+$('.hover-background').hover(
+   function(){
+    var photo_bg_url = $(this).attr('id');
+    $('#change-bg-on-hover').css("background-image", "url(\"" + photo_bg_url + "\")");
+    //console.log("url(\"" + photo_bg_url + ")\"");
+   },
+   function(){
+    var default_photo_bg_url = 'url("https://res.cloudinary.com/sergeynikiforov/image/upload/v1449663321/photography_xddfkp.jpg")';
+    $('#change-bg-on-hover').css("background-image", default_photo_bg_url);
+    //console.log('hover-out');
+   }
+);

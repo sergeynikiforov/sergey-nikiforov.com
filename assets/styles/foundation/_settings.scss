@@ -1435,20 +1435,20 @@ $topbar-link-bg-hover: $white;
 // $topbar-button-top: 7px;
 
 // Style the top bar dropdown elements
-$topbar-dropdown-bg: $white;
-$topbar-dropdown-link-color: $black;
+//$topbar-dropdown-bg: $white;
+$topbar-dropdown-link-color: $white;
 $topbar-dropdown-link-color-hover: $topbar-link-color-hover;
 // $topbar-dropdown-link-bg: $oil;
 // $topbar-dropdown-link-bg-hover: $jet;
 // $topbar-dropdown-link-weight: $font-weight-normal;
-// $topbar-dropdown-toggle-size: 5px;
-$topbar-dropdown-toggle-color: $black;
+$topbar-dropdown-toggle-size: 5px;
+$topbar-dropdown-toggle-color: $white;
 // $topbar-dropdown-toggle-alpha: .4;
 
 $topbar-dropdown-label-color: $black;
 // $topbar-dropdown-label-text-transform: uppercase;
 $topbar-dropdown-label-font-weight: $font-weight-normal;
-// $topbar-dropdown-label-font-size: rem-calc(10);
+//$topbar-dropdown-label-font-size: rem-calc(10);
 // $topbar-dropdown-label-bg: $oil;
 
 // Top menu icon styles
@@ -1464,7 +1464,7 @@ $topbar-menu-icon-color: $black;
 // Transitions and breakpoint styles
 // $topbar-transition-speed: 300ms;
 // Using rem-calc for the below breakpoint causes issues with top bar
-$topbar-breakpoint: #{lower-bound($large-range)}; // Change to 9999px for always mobile layout
+//$topbar-breakpoint: #{lower-bound($large-range)}; // Change to 9999px for always mobile layout
 // $topbar-media-query: "#{$screen} and (min-width:#{lower-bound($topbar-breakpoint)})";
 
 // Top-bar input styles

@@ -22,16 +22,30 @@
                                     <li class="name">
                                         <h1>{% block top_bar_title %}<a href="{% url 'sn_app:landing' %}">{{ person.first_name|upper }} {{ person.last_name|upper }}</a>{% endblock top_bar_title %}</h1>
                                     </li>
-                                    <li class="toggle-topbar"><a href="#"><span>Menu</span></a></li>
+                                    <!--<li class="toggle-topbar"><a href="#"><span>Menu</span></a></li>-->
                                 </ul>
                                 {% block top_bar_section %}
-                                    <section class="top-bar-section">
+                                    <section  class="top-bar-section show-for-large-up">
                                         <ul class="right text-right">
                                             <li><a href="{% url 'sn_app:landing' %}">HOME</a></li>
                                             <li><a href="{% url 'sn_app:about' %}">ABOUT</a></li>
                                             <li><a href="{% url 'sn_app:resume' %}">RESUME</a></li>
                                             <li><a href="{% url 'sn_app:photography' %}">PHOTOGRAPHY</a></li>
                                             <li><a href="{% url 'sn_app:contact' %}">CONTACT ME</a></li>
+                                        </ul>
+                                    </section>
+                                    <section  class="top-bar-section show-for-medium-only">
+                                        <ul class="right text-right">
+                                            <li class="has-dropdown">
+                                                <a href="#">MENU</a>
+                                                <ul class="dropdown">
+                                                    <li><a href="{% url 'sn_app:landing' %}">HOME</a></li>
+                                                    <li><a href="{% url 'sn_app:about' %}">ABOUT</a></li>
+                                                    <li><a href="{% url 'sn_app:resume' %}">RESUME</a></li>
+                                                    <li><a href="{% url 'sn_app:photography' %}">PHOTOGRAPHY</a></li>
+                                                    <li><a href="{% url 'sn_app:contact' %}">CONTACT ME</a></li>
+                                                </ul>
+                                            </li>
                                         </ul>
                                     </section>
                                 {% endblock top_bar_section %}
@@ -52,9 +66,12 @@
                                 <nav id="navigation-top-bar" class="tab-bar">
                                   <section class="left tab-bar-section">
                                     <h2 class="title">{% block tab_bar_title %}<a href="{% url 'sn_app:landing' %}">{{ person.first_name|upper }} {{ person.last_name|upper }}</a>{% endblock tab_bar_title %}</h2>
+
                                     {% block off_canvas_tab_bar_page_header %}
                                     <h2 class="page_header">/SPAM</h2>
                                     {% endblock off_canvas_tab_bar_page_header %}
+
+                                    {% block off_canvas_tab_bar_page_links %}{% endblock off_canvas_tab_bar_page_links %}
                                   </section>
                                   <section class="right">
                                     <a href="#idOfRightMenu" role="button" aria-controls="idOfRightMenu" aria-expanded="false" class="right-off-canvas-toggle transparent-button-small">MENU</a>
@@ -71,7 +88,7 @@
                 </div>
 
                 <aside id="navigation-top-bar" class="right-off-canvas-menu">
-                  <ul class="off-canvas-list">
+                  <ul  class="off-canvas-list">
                     <li><label>{{ person.first_name|upper }} {{ person.last_name|upper }}</label></li>
                     <li><a href="{% url 'sn_app:landing' %}">HOME</a></li>
                     <li><a href="{% url 'sn_app:about' %}">ABOUT</a></li>
@@ -79,13 +96,13 @@
                     <li><a href="{% url 'sn_app:photography' %}">PHOTOGRAPHY</a></li>
                     <li><a href="{% url 'sn_app:contact' %}">CONTACT ME</a></li>
                     {% if photosets %}
-                        <li><label id="off-canvas-extra-label">/PHOTOGRAPHY</label></li>
+                        <li><label id="off-canvas-extra-label">/PHOTOGRAPHY/</label></li>
                         {% for photoset in photosets %}
                             <li><a href="{% url 'sn_app:photoset' photoset.slug %}">{{ photoset.title|upper }}</a></li>
                         {% endfor %}
                     {% endif %}
                     {% if jobs %}
-                        <li><label id="off-canvas-extra-label">/RESUME</label></li>
+                        <li><label id="off-canvas-extra-label">/RESUME/</label></li>
                         <li><a class="exit-off-canvas-link" href="#contact">Contact Details</a></li>
                         <li><a class="exit-off-canvas-link" href="#education">Education</a></li>
                         <li><a class="exit-off-canvas-link" href="#courses">Online Courses</a></li>

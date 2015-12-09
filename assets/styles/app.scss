@@ -51,20 +51,18 @@ $font-size-sans-serif-nav: 1.1rem;
 $font-size-serif-page-header: 3rem;
 $font-size-custom-panel: 2rem;
 
-@media #{$small-up} {
-    .vh-style {
+
+.vh-style {
+    @media #{$small-up} {
         @include viewport-unit(height, 100vh);
         figure{
-            @include viewport-unit(height, 99vh);
+            @include viewport-unit(height, 100vh);
             img {
-            @include viewport-unit(max-height, 99vh);
+            @include viewport-unit(max-height, 100vh);
             }
         }
     }
-}
 
-.hero-image {
-    //margin-top: 2rem;
 }
 
 
@@ -133,6 +131,18 @@ footer {
 @media #{$medium-up} {
     #navigation-top-bar {
         margin-top: 3rem;
+    }
+}
+
+.top-bar .top-bar-section ul.dropdown {
+    padding-top: 1.5rem;
+    li a {
+        @media #{$medium-only} {
+            //font-size: $font-size-sans-serif-nav + 0rem;
+        }
+        font-family: $font-family-sans-serif;
+        font-weight: $font-weight-thin;
+        margin: 0.5rem 0rem;
     }
 }
 
@@ -285,7 +295,7 @@ footer {
     margin-top: 2rem;
 }
 
-#contact-nav {
+#hero-nav {
     margin-top: 2.7rem;
     p {
         font-weight: $font-weight-thin;
@@ -324,6 +334,17 @@ footer {
 }
 
 .resume-wrapper {
+    height: 100vh;
+    width: 100%;
+    @media #{$large-up} {
+        padding: 1.5rem;
+    }
+    @media #{$medium-only} {
+        padding: 2rem 0rem 6rem 0rem;
+    }
+}
+
+.photography-wrapper {
     height: 100vh;
     width: 100%;
     @media #{$large-up} {
@@ -411,13 +432,28 @@ footer {
     height:100%;
 }
 
+.photography-image {
+    background-image: url("https://res.cloudinary.com/sergeynikiforov/image/upload/v1449663321/photography_xddfkp.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    width:100%;
+    height:100%;
+}
+
+
 
 .landing {
-
-    font-size: $font-size-sans-serif-nav + 0.3rem;
     @media #{$medium-only} {
         font-size: $font-size-sans-serif-nav;
     }
+    @media #{$small-only} {
+        a{
+            font-size: $font-size-sans-serif-nav - 0.1rem;
+            line-height: 1.3;
+        }
+    }
+    font-size: $font-size-sans-serif-nav + 0.3rem;
     font-family: $font-family-sans-serif;
     font-style: italic;
     font-weight: $font-weight-thin;
@@ -689,7 +725,7 @@ figure {
 @media #{$small-only} {
     .page_header {
         color: $white;
-        font-size: $font-size-serif-page-header - 0.5rem;
+        font-size: $font-size-serif-page-header - 1.3rem;
         font-family: $font-family-sans-serif;
         font-weight: $font-weight-bold;
         line-height: 0.9;
@@ -703,7 +739,7 @@ figure {
         font-weight: $font-weight-bold;
         line-height: 0.9;
         margin-top: -0.9rem;
-        margin-bottom: 1rem;
+        margin-bottom: 0rem;
     }
     .page_subheader {
         font-size: $font-size-serif-page-header - 1.1rem;
@@ -784,6 +820,10 @@ figure {
 }
 */
 
+#change-bg-on-hover {
+    transition: 0.5s;
+}
+
 .photoset-description {
     margin-bottom: 3rem;
 }
@@ -811,6 +851,11 @@ figure {
                     );
     margin-bottom: 0px;
     font-size: $font-size-sans-serif-nav;
+    @media #{$large-up} {
+        font-size: $font-size-sans-serif-nav + 0.3rem;
+        padding: 0.1rem 0rem;
+        margin: 0;
+    }
     font-family: $font-family-sans-serif;
     font-weight: $font-weight-thin;
     padding-left: 0px;
@@ -854,9 +899,9 @@ figure {
 }
 
 .photoset-thumbnail {
-    margin-bottom: 9rem;
+    //margin: 9rem 0rem;
     @media #{$small-only} {
-        margin-bottom: 5rem;
+        padding: 5rem 0rem;
     }
 }
 

@@ -4712,8 +4712,8 @@ table {
     top: 50%; } }
 
 meta.foundation-mq-topbar {
-  font-family: "/only screen and (min-width:64.0625em)/";
-  width: 64.0625em; }
+  font-family: "/only screen and (min-width:40.0625em)/";
+  width: 40.0625em; }
 
 /* Wrapped around .top-bar to contain to grid width */
 .contain-to-grid {
@@ -4860,7 +4860,7 @@ meta.foundation-mq-topbar {
     height: 1px;
     width: 100%; }
   .top-bar-section ul li {
-    background: #FFFFFF; }
+    background: #333333; }
     .top-bar-section ul li > a {
       color: #211C19;
       display: block;
@@ -4993,7 +4993,7 @@ meta.foundation-mq-topbar {
       display: block;
       height: 0;
       width: 0;
-      border-color: transparent transparent transparent rgba(33, 28, 25, 0.4);
+      border-color: transparent transparent transparent rgba(255, 255, 255, 0.4);
       border-left-style: solid;
       margin-right: 0.36667rem;
       margin-top: -4.5px;
@@ -5058,7 +5058,7 @@ meta.foundation-mq-topbar {
 .js-generated {
   display: block; }
 
-@media only screen and (min-width: 64.0625em) {
+@media only screen and (min-width: 40.0625em) {
   .top-bar {
     background: transparent;
     overflow: visible; }
@@ -5137,7 +5137,7 @@ meta.foundation-mq-topbar {
         display: block;
         height: 0;
         width: 0;
-        border-color: rgba(33, 28, 25, 0.4) transparent transparent transparent;
+        border-color: rgba(255, 255, 255, 0.4) transparent transparent transparent;
         border-top-style: solid;
         margin-top: -2.5px;
         top: 0.55rem; }
@@ -5178,13 +5178,13 @@ meta.foundation-mq-topbar {
       top: auto; }
       .top-bar-section .dropdown li a {
         background: #333333;
-        color: #211C19;
+        color: #FFFFFF;
         line-height: 1.1rem;
         padding: 12px 0.36667rem;
         white-space: nowrap; }
       .top-bar-section .dropdown li:not(.has-form):not(.active) > a:not(.button) {
         background: #333333;
-        color: #211C19; }
+        color: #FFFFFF; }
       .top-bar-section .dropdown li:not(.has-form):not(.active):hover > a:not(.button) {
         background-color: #555555;
         color: #C8280A;
@@ -6641,47 +6641,47 @@ th.hide-for-touch {
 
 @media only screen {
     .vh-style figure {
-      height: 99vh; } }
+      height: 100vh; } }
     @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
       .vh-style figure {
-        height: 1013.76px; } }
+        height: 1024px; } }
     @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: landscape) {
       .vh-style figure {
-        height: 760.32px; } }
+        height: 768px; } }
     @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: portrait) {
       .vh-style figure {
-        height: 475.2px; } }
+        height: 480px; } }
     @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: landscape) {
       .vh-style figure {
-        height: 316.8px; } }
+        height: 320px; } }
     @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: portrait) {
       .vh-style figure {
-        height: 562.32px; } }
+        height: 568px; } }
     @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: landscape) {
       .vh-style figure {
-        height: 316.8px; } }
+        height: 320px; } }
 
 @media only screen {
       .vh-style figure img {
-        max-height: 99vh; } }
+        max-height: 100vh; } }
       @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
         .vh-style figure img {
-          max-height: 1013.76px; } }
+          max-height: 1024px; } }
       @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: landscape) {
         .vh-style figure img {
-          max-height: 760.32px; } }
+          max-height: 768px; } }
       @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: portrait) {
         .vh-style figure img {
-          max-height: 475.2px; } }
+          max-height: 480px; } }
       @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: landscape) {
         .vh-style figure img {
-          max-height: 316.8px; } }
+          max-height: 320px; } }
       @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: portrait) {
         .vh-style figure img {
-          max-height: 562.32px; } }
+          max-height: 568px; } }
       @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: landscape) {
         .vh-style figure img {
-          max-height: 316.8px; } }
+          max-height: 320px; } }
 
 footer {
   font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
@@ -6713,6 +6713,13 @@ footer {
 @media only screen and (min-width: 40.0625em) {
   #navigation-top-bar {
     margin-top: 3rem; } }
+
+.top-bar .top-bar-section ul.dropdown {
+  padding-top: 1.5rem; }
+  .top-bar .top-bar-section ul.dropdown li a {
+    font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
+    font-weight: 300;
+    margin: 0.5rem 0rem; }
 
 .top-bar .title-area h1 > a {
   color: #FFFFFF;
@@ -6815,9 +6822,9 @@ footer {
 #home-nav {
   margin-top: 2rem; }
 
-#contact-nav {
+#hero-nav {
   margin-top: 2.7rem; }
-  #contact-nav p {
+  #hero-nav p {
     font-weight: 300; }
 
 .home-wrapper {
@@ -6856,6 +6863,16 @@ footer {
       padding: 1.5rem; } }
   @media only screen and (min-width: 40.0625em) and (max-width: 64em) {
     .resume-wrapper {
+      padding: 2rem 0rem 6rem 0rem; } }
+
+.photography-wrapper {
+  height: 100vh;
+  width: 100%; }
+  @media only screen and (min-width: 64.0625em) {
+    .photography-wrapper {
+      padding: 1.5rem; } }
+  @media only screen and (min-width: 40.0625em) and (max-width: 64em) {
+    .photography-wrapper {
       padding: 2rem 0rem 6rem 0rem; } }
 
 .image-wrap {
@@ -6926,6 +6943,14 @@ footer {
   width: 100%;
   height: 100%; }
 
+.photography-image {
+  background-image: url("https://res.cloudinary.com/sergeynikiforov/image/upload/v1449663321/photography_xddfkp.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  width: 100%;
+  height: 100%; }
+
 .landing {
   font-size: 1.4rem;
   font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
@@ -6935,6 +6960,10 @@ footer {
   @media only screen and (min-width: 40.0625em) and (max-width: 64em) {
     .landing {
       font-size: 1.1rem; } }
+  @media only screen and (max-width: 40em) {
+    .landing a {
+      font-size: 1rem;
+      line-height: 1.3; } }
   .landing a {
     color: #FFFFFF; }
   .landing a:hover {
@@ -7134,7 +7163,7 @@ figure {
 @media only screen and (max-width: 40em) {
   .page_header {
     color: #FFFFFF;
-    font-size: 2.5rem;
+    font-size: 1.7rem;
     font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
     font-weight: bold;
     line-height: 0.9;
@@ -7147,7 +7176,7 @@ figure {
     font-weight: bold;
     line-height: 0.9;
     margin-top: -0.9rem;
-    margin-bottom: 1rem; }
+    margin-bottom: 0rem; }
   .page_subheader {
     font-size: 1.9rem;
     font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
@@ -7206,6 +7235,10 @@ figure {
     }
 }
 */
+#change-bg-on-hover {
+  -webkit-transition: 0.5s;
+  transition: 0.5s; }
+
 .photoset-description {
   margin-bottom: 3rem; }
 
@@ -7242,6 +7275,11 @@ figure {
   font-weight: 300;
   padding-left: 0px;
   padding-right: 0px; }
+  @media only screen and (min-width: 64.0625em) {
+    .transparent-button-small {
+      font-size: 1.4rem;
+      padding: 0.1rem 0rem;
+      margin: 0; } }
 
 .transparent-button-small.prev {
   margin-right: 3rem; }
@@ -7306,11 +7344,9 @@ figure {
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease; }
 
-.photoset-thumbnail {
-  margin-bottom: 9rem; }
-  @media only screen and (max-width: 40em) {
-    .photoset-thumbnail {
-      margin-bottom: 5rem; } }
+@media only screen and (max-width: 40em) {
+  .photoset-thumbnail {
+    padding: 5rem 0rem; } }
 
 .photoset-thumbs {
   margin-top: 11rem; }
