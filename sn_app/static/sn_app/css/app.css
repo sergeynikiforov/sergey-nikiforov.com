@@ -6848,6 +6848,16 @@ footer {
     .about-wrapper {
       padding: 2rem 0rem 6rem 0rem; } }
 
+.resume-wrapper {
+  height: 100vh;
+  width: 100%; }
+  @media only screen and (min-width: 64.0625em) {
+    .resume-wrapper {
+      padding: 1.5rem; } }
+  @media only screen and (min-width: 40.0625em) and (max-width: 64em) {
+    .resume-wrapper {
+      padding: 2rem 0rem 6rem 0rem; } }
+
 .image-wrap {
   height: 100%;
   width: 100%; }
@@ -6902,6 +6912,14 @@ footer {
 
 .about-image-onarun {
   background-image: url("/static/sn_app/images/onarun.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 100%;
+  width: 100%;
+  height: 100%; }
+
+.resume-image {
+  background-image: url("/static/sn_app/images/ladefense.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 100%;

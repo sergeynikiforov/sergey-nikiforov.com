@@ -23426,7 +23426,7 @@ $(function() {
         var originalY = element.offset().top;
 
         // Space between element and top of screen (when scrolling)
-        var topMargin = 20;
+        var topMargin = 90;
 
         // Should probably be set in CSS; but here just for emphasis
         element.css('position', 'relative');

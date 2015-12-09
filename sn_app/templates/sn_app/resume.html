@@ -2,19 +2,67 @@
 {% load sn_app_extras %}
 {% load staticfiles %}
 {% block title %}Resume{% endblock title %}
-{% block page_header %}/RESUME{% endblock page_header %}
+
+{% block off_canvas_tab_bar_page_header %}
+    <h2 class="page_header">/RESUME/</h2>
+{% endblock off_canvas_tab_bar_page_header %}
+
+{% block off_canvas_tab_bar_image %}
+    <figure>
+        <img src="{% static 'sn_app/images/ladefense.jpg' %}" alt="La Defense, Paris">
+    </figure>
+{% endblock off_canvas_tab_bar_image %}
+
 {% block body %}
+    <div id="page-top" class="row">
+        <section class="small-12 medium_screen_figure large-centered columns">
+            <div class="resume-wrapper show-for-large-up">
+                <div class="image-wrap">
+                    <div class="resume-image">
+                        <div class="row">
+                            <div class="small-12 medium-10 small-centered columns show-for-large-up page_header_wrapper_large">
+                                <nav id="contact-nav" role="navigation">
+                                    <h2 class="page_header">/RESUME/</h2>
+                                    <p class="landing"><a href="#contact">CONTACT DETAILS</a></p>
+                                    <p class="landing"><a href="#education">EDUCATION</a></p>
+                                    <p class="landing"><a href="#courses">ONLINE COURSES</a></p>
+                                    <p class="landing"><a href="#work">WORK EXPERIENCE</a></p>
+                                    <p class="landing"><a href="#skills">SKILLS</a></p>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
     <div class="row hide-for-large-up">
-        <div class="small-12 columns small_screen_figure medium_screen_figure hero-image">
-            <figure>
-                <img src="{% static 'sn_app/images/ladefense.jpg' %}" alt="La Defense, Paris">
-            </figure>
+        <div class="small-12 columns small_screen_figure medium_screen_figure hero-image show-for-medium-only">
+            <div class="overlay_container">
+                <figure>
+                    <img src="{% static 'sn_app/images/ladefense.jpg' %}" alt="La Defense, Paris">
+                </figure>
+                <div class="overlay">
+                    <div class="row">
+                        <div class="medium-10 small-centered columns">
+                            <nav id="contact-nav" role="navigation">
+                                <h2 class="page_header">/RESUME/</h2>
+                                <p class="landing"><a href="#contact">CONTACT DETAILS</a></p>
+                                <p class="landing"><a href="#education">EDUCATION</a></p>
+                                <p class="landing"><a href="#courses">ONLINE COURSES</a></p>
+                                <p class="landing"><a href="#work">WORK EXPERIENCE</a></p>
+                                <p class="landing"><a href="#skills">SKILLS</a></p>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="row">
         <div class="large-2 columns show-for-large-up">
             <nav class="side-nav text-right sticky-sidebar" role="navigation" title="Resume">
-                <header><h6 id="sticky-sidebar-label"><a href="#page-top">/RESUME</a></h6></header>
+                <header><h6 id="sticky-sidebar-label"><a href="#page-top">/RESUME/</a></h6></header>
                 <p><a href="#contact">Contact Details</a></p>
                 <p><a href="#education">Education</a></p>
                 <p><a href="#courses">Online Courses</a></p>
@@ -23,13 +71,6 @@
             </nav>
         </div>
         <div class="small-12 medium-10 large-8 medium-centered large-uncentered columns">
-            <div class="row show-for-large-up">
-                <div class="small-12 columns small_screen_figure medium_screen_figure hero-image">
-                    <figure>
-                        <img src="{% static 'sn_app/images/ladefense.jpg' %}" alt="La Defense, Paris">
-                    </figure>
-                </div>
-            </div>
             {% if person %}
                 <div class="row">
                     <article class="small-12 columns">

@@ -20,7 +20,7 @@
                             <nav id="navigation-top-bar" class="top-bar" data-topbar role="navigation">
                                 <ul class="title-area">
                                     <li class="name">
-                                        <h1>{% block top_bar_title %}<a  id="page-top" href="{% url 'sn_app:landing' %}">{{ person.first_name|upper }} {{ person.last_name|upper }}</a>{% endblock top_bar_title %}</h1>
+                                        <h1>{% block top_bar_title %}<a href="{% url 'sn_app:landing' %}">{{ person.first_name|upper }} {{ person.last_name|upper }}</a>{% endblock top_bar_title %}</h1>
                                     </li>
                                     <li class="toggle-topbar"><a href="#"><span>Menu</span></a></li>
                                 </ul>
