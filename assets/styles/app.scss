@@ -302,6 +302,16 @@ footer {
     }
 }
 
+#photoset-nav {
+    margin-top: 5.5rem;
+    @media #{$medium-only} {
+        margin-top: 4.7rem;
+    }
+    p {
+        font-weight: $font-weight-thin;
+    }
+}
+
 .home-wrapper {
     height: 100vh;
     width: 100%;
@@ -345,6 +355,17 @@ footer {
 }
 
 .photography-wrapper {
+    height: 100vh;
+    width: 100%;
+    @media #{$large-up} {
+        padding: 1.5rem;
+    }
+    @media #{$medium-only} {
+        padding: 2rem 0rem 6rem 0rem;
+    }
+}
+
+.photoset-wrapper {
     height: 100vh;
     width: 100%;
     @media #{$large-up} {
@@ -441,7 +462,14 @@ footer {
     height:100%;
 }
 
-
+.photoset-image {
+    //background-image: url("https://res.cloudinary.com/sergeynikiforov/image/upload/v1449663321/photography_xddfkp.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    width:100%;
+    height:100%;
+}
 
 .landing {
     @media #{$medium-only} {
@@ -757,7 +785,7 @@ figure {
         font-family: $font-family-sans-serif;
         font-weight: $font-weight-bold;
         line-height: 1;
-        margin-top: -0.75rem;
+        margin-top: 0rem;
         margin-bottom: 0rem;
     }
     .page_subheader {
@@ -898,40 +926,57 @@ figure {
     }
 }
 
+// make room for thumbs on small screens
 .photoset-thumbnail {
     //margin: 9rem 0rem;
     @media #{$small-only} {
-        padding: 5rem 0rem;
+        margin: 5rem 0rem;
     }
 }
 
-.photoset-thumbs {
-    margin-top: 11rem;
-}
-.sticky-photosets {
-    margin-top: 3rem;
+.thumbs-wrapper {
+    @media #{$xlarge-up} {
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+    }
 }
 
-.photoset-title {
-    font-style: italic;
-    font-weight: $font-weight-thin;
-    font-size: 1.3rem;
-    margin-top: 5rem;
-    margin-bottom: 3rem;
+.thumbs {
+    background: black;
+    @media #{$small-only} {
+        padding: 5rem 0.5rem 5rem 0.5rem;
+    }
+    @media #{$medium-up} {
+        padding: $block-grid-default-spacing;
+        padding-top: 5rem;
+    }
 }
+
+.one-thumb {
+    @media #{$small-only} {
+        margin-bottom: 0rem;
+    }
+    @media #{$medium-only} {
+        margin-bottom: 8rem;
+    }
+}
+
 
 .photo-captions {
     h6 {
+        color: $white;
         font-style: normal;
-        font-family: $font-family-serif;
-        font-weight: 400;
+        font-family: $font-family-sans-serif;
+        font-weight: $font-weight-bold;
         font-size: 1.2rem;
         margin-top: 0.5rem;
         margin-bottom: 0rem;
     }
     p {
+        color: $white;
         font-style: italic;
         font-family: $font-family-sans-serif;
+        font-weight: $font-weight-thin;
         font-size: 1rem;
         margin-top: 0rem;
         padding-top: 0rem;

@@ -1281,7 +1281,7 @@ select {
 [class*="block-grid-"] {
   display: block;
   padding: 0;
-  margin: 0 0; }
+  margin: 0 -1.25rem; }
   [class*="block-grid-"]:before, [class*="block-grid-"]:after {
     content: " ";
     display: table; }
@@ -1291,7 +1291,7 @@ select {
     display: block;
     float: left;
     height: auto;
-    padding: 0 0 0; }
+    padding: 0 1.25rem 2.5rem; }
 
 @media only screen {
   .small-block-grid-1 > li {
@@ -6827,6 +6827,14 @@ footer {
   #hero-nav p {
     font-weight: 300; }
 
+#photoset-nav {
+  margin-top: 5.5rem; }
+  @media only screen and (min-width: 40.0625em) and (max-width: 64em) {
+    #photoset-nav {
+      margin-top: 4.7rem; } }
+  #photoset-nav p {
+    font-weight: 300; }
+
 .home-wrapper {
   height: 100vh;
   width: 100%;
@@ -6873,6 +6881,16 @@ footer {
       padding: 1.5rem; } }
   @media only screen and (min-width: 40.0625em) and (max-width: 64em) {
     .photography-wrapper {
+      padding: 2rem 0rem 6rem 0rem; } }
+
+.photoset-wrapper {
+  height: 100vh;
+  width: 100%; }
+  @media only screen and (min-width: 64.0625em) {
+    .photoset-wrapper {
+      padding: 1.5rem; } }
+  @media only screen and (min-width: 40.0625em) and (max-width: 64em) {
+    .photoset-wrapper {
       padding: 2rem 0rem 6rem 0rem; } }
 
 .image-wrap {
@@ -6945,6 +6963,13 @@ footer {
 
 .photography-image {
   background-image: url("https://res.cloudinary.com/sergeynikiforov/image/upload/v1449663321/photography_xddfkp.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  width: 100%;
+  height: 100%; }
+
+.photoset-image {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 50%;
@@ -7191,7 +7216,7 @@ figure {
     font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
     font-weight: bold;
     line-height: 1;
-    margin-top: -0.75rem;
+    margin-top: 0rem;
     margin-bottom: 0rem; }
   .page_subheader {
     font-size: 2rem;
@@ -7346,32 +7371,45 @@ figure {
 
 @media only screen and (max-width: 40em) {
   .photoset-thumbnail {
-    padding: 5rem 0rem; } }
+    margin: 5rem 0rem; } }
 
-.photoset-thumbs {
-  margin-top: 11rem; }
+@media only screen and (min-width: 90.0625em) {
+  .thumbs-wrapper {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem; } }
 
-.sticky-photosets {
-  margin-top: 3rem; }
+.thumbs {
+  background: black; }
+  @media only screen and (max-width: 40em) {
+    .thumbs {
+      padding: 5rem 0.5rem 5rem 0.5rem; } }
+  @media only screen and (min-width: 40.0625em) {
+    .thumbs {
+      padding: 2.5rem;
+      padding-top: 5rem; } }
 
-.photoset-title {
-  font-style: italic;
-  font-weight: 300;
-  font-size: 1.3rem;
-  margin-top: 5rem;
-  margin-bottom: 3rem; }
+@media only screen and (max-width: 40em) {
+  .one-thumb {
+    margin-bottom: 0rem; } }
+
+@media only screen and (min-width: 40.0625em) and (max-width: 64em) {
+  .one-thumb {
+    margin-bottom: 8rem; } }
 
 .photo-captions h6 {
+  color: #FFFFFF;
   font-style: normal;
-  font-family: "Athelas", "adobe-garamond-pro", Garamond, Times, serif;
-  font-weight: 400;
+  font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
+  font-weight: bold;
   font-size: 1.2rem;
   margin-top: 0.5rem;
   margin-bottom: 0rem; }
 
 .photo-captions p {
+  color: #FFFFFF;
   font-style: italic;
   font-family: "Helvetica Neue", "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
+  font-weight: 300;
   font-size: 1rem;
   margin-top: 0rem;
   padding-top: 0rem;

@@ -112,7 +112,6 @@ class ContactMe(models.Model):
 class Photoset(models.Model):
     title = models.CharField(max_length=200, unique=True)
     description = models.TextField(max_length=2000)
-    cover = models.CharField(max_length=200, default='choose_coverID_plz') # Cloudinary photo ID for album cover
     cover_photo = models.OneToOneField('Photo', null=True) # Photo model instance
     num_views = models.PositiveIntegerField(default=0)
     num_photos = models.PositiveIntegerField(default=0)

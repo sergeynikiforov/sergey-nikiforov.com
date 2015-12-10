@@ -222,6 +222,13 @@ def photoset_api(request, photoset_slug=''):
 def photoset(request, photoset_slug=''):
     '''
     view for a particular photoset page (thumbnails view)
+
+    returns in context:
+    - all photosets in 'photosets'
+    - current 'photoset_title' & 'photoset_description'
+    - the whole 'active_photoset'
+    - 'photos' of current photoset
+    - 'person'
     '''
     # create context dict
     context_dict = {}
@@ -263,6 +270,10 @@ def photoset(request, photoset_slug=''):
 def photography(request):
     '''
     view for a general photography page (with thumbs for photosets)
+
+    returns in context:
+    - all photosets in 'photosets'
+    - 'person'
     '''
     # create context dict
     context_dict = {}

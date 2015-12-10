@@ -23571,18 +23571,18 @@ $.ajaxSetup({
 });
 
 // change hero-image on photography page on hover
-$('.hover-background').hover(
-   function(){
-    var photo_bg_url = $(this).attr('id');
-    $('#change-bg-on-hover').css("background-image", "url(\"" + photo_bg_url + "\")");
-    //console.log("url(\"" + photo_bg_url + ")\"");
-   },
-   function(){
-    var default_photo_bg_url = 'url("https://res.cloudinary.com/sergeynikiforov/image/upload/v1449663321/photography_xddfkp.jpg")';
-    $('#change-bg-on-hover').css("background-image", default_photo_bg_url);
-    //console.log('hover-out');
-   }
-);
+$(document).ready(function() {
+    var default_photo_bg_url = $('#change-bg-on-hover').css('background-image');
+    $('.hover-background').hover(
+       function(){
+        var photo_bg_url = $(this).attr('id');
+        $('#change-bg-on-hover').css("background-image", "url(\"" + photo_bg_url + "\")");
+       },
+       function(){
+        $('#change-bg-on-hover').css("background-image", default_photo_bg_url);
+       }
+    );
+});
 /*!
  * jQuery Sticky Footer 2.1
  * Corey Snyder
