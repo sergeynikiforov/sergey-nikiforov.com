@@ -23,9 +23,7 @@
                                         <h1>{% block top_bar_title %}<a href="{% url 'sn_app:landing' %}">{{ person.first_name|upper }} {{ person.last_name|upper }}</a>{% endblock top_bar_title %}</h1>
                                     </li>
                                     <!--<li class="toggle-topbar"><a href="#"><span>Menu</span></a></li>-->
-
                                 </ul>
-
                                 {% block top_bar_section %}
                                     <section  class="top-bar-section show-for-large-up">
                                         <ul class="right text-right">
@@ -50,7 +48,6 @@
                                             </li>
                                         </ul>
                                     </section>
-
                                 {% endblock top_bar_section %}
                             </nav>
                         </header>

@@ -112,6 +112,7 @@ class ContactMe(models.Model):
 class Photoset(models.Model):
     title = models.CharField(max_length=200, unique=True)
     description = models.TextField(max_length=2000)
+    short_description = models.TextField(max_length=1000, default='Vehicula sem libero per ipsum donec, ante vitae neque mauris, integer quisque et nisl, etiam veritatis pede commodo sed penatibus vel, erat ac suspendisse ipsum enim tristique orci.')
     cover_photo = models.OneToOneField('Photo', null=True) # Photo model instance
     num_views = models.PositiveIntegerField(default=0)
     num_photos = models.PositiveIntegerField(default=0)
@@ -119,7 +120,6 @@ class Photoset(models.Model):
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
-        #self.cover = Photo.objects.filter(photosets__title__exact=self.title)[0].publicID
         super(Photoset, self).save(*args, **kwargs)
 
     def __unicode__(self):
@@ -131,6 +131,7 @@ class Photo(models.Model):
     url = models.URLField(default='http://www.example.com')
     title = models.CharField(max_length=200, default='Untitled')
     description = models.TextField(max_length=2000, default='No description')
+    date_taken = models.DateTimeField(default=timezone.now)
     num_views = models.PositiveIntegerField(default=0)
     photosets = models.ManyToManyField(Photoset, through='PhotoInPhotoset')
 
@@ -142,3 +143,8 @@ class PhotoInPhotoset(models.Model):
     photoset = models.ForeignKey(Photoset)
     photo = models.ForeignKey(Photo)
     order = models.PositiveIntegerField()
+
+    def save(self, *args, **kwargs):
+        self.photoset.num_photos += 1
+        self.photoset.save()
+        super(PhotoInPhotoset, self).save(*args, **kwargs)

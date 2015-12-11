@@ -26,6 +26,12 @@ cloudinary.config(
 PHOTOPATH = '/home/sergeynikiforov/Dropbox/img_assets/test2/'
 
 def populate(photos_path, photoset_title=None):
+    """
+    initial population of photoset
+
+    #TODO - set 'date_taken' for Photo from EXIF using exifread
+    """
+
     # create photoset
     if photoset_title:
         photoset, created = Photoset.objects.get_or_create(title=photoset_title, description='none')
@@ -51,7 +57,6 @@ def populate(photos_path, photoset_title=None):
         ps.save()
 
         # increment counters
-        photoset.num_photos += 1
         order_counter += 1
 
     # save changes to photoset

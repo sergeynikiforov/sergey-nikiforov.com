@@ -5,22 +5,33 @@
 {% block title %}{% if active_photoset %}{{ active_photoset.title }}{% endif %}{% endblock title %}
 
 {% block top_bar_title %}
-<a id="page-top" href="{% url 'sn_app:photoset' active_photoset.slug %}">{{ active_photoset.title|upper }}</a>
+    <a href="{% url 'sn_app:photoset' active_photoset.slug %}">{{ active_photoset.title|upper }}</a>
 {% endblock top_bar_title %}
 
 {% block top_bar_section %} {% endblock top_bar_section %}
 
-{% block tab_bar_title %}{{ active_photoset.title|upper }}{% endblock tab_bar_title %}
+{% block tab_bar_title %}
+    <a href="{% url 'sn_app:photoset' active_photoset.slug %}">{{ active_photoset.title|upper }}</a>
+{% endblock tab_bar_title %}
 
-{% block page_header %}<span id="photo-title-wrapper"></span>{% endblock page_header %}
+{% block off_canvas_tab_bar_page_header %}
+    <h2 class="page_header"><span id="photo-title-wrapper"></span></h2>
+{% endblock off_canvas_tab_bar_page_header %}
 
-{% block body %}
+{% block off_canvas_tab_bar_image %} {% endblock off_canvas_tab_bar_image %}
+
+{% block top_bar_sticky_page_header %}
     <div class="row">
-        <div class="small-12 medium-10 medium-centered columns">
+        <div class="medium-10 large-10 medium-centered columns show-for-medium-up">
+            <h2 class="page_header"><span id="photo-title-wrapper"></span></h2>
             <h5>2014</h5>
         </div>
     </div>
-    <div id="sticky_footer">
+{% endblock top_bar_sticky_page_header %}
+
+{% block body %}
+<div class="bg-wrapper" style="background: black; color: white;">
+    <div id="sticky_footer" class="row">
         <div class="large-2 columns show-for-large-up text-right">
             <div id="photo-description-wrapper"></div>
         </div>
@@ -36,6 +47,7 @@
             </div>
         </div>
     </div>
+</div>
 {% endblock body %}
 {% block footer %}
 {% endblock footer %}
