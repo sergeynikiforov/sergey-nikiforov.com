@@ -128,9 +128,27 @@ footer {
     background:transparent !important;
 }
 
-@media #{$medium-up} {
-    #navigation-top-bar {
+@media #{$medium-only} {
+    #navigation-bar {
+        margin-top: 1rem;
+    }
+    #navigation-bar-photo {
+        margin-top: 1rem;
+    }
+}
+
+@media #{$large-up} {
+    #navigation-bar {
         margin-top: 3rem;
+    }
+    #navigation-bar-photo {
+        margin-top: 1rem;
+    }
+}
+
+#navigation-bar.top-bar {
+    .expanded .top-bar-section ul.right.text-right {
+    padding-top: 1rem;
     }
 }
 
@@ -158,6 +176,12 @@ footer {
         @media #{$medium-only} {
             font-size: $font-size-sans-serif-nav - 0.2rem;
         }
+        &.black-color {
+            color: $black;
+            &:hover {
+                color: $red;
+            }
+        }
     }
     h2, p > a {
         color: $white;
@@ -180,11 +204,7 @@ footer {
     }
 }
 
-#navigation-top-bar.top-bar {
-    .expanded .top-bar-section ul.right.text-right {
-    padding-top: 1rem;
-    }
-}
+
 
 .top-bar .top-bar-section .right {
     li a {
@@ -199,6 +219,17 @@ footer {
         font-style: italic;
         @media #{$medium-only} {
             font-size: $font-size-sans-serif-nav - 0.2rem;
+        }
+    }
+    li.black-color {
+       a {
+            color: $black;
+            &:hover {
+                color: $red;
+            }
+        }
+        .dropdown li > a {
+            color: $black;
         }
     }
 }
@@ -296,7 +327,7 @@ footer {
 }
 
 #hero-nav {
-    margin-top: 2.7rem;
+    margin-top: 2.1rem;
     p {
         font-weight: $font-weight-thin;
     }
@@ -513,6 +544,9 @@ footer {
 
     a {
         color: $white;
+        &.black-color {
+            color: $black;
+        }
     }
     a:hover {
         color: $red;
@@ -531,8 +565,9 @@ footer {
             top: 0;
             left: 0;
             right: 0;
-            margin-top: 2rem;
+            margin-top: 0rem;
             margin-left: rem-calc(18);
+            padding: 0rem;
             //margin-right: 18px;
         }
     }
@@ -546,8 +581,8 @@ footer {
 @media #{$small-only} {
     .overlay_container {
         position: relative;
-        margin-top: 2rem;
-        margin-bottom: 2rem;
+        margin-top: 0rem;
+        margin-bottom: 0rem;
         .overlay {
             position: absolute;
             top: 0;
@@ -555,7 +590,7 @@ footer {
             right: 0;
             margin-top: 0.5rem;
             margin-left: rem-calc(18);
-            margin-right: 18px;
+            margin-right: rem-calc(18);
         }
     }
     .contact {
@@ -604,6 +639,12 @@ figure {
     }
 }
 
+@media #{$large-up} {
+    .large_screen_figure {
+        padding-left: 0px;
+    }
+}
+
 .spiel {
     margin: 4rem 0rem 5rem 0rem;
 }
@@ -615,6 +656,14 @@ figure {
 .content-center {
     display: table-cell;
     vertical-align: middle;
+}
+
+.container-down {
+    //display: table;
+}
+.content-down {
+    //display: table-cell;
+    vertical-align: bottom;
 }
 
 // END ABOUT ME
@@ -768,6 +817,9 @@ figure {
         line-height: 0.9;
         margin-top: -0.9rem;
         margin-bottom: 0rem;
+        &.black-color {
+            color: $black;
+        }
     }
     .page_subheader {
         font-size: $font-size-serif-page-header - 1.1rem;
@@ -880,34 +932,86 @@ figure {
     margin-bottom: 0px;
     font-size: $font-size-sans-serif-nav;
     @media #{$large-up} {
-        font-size: $font-size-sans-serif-nav + 0.3rem;
-        padding: 0.1rem 0rem;
+        font-size: $font-size-sans-serif-nav;
+        padding: 0.1rem 0.1rem;
         margin: 0;
     }
     font-family: $font-family-sans-serif;
     font-weight: $font-weight-thin;
-    padding-left: 0px;
-    padding-right: 0px;
+    font-style: italic;
+    padding-left: 2px;
+    padding-right: 2px;
 }
 .transparent-button-small.prev {
     margin-right: 3rem;
 }
-.prev-next-nav p {
-    font-size: $font-size-sans-serif-nav;
-    font-family: $font-family-sans-serif;
-    font-weight: $font-weight-thin;
-}
 
-// max height of an image
 
+// max height of an image on a single photo page
 #photo-wrapper {
-    figure{
-        @include viewport-unit(height, 75vh);
-        img {
-        @include viewport-unit(max-height, 75vh);
+    @media #{$large-up} {
+        padding-top: 2rem;
+        figure{
+            @include viewport-unit(max-height, 84vh);
+            min-height: 470px;
+            img {
+                @include viewport-unit(max-height, 84vh);
+                min-height: 470px;
+                padding-bottom: 3rem;
+            }
+        }
+    }
+    @media #{$medium-only} {
+        @media #{$portrait} {
+            padding-top: 2rem;
+            figure{
+                @include viewport-unit(height, 55vh);
+                min-height: 400px;
+                img {
+                    @include viewport-unit(max-height, 55vh);
+                    min-height: 400px;
+                }
+            }
+        }
+    }
+    @media #{$medium-only} {
+        @media #{$landscape} {
+            padding-top: 2rem;
+            figure{
+                @include viewport-unit(max-height, 50vh);
+                min-height: 400px;
+                img {
+                    @include viewport-unit(max-height, 50vh);
+                    min-height: 400px;
+                }
+            }
+        }
+    }
+     @media #{$small-only} {
+        padding-top: 2rem;
+        figure{
+            @include viewport-unit(max-height, 100vh);
+            //min-height: 470px;
+            img {
+                @include viewport-unit(max-height, 100vh);
+                //min-height: 470px;
+            }
         }
     }
 }
+
+// photo credentials on a single photo page
+#photo-info-wrapper {
+    @media #{$large-up} {
+        @include viewport-unit(height, 84vh);
+        padding-top: 2rem;
+    }
+}
+
+#nav-wrapper {
+    margin-top: 3rem;
+}
+
 
 // animation 0.1=)
 .row.photoset-cover {
@@ -990,6 +1094,20 @@ figure {
             $spacing: 5rem,
             $base-style: true
     );
+}
+
+.black-color {
+    color: $black;
+    h2 {
+        color: $black;
+    }
+    a {
+        color: $black;
+        &:hover {
+            color: $red;
+        }
+    }
+
 }
 
 // END PHOTOGRAPHY

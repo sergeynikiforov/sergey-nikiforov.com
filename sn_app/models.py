@@ -142,7 +142,7 @@ class Photo(models.Model):
 class PhotoInPhotoset(models.Model):
     photoset = models.ForeignKey(Photoset)
     photo = models.ForeignKey(Photo)
-    order = models.PositiveIntegerField()
+    order = models.FloatField()
 
     def save(self, *args, **kwargs):
         self.photoset.num_photos += 1

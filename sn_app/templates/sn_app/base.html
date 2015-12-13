@@ -17,7 +17,7 @@
                 <div class="row">
                     <div class="medium-10 large-10 medium-centered columns show-for-medium-up">
                         <header>
-                            <nav id="navigation-top-bar" class="top-bar" data-topbar role="navigation">
+                            <nav id="navigation-bar" class="top-bar" data-topbar role="navigation">
                                 <ul class="title-area">
                                     <li class="name">
                                         <h1>{% block top_bar_title %}<a href="{% url 'sn_app:landing' %}">{{ person.first_name|upper }} {{ person.last_name|upper }}</a>{% endblock top_bar_title %}</h1>
@@ -34,7 +34,7 @@
                                             <li><a href="{% url 'sn_app:contact' %}">CONTACT ME</a></li>
                                         </ul>
                                     </section>
-                                    <section  class="top-bar-section show-for-medium-only">
+                                    <section class="top-bar-section show-for-medium-only">
                                         <ul class="right text-right">
                                             <li class="has-dropdown">
                                                 <a href="#">MENU</a>
@@ -66,12 +66,12 @@
                     <div class="small-12 medium-10 small-centered columns small_screen_figure">
                         <div class="overlay_container {% block offcanvas_visibility %} show-for-small-only {% endblock offcanvas_visibility %}">
                             <div class="overlay">
-                                <nav id="navigation-top-bar" class="tab-bar">
+                                <nav id="navigation-bar" class="tab-bar">
                                   <section class="left tab-bar-section">
                                     <h2 class="title">{% block tab_bar_title %}<a href="{% url 'sn_app:landing' %}">{{ person.first_name|upper }} {{ person.last_name|upper }}</a>{% endblock tab_bar_title %}</h2>
 
                                     {% block off_canvas_tab_bar_page_header %}
-                                    <h2 class="page_header">/SPAM</h2>
+                                        <h2 class="page_header">/SPAM</h2>
                                     {% endblock off_canvas_tab_bar_page_header %}
 
                                     {% block off_canvas_tab_bar_page_links %}{% endblock off_canvas_tab_bar_page_links %}
@@ -90,7 +90,7 @@
                     </div>
                 </div>
 
-                <aside id="navigation-top-bar" class="right-off-canvas-menu">
+                <aside id="navigation-bar" class="right-off-canvas-menu show-for-small-only">
                   <ul  class="off-canvas-list">
                     <li><label>{{ person.first_name|upper }} {{ person.last_name|upper }}</label></li>
                     <li><a href="{% url 'sn_app:landing' %}">HOME</a></li>

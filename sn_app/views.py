@@ -1,7 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import JsonResponse
 from django.core.mail import EmailMessage
-from django.template.loader import get_template
 from models import Person, Education, Job, OnlineCourse, Photo, PhotoInPhotoset, Photoset
 from forms import ContactMeForm
 import json
@@ -121,7 +120,12 @@ def contact(request):
 
 def photo_home(request, photoset_slug):
     '''
-    view for home page photo_api
+    view for home page photo_api - single photo view
+
+    returns in context:
+    - active photoset
+    - all 'photosets'
+    - person
     '''
 
     context_dict = {}
@@ -156,14 +160,17 @@ def photo_dict(photoset, photo, srcset="200w 400w 600w 800w 1000w 1200w 1400w 16
     context_dict['photoset'] = photoset.title
     context_dict['title'] = photo.title
     context_dict['description'] = photo.description
+    context_dict['year'] = photo.date_taken.year
 
-    # get prev/next photoID
+    # get prev/next photoID + order info
     try:
-        photos = Photo.objects.filter(photosets__title__exact=photoset.title).values_list('id', 'publicID').order_by('id')
-        photos = [i[1] for i in photos]
+        photos = PhotoInPhotoset.objects.filter(photoset=photoset).order_by('order')
+        photos = [i.photo.publicID for i in photos]
         qty = len(photos)
-        context_dict['prev_photoID'] = photos[(photos.index(photo.publicID) - 1) % qty]
-        context_dict['next_photoID'] = photos[(photos.index(photo.publicID) + 1) % qty]
+        current_photo_index = photos.index(photo.publicID)
+        context_dict['order'] = '{current} / {total}'.format(current=current_photo_index+1, total=photoset.num_photos)
+        context_dict['prev_photoID'] = photos[(current_photo_index - 1) % qty]
+        context_dict['next_photoID'] = photos[(current_photo_index + 1) % qty]
 
     except Photoset.DoesNotExist, Photo.DoesNotExist:
         pass
@@ -247,7 +254,10 @@ def photoset(request, photoset_slug=''):
             context_dict['photoset_description'] = active_photoset.description
 
         # retrieve photos for the active photoset
-        photos = Photo.objects.filter(photosets__title__exact=active_photoset.title)
+        photos_in_photoset = PhotoInPhotoset.objects.filter(photoset=active_photoset).order_by('order')
+        for index, photo_in_photoset in enumerate(photos_in_photoset):
+            photo_in_photoset.photo.current_order = index + 1
+        photos = [i.photo for i in photos_in_photoset]
         context_dict['photos'] = photos
 
         # add photoset to context dict

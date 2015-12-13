@@ -1,4 +1,4 @@
-var SIZES = '(min-width: 1025px) 80vw, (min-width: 641px) 90vw, 100vw';
+var SIZES = '(min-width: 1025px) 80vw, 100vw';
 
 var App = {};
 
@@ -13,6 +13,8 @@ App.PhotoModel = Backbone.Model.extend({
             photoset: null,
             title: null,
             description: null,
+            year: null,
+            order: null,
             srcsetWebp: null,
             srcsetJpg: null,
             imgSrc: null,
@@ -48,8 +50,25 @@ App.PhotoView = Backbone.View.extend({
 });
 
 
+App.OrderView = Backbone.View.extend({
+    el: '#order-wrapper',
+    template: _.template($('#order-tmpl').html()),
+    initialize: function() {
+        this.listenTo(this.model, 'sync change', this.render);
+        //this.model.fetch();
+        this.render();
+    },
+    render: function() {
+        var html = this.template(this.model.toJSON());
+        this.$el.html(html);
+        return this;
+    }
+});
+
+
 App.DescriptionView = Backbone.View.extend({
-    el: '#photo-description-wrapper',
+    medium: '#medium-photo-description-wrapper',
+    large: '#large-photo-description-wrapper',
     template: _.template($('#photo-description-tmpl').html()),
     initialize: function() {
         this.listenTo(this.model, 'sync change', this.render);
@@ -57,20 +76,25 @@ App.DescriptionView = Backbone.View.extend({
     },
     render: function() {
         if (this.model.toJSON().description != 'No description') {
-            var html = this.template(this.model.toJSON());
+            var html_medium = this.template(this.model.toJSON());
+            var html_large = html_medium;
         }
         else {
-            var html = '<p> </p>';
+            var html_medium = '<p> </p>';
+            var html_large = html_medium;
         }
-        this.$el.html(html);
+        $(this.medium).html(html_medium);
+        $(this.large).html(html_large);
         return this;
     }
 });
 
-
+// render two templates - for tap & top bars
 App.TitleView = Backbone.View.extend({
-    el: '#photo-title-wrapper',
-    template: _.template($('#photo-title-tmpl').html()),
+    large_title: '#large-title-wrapper',
+    tab_bar: '#tab-bar-title-wrapper',
+    template_large_title: _.template($('#large-photo-title-tmpl').html()),
+    template_TAB_bar: _.template($('#tab-bar-photo-title-tmpl').html()),
     initialize: function() {
         this.listenTo(this.model, 'sync change', this.render);
         this.render();
@@ -84,9 +108,11 @@ App.TitleView = Backbone.View.extend({
             var html = '';
         }
         */
-        this.model.attributes.title = this.model.attributes.title.toUpperCase();
-        var html = this.template(this.model.toJSON());
-        this.$el.html(html);
+        //this.model.attributes.title = this.model.attributes.title.toUpperCase();
+        var html_large_title = this.template_large_title(this.model.toJSON());
+        var html_TAB_bar = this.template_TAB_bar(this.model.toJSON());
+        $(this.large_title).html(html_large_title);
+        $(this.tab_bar).html(html_TAB_bar);
         return this;
     }
 });
@@ -120,9 +146,9 @@ App.PhotoRouter = Backbone.Router.extend({
         App.photo.fetch({
             success: function() {
                 App.photoView = new App.PhotoView({model: App.photo});
+                App.orderView = new App.OrderView({model: App.photo});
                 App.photoTitleView = new App.TitleView({model: App.photo});
                 App.photoDescrView = new App.DescriptionView({model: App.photo});
-                stickyFooter();
                 }
             });
     }
