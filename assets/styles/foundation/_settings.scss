@@ -245,7 +245,7 @@ $h6-font-reduction: - rem-calc(2);
 // $subheader-bottom-margin: .5rem;
 
 // A general <small> styling
-$small-font-size: 70%;
+$small-font-size: 100%;
 // $small-font-color: scale-color($header-font-color, $lightness: 35%);
 
 // We use these to style paragraphs
@@ -278,7 +278,7 @@ $anchor-font-color-hover: $red;
 // We use these to style the <hr> element
 // $hr-border-width: 1px;
 // $hr-border-style: solid;
-// $hr-border-color: $gainsboro;
+$hr-border-color: $black;//$gainsboro;
 // $hr-margin: rem-calc(20);
 
 // We use these to style lists
@@ -688,7 +688,7 @@ $input-focus-border-color: scale-color($black, $lightness: -40%);
 // We use these to style the error states for inputs and labels
 // $input-error-message-padding: rem-calc(6 9 9);
 $input-error-message-top: 1px;
-$input-error-message-font-size: 0.9rem;
+$input-error-message-font-size: 1rem;
 // $input-error-message-font-weight: $font-weight-normal;
 $input-error-message-font-style: none;
 $input-error-message-font-color: $red;

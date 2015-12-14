@@ -121,22 +121,55 @@
             </article>
         </main>
         {% block footer %}
-            <footer id="sticky_footer">
-                <div class="row">
-                    <div class="small-12 medium-10 large-8 small-centered columns">
-                        {% if person %}
-                        <address>
-                            <ul>
-                                <li><a href="{% url 'sn_app:landing' %}">2015 © Sergey Nikiforov</a></li>
-                                <li><a href="{{ person.facebook_link }}">facebook</a></li>
-                                <li><a href="{{ person.flickr_link }}">flickr</a></li>
-                                <li><a href="{{ person.instagram_link }}">instagram</a></li>
-                                <li><a href="{{ person.linkedin_link }}">linkedin</a></li>
+            <footer>
+                {% block whats_next %}
+                    <div id="whats-next" class="row">
+                        <div class="small-12 medium-10 small-centered columns">
+                            <ul class="no-bullet">
+                                <li><a href="{% url 'sn_app:about' %}">ABOUT</a></li>
+                                <li><a href="{% url 'sn_app:resume' %}">SEE MY RESUME</a></li>
+                                <li><a href="{% url 'sn_app:photography' %}">SEE MY PHOTOS</a></li>
+                                <li><a href="{% url 'sn_app:contact' %}">GET IN TOUCH WITH ME</a></li>
                             </ul>
-                        </address>
-                        {% else %}
-                            <p>Error retrieving data</p>
-                        {% endif %}
+                        </div>
+                    </div>
+                {% endblock whats_next %}
+                <div id="footer-wrapper" class="row">
+                    <div class="small-12 medium-10 small-centered columns">
+                        <div id="footer-top-section" class="row">
+                            <div class="small-12 medium-4 columns footer-column">
+                                <ul class="no-bullet">
+                                    <li class="footer-column-title"><a href="{% url 'sn_app:landing' %}">/{{ person.first_name|upper}} {{ person.last_name|upper}}/</a></li>
+                                    <li><a href="{% url 'sn_app:about' %}">ABOUT</a></li>
+                                    <li><a href="{% url 'sn_app:resume' %}">RESUME</a></li>
+                                    <li><a href="{% url 'sn_app:photography' %}">PHOTOGRAPHY</a></li>
+                                    <li><a href="{% url 'sn_app:contact' %}">CONTACT ME</a></li>
+                                </ul>
+                            </div>
+                            <div class="small-12 medium-4 columns footer-column show-for-medium-up">
+                                <ul class="no-bullet">
+                                    <li class="footer-column-title">/SOCIAL NETWORKS/</li>
+                                    <li><a href="{{ person.facebook_link }}">FACEBOOK</a></li>
+                                    <li><a href="{{ person.flickr_link }}">FLICKR</a></li>
+                                    <li><a href="{{ person.instagram_link }}">INSTAGRAM</a></li>
+                                    <li><a href="{{ person.linkedin_link }}">LINKEDIN</a></li>
+                                </ul>
+                            </div>
+                            <div class="small-12 medium-4 columns footer-column">
+                                <ul class="no-bullet">
+                                    <li class="footer-column-title"><a href="{% url 'sn_app:contact' %}">/WRITE TO ME/</a></li>
+                                    <li><a href="mailto:{{ person.email }}">{{ person.email }}</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div id="footer-bottom-section" class="row">
+                            <div class="small-7 columns copyright">
+                                <a href="{% url 'sn_app:landing' %}">2015 (c) {{ person.first_name}} {{ person.last_name }}</a>
+                            </div>
+                            <div class="small-5 columns text-right page-top-link">
+                                <a href="#page-top">BACK TO TOP</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </footer>

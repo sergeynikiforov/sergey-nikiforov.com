@@ -86,6 +86,7 @@ $font-size-custom-panel-small: 1.5rem;
 //-----------------------------------------------------
 
 // center list with social links in footer
+/*
 footer {
     font-family: $font-family-sans-serif;
     font-weight: $font-weight-thin;
@@ -112,22 +113,104 @@ footer {
         }
     }
 }
-
-// remove padding & margin for small screens
-@media #{$small-only} {
-    #sticky_footer {
-        section {
-            padding: 0px;
-            margin: 0px;
-            figure {
-                padding: 0px;
-                margin: 0px;
-            }
+*/
+// 'What's next ' section
+#whats-next {
+    @media #{$small-only} {
+        margin-top: 3rem;
+        /*
+        ul {
+            padding-top: 6rem;
+            border-top: 1px solid $black;
+        }
+        */
+    }
+    @media #{$medium-only} {
+        margin-top: 13rem;
+    }
+    @media #{$large-up} {
+        margin-top: 19rem;
+    }
+    ul li {
+        margin-bottom: 1rem;
+        font-family: $font-family-sans-serif;
+        font-weight: $font-weight-thin;
+        font-style: italic;
+        @media #{$small-only} {
+            font-size: $font-size-sans-serif-page-subheader-small;
+        }
+        @media #{$medium-only} {
+            font-size: $font-size-sans-serif-page-subheader-medium;
+        }
+        @media #{$large-up} {
+            font-size: $font-size-sans-serif-page-subheader-large;
         }
     }
 }
 
+// main footer section
+#footer-top-section {
+    @media #{$medium-up} {
+        border-top: 2px solid $black;
+        margin-top: 3rem;
+        padding-top: 2rem;
+    }
+    @media #{$small-only} {
+        margin-top: 2rem;
+    }
+}
 
+#footer-bottom-section {
+    border-top: 2px solid $black;
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+    padding-top: 2rem;
+    font-family: $font-family-sans-serif;
+    font-weight: $font-weight-thin;
+    @media #{$small-only} {
+        font-size: $font-size-sans-serif-nav-small;
+        border-top: 0px solid $black;
+        margin-top: 0rem;
+        margin-bottom: 2rem;
+    }
+    @media #{$medium-only} {
+        font-size: $font-size-sans-serif-nav-medium;
+    }
+    @media #{$large-up} {
+        font-size: $font-size-sans-serif-nav-large;
+    }
+    .page-top-link {
+        font-style: italic;
+    }
+}
+
+.footer-column {
+    .footer-column-title {
+        font-weight: $font-weight-bold;
+        font-style: normal;
+        margin-bottom: 0.6rem;
+        @media #{$small-only} {
+            border-top: 1px solid $black;
+            padding-top: 0.5rem;
+        }
+    }
+    font-family: $font-family-sans-serif;
+    font-weight: $font-weight-thin;
+    font-style: italic;
+    ul li {
+        margin-bottom: 0.3rem;
+        @media #{$small-only} {
+            font-size: $font-size-sans-serif-nav-small;
+
+        }
+        @media #{$medium-only} {
+            font-size: $font-size-sans-serif-nav-medium;
+        }
+        @media #{$large-up} {
+            font-size: $font-size-sans-serif-nav-large;
+        }
+    }
+}
 
 // END FOOTER
 //-----------------------------------------------------
@@ -1149,7 +1232,7 @@ figure {
 .thumbs {
     //background: black;
     @media #{$small-only} {
-        padding: 5rem 0.5rem 5rem 0.5rem;
+        padding: 5rem 0.5rem 1rem 0.5rem;
     }
     @media #{$medium-up} {
         padding: $block-grid-default-spacing;
@@ -1183,12 +1266,17 @@ figure {
 }
 
 // styling of "More Albums" section
+.more-albums-start {
+    border-top: 1px solid $black;
+    padding-top: 2rem;
+}
+
 .more-albums-thumb {
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
 }
 
 #more-albums-wrapper {
-    margin: 3rem auto;
+    margin: 2rem auto;
 }
 
 .more-albums-title {
