@@ -419,6 +419,17 @@ footer {
     }
 }
 
+.photoset-cover-wrapper {
+    height: 60vh;
+    width: 100%;
+    @media #{$large-up} {
+        padding: 1.5rem;
+    }
+    @media #{$medium-only} {
+        padding: 2rem 0rem 6rem 0rem;
+    }
+}
+
 .image-wrap {
     height: 100%;
     width: 100%;
@@ -667,14 +678,6 @@ figure {
     vertical-align: middle;
 }
 
-.container-down {
-    //display: table;
-}
-.content-down {
-    //display: table-cell;
-    vertical-align: bottom;
-}
-
 // END ABOUT ME
 //-----------------------------------------------------
 
@@ -893,22 +896,6 @@ figure {
 //-----------------------------------------------------
 //
 
-// drop caps for description
-/*
-.photoset-description {
-    p:first-child:first-letter {
-        float: left;
-        //color: $red;
-        font-size: 3.5rem;
-        line-height: 2.8rem;
-        padding-top: 4px;
-        padding-right: 8px;
-        padding-left: 3px;
-        padding-bottom: 0px;
-    }
-}
-*/
-
 #change-bg-on-hover {
     transition: 0.5s;
 }
@@ -1018,7 +1005,7 @@ figure {
     }
 }
 
-// photo credentials on a single photo page
+// photo info on a single photo page
 #photo-info-wrapper {
     @media #{$large-up} {
         @include viewport-unit(height, 84vh);
@@ -1033,7 +1020,7 @@ figure {
     }
 }
 
-// photo credentials styling
+// photo info styling
 .image-order, .image-year {
     font-family: $font-family-sans-serif;
     font-weight: $font-weight-thin;
@@ -1249,6 +1236,35 @@ figure {
                 $base-style: true
         );
     }
+}
+
+// photoset thumbs for 'photography' page
+.photoset-info {
+    @media #{$medium-up} {
+        margin-top: 13rem;
+    }
+    @media #{$small-only} {
+        margin-top: 7rem;
+    }
+}
+
+.photoset-thumb-title {
+    font-family: $font-family-sans-serif;
+    font-weight: $font-weight-normal;
+    @media #{$large-up} {
+        font-size: $font-size-sans-serif-page-subheader-large;
+    }
+    @media #{$medium-only} {
+        font-size: $font-size-sans-serif-page-subheader-medium;
+    }
+    @media #{$small-only} {
+        font-size: $font-size-sans-serif-page-subheader-small;
+    }
+}
+
+.photoset-thumb-description {
+    border-top: 1px solid $black;
+    padding-top: 1rem;
 }
 
 .black-color {

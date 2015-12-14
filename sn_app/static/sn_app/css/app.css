@@ -6913,6 +6913,16 @@ footer {
     .photoset-wrapper {
       padding: 2rem 0rem 6rem 0rem; } }
 
+.photoset-cover-wrapper {
+  height: 60vh;
+  width: 100%; }
+  @media only screen and (min-width: 64.0625em) {
+    .photoset-cover-wrapper {
+      padding: 1.5rem; } }
+  @media only screen and (min-width: 40.0625em) and (max-width: 64em) {
+    .photoset-cover-wrapper {
+      padding: 2rem 0rem 6rem 0rem; } }
+
 .image-wrap {
   height: 100%;
   width: 100%; }
@@ -7097,9 +7107,6 @@ figure {
   display: table-cell;
   vertical-align: middle; }
 
-.content-down {
-  vertical-align: bottom; }
-
 .article_header_panel {
   border-style: solid;
   border-width: 1px;
@@ -7278,20 +7285,6 @@ figure {
   .contact_details p {
     margin-bottom: 5px; }
 
-/*
-.photoset-description {
-    p:first-child:first-letter {
-        float: left;
-        //color: $red;
-        font-size: 3.5rem;
-        line-height: 2.8rem;
-        padding-top: 4px;
-        padding-right: 8px;
-        padding-left: 3px;
-        padding-bottom: 0px;
-    }
-}
-*/
 #change-bg-on-hover {
   -webkit-transition: 0.5s;
   transition: 0.5s; }
@@ -7865,6 +7858,31 @@ figure {
         clear: none; }
       .more-albums-block-grid > li:nth-of-type(2n+1) {
         clear: both; } }
+
+@media only screen and (min-width: 40.0625em) {
+  .photoset-info {
+    margin-top: 13rem; } }
+
+@media only screen and (max-width: 40em) {
+  .photoset-info {
+    margin-top: 7rem; } }
+
+.photoset-thumb-title {
+  font-family: "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
+  font-weight: normal; }
+  @media only screen and (min-width: 64.0625em) {
+    .photoset-thumb-title {
+      font-size: 2.1rem; } }
+  @media only screen and (min-width: 40.0625em) and (max-width: 64em) {
+    .photoset-thumb-title {
+      font-size: 1.8rem; } }
+  @media only screen and (max-width: 40em) {
+    .photoset-thumb-title {
+      font-size: 1.5rem; } }
+
+.photoset-thumb-description {
+  border-top: 1px solid #211C19;
+  padding-top: 1rem; }
 
 .black-color {
   color: #211C19; }
