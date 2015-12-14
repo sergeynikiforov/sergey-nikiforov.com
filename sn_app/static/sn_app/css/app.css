@@ -7593,20 +7593,70 @@ figure {
 
 .image-description {
   padding-top: 0.8rem;
-  border-top: 1px solid #211C19; }
+  border-top: 1px solid #211C19;
+  color: #211C19; }
 
 .image-title {
   font-weight: normal;
   margin-bottom: 0.5rem; }
   @media only screen and (min-width: 64.0625em) {
     .image-title {
-      font-size: 2.1rem; } }
+      font-size: 1.8rem; } }
   @media only screen and (min-width: 40.0625em) and (max-width: 64em) {
     .image-title {
-      font-size: 1.8rem; } }
+      font-size: 1.5rem; } }
   @media only screen and (max-width: 40em) {
     .image-title {
       font-size: 1.5rem; } }
+
+#album-wrapper {
+  margin: 2rem auto; }
+
+.album-title {
+  font-weight: bold;
+  margin-bottom: 0.5rem; }
+  @media only screen and (min-width: 64.0625em) {
+    .album-title {
+      font-size: 2.1rem; } }
+  @media only screen and (min-width: 40.0625em) and (max-width: 64em) {
+    .album-title {
+      font-size: 1.8rem; } }
+  @media only screen and (max-width: 40em) {
+    .album-title {
+      font-size: 1.5rem; } }
+
+.album-description {
+  padding-top: 0.8rem;
+  border-top: 1px solid #211C19; }
+  @media only screen and (min-width: 64.0625em) {
+    .album-description {
+      font-size: 1.8rem; } }
+  @media only screen and (min-width: 40.0625em) and (max-width: 64em) {
+    .album-description {
+      font-size: 1.4rem; } }
+  @media only screen and (max-width: 40em) {
+    .album-description {
+      font-size: 1.2rem; } }
+
+.image-number {
+  font-family: "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
+  font-weight: bold;
+  margin-right: -0.7rem; }
+  @media only screen and (min-width: 64.0625em) {
+    .image-number {
+      font-size: 4.2rem; } }
+  @media only screen and (min-width: 40.0625em) and (max-width: 64em) {
+    .image-number {
+      font-size: 3.1rem; } }
+  @media only screen and (max-width: 40em) {
+    .image-number {
+      font-size: 2.5rem; } }
+
+.image-captions {
+  margin-top: 1rem; }
+  @media only screen and (max-width: 40em) {
+    .image-captions {
+      margin-right: 0.5rem; } }
 
 #nav-wrapper {
   margin-top: 3rem; }
@@ -7625,74 +7675,196 @@ figure {
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease; }
 
-@media only screen and (max-width: 40em) {
-  .photoset-thumbnail {
-    margin: 5rem 0rem; } }
-
 @media only screen and (min-width: 90.0625em) {
-  .thumbs-wrapper {
+  #thumbs-wrapper {
     padding-left: 2.5rem;
     padding-right: 2.5rem; } }
 
-.thumbs {
-  background: black; }
-  @media only screen and (max-width: 40em) {
-    .thumbs {
-      padding: 5rem 0.5rem 5rem 0.5rem; } }
-  @media only screen and (min-width: 40.0625em) {
-    .thumbs {
-      padding: 2.5rem;
-      padding-top: 5rem; } }
+@media only screen and (max-width: 40em) {
+  .thumbs {
+    padding: 5rem 0.5rem 5rem 0.5rem; } }
+
+@media only screen and (min-width: 40.0625em) {
+  .thumbs {
+    padding: 2.5rem;
+    padding-top: 5rem; } }
+
+@media only screen and (max-width: 40em) {
+  .one-thumb figure img {
+    max-height: 100vh; } }
+  @media only screen and (max-width: 40em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
+    .one-thumb figure img {
+      max-height: 1024px; } }
+  @media only screen and (max-width: 40em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: landscape) {
+    .one-thumb figure img {
+      max-height: 768px; } }
+  @media only screen and (max-width: 40em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: portrait) {
+    .one-thumb figure img {
+      max-height: 480px; } }
+  @media only screen and (max-width: 40em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: landscape) {
+    .one-thumb figure img {
+      max-height: 320px; } }
+  @media only screen and (max-width: 40em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: portrait) {
+    .one-thumb figure img {
+      max-height: 568px; } }
+  @media only screen and (max-width: 40em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: landscape) {
+    .one-thumb figure img {
+      max-height: 320px; } }
+
+@media only screen and (min-width: 40.0625em) and (max-width: 64em) {
+  .one-thumb figure img {
+    max-height: 100vh; } }
+  @media only screen and (min-width: 40.0625em) and (max-width: 64em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
+    .one-thumb figure img {
+      max-height: 1024px; } }
+  @media only screen and (min-width: 40.0625em) and (max-width: 64em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: landscape) {
+    .one-thumb figure img {
+      max-height: 768px; } }
+  @media only screen and (min-width: 40.0625em) and (max-width: 64em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: portrait) {
+    .one-thumb figure img {
+      max-height: 480px; } }
+  @media only screen and (min-width: 40.0625em) and (max-width: 64em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: landscape) {
+    .one-thumb figure img {
+      max-height: 320px; } }
+  @media only screen and (min-width: 40.0625em) and (max-width: 64em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: portrait) {
+    .one-thumb figure img {
+      max-height: 568px; } }
+  @media only screen and (min-width: 40.0625em) and (max-width: 64em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: landscape) {
+    .one-thumb figure img {
+      max-height: 320px; } }
+
+@media only screen and (min-width: 64.0625em) {
+  .one-thumb figure img {
+    max-height: 80vh; } }
+  @media only screen and (min-width: 64.0625em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
+    .one-thumb figure img {
+      max-height: 819.2px; } }
+  @media only screen and (min-width: 64.0625em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: landscape) {
+    .one-thumb figure img {
+      max-height: 614.4px; } }
+  @media only screen and (min-width: 64.0625em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: portrait) {
+    .one-thumb figure img {
+      max-height: 384px; } }
+  @media only screen and (min-width: 64.0625em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: landscape) {
+    .one-thumb figure img {
+      max-height: 256px; } }
+  @media only screen and (min-width: 64.0625em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: portrait) {
+    .one-thumb figure img {
+      max-height: 454.4px; } }
+  @media only screen and (min-width: 64.0625em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: landscape) {
+    .one-thumb figure img {
+      max-height: 256px; } }
 
 @media only screen and (max-width: 40em) {
   .one-thumb {
-    margin-bottom: 0rem; } }
+    margin-bottom: 5rem; } }
 
 @media only screen and (min-width: 40.0625em) and (max-width: 64em) {
   .one-thumb {
-    margin-bottom: 8rem; } }
+    margin-bottom: 13rem; } }
 
-.photo-captions h6 {
-  color: #FFFFFF;
-  font-style: normal;
-  font-family: "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
-  font-weight: bold;
-  font-size: 1.2rem;
-  margin-top: 0.5rem;
-  margin-bottom: 0rem; }
+@media only screen and (min-width: 64.0625em) {
+  .one-thumb {
+    margin-bottom: 17rem; } }
 
-.photo-captions p {
-  color: #FFFFFF;
-  font-style: italic;
+.more-albums-thumb {
+  margin-bottom: 3rem; }
+
+#more-albums-wrapper {
+  margin: 3rem auto; }
+
+.more-albums-title {
   font-family: "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
   font-weight: 300;
-  font-size: 1rem;
-  margin-top: 0rem;
-  padding-top: 0rem;
-  margin-bottom: 7.5rem; }
+  font-style: italic;
+  border-top: 1px solid #211C19; }
+  @media only screen and (min-width: 64.0625em) {
+    .more-albums-title {
+      font-size: 1.1rem;
+      margin-top: 1.3rem;
+      padding-top: 0.27083rem; } }
+  @media only screen and (min-width: 40.0625em) and (max-width: 64em) {
+    .more-albums-title {
+      font-size: 0.9rem;
+      margin-top: 1.1rem;
+      padding-top: 0.22917rem; } }
+  @media only screen and (max-width: 40em) {
+    .more-albums-title {
+      font-size: 0.8rem;
+      margin-top: 0.7rem;
+      padding-top: 0.14583rem; } }
 
-.photoset-thumbs-block-grid {
-  display: block;
-  padding: 0;
-  margin: 0 -2.5rem; }
-  .photoset-thumbs-block-grid:before, .photoset-thumbs-block-grid:after {
-    content: " ";
-    display: table; }
-  .photoset-thumbs-block-grid:after {
-    clear: both; }
-  .photoset-thumbs-block-grid > li {
+@media only screen and (min-width: 64.0625em) {
+  .more-albums-block-grid {
     display: block;
-    float: left;
-    height: auto;
-    padding: 0 2.5rem 5rem; }
-  .photoset-thumbs-block-grid > li {
-    list-style: none;
-    padding: 0 2.5rem 5rem;
-    width: 50%; }
-    .photoset-thumbs-block-grid > li:nth-of-type(1n) {
-      clear: none; }
-    .photoset-thumbs-block-grid > li:nth-of-type(2n+1) {
+    padding: 0;
+    margin: 0 -3rem; }
+    .more-albums-block-grid:before, .more-albums-block-grid:after {
+      content: " ";
+      display: table; }
+    .more-albums-block-grid:after {
       clear: both; }
+    .more-albums-block-grid > li {
+      display: block;
+      float: left;
+      height: auto;
+      padding: 0 3rem 6rem; }
+    .more-albums-block-grid > li {
+      list-style: none;
+      padding: 0 3rem 6rem;
+      width: 33.33333%; }
+      .more-albums-block-grid > li:nth-of-type(1n) {
+        clear: none; }
+      .more-albums-block-grid > li:nth-of-type(3n+1) {
+        clear: both; } }
+
+@media only screen and (min-width: 40.0625em) and (max-width: 64em) {
+  .more-albums-block-grid {
+    display: block;
+    padding: 0;
+    margin: 0 -2.5rem; }
+    .more-albums-block-grid:before, .more-albums-block-grid:after {
+      content: " ";
+      display: table; }
+    .more-albums-block-grid:after {
+      clear: both; }
+    .more-albums-block-grid > li {
+      display: block;
+      float: left;
+      height: auto;
+      padding: 0 2.5rem 5rem; }
+    .more-albums-block-grid > li {
+      list-style: none;
+      padding: 0 2.5rem 5rem;
+      width: 50%; }
+      .more-albums-block-grid > li:nth-of-type(1n) {
+        clear: none; }
+      .more-albums-block-grid > li:nth-of-type(2n+1) {
+        clear: both; } }
+
+@media only screen and (max-width: 40em) {
+  .more-albums-block-grid {
+    display: block;
+    padding: 0;
+    margin: 0 -1rem; }
+    .more-albums-block-grid:before, .more-albums-block-grid:after {
+      content: " ";
+      display: table; }
+    .more-albums-block-grid:after {
+      clear: both; }
+    .more-albums-block-grid > li {
+      display: block;
+      float: left;
+      height: auto;
+      padding: 0 1rem 2rem; }
+    .more-albums-block-grid > li {
+      list-style: none;
+      padding: 0 1rem 2rem;
+      width: 50%; }
+      .more-albums-block-grid > li:nth-of-type(1n) {
+        clear: none; }
+      .more-albums-block-grid > li:nth-of-type(2n+1) {
+        clear: both; } }
 
 .black-color {
   color: #211C19; }

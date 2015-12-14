@@ -23,7 +23,7 @@
                             </ul>
                         </section>
                         -->
-                        <section class="top-bar-section show-for-medium-up">
+                        <section class="top-bar-section show-for-medium-only    ">
                             <ul class="right text-right">
                                 <li class="black-color"><a href="{% url 'sn_app:about' %}">ABOUT</a></li>
                                 <li class="black-color"><a href="{% url 'sn_app:resume' %}">RESUME</a></li>
@@ -96,6 +96,7 @@
             <div class="small-12 columns">
                 <div id="large-title-wrapper"></div>
                 <div id="large-photo-description-wrapper"></div>
+                <p class="image-order show-for-large-up"><a href="{% url 'sn_app:photoset' active_photoset.slug %}">BACK TO THE ALBUM</a></p>
             </div>
         </div>
     </div>

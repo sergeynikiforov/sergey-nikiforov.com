@@ -1055,10 +1055,29 @@ figure {
 .image-description {
     padding-top: 0.8rem;
     border-top: 1px solid $black;
+    color: $black;
 }
 
 .image-title {
     font-weight: $font-weight-normal;
+    @media #{$large-up} {
+        font-size: $font-size-sans-serif-page-subheader-medium;
+    }
+    @media #{$medium-only} {
+        font-size: $font-size-sans-serif-page-subheader-medium - 0.3rem;
+    }
+    @media #{$small-only} {
+        font-size: $font-size-sans-serif-page-subheader-small;
+    }
+    margin-bottom: 0.5rem;
+}
+
+#album-wrapper {
+    margin: 2rem auto;
+}
+
+.album-title {
+    font-weight: $font-weight-bold;
     @media #{$large-up} {
         font-size: $font-size-sans-serif-page-subheader-large;
     }
@@ -1069,6 +1088,45 @@ figure {
         font-size: $font-size-sans-serif-page-subheader-small;
     }
     margin-bottom: 0.5rem;
+}
+
+.album-description {
+    padding-top: 0.8rem;
+    border-top: 1px solid $black;
+    @media #{$large-up} {
+        font-size: 1.8rem;//$font-size-sans-serif-page-subheader-large;
+    }
+    @media #{$medium-only} {
+        font-size: 1.4rem;//$font-size-sans-serif-page-subheader-medium;
+    }
+    @media #{$small-only} {
+        font-size: 1.2rem;//$font-size-sans-serif-page-subheader-small;
+    }
+}
+
+
+// picture thumbnail number for photoset view
+.image-number {
+    font-family: $font-family-sans-serif;
+    font-weight: $font-weight-bold;
+    margin-right: -0.7rem;
+    @media #{$large-up} {
+        font-size: $font-size-sans-serif-page-header-large + 1.2rem;
+    }
+    @media #{$medium-only} {
+        font-size: $font-size-sans-serif-page-header-large + 0.1;
+    }
+    @media #{$small-only} {
+        font-size: $font-size-sans-serif-page-header-medium;
+    }
+}
+
+// image captions wrapper for photoset view
+.image-captions {
+    margin-top: 1rem;
+    @media #{$small-only} {
+        margin-right: 0.5rem;
+    }
 }
 
 #nav-wrapper {
@@ -1093,15 +1151,8 @@ figure {
     }
 }
 
-// make room for thumbs on small screens
-.photoset-thumbnail {
-    //margin: 9rem 0rem;
-    @media #{$small-only} {
-        margin: 5rem 0rem;
-    }
-}
 
-.thumbs-wrapper {
+#thumbs-wrapper {
     @media #{$xlarge-up} {
         padding-left: 2.5rem;
         padding-right: 2.5rem;
@@ -1109,7 +1160,7 @@ figure {
 }
 
 .thumbs {
-    background: black;
+    //background: black;
     @media #{$small-only} {
         padding: 5rem 0.5rem 5rem 0.5rem;
     }
@@ -1120,43 +1171,84 @@ figure {
 }
 
 .one-thumb {
+    figure {
+        img {
+            @media #{$small-only} {
+                @include viewport-unit(max-height, 100vh);
+            }
+            @media #{$medium-only} {
+                @include viewport-unit(max-height, 100vh);
+            }
+            @media #{$large-up} {
+                @include viewport-unit(max-height, 80vh);
+            }
+        }
+    }
     @media #{$small-only} {
-        margin-bottom: 0rem;
+        margin-bottom: 5rem;
     }
     @media #{$medium-only} {
-        margin-bottom: 8rem;
+        margin-bottom: 13rem;
+    }
+    @media #{$large-up} {
+        margin-bottom: 17rem;
     }
 }
 
-// TODO font-sizing
-.photo-captions {
-    h6 {
-        color: $white;
-        font-style: normal;
-        font-family: $font-family-sans-serif;
-        font-weight: $font-weight-bold;
-        font-size: 1.2rem;
-        margin-top: 0.5rem;
-        margin-bottom: 0rem;
+// styling of "More Albums" section
+.more-albums-thumb {
+    margin-bottom: 3rem;
+}
+
+#more-albums-wrapper {
+    margin: 3rem auto;
+}
+
+.more-albums-title {
+    font-family: $font-family-sans-serif;
+    font-weight: $font-weight-thin;
+    font-style: italic;
+    border-top: 1px solid $black;
+    @media #{$large-up} {
+        font-size: $font-size-sans-serif-nav-large;
+        margin-top: 1.3rem;
+        padding-top: rem-calc(1.3/0.3);
     }
-    p {
-        color: $white;
-        font-style: italic;
-        font-family: $font-family-sans-serif;
-        font-weight: $font-weight-thin;
-        font-size: 1rem;
-        margin-top: 0rem;
-        padding-top: 0rem;
-        margin-bottom: 7.5rem;
+    @media #{$medium-only} {
+        font-size: $font-size-sans-serif-nav-medium;
+        margin-top: 1.1rem;
+        padding-top: rem-calc(1.1/0.3);
+    }
+    @media #{$small-only} {
+        font-size: $font-size-sans-serif-nav-small;
+        margin-top: 0.7rem;
+        padding-top: rem-calc(0.7/0.3);
     }
 }
 
-.photoset-thumbs-block-grid {
-    @include block-grid(
-            $per-row: 2,
-            $spacing: 5rem,
-            $base-style: true
-    );
+// custom block grid settings for "More Albums" section
+.more-albums-block-grid {
+    @media #{$large-up} {
+        @include block-grid(
+                $per-row: 3,
+                $spacing: 6rem,
+                $base-style: true
+        );
+    }
+    @media #{$medium-only} {
+        @include block-grid(
+                $per-row: 2,
+                $spacing: 5rem,
+                $base-style: true
+        );
+    }
+    @media #{$small-only} {
+        @include block-grid(
+                $per-row: 2,
+                $spacing: 2rem,
+                $base-style: true
+        );
+    }
 }
 
 .black-color {

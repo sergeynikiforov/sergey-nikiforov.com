@@ -79,29 +79,63 @@
         </div>
     </div>
     {% if photoset_description %}
-        <div class="row">
-            <div class="small-12 medium-8 large-6 small-centered columns vh-style text-center container-center">
+        <div id="album-wrapper" class="row">
+            <div class="small-12 medium-9 small-centered columns vh-style container-center">
                 <div class="content-center">
-                    <p>{{ photoset_description }}</p>
+                    <h3 class="album-title">{{ photoset_title }}</h3>
+                    <p class="album-description">{{ photoset_description }}</p>
+                    <p class="image-order"><a href="#thumbs-wrapper">SEE THE PHOTOS</a></p>
                 </div>
             </div>
         </div>
     {% endif %}
     {% if photos %}
-        <div class="row thumbs-wrapper">
+        <div id="thumbs-wrapper" class="row">
             <div class="small-12 columns small_screen_figure thumbs">
                 <ul class="small-block-grid-1 medium-block-grid-1 large-block-grid-2">
                     {% for photo in photos %}
-                        <li class="one-thumb vh-style text-center">
+                        <li class="one-thumb text-center">
                             <figure>
                                 <a href="{% url 'sn_app:photo_home' active_photoset.slug %}#{{photo.publicID}}">{% pictureCloudinary photo.publicID sizes="(min-width: 1025px) 50vw, (min-width: 641px) 100vw, 100vw" srcset="200w 400w 600w 800w 1000w 1200w 1400w 1600w 2000w 2400w 2800w 3200w" alt=photo.title %}
                                 </a>
-                            <figcaption class="photo-captions">
-                                <a href="{% url 'sn_app:photo_home' active_photoset.slug %}#{{photo.publicID}}">
-
+                                <figcaption class="image-captions">
+                                    <div class="row">
+                                        <div class="small-2 medium-2 columns">
+                                            <p class="image-number text-center">{{ photo.current_order }}</p>
+                                        </div>
+                                        <div class="small-10 medium-9 end columns text-left">
+                                            <a href="{% url 'sn_app:photo_home' active_photoset.slug %}#{{photo.publicID}}"><h3 class="image-title">{{ photo.title }}, {{ photo.date_taken.year }}</h3></a>
+                                            <p class="image-description">{{ photo.description }}</p>
+                                        </div>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    {% endif %}
+    {% if photosets %}
+        <div class="row">
+            <div class="small-12 medium-10 medium-centered columns">
+                <h3 class="page_subheader">More Albums:</h3>
+            </div>
+        </div>
+        <div id="more-albums-wrapper" class="row">
+            <div class="small-12 medium-10 medium-centered columns">
+                <ul class="more-albums-block-grid">
+                    {% for photoset in photosets %}
+                        <li class="more-albums-thumb">
+                            <figure>
+                                <a href="{% url 'sn_app:photoset' photoset.slug %}">
+                                    {% pictureCloudinary photoset.cover_photo.publicID sizes="(min-width: 1025px) 35vw, (min-width: 641px) 50vw, 60vw" srcset="200w 400w 600w 800w 1000w 1200w 1400w 1600w 2000w 2400w 2800w 3200w" alt=photoset.title %}
                                 </a>
-                                <h2>{{photo.current_order}}</h2>
-                            </figcaption>
+                                <figcaption>
+                                    <a href="{% url 'sn_app:photoset' photoset.slug %}">
+                                        <p class="more-albums-title">{{ photoset.title|upper }}</p>
+                                    </a>
+                                </figcaption>
                             </figure>
                         </li>
                     {% endfor %}
