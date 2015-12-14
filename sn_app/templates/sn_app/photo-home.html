@@ -23,7 +23,7 @@
                             </ul>
                         </section>
                         -->
-                        <section class="top-bar-section show-for-medium-only">
+                        <section class="top-bar-section show-for-medium-up">
                             <ul class="right text-right">
                                 <li class="black-color"><a href="{% url 'sn_app:about' %}">ABOUT</a></li>
                                 <li class="black-color"><a href="{% url 'sn_app:resume' %}">RESUME</a></li>
@@ -85,10 +85,10 @@
     <div id="photo-wrapper" class="small-12 large-9 small-centered large-uncentered columns small_screen_figure medium_screen_figure large_screen_figure text-center"></div>
     <div id="photo-info-wrapper" class="small-12 medium-11 large-3 small-centered large-uncentered columns">
         <div class="row">
-            <div class="small-12 medium-7 large-12 medium-push-5 columns large-collapse large-reset-order">
+            <div class="small-7 medium-7 large-12 small-push-5 medium-push-5 columns large-collapse large-reset-order">
                 <p class="small-text-center medium-text-right large-text-center"><a id="prev" class="transparent-button-small prev">PREV</a><a id="next" class="transparent-button-small next">NEXT</a></p>
             </div>
-            <div class="small-12 medium-5 large-12 medium-pull-7 columns large-collapse large-reset-order">
+            <div class="small-5 medium-5 large-12 small-pull-7 medium-pull-7 columns large-collapse large-reset-order">
                 <div id="order-wrapper"></div>
             </div>
         </div>
@@ -115,14 +115,14 @@
     </figure>
 </script>
 <script type="text/template" id="photo-description-tmpl">
-    <p><%= description %></p>
-    <p><%= year %></p>
+    <p class="image-description"><%= description %></p>
+    <p class="image-year show-for-large-up"><%= year %></p>
 </script>
 <script type="text/template" id="order-tmpl">
-    <p><%= order %></p>
+    <p class="image-order"><%= order %></p>
 </script>
 <script type="text/template" id="large-photo-title-tmpl">
-    <h3><%= title %></h3>
+    <h3 class="image-title show-for-large-up"><%= title %></h3> <h3 class="image-title hide-for-large-up"><%= title %> (<%= year %>)</h3>
 </script>
 <script type="text/template" id="tab-bar-photo-title-tmpl">
     <h3><%= title %></h3>

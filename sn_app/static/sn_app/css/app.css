@@ -5393,7 +5393,7 @@ p {
   font-weight: normal;
   line-height: 1.4;
   margin-bottom: 1.25rem;
-  text-rendering: optimizeLegibility; }
+  text-rendering: optimizeLegibility(); }
   p.lead {
     font-size: 1.41875rem;
     line-height: 1.6; }
@@ -6693,7 +6693,7 @@ footer {
     display: inline-block;
     margin-right: 1rem; }
     footer li a {
-      font-size: 1rem;
+      font-size: 1.1rem;
       font-style: normal;
       color: #211C19; }
     footer li a:hover {
@@ -6832,7 +6832,7 @@ footer {
     margin: 0rem 0.7rem;
     padding-left: 0.2rem;
     padding-right: 0.2rem;
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 300;
     font-style: italic; }
 
@@ -6997,17 +6997,17 @@ footer {
   height: 100%; }
 
 .landing {
-  font-size: 1.4rem;
+  font-size: 1.1rem;
   font-family: "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
   font-style: italic;
   font-weight: 300;
   margin-bottom: 0px; }
   @media only screen and (min-width: 40.0625em) and (max-width: 64em) {
     .landing {
-      font-size: 1.1rem; } }
+      font-size: 0.9rem; } }
   @media only screen and (max-width: 40em) {
     .landing a {
-      font-size: 1rem;
+      font-size: 0.8rem;
       line-height: 1.3; } }
   .landing a {
     color: #FFFFFF; }
@@ -7218,7 +7218,7 @@ figure {
 @media only screen and (max-width: 40em) {
   .page_header {
     color: #FFFFFF;
-    font-size: 1.7rem;
+    font-size: 2rem;
     font-family: "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
     font-weight: bold;
     line-height: 0.9;
@@ -7226,7 +7226,7 @@ figure {
     margin-bottom: 1rem; }
   .tab-bar .page_header {
     color: #FFFFFF;
-    font-size: 1.7rem;
+    font-size: 2rem;
     font-family: "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
     font-weight: bold;
     line-height: 0.9;
@@ -7235,7 +7235,7 @@ figure {
     .tab-bar .page_header.black-color {
       color: #211C19; }
   .page_subheader {
-    font-size: 1.9rem;
+    font-size: 1.5rem;
     font-family: "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
     font-weight: bold;
     margin-top: 1rem;
@@ -7251,7 +7251,7 @@ figure {
     margin-top: 0rem;
     margin-bottom: 0rem; }
   .page_subheader {
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-family: "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
     font-weight: bold;
     margin-top: 1.5rem;
@@ -7327,7 +7327,6 @@ figure {
   -webkit-transition: background-color 300ms ease-out;
   transition: background-color 300ms ease-out;
   margin-bottom: 0px;
-  font-size: 1.1rem;
   font-family: "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
   font-weight: 300;
   font-style: italic;
@@ -7336,6 +7335,16 @@ figure {
   @media only screen and (min-width: 64.0625em) {
     .transparent-button-small {
       font-size: 1.1rem;
+      padding: 0.3rem 0.3rem;
+      margin: 0; } }
+  @media only screen and (min-width: 40.0625em) and (max-width: 64em) {
+    .transparent-button-small {
+      font-size: 0.9rem;
+      padding: 0.2rem 0.2rem;
+      margin: 0; } }
+  @media only screen and (max-width: 40em) {
+    .transparent-button-small {
+      font-size: 0.8rem;
       padding: 0.1rem 0.1rem;
       margin: 0; } }
 
@@ -7347,7 +7356,7 @@ figure {
     padding-top: 2rem; }
     #photo-wrapper figure {
       max-height: 84vh;
-      min-height: 470px; } }
+      min-height: 500px; } }
     @media only screen and (min-width: 64.0625em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
       #photo-wrapper figure {
         max-height: 860.16px; } }
@@ -7370,7 +7379,7 @@ figure {
 @media only screen and (min-width: 64.0625em) {
       #photo-wrapper figure img {
         max-height: 84vh;
-        min-height: 470px;
+        min-height: 500px;
         padding-bottom: 3rem; } }
       @media only screen and (min-width: 64.0625em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
         #photo-wrapper figure img {
@@ -7536,7 +7545,8 @@ figure {
 @media only screen and (min-width: 64.0625em) {
   #photo-info-wrapper {
     height: 84vh;
-    padding-top: 2rem; } }
+    padding-top: 2rem;
+    padding-right: 2rem; } }
   @media only screen and (min-width: 64.0625em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
     #photo-info-wrapper {
       height: 860.16px; } }
@@ -7555,6 +7565,48 @@ figure {
   @media only screen and (min-width: 64.0625em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: landscape) {
     #photo-info-wrapper {
       height: 268.8px; } }
+
+@media only screen and (min-width: 40.0625em) and (max-width: 64em) {
+  #photo-info-wrapper {
+    margin-top: 1rem; } }
+
+@media only screen and (max-width: 40em) {
+  #photo-info-wrapper {
+    margin-top: 1rem; } }
+
+.image-order, .image-year {
+  font-family: "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
+  font-weight: 300;
+  font-style: italic; }
+  @media only screen and (min-width: 64.0625em) {
+    .image-order, .image-year {
+      font-size: 1.1rem;
+      margin-top: 2rem; } }
+  @media only screen and (min-width: 40.0625em) and (max-width: 64em) {
+    .image-order, .image-year {
+      font-size: 0.9rem;
+      padding-top: 0.2rem; } }
+  @media only screen and (max-width: 40em) {
+    .image-order, .image-year {
+      font-size: 0.8rem;
+      padding-top: 0.4rem; } }
+
+.image-description {
+  padding-top: 0.8rem;
+  border-top: 1px solid #211C19; }
+
+.image-title {
+  font-weight: normal;
+  margin-bottom: 0.5rem; }
+  @media only screen and (min-width: 64.0625em) {
+    .image-title {
+      font-size: 2.1rem; } }
+  @media only screen and (min-width: 40.0625em) and (max-width: 64em) {
+    .image-title {
+      font-size: 1.8rem; } }
+  @media only screen and (max-width: 40em) {
+    .image-title {
+      font-size: 1.5rem; } }
 
 #nav-wrapper {
   margin-top: 3rem; }

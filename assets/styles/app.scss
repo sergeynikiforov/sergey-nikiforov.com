@@ -46,10 +46,25 @@
   }
 }
 
+
+// font-sizing
 $font-weight-thin: 300;
-$font-size-sans-serif-nav: 1.1rem;
-$font-size-serif-page-header: 3rem;
-$font-size-custom-panel: 2rem;
+//$font-size-sans-serif-nav: 1.1rem;
+$font-size-sans-serif-nav-large: 1.1rem;
+$font-size-sans-serif-nav-medium: 0.9rem;
+$font-size-sans-serif-nav-small: 0.8rem;
+//$font-size-serif-page-header: 3rem;
+$font-size-sans-serif-page-header-large: 3rem;
+$font-size-sans-serif-page-header-medium: 2.5rem;
+$font-size-sans-serif-page-header-small: 2rem;
+$font-size-sans-serif-page-subheader-large: 2.1rem;
+$font-size-sans-serif-page-subheader-medium: 1.8rem;
+$font-size-sans-serif-page-subheader-small: 1.5rem;
+//$font-size-custom-panel: 2rem;
+$font-size-custom-panel-large: 2rem;
+$font-size-custom-panel-medium: 1.8rem;
+$font-size-custom-panel-small: 1.5rem;
+
 
 
 .vh-style {
@@ -87,7 +102,7 @@ footer {
 
         // style links
         a {
-            font-size: $font-size-sans-serif-nav - 0.1rem;
+            font-size: $font-size-sans-serif-nav-large;
             font-style: normal;
 
             color: $black;
@@ -155,9 +170,6 @@ footer {
 .top-bar .top-bar-section ul.dropdown {
     padding-top: 1.5rem;
     li a {
-        @media #{$medium-only} {
-            //font-size: $font-size-sans-serif-nav + 0rem;
-        }
         font-family: $font-family-sans-serif;
         font-weight: $font-weight-thin;
         margin: 0.5rem 0rem;
@@ -172,9 +184,9 @@ footer {
         padding: 0px;
         font-weight: $font-weight-bold;
         font-family: $font-family-sans-serif;
-        font-size: $font-size-sans-serif-nav;
+        font-size: $font-size-sans-serif-nav-large;
         @media #{$medium-only} {
-            font-size: $font-size-sans-serif-nav - 0.2rem;
+            font-size: $font-size-sans-serif-nav-medium;
         }
         &.black-color {
             color: $black;
@@ -194,9 +206,9 @@ footer {
         font-family: $font-family-sans-serif;
         font-weight: $font-weight-thin;
         font-style: italic;
-        font-size: $font-size-sans-serif-nav;
+        font-size: $font-size-sans-serif-nav-large;
         @media #{$medium-only} {
-            font-size: $font-size-sans-serif-nav - 0.2rem;
+            font-size: $font-size-sans-serif-nav-medium;
         }
         &:hover {
             color: $red;
@@ -214,11 +226,11 @@ footer {
         margin-left: 0.4rem;
         //margin: auto;
         font-family: $font-family-sans-serif;
-        font-size: $font-size-sans-serif-nav;
+        font-size: $font-size-sans-serif-nav-large;
         font-weight: $font-weight-thin;
         font-style: italic;
         @media #{$medium-only} {
-            font-size: $font-size-sans-serif-nav - 0.2rem;
+            font-size: $font-size-sans-serif-nav-medium;
         }
     }
     li.black-color {
@@ -253,9 +265,9 @@ footer {
         margin: 0px;
         padding: 0px;
         font-weight: $font-weight-bold;
-        font-size: $font-size-sans-serif-nav;
+        font-size: $font-size-sans-serif-nav-large;
         @media #{$small-only} {
-            font-size: $font-size-sans-serif-nav - 0.3rem;
+            font-size: $font-size-sans-serif-nav-small;
         }
     }
     .right {
@@ -272,9 +284,9 @@ footer {
         }
     }
     a {
-        font-size: $font-size-sans-serif-nav;
+        font-size: $font-size-sans-serif-nav-large;
         @media #{$small-only} {
-            font-size: $font-size-sans-serif-nav - 0.3rem;
+            font-size: $font-size-sans-serif-nav-small;
         }
     }
     a:hover {
@@ -293,14 +305,14 @@ footer {
             padding-top: 0.7rem;
             padding-left: 0.85rem;
             padding-bottom: 0.8rem;
-            font-size: $font-size-sans-serif-nav;
+            font-size: $font-size-sans-serif-nav-large;
         }
 
         a {
             margin: 0rem 0.7rem;
             padding-left: 0.2rem;
             padding-right: 0.2rem;
-            font-size: $font-size-sans-serif-nav - 0.1rem;
+            font-size: $font-size-sans-serif-nav-medium;
             font-weight: $font-weight-thin;
             font-style: italic;
         }
@@ -504,15 +516,15 @@ footer {
 
 .landing {
     @media #{$medium-only} {
-        font-size: $font-size-sans-serif-nav;
+        font-size: $font-size-sans-serif-nav-medium;
     }
     @media #{$small-only} {
         a{
-            font-size: $font-size-sans-serif-nav - 0.1rem;
+            font-size: $font-size-sans-serif-nav-small;
             line-height: 1.3;
         }
     }
-    font-size: $font-size-sans-serif-nav + 0.3rem;
+    font-size: $font-size-sans-serif-nav-large;
     font-family: $font-family-sans-serif;
     font-style: italic;
     font-weight: $font-weight-thin;
@@ -528,7 +540,7 @@ footer {
         font-weight: $font-weight-bold;
     }
     h2 {
-        font-size: $font-size-sans-serif-nav;
+        font-size: $font-size-sans-serif-nav-large;
         //padding-left: 2px;
     }
 }
@@ -537,7 +549,7 @@ footer {
 .overlay {
 
     p{
-        font-size: $font-size-sans-serif-nav;
+        font-size: $font-size-sans-serif-nav-large;
         font-family: $font-family-sans-serif;
         font-weight: $font-weight-thin;
     }
@@ -558,8 +570,6 @@ footer {
 @media #{$medium-only} {
     .overlay_container {
         position: relative;
-        //margin-top: 2rem;
-        //margin-bottom: 2rem;
         .overlay {
             position: absolute;
             top: 0;
@@ -568,7 +578,6 @@ footer {
             margin-top: 0rem;
             margin-left: rem-calc(18);
             padding: 0rem;
-            //margin-right: 18px;
         }
     }
     .contact {
@@ -697,10 +706,10 @@ figure {
 
   header h2 {
     font-weight: $font-weight-thin - 100;
-    font-size: $font-size-custom-panel;
+    font-size: $font-size-custom-panel-large;
     margin: 1px;
     @media #{$small-only} {
-        font-size: $font-size-custom-panel - 0.5rem;
+        font-size: $font-size-custom-panel-small;
     }
   }
 }
@@ -802,7 +811,7 @@ figure {
 @media #{$small-only} {
     .page_header {
         color: $white;
-        font-size: $font-size-serif-page-header - 1.3rem;
+        font-size: $font-size-sans-serif-page-header-small;
         font-family: $font-family-sans-serif;
         font-weight: $font-weight-bold;
         line-height: 0.9;
@@ -811,7 +820,7 @@ figure {
     }
     .tab-bar .page_header {
         color: $white;
-        font-size: $font-size-serif-page-header - 1.3rem;
+        font-size: $font-size-sans-serif-page-header-small;
         font-family: $font-family-sans-serif;
         font-weight: $font-weight-bold;
         line-height: 0.9;
@@ -822,7 +831,7 @@ figure {
         }
     }
     .page_subheader {
-        font-size: $font-size-serif-page-header - 1.1rem;
+        font-size: $font-size-sans-serif-page-subheader-small;
         font-family: $font-family-sans-serif;
         font-weight: $font-weight-bold;
         margin-top: 1rem;
@@ -833,7 +842,7 @@ figure {
 @media #{$medium-only} {
     .page_header {
         color: $white;
-        font-size: $font-size-serif-page-header - 0.5rem;
+        font-size: $font-size-sans-serif-page-header-medium;
         font-family: $font-family-sans-serif;
         font-weight: $font-weight-bold;
         line-height: 1;
@@ -841,7 +850,7 @@ figure {
         margin-bottom: 0rem;
     }
     .page_subheader {
-        font-size: $font-size-serif-page-header - 1rem;
+        font-size: $font-size-sans-serif-page-subheader-medium;
         font-family: $font-family-sans-serif;
         font-weight: $font-weight-bold;
         margin-top: 1.5rem;
@@ -852,7 +861,7 @@ figure {
 @media #{$large-up} {
     .page_header {
         color: $white;
-        font-size: $font-size-serif-page-header;
+        font-size: $font-size-sans-serif-page-header-large;
         font-family: $font-family-sans-serif;
         font-weight: $font-weight-bold;
         line-height: 1;
@@ -860,7 +869,7 @@ figure {
         margin-bottom: 0rem;
     }
     .page_subheader {
-        font-size: $font-size-serif-page-header - 0.9rem;
+        font-size: $font-size-sans-serif-page-subheader-large;
         font-family: $font-family-sans-serif;
         font-weight: $font-weight-bold;
         margin-top: 2rem;
@@ -930,9 +939,18 @@ figure {
                     $padding: rem-calc(10)
                     );
     margin-bottom: 0px;
-    font-size: $font-size-sans-serif-nav;
     @media #{$large-up} {
-        font-size: $font-size-sans-serif-nav;
+        font-size: $font-size-sans-serif-nav-large;
+        padding: 0.3rem 0.3rem;
+        margin: 0;
+    }
+    @media #{$medium-only} {
+        font-size: $font-size-sans-serif-nav-medium;
+        padding: 0.2rem 0.2rem;
+        margin: 0;
+    }
+    @media #{$small-only} {
+        font-size: $font-size-sans-serif-nav-small;
         padding: 0.1rem 0.1rem;
         margin: 0;
     }
@@ -953,10 +971,10 @@ figure {
         padding-top: 2rem;
         figure{
             @include viewport-unit(max-height, 84vh);
-            min-height: 470px;
+            min-height: 500px;
             img {
                 @include viewport-unit(max-height, 84vh);
-                min-height: 470px;
+                min-height: 500px;
                 padding-bottom: 3rem;
             }
         }
@@ -1005,7 +1023,52 @@ figure {
     @media #{$large-up} {
         @include viewport-unit(height, 84vh);
         padding-top: 2rem;
+        padding-right: 2rem;
     }
+    @media #{$medium-only} {
+        margin-top: 1rem;
+    }
+    @media #{$small-only} {
+        margin-top: 1rem;
+    }
+}
+
+// photo credentials styling
+.image-order, .image-year {
+    font-family: $font-family-sans-serif;
+    font-weight: $font-weight-thin;
+    font-style: italic;
+    @media #{$large-up} {
+        font-size: $font-size-sans-serif-nav-large;
+        margin-top: 2rem;
+    }
+    @media #{$medium-only} {
+        font-size: $font-size-sans-serif-nav-medium;
+        padding-top: 0.2rem;
+    }
+    @media #{$small-only} {
+        font-size: $font-size-sans-serif-nav-small;
+        padding-top: 0.4rem;
+    }
+}
+
+.image-description {
+    padding-top: 0.8rem;
+    border-top: 1px solid $black;
+}
+
+.image-title {
+    font-weight: $font-weight-normal;
+    @media #{$large-up} {
+        font-size: $font-size-sans-serif-page-subheader-large;
+    }
+    @media #{$medium-only} {
+        font-size: $font-size-sans-serif-page-subheader-medium;
+    }
+    @media #{$small-only} {
+        font-size: $font-size-sans-serif-page-subheader-small;
+    }
+    margin-bottom: 0.5rem;
 }
 
 #nav-wrapper {
@@ -1065,7 +1128,7 @@ figure {
     }
 }
 
-
+// TODO font-sizing
 .photo-captions {
     h6 {
         color: $white;
@@ -1128,7 +1191,7 @@ figure {
     margin-right: 1.5rem;
     p {
         margin-bottom: 1.2rem;
-        font-size: $font-size-sans-serif-nav;
+        font-size: $font-size-sans-serif-nav-large;
     }
     #sticky-sidebar-label {
         font-weight: $font-weight-bold;
