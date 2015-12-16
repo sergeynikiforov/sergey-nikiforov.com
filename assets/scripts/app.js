@@ -68,6 +68,7 @@ $(function() {
  * owl carousel
  *
  */
+/*
 $(document).ready(function() {
 
     var owl = $("#owl-example");
@@ -93,7 +94,7 @@ $(document).ready(function() {
       owl.trigger('owl.prev');
     });
 });
-
+*/
 
 /*
  * AJAX contact me post
@@ -190,6 +191,7 @@ $.ajaxSetup({
     }
 });
 
+
 // change hero-image on photography page on hover
 $(document).ready(function() {
     var default_photo_bg_url = $('#change-bg-on-hover').css('background-image');
@@ -202,4 +204,90 @@ $(document).ready(function() {
         $('#change-bg-on-hover').css("background-image", default_photo_bg_url);
        }
     );
+});
+
+
+// waypoints use
+function changeTopBarFontColor() {
+    $('#navigation-bar').toggleClass('black-color');
+    $('#top-bar-sticky-page-header').toggleClass('black-color');
+}
+
+function turnTopBarFontColorBlack() {
+    $('#navigation-bar').addClass('black-color');
+    $('#top-bar-sticky-page-header').addClass('black-color');
+}
+
+function turnTopBarFontColorWhite() {
+    $('#navigation-bar').removeClass('black-color');
+    $('#top-bar-sticky-page-header').removeClass('black-color');
+}
+
+function changeTopBarBackgroundColor() {
+    $('#top-bar-wrapper').toggleClass('white-bg');
+}
+
+$(document).ready(function() {
+    // toggle top-bar font color whatever it is
+    var waypointsToggleFontColor = $('.toggle-color').waypoint({
+        handler: function(direction) {
+            changeTopBarFontColor();
+        },
+        offset: 40
+    });
+    // toggle top-bar bg color whatever it is
+    var waypointsBackgroundColor = $('.toggle-bg').waypoint({
+        handler: function(direction) {
+            changeTopBarBackgroundColor();
+        },
+        offset: 40
+    });
+    // on move down make top-bar font color black, on up - white
+    var waypointsFontColorBlack = $('.toggle-color-black').waypoint({
+        handler: function(direction) {
+            if (direction == 'down') {
+                turnTopBarFontColorBlack();
+            } else {
+                turnTopBarFontColorWhite();
+            };
+        },
+        offset: 40
+    });
+    // on down - white, on up - black
+    var waypointsFontColorWhite = $('.toggle-color-white').waypoint({
+        handler: function(direction) {
+            if (direction == 'down') {
+                turnTopBarFontColorWhite();
+            } else {
+                turnTopBarFontColorBlack();
+            };
+        },
+        offset: 40
+    });
+    // toggle hero-nav
+    var waypointsHeroNav = $('#page-top').waypoint({
+        handler: function(direction) {
+            $('nav .page_header').animate({
+                opacity: "toggle"
+            }, 500);
+            $('.landing').animate({
+                opacity: "toggle"
+            }, 500);
+        },
+        offset: -5
+    });
+    // change top-bar header
+    /*
+    var waypointsToggleTopBarHeader = $('.thumbs').waypoint({
+        handler: function(direction) {
+            if (direction == 'down') {
+                $('#top-bar-header').html($('.page_header').html());
+                $('#top-bar-header').attr('href', '#page-top');
+            } else {
+                $('#top-bar-header').html('PHOTOGRAPHY');
+            };
+        },
+        offset: 40
+    });
+    */
 });

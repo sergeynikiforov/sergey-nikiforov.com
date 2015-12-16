@@ -91,7 +91,7 @@ $tab-bar-top-margin: 1rem;
 // 'What's next ' section
 #whats-next {
     @media #{$small-only} {
-        margin-top: 5rem;
+        padding-top: 5rem;
         /*
         ul {
             padding-top: 6rem;
@@ -100,10 +100,10 @@ $tab-bar-top-margin: 1rem;
         */
     }
     @media #{$medium-only} {
-        margin-top: 11rem;
+        padding-top: 11rem;
     }
     @media #{$large-up} {
-        margin-top: 13rem;
+        padding-top: 13rem;
     }
     ul {
         margin-top: 1rem;
@@ -212,9 +212,15 @@ $tab-bar-top-margin: 1rem;
 //
 
 // transparency
-
 .fixed, .top-bar, .top-bar-section ul, .top-bar-section ul li, .top-bar-section li:not(.has-form) a:not(.button), .top-bar-section .dropdown li a, .top-bar-section .dropdown li:not(.has-form) a:not(.button), .top-bar-section li:not(.has-form) a:not(.button):hover, .toggle-topbar, .tab-bar, .left .tab-bar-section, .right-off-canvas-toggle {
-    background:transparent !important;
+    background: transparent !important;
+}
+
+// white bg
+.white-bg {
+    .fixed, .top-bar, .top-bar-section ul, .top-bar-section ul li, .top-bar-section li:not(.has-form) a:not(.button), .top-bar-section .dropdown li a, .top-bar-section .dropdown li:not(.has-form) a:not(.button), .top-bar-section li:not(.has-form) a:not(.button):hover, .toggle-topbar, .tab-bar, .left .tab-bar-section, .right-off-canvas-toggle {
+        background: $white !important;
+    }
 }
 
 #navigation-bar {
@@ -236,7 +242,7 @@ $tab-bar-top-margin: 1rem;
 }
 
 
-#navigation-bar.top-bar {
+#navigation-bar .top-bar {
     .expanded .top-bar-section ul.right.text-right {
     padding-top: 1rem;
     }
@@ -303,6 +309,7 @@ $tab-bar-top-margin: 1rem;
         font-size: $font-size-sans-serif-nav-large;
         font-weight: $font-weight-thin;
         font-style: italic;
+        transition: all 0.2s ease;
         @media #{$medium-only} {
             font-size: $font-size-sans-serif-nav-medium;
         }
@@ -310,14 +317,20 @@ $tab-bar-top-margin: 1rem;
     li.black-color {
        a {
             color: $black;
+            transition: all 0.2s ease;
             &:hover {
                 color: $red;
             }
         }
         .dropdown li > a {
             color: $black;
+            transition: all 0.2s ease;
         }
     }
+}
+
+#top-bar-header {
+    transition: all 0.2s ease;
 }
 
 // END TOP-BAR
@@ -1147,7 +1160,7 @@ figure {
 }
 
 #album-wrapper {
-    margin: 2rem auto;
+    padding: 4rem 0rem;
 }
 
 .album-title {
@@ -1221,7 +1234,7 @@ figure {
 
         outline: solid 1px $black;
         img {
-            transition:all 0.3s ease;
+            transition: all 0.3s ease;
             transform: scale(0.97);
         }
     }
@@ -1245,7 +1258,7 @@ figure {
     }
     @media #{$medium-up} {
         //padding: $block-grid-default-spacing;
-        padding-top: 5rem;
+        padding-top: 9rem;
     }
 }
 
@@ -1340,7 +1353,7 @@ figure {
 // photoset thumbs for 'photography' page
 .photoset-info {
     @media #{$medium-up} {
-        margin-top: 8rem;
+        padding-top: 8rem;
         margin-bottom: 1rem;
     }
     @media #{$small-only} {
@@ -1369,8 +1382,14 @@ figure {
 
 .black-color {
     color: $black;
+    ul li h1 a, section ul li a {
+        color: $black !important;
+        &:hover {
+            color: $red !important;
+        }
+    }
     h2 {
-        color: $black;
+        color: $black !important;
     }
     a {
         color: $black;

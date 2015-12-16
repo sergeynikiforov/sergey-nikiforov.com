@@ -5,7 +5,7 @@
 {% block title %}Photography - {% if photoset_title %}{{ photoset_title }}{% endif %}{% endblock title %}
 
 {% block top_bar_title %}
-<a href="{% url 'sn_app:photography' %}">PHOTOGRAPHY</a>
+    <a id="top-bar-header" href="{% url 'sn_app:photography' %}">PHOTOGRAPHY</a>
 {% endblock top_bar_title %}
 
 {% block tab_bar_title %}
@@ -25,14 +25,6 @@
     </figure>
 {% endblock off_canvas_tab_bar_image %}
 
-{% block top_bar_sticky_page_header %}
-    <div class="row">
-        <div class="medium-10 large-10 medium-centered columns show-for-medium-up">
-            <h2 class="page_header">/{{ photoset_title|upper }}/</h2>
-        </div>
-    </div>
-{% endblock top_bar_sticky_page_header %}
-
 {% block body %}
     <div id="page-top"></div>
     <div class="row show-for-large-up">
@@ -42,10 +34,13 @@
                     <div id="change-bg-on-hover" class="photoset-image" style="background-image: url('{{ active_photoset.cover_photo.url }}');">
                         <div class="row">
                             <div class="small-12 medium-10 small-centered columns page_header_wrapper_large">
-                                <nav id="hero-nav-no-header" role="navigation">
+                                <nav id="hero-nav" role="navigation">
+                                    <h2 class="page_header">/{{ photoset_title|upper }}/</h2>
                                     {% if photosets %}
                                         {% for photoset in photosets %}
-                                            <p class="landing"><a id="{{ photoset.cover_photo.url }}" class="hover-background" href="{% url 'sn_app:photoset' photoset.slug %}">{{ photoset.title|upper }}</a></p>
+                                            {% if photoset.title != active_photoset.title %}
+                                                <p class="landing"><a id="{{ photoset.cover_photo.url }}" class="hover-background" href="{% url 'sn_app:photoset' photoset.slug %}">{{ photoset.title|upper }}</a></p>
+                                            {% endif %}
                                         {% endfor %}
                                     {% endif %}
                                 </nav>
@@ -65,10 +60,13 @@
                 <div class="overlay">
                     <div class="row">
                         <div class="medium-10 small-centered columns">
-                            <nav id="hero-nav-no-header" role="navigation">
+                            <nav id="hero-nav" role="navigation">
+                                <h2 class="page_header">/{{ photoset_title|upper }}/</h2>
                                 {% if photosets %}
                                     {% for photoset in photosets %}
-                                        <p class="landing"><a href="{% url 'sn_app:photoset' photoset.slug %}">{{ photoset.title|upper }}</a></p>
+                                        {% if photoset.title != active_photoset.title %}
+                                            <p class="landing"><a href="{% url 'sn_app:photoset' photoset.slug %}">{{ photoset.title|upper }}</a></p>
+                                        {% endif %}
                                     {% endfor %}
                                 {% endif %}
                             </nav>
@@ -78,27 +76,29 @@
             </div>
         </div>
     </div>
-    {% if photoset_description %}
-        <div id="album-wrapper" class="row">
-            <div class="small-12 medium-9 small-centered columns container-center">
-                <div class="content-center">
-                    <h3 class="album-title">{{ photoset_title }}</h3>
-                    <p class="album-description">{{ photoset_description }}</p>
-                    <p class="image-order"><a href="#thumbs-wrapper">SEE THE PHOTOS</a></p>
+    <div class="toggle-color">
+        {% if photoset_description %}
+            <div id="album-wrapper" class="row">
+                <div class="small-12 medium-9 small-centered columns container-center">
+                    <div class="content-center">
+                        <h3 class="album-title">{{ photoset_title }}</h3>
+                        <p class="album-description">{{ photoset_description }}</p>
+                        <p class="image-order"><a href="#thumbs-wrapper">SEE THE PHOTOS</a></p>
+                    </div>
                 </div>
             </div>
-        </div>
-    {% endif %}
+        {% endif %}
+    </div>
     {% if photos %}
         <div id="thumbs-wrapper" class="row">
             <div class="small-12 columns small_screen_figure medium_screen_figure large_screen_figure thumbs">
                 <ul class="small-block-grid-1 medium-block-grid-1 large-block-grid-2">
                     {% for photo in photos %}
                         <li class="one-thumb text-center">
-                            <figure>
+                            <figure class="toggle-color-white" >
                                 <a href="{% url 'sn_app:photo_home' active_photoset.slug %}#{{photo.publicID}}">{% pictureCloudinary photo.publicID sizes="(min-width: 1025px) 60vw, 100vw" srcset="200w 400w 600w 800w 1000w 1200w 1400w 1600w 2000w 2400w 2800w 3200w" alt=photo.title %}
                                 </a>
-                                <figcaption class="image-captions">
+                                <figcaption class="image-captions toggle-color-black">
                                     <div class="row">
                                         <div class="small-11 medium-10 small-centered columns text-left large-text-center">
                                             <a href="{% url 'sn_app:photo_home' active_photoset.slug %}#{{photo.publicID}}"><h3 class="image-title">{{ photo.current_order }}. {{ photo.title }}</h3></a>
@@ -122,18 +122,20 @@
             <div class="small-12 medium-10 medium-centered columns">
                 <ul class="more-albums-block-grid">
                     {% for photoset in photosets %}
-                        <li class="more-albums-thumb">
-                            <figure>
-                                <a href="{% url 'sn_app:photoset' photoset.slug %}">
-                                    {% pictureCloudinary photoset.cover_photo.publicID sizes="(min-width: 1025px) 35vw, (min-width: 641px) 50vw, 60vw" srcset="200w 400w 600w 800w 1000w 1200w 1400w 1600w 2000w 2400w 2800w 3200w" alt=photoset.title %}
-                                </a>
-                                <figcaption>
+                        {% if photoset.title != active_photoset.title %}
+                            <li class="more-albums-thumb">
+                                <figure>
                                     <a href="{% url 'sn_app:photoset' photoset.slug %}">
-                                        <p class="more-albums-title">{{ photoset.title|upper }}</p>
+                                        {% pictureCloudinary photoset.cover_photo.publicID sizes="(min-width: 1025px) 35vw, (min-width: 641px) 50vw, 60vw" srcset="200w 400w 600w 800w 1000w 1200w 1400w 1600w 2000w 2400w 2800w 3200w" alt=photoset.title %}
                                     </a>
-                                </figcaption>
-                            </figure>
-                        </li>
+                                    <figcaption>
+                                        <a href="{% url 'sn_app:photoset' photoset.slug %}">
+                                            <p class="more-albums-title">{{ photoset.title|upper }}</p>
+                                        </a>
+                                    </figcaption>
+                                </figure>
+                            </li>
+                        {% endif %}
                     {% endfor %}
                 </ul>
             </div>

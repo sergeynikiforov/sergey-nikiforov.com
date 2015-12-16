@@ -2,6 +2,7 @@
 {% load sn_app_extras %}
 {% load staticfiles %}
 {% block title %}About{% endblock title %}
+
 {% block off_canvas_tab_bar_page_header %}
     <h2 class="page_header">/ABOUT-ME/</h2>
 {% endblock off_canvas_tab_bar_page_header %}
@@ -12,20 +13,19 @@
     </figure>
 {% endblock off_canvas_tab_bar_image %}
 
-{% block top_bar_sticky_page_header %}
-    <div class="row">
-        <div class="medium-10 large-10 medium-centered columns show-for-medium-up">
-            <h2 class="page_header">/ABOUT-ME/</h2>
-        </div>
-    </div>
-{% endblock top_bar_sticky_page_header %}
-
 {% block body %}
     <div class="row show-for-large-up">
         <section class="small-12 large_screen_figure large-centered columns">
             <div class="bg75-image-wrapper">
                 <div class="image-wrap">
                     <div class="about-image">
+                        <div class="row">
+                            <div class="large-10 large-centered columns page_header_wrapper_large">
+                                <nav id="hero-nav" role="navigation">
+                                    <h2 class="page_header">/ABOUT-ME/</h2>
+                                </nav>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -38,13 +38,19 @@
                     {% pictureCloudinary '000078160033_shjhht' sizes="100vw" srcset="200w 400w 600w 800w 1000w 1200w 1400w 1600w 2000w 2400w 2800w 3200w" alt='autoportrait' %}
                 </figure>
                 <div class="overlay">
-
+                    <div class="row">
+                        <div class="medium-10 medium-centered columns page_header_wrapper_large">
+                            <nav id="hero-nav" role="navigation">
+                                <h2 class="page_header">/ABOUT-ME/</h2>
+                            </nav>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <div class="row">
-        <div class="small-12 medium-8 small-centered columns vh-style  container-center">
+        <div class="small-12 medium-8 small-centered columns vh-style container-center toggle-color">
             <div class="content-center">
                 <h2 class="page_subheader text-center">Hello!</h2>
                 <ul class="about-me-section no-bullet text-center">
@@ -60,14 +66,14 @@
         </div>
     </div>
     <div class="row hide-for-large-up">
-        <div class="small-12 large-12 small-centered columns small_screen_figure medium_screen_figure text-center">
+        <div class="small-12 large-12 small-centered columns small_screen_figure medium_screen_figure text-center toggle-color">
             <figure>
                 <img src="{% static 'sn_app/images/melombok.jpg' %}" alt="Pic of me">
             </figure>
         </div>
     </div>
     <div class="row show-for-large-up">
-        <section class="small-12 large_screen_figure large-centered columns">
+        <section class="small-12 large_screen_figure large-centered columns toggle-color">
             <div class="bg100-image-wrapper show-for-large-up">
                 <div class="image-wrap">
                     <div class="about-image-lombok"></div>
@@ -76,7 +82,7 @@
         </section>
     </div>
     <div class="row">
-        <section class="small-12 medium-6 small-centered columns vh-style text-center container-center">
+        <section class="small-12 medium-6 small-centered columns vh-style text-center container-center toggle-color">
             <div class="content-center">
                 <h2 class="page_subheader">I take pictures...</h2>
                 <p class="about-me-section">...since I was 13 or so when my parents presented me Olympus point-and-shoot 35-mm camera. Photography became my second nature since then and it’s my way of exploring the world.</p>
@@ -84,14 +90,14 @@
         </section>
     </div>
     <div class="row hide-for-large-up">
-        <div class="small-12 large-10 small-centered columns small_screen_figure medium_screen_figure text-center">
+        <div class="small-12 large-10 small-centered columns small_screen_figure medium_screen_figure text-center toggle-color">
             <figure>
                 <img src="{% static 'sn_app/images/selfie.jpg' %}" alt="Seville selfie">
             </figure>
         </div>
     </div>
     <div class="row show-for-large-up">
-        <section class="small-12 large_screen_figure large-centered columns">
+        <section class="small-12 large_screen_figure large-centered columns toggle-color">
             <div class="bg100-image-wrapper">
                 <div class="image-wrap">
                     <div class="about-image-selfie"></div>
@@ -100,7 +106,7 @@
         </section>
     </div>
     <div class="row">
-        <section class="small-12 medium-6 small-centered columns vh-style text-center container-center">
+        <section class="small-12 medium-6 small-centered columns vh-style text-center container-center toggle-color">
             <div class="content-center">
                 <h2 class="page_subheader">I like travelling</h2>
                 <p class="about-me-section">Road is life. And it’s never enough.</p>
@@ -108,14 +114,14 @@
         </section>
     </div>
     <div class="row hide-for-large-up">
-        <div class="small-12 large-10 small-centered columns small_screen_figure medium_screen_figure text-center">
+        <div class="small-12 large-10 small-centered columns small_screen_figure medium_screen_figure text-center toggle-color">
             <figure>
                 <img src="{% static 'sn_app/images/road.jpg' %}" alt="Driving in the dark">
             </figure>
         </div>
     </div>
     <div class="row show-for-large-up">
-        <section class="small-12 large_screen_figure large-centered columns">
+        <section class="small-12 large_screen_figure large-centered columns toggle-color">
             <div class="bg100-image-wrapper">
                 <div class="image-wrap">
                     <div class="about-image-road"></div>
@@ -124,7 +130,7 @@
         </section>
     </div>
     <div class="row">
-        <section class="small-12 medium-6 small-centered columns vh-style text-center container-center">
+        <section class="small-12 medium-6 small-centered columns vh-style text-center container-center toggle-color">
             <div class="content-center">
                 <h2 class="page_subheader">I enjoy running</h2>
                 <p class="about-me-section">This is how I meditate.</p>
@@ -132,14 +138,14 @@
         </section>
     </div>
     <div class="row hide-for-large-up">
-        <div class="small-12 large-10 small-centered columns small_screen_figure medium_screen_figure text-center">
+        <div class="small-12 large-10 small-centered columns small_screen_figure medium_screen_figure text-center toggle-color">
             <figure>
                 <img src="{% static 'sn_app/images/onarun.jpg' %}" alt="Running views">
             </figure>
         </div>
     </div>
     <div class="row show-for-large-up">
-        <section class="small-12 large_screen_figure large-centered columns">
+        <section class="small-12 large_screen_figure large-centered columns toggle-color">
             <div class="bg100-image-wrapper">
                 <div class="image-wrap">
                     <div class="about-image-onarun"></div>
@@ -149,7 +155,7 @@
     </div>
 {% endblock body %}
 {% block whats_next %}
-    <div id="whats-next" class="row">
+    <div id="whats-next" class="row toggle-color">
         <div class="small-12 medium-10 small-centered columns">
             <h2 class="page_subheader">What's next?</h2>
             <ul class="no-bullet">

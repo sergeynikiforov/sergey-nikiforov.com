@@ -75,10 +75,10 @@ gulp.task('scripts', function() {
             paths.bower + '/foundation/js/foundation/foundation.alert.js',
             paths.bower + '/underscore/underscore.js',
             paths.bower + '/backbone/backbone.js',
-            paths.bower + '/cloudinary-jquery/cloudinary-jquery.js',
+            paths.bower + '/waypoints/lib/jquery.waypoints.js',
             paths.assets + '/scripts/app.js',
-            paths.assets + '/scripts/myStickyFooter.js',
-            paths.assets + '/scripts/owl.carousel.js',
+            //paths.assets + '/scripts/myStickyFooter.js',
+            //paths.assets + '/scripts/owl.carousel.js',
             paths.assets + '/scripts/photoApp.js'
              ])
     // concat into 1 file

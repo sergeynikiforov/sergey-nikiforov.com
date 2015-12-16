@@ -37,7 +37,7 @@
         </section>
     </div>
     <div class="row hide-for-large-up">
-        <div class="small-12 columns small_screen_figure medium_screen_figure  show-for-medium-only">
+        <div class="small-12 columns small_screen_figure medium_screen_figure show-for-medium-only">
             <div class="overlay_container">
                 <figure>
                     <img src="{% static 'sn_app/images/ladefense.jpg' %}" alt="La Defense, Paris">
@@ -60,7 +60,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="large-2 columns show-for-large-up">
+        <div class="large-2 columns show-for-xlarge-up">
             <nav class="side-nav text-right sticky-sidebar" role="navigation" title="Resume">
                 <header><h6 id="sticky-sidebar-label"><a href="#page-top">/RESUME/</a></h6></header>
                 <p><a href="#contact">CONTACT DETAILS</a></p>
@@ -70,7 +70,7 @@
                 <p><a href="#skills">SKILLS</a></p>
             </nav>
         </div>
-        <div class="small-12 medium-10 large-8 medium-centered large-uncentered columns">
+        <div class="small-12 medium-10 large-10 medium-centered large-centered columns toggle-color">
             {% if person %}
                 <div class="row">
                     <article class="small-12 columns">
@@ -201,13 +201,13 @@
                 </div>
             </div>
         </div>
-        <div class="large-2 columns show-for-large-up">
+        <div class="large-2 columns show-for-xlarge-up">
             <p></p>
         </div>
     </div>
 {% endblock body %}
 {% block whats_next %}
-    <div id="whats-next" class="row">
+    <div id="whats-next" class="row toggle-sidebar">
         <div class="small-12 medium-10 small-centered columns">
             <h2 class="page_subheader">What's next?</h2>
             <ul class="no-bullet">
