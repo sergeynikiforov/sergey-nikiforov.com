@@ -13,6 +13,7 @@
     <body>
         {% block header %}
             {% if person %}
+            <div id="page-top"></div>
             <div class="fixed">
                 <div class="row">
                     <div class="medium-10 large-10 medium-centered columns show-for-medium-up">
@@ -106,11 +107,11 @@
                     {% endif %}
                     {% if jobs %}
                         <li><label id="off-canvas-extra-label">/RESUME/</label></li>
-                        <li><a class="exit-off-canvas-link" href="#contact">Contact Details</a></li>
-                        <li><a class="exit-off-canvas-link" href="#education">Education</a></li>
-                        <li><a class="exit-off-canvas-link" href="#courses">Online Courses</a></li>
-                        <li><a class="exit-off-canvas-link" href="#work">Work Experience</a></li>
-                        <li><a class="exit-off-canvas-link" href="#skills">Skills</a></li>
+                        <li><a class="exit-off-canvas-link" href="#contact">CONTACT DETAILS</a></li>
+                        <li><a class="exit-off-canvas-link" href="#education">EDUCATION</a></li>
+                        <li><a class="exit-off-canvas-link" href="#courses">ONLINE COURSES</a></li>
+                        <li><a class="exit-off-canvas-link" href="#work">WORK</a></li>
+                        <li><a class="exit-off-canvas-link" href="#skills">SKILLS</a></li>
                     {% endif %}
                   </ul>
                 </aside>
@@ -164,7 +165,8 @@
                         </div>
                         <div id="footer-bottom-section" class="row">
                             <div class="small-7 columns copyright">
-                                <a href="{% url 'sn_app:landing' %}">2015 (c) {{ person.first_name}} {{ person.last_name }}</a>
+                                <p><a href="{% url 'sn_app:landing' %}">{{ person.first_name}} {{ person.last_name }}</a></p>
+                                <p>(c) 2015</p>
                             </div>
                             <div class="small-5 columns text-right page-top-link">
                                 <a href="#page-top">BACK TO TOP</a>

@@ -2,7 +2,6 @@
 {% load sn_app_extras %}
 {% load staticfiles %}
 {% block title %}About{% endblock title %}
-
 {% block off_canvas_tab_bar_page_header %}
     <h2 class="page_header">/ABOUT-ME/</h2>
 {% endblock off_canvas_tab_bar_page_header %}
@@ -16,16 +15,15 @@
 {% block top_bar_sticky_page_header %}
     <div class="row">
         <div class="medium-10 large-10 medium-centered columns show-for-medium-up">
-            <a href="#page-top"><h2 class="page_header">/ABOUT-ME/</h2></a>
+            <h2 class="page_header">/ABOUT-ME/</h2>
         </div>
     </div>
 {% endblock top_bar_sticky_page_header %}
 
 {% block body %}
-    <div id="page-top"></div>
     <div class="row show-for-large-up">
-        <section class="small-12 medium_screen_figure large-centered columns">
-            <div class="about-wrapper">
+        <section class="small-12 large_screen_figure large-centered columns">
+            <div class="bg75-image-wrapper">
                 <div class="image-wrap">
                     <div class="about-image">
                     </div>
@@ -46,13 +44,14 @@
         </div>
     </div>
     <div class="row">
-        <div class="small-12 medium-6 small-centered columns vh-style text-center container-center">
+        <div class="small-12 medium-8 small-centered columns vh-style  container-center">
             <div class="content-center">
-                <ul class="spiel no-bullet">
-                    <li>Hello! I'm Sergey.</li>
+                <h2 class="page_subheader text-center">Hello!</h2>
+                <ul class="about-me-section no-bullet text-center">
+                    <li>My name is Sergey.</li>
                     <li>I like things that work flawlessly and look beautiful.</li>
                     <li>I like to build such things.</li>
-                    <li>I like to contribute to the projects that have meaning and stand out.</li>
+                    <li>I like to contribute to projects that have meaning and stand out.</li>
                     <li>I like to teach and learn.</li>
                     <li>I'm one of those who unites people into groups rather than divides them into ones.</li>
                     <li>I like to make this world a better place.</li>
@@ -60,88 +59,88 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="small-12 large-12 small-centered columns small_screen_figure medium_screen_figure text-center hide-for-large-up">
+    <div class="row hide-for-large-up">
+        <div class="small-12 large-12 small-centered columns small_screen_figure medium_screen_figure text-center">
             <figure>
                 <img src="{% static 'sn_app/images/melombok.jpg' %}" alt="Pic of me">
             </figure>
         </div>
     </div>
-    <div class="row">
-        <section class="small-12 medium_screen_figure large-centered columns">
-            <div class="about-wrapper show-for-large-up">
+    <div class="row show-for-large-up">
+        <section class="small-12 large_screen_figure large-centered columns">
+            <div class="bg100-image-wrapper show-for-large-up">
                 <div class="image-wrap">
                     <div class="about-image-lombok"></div>
                 </div>
             </div>
         </section>
     </div>
-    <div class="row  ">
+    <div class="row">
         <section class="small-12 medium-6 small-centered columns vh-style text-center container-center">
             <div class="content-center">
                 <h2 class="page_subheader">I take pictures...</h2>
-                <p>...since I was 13 or so when my parents bought me Olympus point-and-shoot 35-mm camera. Photography became my second nature since then and it’s my way of exploring the world.</p>
+                <p class="about-me-section">...since I was 13 or so when my parents presented me Olympus point-and-shoot 35-mm camera. Photography became my second nature since then and it’s my way of exploring the world.</p>
             </div>
         </section>
     </div>
-    <div class="row">
-        <div class="small-12 large-10 small-centered columns small_screen_figure medium_screen_figure text-center hide-for-large-up">
+    <div class="row hide-for-large-up">
+        <div class="small-12 large-10 small-centered columns small_screen_figure medium_screen_figure text-center">
             <figure>
                 <img src="{% static 'sn_app/images/selfie.jpg' %}" alt="Seville selfie">
             </figure>
         </div>
     </div>
-    <div class="row">
-        <section class="small-12 medium_screen_figure large-centered columns">
-            <div class="about-wrapper show-for-large-up">
+    <div class="row show-for-large-up">
+        <section class="small-12 large_screen_figure large-centered columns">
+            <div class="bg100-image-wrapper">
                 <div class="image-wrap">
                     <div class="about-image-selfie"></div>
                 </div>
             </div>
         </section>
     </div>
-    <div class="row  ">
+    <div class="row">
         <section class="small-12 medium-6 small-centered columns vh-style text-center container-center">
             <div class="content-center">
-                <h2 class="page_subheader">I travel</h2>
-                <p>Road is life. And it’s never enough.</p>
+                <h2 class="page_subheader">I like travelling</h2>
+                <p class="about-me-section">Road is life. And it’s never enough.</p>
             </div>
         </section>
     </div>
-    <div class="row">
-        <div class="small-12 large-10 small-centered columns small_screen_figure medium_screen_figure text-center hide-for-large-up">
+    <div class="row hide-for-large-up">
+        <div class="small-12 large-10 small-centered columns small_screen_figure medium_screen_figure text-center">
             <figure>
                 <img src="{% static 'sn_app/images/road.jpg' %}" alt="Driving in the dark">
             </figure>
         </div>
     </div>
-    <div class="row">
-        <section class="small-12 medium_screen_figure large-centered columns">
-            <div class="about-wrapper show-for-large-up">
+    <div class="row show-for-large-up">
+        <section class="small-12 large_screen_figure large-centered columns">
+            <div class="bg100-image-wrapper">
                 <div class="image-wrap">
                     <div class="about-image-road"></div>
                 </div>
             </div>
         </section>
     </div>
-    <div class="row  ">
+    <div class="row">
         <section class="small-12 medium-6 small-centered columns vh-style text-center container-center">
             <div class="content-center">
-                <h2 class="page_subheader">I run</h2>
-                <p>This is how I meditate.</p>
+                <h2 class="page_subheader">I enjoy running</h2>
+                <p class="about-me-section">This is how I meditate.</p>
             </div>
         </section>
     </div>
-    <div class="row ">
-        <div class="small-12 large-10 small-centered columns small_screen_figure medium_screen_figure text-center hide-for-large-up">
+    <div class="row hide-for-large-up">
+        <div class="small-12 large-10 small-centered columns small_screen_figure medium_screen_figure text-center">
             <figure>
                 <img src="{% static 'sn_app/images/onarun.jpg' %}" alt="Running views">
             </figure>
         </div>
     </div>
-    <div class="row">
-        <section class="small-12 medium_screen_figure large-centered columns">
-            <div class="about-wrapper show-for-large-up">
+    <div class="row show-for-large-up">
+        <section class="small-12 large_screen_figure large-centered columns">
+            <div class="bg100-image-wrapper">
                 <div class="image-wrap">
                     <div class="about-image-onarun"></div>
                 </div>
@@ -149,3 +148,15 @@
         </section>
     </div>
 {% endblock body %}
+{% block whats_next %}
+    <div id="whats-next" class="row">
+        <div class="small-12 medium-10 small-centered columns">
+            <h2 class="page_subheader">What's next?</h2>
+            <ul class="no-bullet">
+                <li><a href="{% url 'sn_app:resume' %}">SEE MY RESUME</a></li>
+                <li><a href="{% url 'sn_app:photography' %}">SEE MY PHOTOS</a></li>
+                <li><a href="{% url 'sn_app:contact' %}">GET IN TOUCH WITH ME</a></li>
+            </ul>
+        </div>
+    </div>
+{% endblock whats_next %}

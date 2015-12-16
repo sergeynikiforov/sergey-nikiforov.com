@@ -14,9 +14,9 @@
 {% endblock off_canvas_tab_bar_image %}
 
 {% block body %}
-    <div id="page-top" class="row">
-        <section class="small-12 medium_screen_figure large-centered columns">
-            <div class="resume-wrapper show-for-large-up">
+    <div class="row show-for-large-up">
+        <section class="small-12 large_screen_figure large-centered columns">
+            <div class="bg75-image-wrapper">
                 <div class="image-wrap">
                     <div class="resume-image">
                         <div class="row">
@@ -63,11 +63,11 @@
         <div class="large-2 columns show-for-large-up">
             <nav class="side-nav text-right sticky-sidebar" role="navigation" title="Resume">
                 <header><h6 id="sticky-sidebar-label"><a href="#page-top">/RESUME/</a></h6></header>
-                <p><a href="#contact">Contact Details</a></p>
-                <p><a href="#education">Education</a></p>
-                <p><a href="#courses">Online Courses</a></p>
-                <p><a href="#work">Work Experience</a></p>
-                <p><a href="#skills">Skills</a></p>
+                <p><a href="#contact">CONTACT DETAILS</a></p>
+                <p><a href="#education">EDUCATION</a></p>
+                <p><a href="#courses">ONLINE COURSES</a></p>
+                <p><a href="#work">WORK</a></p>
+                <p><a href="#skills">SKILLS</a></p>
             </nav>
         </div>
         <div class="small-12 medium-10 large-8 medium-centered large-uncentered columns">
@@ -206,3 +206,14 @@
         </div>
     </div>
 {% endblock body %}
+{% block whats_next %}
+    <div id="whats-next" class="row">
+        <div class="small-12 medium-10 small-centered columns">
+            <h2 class="page_subheader">What's next?</h2>
+            <ul class="no-bullet">
+                <li><a href="{% url 'sn_app:photography' %}">SEE MY PHOTOS</a></li>
+                <li><a href="{% url 'sn_app:contact' %}">GET IN TOUCH WITH ME</a></li>
+            </ul>
+        </div>
+    </div>
+{% endblock whats_next %}

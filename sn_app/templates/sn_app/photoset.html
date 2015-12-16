@@ -28,7 +28,7 @@
 {% block top_bar_sticky_page_header %}
     <div class="row">
         <div class="medium-10 large-10 medium-centered columns show-for-medium-up">
-            <a href="#page-top"><h2 class="page_header">/{{ photoset_title|upper }}/</h2></a>
+            <h2 class="page_header">/{{ photoset_title|upper }}/</h2>
         </div>
     </div>
 {% endblock top_bar_sticky_page_header %}
@@ -36,16 +36,16 @@
 {% block body %}
     <div id="page-top"></div>
     <div class="row show-for-large-up">
-        <section class="small-12 medium_screen_figure large-centered columns">
-            <div class="photoset-wrapper">
+        <section class="small-12 large_screen_figure large-centered columns">
+            <div class="bg75-image-wrapper">
                 <div class="image-wrap">
                     <div id="change-bg-on-hover" class="photoset-image" style="background-image: url('{{ active_photoset.cover_photo.url }}');">
                         <div class="row">
                             <div class="small-12 medium-10 small-centered columns page_header_wrapper_large">
-                                <nav id="photoset-nav" role="navigation">
+                                <nav id="hero-nav-no-header" role="navigation">
                                     {% if photosets %}
                                         {% for photoset in photosets %}
-                                            <p class="landing"><a id="{{ photoset.cover_photo.url }}" class="hover-background transparent-button-small" href="{% url 'sn_app:photoset' photoset.slug %}">{{ photoset.title|upper }}</a></p>
+                                            <p class="landing"><a id="{{ photoset.cover_photo.url }}" class="hover-background" href="{% url 'sn_app:photoset' photoset.slug %}">{{ photoset.title|upper }}</a></p>
                                         {% endfor %}
                                     {% endif %}
                                 </nav>
@@ -65,7 +65,7 @@
                 <div class="overlay">
                     <div class="row">
                         <div class="medium-10 small-centered columns">
-                            <nav id="photoset-nav" role="navigation">
+                            <nav id="hero-nav-no-header" role="navigation">
                                 {% if photosets %}
                                     {% for photoset in photosets %}
                                         <p class="landing"><a href="{% url 'sn_app:photoset' photoset.slug %}">{{ photoset.title|upper }}</a></p>
@@ -80,7 +80,7 @@
     </div>
     {% if photoset_description %}
         <div id="album-wrapper" class="row">
-            <div class="small-12 medium-9 small-centered columns vh-style container-center">
+            <div class="small-12 medium-9 small-centered columns container-center">
                 <div class="content-center">
                     <h3 class="album-title">{{ photoset_title }}</h3>
                     <p class="album-description">{{ photoset_description }}</p>
@@ -91,21 +91,17 @@
     {% endif %}
     {% if photos %}
         <div id="thumbs-wrapper" class="row">
-            <div class="small-12 columns small_screen_figure thumbs">
+            <div class="small-12 columns small_screen_figure medium_screen_figure large_screen_figure thumbs">
                 <ul class="small-block-grid-1 medium-block-grid-1 large-block-grid-2">
                     {% for photo in photos %}
                         <li class="one-thumb text-center">
                             <figure>
-                                <a href="{% url 'sn_app:photo_home' active_photoset.slug %}#{{photo.publicID}}">{% pictureCloudinary photo.publicID sizes="(min-width: 1025px) 50vw, (min-width: 641px) 100vw, 100vw" srcset="200w 400w 600w 800w 1000w 1200w 1400w 1600w 2000w 2400w 2800w 3200w" alt=photo.title %}
+                                <a href="{% url 'sn_app:photo_home' active_photoset.slug %}#{{photo.publicID}}">{% pictureCloudinary photo.publicID sizes="(min-width: 1025px) 60vw, 100vw" srcset="200w 400w 600w 800w 1000w 1200w 1400w 1600w 2000w 2400w 2800w 3200w" alt=photo.title %}
                                 </a>
                                 <figcaption class="image-captions">
                                     <div class="row">
-                                        <div class="small-2 medium-2 columns">
-                                            <p class="image-number text-center">{{ photo.current_order }}</p>
-                                        </div>
-                                        <div class="small-10 medium-9 end columns text-left">
-                                            <a href="{% url 'sn_app:photo_home' active_photoset.slug %}#{{photo.publicID}}"><h3 class="image-title">{{ photo.title }}, {{ photo.date_taken.year }}</h3></a>
-                                            <p class="image-description">{{ photo.description }}</p>
+                                        <div class="small-11 medium-10 small-centered columns text-left large-text-center">
+                                            <a href="{% url 'sn_app:photo_home' active_photoset.slug %}#{{photo.publicID}}"><h3 class="image-title">{{ photo.current_order }}. {{ photo.title }}</h3></a>
                                         </div>
                                     </div>
                                 </figcaption>
@@ -119,7 +115,7 @@
     {% if photosets %}
         <div class="row">
             <div class="small-12 medium-10 medium-centered columns">
-                <h3 class="page_subheader more-albums-start">More Albums:</h3>
+                <h3 class="page_subheader more-albums-start">Other Albums:</h3>
             </div>
         </div>
         <div id="more-albums-wrapper" class="row">
@@ -144,3 +140,14 @@
         </div>
     {% endif %}
 {% endblock body %}
+{% block whats_next %}
+    <div id="whats-next" class="row">
+        <div class="small-12 medium-10 small-centered columns">
+            <h2 class="page_subheader">What's next?</h2>
+            <ul class="no-bullet">
+                <li><a href="{% url 'sn_app:about' %}">A FEW WORDS ABOUT MYSELF</a></li>
+                <li><a href="{% url 'sn_app:contact' %}">GET IN TOUCH WITH ME</a></li>
+            </ul>
+        </div>
+    </div>
+{% endblock whats_next %}

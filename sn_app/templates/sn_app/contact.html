@@ -20,13 +20,13 @@
 
 {% block body %}
     <div id="page-top"></div>
-    <div class="row">
-        <section class="small-12 medium_screen_figure large-centered columns">
-            <div class="contact-wrapper show-for-large-up">
+    <div class="row show-for-large-up">
+        <section class="small-12 large_screen_figure large-centered columns">
+            <div class="bg75-image-wrapper">
                 <div class="image-wrap">
                     <div class="contact-image">
                         <div class="row">
-                            <div class="small-12 medium-10 small-centered columns show-for-large-up page_header_wrapper_large">
+                            <div class="large-10 large-centered columns page_header_wrapper_large">
                                 <nav id="hero-nav" role="navigation">
                                     <h2 class="page_header">/CONTACT-ME/</h2>
                                     <p class="landing"><a href="#drop_me_a_line">DROP ME A LINE</a></p>
@@ -65,24 +65,31 @@
     <div class="row">
         <section class="small-12 medium-10 medium-centered columns">
             <form id="post-form" method="post" data-abide="ajax">
-                <div class="row">
-                    <div class="small-12 columns text-left">
-                        <h3 id="drop_me_a_line" class="page_subheader">Drop me a line</h3>
-                    </div>
-                </div>
                 {% if person %}
-                <div class="row">
-                    <div class="small-12 columns text-right">
-                        <div class="contact_details">
-                        <p>{{ person.first_name }} {{ person.last_name }}</p>
-                        <address>
-                            <p>{{ person.address }}</p>
-                            <p><a href="mailto:{{ person.email }}">{{ person.email }}</a></p>
-                            <p>{{ person.telephone }}</p>
-                        </address>
+                    <div class="row">
+                        <div class="small-12 medium-6 medium-push-6 columns text-left">
+                            <h3 class="page_subheader">Social Networks</h3>
+                            <div class="social_networks">
+                                <ul class="no-bullet">
+                                    <li><a href="{{ person.facebook_link }}">FACEBOOK</a></li>
+                                    <li><a href="{{ person.flickr_link }}">FLICKR</a></li>
+                                    <li><a href="{{ person.instagram_link }}">INSTAGRAM</a></li>
+                                    <li><a href="{{ person.linkedin_link }}">LINKEDIN</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="small-12 medium-6 medium-pull-6 columns text-left">
+                            <h3 id="drop_me_a_line" class="page_subheader">Drop me a line</h3>
+                            <div class="contact_details">
+                                <p>{{ person.first_name }} {{ person.last_name }}</p>
+                                <address>
+                                    <p>{{ person.address }}</p>
+                                    <p><a href="mailto:{{ person.email }}">{{ person.email }}</a></p>
+                                    <p>{{ person.telephone }}</p>
+                                </address>
+                            </div>
                         </div>
                     </div>
-                </div>
                 {% endif %}
                 {% csrf_token %}
                 <div class="row">
@@ -116,3 +123,14 @@
         </section>
     </div>
 {% endblock body %}
+{% block whats_next %}
+    <div id="whats-next" class="row">
+        <div class="small-12 medium-10 small-centered columns">
+            <h2 class="page_subheader">What's next?</h2>
+            <ul class="no-bullet">
+                <li><a href="{% url 'sn_app:resume' %}">SEE MY RESUME</a></li>
+                <li><a href="{% url 'sn_app:photography' %}">SEE MY PHOTOS</a></li>
+            </ul>
+        </div>
+    </div>
+{% endblock whats_next %}

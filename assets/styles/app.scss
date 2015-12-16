@@ -49,22 +49,25 @@
 
 // font-sizing
 $font-weight-thin: 300;
-//$font-size-sans-serif-nav: 1.1rem;
-$font-size-sans-serif-nav-large: 1.1rem;
+$font-size-sans-serif-nav-large: 1rem;
 $font-size-sans-serif-nav-medium: 0.9rem;
-$font-size-sans-serif-nav-small: 0.8rem;
-//$font-size-serif-page-header: 3rem;
-$font-size-sans-serif-page-header-large: 3rem;
+$font-size-sans-serif-nav-small: 0.9rem;
+$font-size-sans-serif-page-header-large: 2.9rem;
 $font-size-sans-serif-page-header-medium: 2.5rem;
 $font-size-sans-serif-page-header-small: 2rem;
 $font-size-sans-serif-page-subheader-large: 2.1rem;
 $font-size-sans-serif-page-subheader-medium: 1.8rem;
 $font-size-sans-serif-page-subheader-small: 1.5rem;
-//$font-size-custom-panel: 2rem;
 $font-size-custom-panel-large: 2rem;
 $font-size-custom-panel-medium: 1.8rem;
 $font-size-custom-panel-small: 1.5rem;
+$font-size-hero-nav-large: 1.3rem;
+$font-size-hero-nav-medium: 1.1rem;
 
+// top-bar, tab-bar top margins
+$top-bar-top-margin-large: 2rem;
+$top-bar-top-margin-medium: 1.5rem;
+$tab-bar-top-margin: 1rem;
 
 
 .vh-style {
@@ -85,39 +88,10 @@ $font-size-custom-panel-small: 1.5rem;
 // FOOTER SCSS
 //-----------------------------------------------------
 
-// center list with social links in footer
-/*
-footer {
-    font-family: $font-family-sans-serif;
-    font-weight: $font-weight-thin;
-
-    ul {
-        list-style-type:none;
-        text-align: center;
-    }
-
-    li {
-        display: inline-block;
-        margin-right: 1rem;
-
-
-        // style links
-        a {
-            font-size: $font-size-sans-serif-nav-large;
-            font-style: normal;
-
-            color: $black;
-        }
-        a:hover {
-            color: $red;
-        }
-    }
-}
-*/
 // 'What's next ' section
 #whats-next {
     @media #{$small-only} {
-        margin-top: 3rem;
+        margin-top: 5rem;
         /*
         ul {
             padding-top: 6rem;
@@ -126,24 +100,27 @@ footer {
         */
     }
     @media #{$medium-only} {
-        margin-top: 13rem;
+        margin-top: 11rem;
     }
     @media #{$large-up} {
-        margin-top: 19rem;
+        margin-top: 13rem;
     }
-    ul li {
+    ul {
+        margin-top: 1rem;
+    }
+    li {
         margin-bottom: 1rem;
         font-family: $font-family-sans-serif;
         font-weight: $font-weight-thin;
         font-style: italic;
         @media #{$small-only} {
-            font-size: $font-size-sans-serif-page-subheader-small;
+            font-size: $font-size-sans-serif-page-subheader-small - 0.3rem;
         }
         @media #{$medium-only} {
-            font-size: $font-size-sans-serif-page-subheader-medium;
+            font-size: $font-size-sans-serif-page-subheader-small - 0.3rem;
         }
         @media #{$large-up} {
-            font-size: $font-size-sans-serif-page-subheader-large;
+            font-size: $font-size-sans-serif-page-subheader-medium - 0.3rem;
         }
     }
 }
@@ -182,8 +159,22 @@ footer {
     .page-top-link {
         font-style: italic;
     }
+    .copyright p {
+        font-weight: $font-weight-thin;
+        margin-bottom: 0rem;
+        @media #{$small-only} {
+            font-size: $font-size-sans-serif-nav-small;
+        }
+        @media #{$medium-only} {
+            font-size: $font-size-sans-serif-nav-medium;
+        }
+        @media #{$large-up} {
+            font-size: $font-size-sans-serif-nav-large;
+        }
+    }
 }
 
+// column within footer-top-section
 .footer-column {
     .footer-column-title {
         font-weight: $font-weight-bold;
@@ -226,23 +217,24 @@ footer {
     background:transparent !important;
 }
 
-@media #{$medium-only} {
-    #navigation-bar {
-        margin-top: 1rem;
+#navigation-bar {
+    @media #{$medium-only} {
+        margin-top: $top-bar-top-margin-medium;
     }
-    #navigation-bar-photo {
-        margin-top: 1rem;
+    @media #{$large-up} {
+        margin-top: $top-bar-top-margin-large;
     }
 }
 
-@media #{$large-up} {
-    #navigation-bar {
-        margin-top: 3rem;
+#navigation-bar-photo {
+    @media #{$medium-only} {
+        margin-top: $top-bar-top-margin-medium;
     }
-    #navigation-bar-photo {
-        margin-top: 1rem;
+    @media #{$large-up} {
+        margin-top: $top-bar-top-margin-large;
     }
 }
+
 
 #navigation-bar.top-bar {
     .expanded .top-bar-section ul.right.text-right {
@@ -307,7 +299,6 @@ footer {
         color: $white;
         margin-right: 0.4rem;
         margin-left: 0.4rem;
-        //margin: auto;
         font-family: $font-family-sans-serif;
         font-size: $font-size-sans-serif-nav-large;
         font-weight: $font-weight-thin;
@@ -363,7 +354,7 @@ footer {
             }
             padding-right: 7px;
             padding-left: 7px;
-            padding-top: 17px;
+            padding-top: 15px;
         }
     }
     a {
@@ -422,80 +413,61 @@ footer {
 }
 
 #hero-nav {
-    margin-top: 2.1rem;
-    p {
-        font-weight: $font-weight-thin;
-    }
-}
-
-#photoset-nav {
-    margin-top: 5.5rem;
     @media #{$medium-only} {
-        margin-top: 4.7rem;
+        margin-top: $top-bar-top-margin-medium + 1rem;
+    }
+    @media #{$large-up} {
+        margin-top: $top-bar-top-margin-large + 1rem;
+        margin-left: 0.9rem;
+        margin-right: 0.9rem;
     }
     p {
         font-weight: $font-weight-thin;
+        @media #{$medium-only} {
+            font-size: $font-size-hero-nav-medium;
+        }
+        @media #{$large-up} {
+            font-size: $font-size-hero-nav-large;
+        }
     }
 }
 
-.home-wrapper {
-    height: 100vh;
-    width: 100%;
-    padding: 1.5rem;
+#hero-nav-no-header {
     @media #{$medium-only} {
-        padding: 2rem 1.5rem 6rem 1.5rem;
+        margin-top: $top-bar-top-margin-medium + 3.5rem;
+    }
+    @media #{$large-up} {
+        margin-top: $top-bar-top-margin-large + 3.9rem;
+        margin-left: 0.8rem;
+        margin-right: 0.8rem;
+    }
+    p {
+        font-weight: $font-weight-thin;
+        @media #{$medium-only} {
+            font-size: $font-size-hero-nav-medium;
+        }
+        @media #{$large-up} {
+            font-size: $font-size-hero-nav-large;
+        }
     }
 }
 
-.contact-wrapper {
+.bg100-image-wrapper {
     height: 100vh;
     width: 100%;
     @media #{$large-up} {
-        padding: 1.5rem;
+        //padding: 1.5rem;
     }
     @media #{$medium-only} {
-        padding: 2rem 0rem 6rem 0rem;
+        //padding: 0rem 0rem 6rem 0rem;
     }
 }
 
-.about-wrapper {
-    height: 100vh;
+.bg75-image-wrapper {
+    height: 75vh;
     width: 100%;
     @media #{$large-up} {
-        padding: 1.5rem;
-    }
-    @media #{$medium-only} {
-        padding: 2rem 0rem 6rem 0rem;
-    }
-}
-
-.resume-wrapper {
-    height: 100vh;
-    width: 100%;
-    @media #{$large-up} {
-        padding: 1.5rem;
-    }
-    @media #{$medium-only} {
-        padding: 2rem 0rem 6rem 0rem;
-    }
-}
-
-.photography-wrapper {
-    height: 100vh;
-    width: 100%;
-    @media #{$large-up} {
-        padding: 1.5rem;
-    }
-    @media #{$medium-only} {
-        padding: 2rem 0rem 6rem 0rem;
-    }
-}
-
-.photoset-wrapper {
-    height: 100vh;
-    width: 100%;
-    @media #{$large-up} {
-        padding: 1.5rem;
+        //padding: 1.5rem;
     }
     @media #{$medium-only} {
         padding: 2rem 0rem 6rem 0rem;
@@ -506,7 +478,7 @@ footer {
     height: 60vh;
     width: 100%;
     @media #{$large-up} {
-        padding: 1.5rem;
+        //padding: 1.5rem;
     }
     @media #{$medium-only} {
         padding: 2rem 0rem 6rem 0rem;
@@ -540,7 +512,7 @@ footer {
     background-image: url("https://res.cloudinary.com/sergeynikiforov/image/upload/v1449071680/000078160033_shjhht.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: 50% 100%;
+    background-position: 50% 50%;
     width:100%;
     height:100%;
 }
@@ -585,7 +557,7 @@ footer {
     background-image: url("/static/sn_app/images/ladefense.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: 50% 100%;
+    background-position: 50% 0%;
     width:100%;
     height:100%;
 }
@@ -742,14 +714,28 @@ figure {
     }
 }
 
+
 @media #{$large-up} {
     .large_screen_figure {
         padding-left: 0px;
+        padding-right: 0px;
     }
 }
 
-.spiel {
-    margin: 4rem 0rem 5rem 0rem;
+.about-me-section {
+    margin: 2rem 0rem 5rem 0rem;
+    li {
+        margin-bottom: 0.7rem;
+    }
+    @media #{$large-up} {
+        font-size: 1.6rem;//$font-size-sans-serif-page-subheader-large;
+    }
+    @media #{$medium-only} {
+        font-size: 1.3rem;//$font-size-sans-serif-page-subheader-medium;
+    }
+    @media #{$small-only} {
+        font-size: 1.2rem;//$font-size-sans-serif-page-subheader-small;
+    }
 }
 
 // center content inside div
@@ -807,6 +793,9 @@ figure {
         h5 {
             margin-top: 0rem;
             font-family: $font-family-sans-serif;
+            @media #{$small-only} {
+                font-size: $paragraph-font-size + 0.3rem;
+            }
             @media #{$medium-up} {
                 font-size: $paragraph-font-size + 0.4rem;
             }
@@ -840,22 +829,16 @@ figure {
 .position {
     font-family: $font-family-sans-serif;
     font-style: italic;
-
-    //font-size: $paragraph-font-size;
     h6 {
-        font-style: italic;
         margin-bottom: 0px;
-        //font-size: $paragraph-font-size;
-        font-weight: 700;
-        @media #{$medium-up} {
-            font-size: $paragraph-font-size - 0.1rem;
+        font-style: italic;
+        @media #{$small-up} {
+            font-size: $paragraph-font-size;
         }
     }
     p {
         font-size: 1rem;
-        @media #{$medium-up} {
-            font-size: $paragraph-font-size - 0.1rem;
-        }
+        font-size: $paragraph-font-size - 0.1rem;
     }
 }
 
@@ -891,7 +874,7 @@ figure {
 // control sizes/position of headers/subheaders for the breakpoints
 
 .page_header_wrapper_large {
-    padding: 0px;
+    //padding: 0px;
 }
 
 @media #{$small-only} {
@@ -966,9 +949,30 @@ figure {
 
 .contact_details {
     p {
-        margin-bottom: 5px;
+        margin-bottom: 0.3rem;
+        font-style: normal;
+
     }
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
+}
+
+.social_networks {
+    margin-bottom: 2rem;
+    ul li {
+        font-family: $font-family-sans-serif;
+        font-weight: $font-weight-thin;
+        font-style: italic;
+        margin-bottom: 0.5rem;
+        @media #{$small-only} {
+            font-size: $font-size-sans-serif-nav-small + 0.2rem;
+        }
+        @media #{$medium-only} {
+            font-size: $font-size-sans-serif-nav-medium  + 0.2rem;
+        }
+        @media #{$large-up} {
+            font-size: $font-size-sans-serif-nav-large  + 0.2rem;
+        }
+    }
 }
 
 // END RESUME
@@ -1123,23 +1127,23 @@ figure {
 }
 
 .image-description {
-    padding-top: 0.8rem;
-    border-top: 1px solid $black;
+    //padding-top: 0.6rem;
+    border-top: 0px solid $black;
     color: $black;
 }
 
 .image-title {
-    font-weight: $font-weight-normal;
+    font-weight: $font-weight-bold;
     @media #{$large-up} {
-        font-size: $font-size-sans-serif-page-subheader-medium;
+        font-size: $font-size-sans-serif-page-subheader-medium  - 0.5rem;
     }
     @media #{$medium-only} {
-        font-size: $font-size-sans-serif-page-subheader-medium - 0.3rem;
+        font-size: $font-size-sans-serif-page-subheader-medium - 0.5rem;
     }
     @media #{$small-only} {
-        font-size: $font-size-sans-serif-page-subheader-small;
+        font-size: $font-size-sans-serif-page-subheader-small - 0.2rem;
     }
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem;
 }
 
 #album-wrapper {
@@ -1164,13 +1168,13 @@ figure {
     padding-top: 0.8rem;
     border-top: 1px solid $black;
     @media #{$large-up} {
-        font-size: 1.8rem;//$font-size-sans-serif-page-subheader-large;
+        font-size: 1.5rem;//$font-size-sans-serif-page-subheader-large;
     }
     @media #{$medium-only} {
-        font-size: 1.4rem;//$font-size-sans-serif-page-subheader-medium;
+        font-size: 1.3rem;//$font-size-sans-serif-page-subheader-medium;
     }
     @media #{$small-only} {
-        font-size: 1.2rem;//$font-size-sans-serif-page-subheader-small;
+        font-size: 1.1rem;//$font-size-sans-serif-page-subheader-small;
     }
 }
 
@@ -1181,21 +1185,26 @@ figure {
     font-weight: $font-weight-bold;
     margin-right: -0.7rem;
     @media #{$large-up} {
-        font-size: $font-size-sans-serif-page-header-large + 1.2rem;
+        font-size: $font-size-sans-serif-page-header-large;
     }
     @media #{$medium-only} {
-        font-size: $font-size-sans-serif-page-header-large + 0.1;
-    }
-    @media #{$small-only} {
         font-size: $font-size-sans-serif-page-header-medium;
     }
+    @media #{$small-only} {
+        font-size: $font-size-sans-serif-page-header-small;
+    }
+
+
 }
 
 // image captions wrapper for photoset view
 .image-captions {
     margin-top: 1rem;
     @media #{$small-only} {
-        margin-right: 0.5rem;
+        margin-left: 0.5rem;
+    }
+    @media #{$medium-only} {
+        margin-left: 0.9rem;
     }
 }
 
@@ -1232,10 +1241,10 @@ figure {
 .thumbs {
     //background: black;
     @media #{$small-only} {
-        padding: 5rem 0.5rem 1rem 0.5rem;
+        padding: 5rem 0rem 1rem 0rem;
     }
     @media #{$medium-up} {
-        padding: $block-grid-default-spacing;
+        //padding: $block-grid-default-spacing;
         padding-top: 5rem;
     }
 }
@@ -1254,6 +1263,7 @@ figure {
             }
         }
     }
+
     @media #{$small-only} {
         margin-bottom: 5rem;
     }
@@ -1261,8 +1271,9 @@ figure {
         margin-bottom: 13rem;
     }
     @media #{$large-up} {
-        margin-bottom: 17rem;
+        margin-bottom: 19rem;
     }
+
 }
 
 // styling of "More Albums" section
@@ -1276,7 +1287,7 @@ figure {
 }
 
 #more-albums-wrapper {
-    margin: 2rem auto;
+    //margin: 1rem auto 1rem auto;
 }
 
 .more-albums-title {
@@ -1329,16 +1340,17 @@ figure {
 // photoset thumbs for 'photography' page
 .photoset-info {
     @media #{$medium-up} {
-        margin-top: 13rem;
+        margin-top: 8rem;
+        margin-bottom: 1rem;
     }
     @media #{$small-only} {
-        margin-top: 7rem;
+        margin-top: 5rem;
     }
 }
 
 .photoset-thumb-title {
     font-family: $font-family-sans-serif;
-    font-weight: $font-weight-normal;
+    font-weight: $font-weight-bold;
     @media #{$large-up} {
         font-size: $font-size-sans-serif-page-subheader-large;
     }
@@ -1351,7 +1363,7 @@ figure {
 }
 
 .photoset-thumb-description {
-    border-top: 1px solid $black;
+    //border-top: 1px solid $black;
     padding-top: 1rem;
 }
 

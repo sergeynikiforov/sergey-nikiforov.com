@@ -25,8 +25,8 @@
 
 {% block body %}
     <div id="page-top" class="row show-for-large-up">
-        <div class="small-12 medium_screen_figure large-centered columns">
-            <div class="photography-wrapper">
+        <div class="small-12 large_screen_figure large-centered columns">
+            <div class="bg75-image-wrapper">
                 <div class="image-wrap">
                     <div id="change-bg-on-hover" class="photography-image">
                         <div class="row">
@@ -35,7 +35,7 @@
                                     <h2 class="page_header">/PHOTOGRAPHY/</h2>
                                     {% if photosets %}
                                         {% for photoset in photosets %}
-                                            <p class="landing"><a id="{{ photoset.cover_photo.url }}" class="hover-background transparent-button-small" href="#{{ photoset.slug }}">{{ photoset.title|upper }}</a></p>
+                                            <p class="landing"><a id="{{ photoset.cover_photo.url }}" class="hover-background" href="#{{ photoset.slug }}">{{ photoset.title|upper }}</a></p>
                                         {% endfor %}
                                     {% endif %}
                                 </nav>
@@ -83,19 +83,21 @@
                 </div>
             </div>
             <div class="row hide-for-large-up">
-                <div class="small-12 medium-12 small-centered columns small_screen_figure medium_screen_figure">
+                <div class="small-12 small-centered columns small_screen_figure medium_screen_figure">
                     <figure>
-                        {% pictureCloudinary photoset.cover_photo.publicID sizes="(min-width: 1025px) 80vw, (min-width: 641px) 100vw, 100vw" srcset="200w 400w 600w 800w 1000w 1200w 1400w 1600w 2000w 2400w 2800w 3200w" alt=photoset.title %}
+                        <a href="{% url 'sn_app:photoset' photoset.slug %}">
+                            {% pictureCloudinary photoset.cover_photo.publicID sizes="(min-width: 1025px) 80vw, (min-width: 641px) 100vw, 100vw" srcset="200w 400w 600w 800w 1000w 1200w 1400w 1600w 2000w 2400w 2800w 3200w" alt=photoset.title %}
+                        </a>
                     </figure>
                 </div>
             </div>
             <div class="row show-for-large-up">
-                <div class="large-12 large-centered columns">
+                <div class="large-12 columns large_screen_figure">
                     <div class="photoset-cover-wrapper">
                         <div class="image-wrap">
-                            <div class="photography-image" style="background-image: url({{ photoset.cover_photo.url }})">
-
-                            </div>
+                            <a href="{% url 'sn_app:photoset' photoset.slug %}">
+                                <div class="photography-image" style="background-image: url({{ photoset.cover_photo.url }})"></div>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -104,3 +106,14 @@
         {% endfor %}
     {% endif %}
 {% endblock body %}
+{% block whats_next %}
+    <div id="whats-next" class="row">
+        <div class="small-12 medium-10 small-centered columns">
+            <h2 class="page_subheader">What's next?</h2>
+            <ul class="no-bullet">
+                <li><a href="{% url 'sn_app:resume' %}">SEE MY RESUME</a></li>
+                <li><a href="{% url 'sn_app:contact' %}">GET IN TOUCH WITH ME</a></li>
+            </ul>
+        </div>
+    </div>
+{% endblock whats_next %}

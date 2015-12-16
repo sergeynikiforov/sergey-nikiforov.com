@@ -1281,7 +1281,7 @@ select {
 [class*="block-grid-"] {
   display: block;
   padding: 0;
-  margin: 0 -1.25rem; }
+  margin: 0 0; }
   [class*="block-grid-"]:before, [class*="block-grid-"]:after {
     content: " ";
     display: table; }
@@ -1291,7 +1291,7 @@ select {
     display: block;
     float: left;
     height: auto;
-    padding: 0 1.25rem 2.5rem; }
+    padding: 0 0 0; }
 
 @media only screen {
   .small-block-grid-1 > li {
@@ -6683,37 +6683,9 @@ th.hide-for-touch {
         .vh-style figure img {
           max-height: 320px; } }
 
-/*
-footer {
-    font-family: $font-family-sans-serif;
-    font-weight: $font-weight-thin;
-
-    ul {
-        list-style-type:none;
-        text-align: center;
-    }
-
-    li {
-        display: inline-block;
-        margin-right: 1rem;
-
-
-        // style links
-        a {
-            font-size: $font-size-sans-serif-nav-large;
-            font-style: normal;
-
-            color: $black;
-        }
-        a:hover {
-            color: $red;
-        }
-    }
-}
-*/
 @media only screen and (max-width: 40em) {
   #whats-next {
-    margin-top: 3rem;
+    margin-top: 5rem;
     /*
         ul {
             padding-top: 6rem;
@@ -6723,26 +6695,29 @@ footer {
 
 @media only screen and (min-width: 40.0625em) and (max-width: 64em) {
   #whats-next {
-    margin-top: 13rem; } }
+    margin-top: 11rem; } }
 
 @media only screen and (min-width: 64.0625em) {
   #whats-next {
-    margin-top: 19rem; } }
+    margin-top: 13rem; } }
 
-#whats-next ul li {
+#whats-next ul {
+  margin-top: 1rem; }
+
+#whats-next li {
   margin-bottom: 1rem;
   font-family: "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
   font-weight: 300;
   font-style: italic; }
   @media only screen and (max-width: 40em) {
-    #whats-next ul li {
-      font-size: 1.5rem; } }
+    #whats-next li {
+      font-size: 1.2rem; } }
   @media only screen and (min-width: 40.0625em) and (max-width: 64em) {
-    #whats-next ul li {
-      font-size: 1.8rem; } }
+    #whats-next li {
+      font-size: 1.2rem; } }
   @media only screen and (min-width: 64.0625em) {
-    #whats-next ul li {
-      font-size: 2.1rem; } }
+    #whats-next li {
+      font-size: 1.5rem; } }
 
 @media only screen and (min-width: 40.0625em) {
   #footer-top-section {
@@ -6763,7 +6738,7 @@ footer {
   font-weight: 300; }
   @media only screen and (max-width: 40em) {
     #footer-bottom-section {
-      font-size: 0.8rem;
+      font-size: 0.9rem;
       border-top: 0px solid #211C19;
       margin-top: 0rem;
       margin-bottom: 2rem; } }
@@ -6772,9 +6747,21 @@ footer {
       font-size: 0.9rem; } }
   @media only screen and (min-width: 64.0625em) {
     #footer-bottom-section {
-      font-size: 1.1rem; } }
+      font-size: 1rem; } }
   #footer-bottom-section .page-top-link {
     font-style: italic; }
+  #footer-bottom-section .copyright p {
+    font-weight: 300;
+    margin-bottom: 0rem; }
+    @media only screen and (max-width: 40em) {
+      #footer-bottom-section .copyright p {
+        font-size: 0.9rem; } }
+    @media only screen and (min-width: 40.0625em) and (max-width: 64em) {
+      #footer-bottom-section .copyright p {
+        font-size: 0.9rem; } }
+    @media only screen and (min-width: 64.0625em) {
+      #footer-bottom-section .copyright p {
+        font-size: 1rem; } }
 
 .footer-column {
   font-family: "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
@@ -6792,28 +6779,32 @@ footer {
     margin-bottom: 0.3rem; }
     @media only screen and (max-width: 40em) {
       .footer-column ul li {
-        font-size: 0.8rem; } }
+        font-size: 0.9rem; } }
     @media only screen and (min-width: 40.0625em) and (max-width: 64em) {
       .footer-column ul li {
         font-size: 0.9rem; } }
     @media only screen and (min-width: 64.0625em) {
       .footer-column ul li {
-        font-size: 1.1rem; } }
+        font-size: 1rem; } }
 
 .fixed, .top-bar, .top-bar-section ul, .top-bar-section ul li, .top-bar-section li:not(.has-form) a:not(.button), .top-bar-section .dropdown li a, .top-bar-section .dropdown li:not(.has-form) a:not(.button), .top-bar-section li:not(.has-form) a:not(.button):hover, .toggle-topbar, .tab-bar, .left .tab-bar-section, .right-off-canvas-toggle {
   background: transparent !important; }
 
 @media only screen and (min-width: 40.0625em) and (max-width: 64em) {
   #navigation-bar {
-    margin-top: 1rem; }
-  #navigation-bar-photo {
-    margin-top: 1rem; } }
+    margin-top: 1.5rem; } }
 
 @media only screen and (min-width: 64.0625em) {
   #navigation-bar {
-    margin-top: 3rem; }
+    margin-top: 2rem; } }
+
+@media only screen and (min-width: 40.0625em) and (max-width: 64em) {
   #navigation-bar-photo {
-    margin-top: 1rem; } }
+    margin-top: 1.5rem; } }
+
+@media only screen and (min-width: 64.0625em) {
+  #navigation-bar-photo {
+    margin-top: 2rem; } }
 
 #navigation-bar.top-bar .expanded .top-bar-section ul.right.text-right {
   padding-top: 1rem; }
@@ -6831,7 +6822,7 @@ footer {
   padding: 0px;
   font-weight: bold;
   font-family: "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
-  font-size: 1.1rem; }
+  font-size: 1rem; }
   @media only screen and (min-width: 40.0625em) and (max-width: 64em) {
     .top-bar .title-area h1 > a {
       font-size: 0.9rem; } }
@@ -6851,7 +6842,7 @@ footer {
   font-family: "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
   font-weight: 300;
   font-style: italic;
-  font-size: 1.1rem; }
+  font-size: 1rem; }
   @media only screen and (min-width: 40.0625em) and (max-width: 64em) {
     .top-bar .title-area .toggle-topbar a {
       font-size: 0.9rem; } }
@@ -6864,7 +6855,7 @@ footer {
   margin-right: 0.4rem;
   margin-left: 0.4rem;
   font-family: "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 300;
   font-style: italic; }
   @media only screen and (min-width: 40.0625em) and (max-width: 64em) {
@@ -6888,27 +6879,27 @@ footer {
   margin: 0px;
   padding: 0px;
   font-weight: bold;
-  font-size: 1.1rem; }
+  font-size: 1rem; }
   @media only screen and (max-width: 40em) {
     .tab-bar h2 > a {
-      font-size: 0.8rem; } }
+      font-size: 0.9rem; } }
 
 .tab-bar .right a {
   font-weight: 300;
   font-style: italic;
   padding-right: 7px;
   padding-left: 7px;
-  padding-top: 17px; }
+  padding-top: 15px; }
   @media only screen and (min-width: 40.0625em) {
     .tab-bar .right a {
       padding-right: 0;
       padding-left: 0; } }
 
 .tab-bar a {
-  font-size: 1.1rem; }
+  font-size: 1rem; }
   @media only screen and (max-width: 40em) {
     .tab-bar a {
-      font-size: 0.8rem; } }
+      font-size: 0.9rem; } }
 
 .tab-bar a:hover {
   color: #C8280A; }
@@ -6920,7 +6911,7 @@ footer {
     padding-top: 0.7rem;
     padding-left: 0.85rem;
     padding-bottom: 0.8rem;
-    font-size: 1.1rem; }
+    font-size: 1rem; }
   .right-off-canvas-menu .off-canvas-list a {
     margin: 0rem 0.7rem;
     padding-left: 0.2rem;
@@ -6935,83 +6926,58 @@ footer {
 #home-nav {
   margin-top: 2rem; }
 
-#hero-nav {
-  margin-top: 2.1rem; }
-  #hero-nav p {
-    font-weight: 300; }
+@media only screen and (min-width: 40.0625em) and (max-width: 64em) {
+  #hero-nav {
+    margin-top: 2.5rem; } }
 
-#photoset-nav {
-  margin-top: 5.5rem; }
+@media only screen and (min-width: 64.0625em) {
+  #hero-nav {
+    margin-top: 3rem;
+    margin-left: 0.9rem;
+    margin-right: 0.9rem; } }
+
+#hero-nav p {
+  font-weight: 300; }
   @media only screen and (min-width: 40.0625em) and (max-width: 64em) {
-    #photoset-nav {
-      margin-top: 4.7rem; } }
-  #photoset-nav p {
-    font-weight: 300; }
+    #hero-nav p {
+      font-size: 1.1rem; } }
+  @media only screen and (min-width: 64.0625em) {
+    #hero-nav p {
+      font-size: 1.3rem; } }
 
-.home-wrapper {
-  height: 100vh;
-  width: 100%;
-  padding: 1.5rem; }
+@media only screen and (min-width: 40.0625em) and (max-width: 64em) {
+  #hero-nav-no-header {
+    margin-top: 5rem; } }
+
+@media only screen and (min-width: 64.0625em) {
+  #hero-nav-no-header {
+    margin-top: 5.9rem;
+    margin-left: 0.8rem;
+    margin-right: 0.8rem; } }
+
+#hero-nav-no-header p {
+  font-weight: 300; }
   @media only screen and (min-width: 40.0625em) and (max-width: 64em) {
-    .home-wrapper {
-      padding: 2rem 1.5rem 6rem 1.5rem; } }
+    #hero-nav-no-header p {
+      font-size: 1.1rem; } }
+  @media only screen and (min-width: 64.0625em) {
+    #hero-nav-no-header p {
+      font-size: 1.3rem; } }
 
-.contact-wrapper {
+.bg100-image-wrapper {
   height: 100vh;
   width: 100%; }
-  @media only screen and (min-width: 64.0625em) {
-    .contact-wrapper {
-      padding: 1.5rem; } }
-  @media only screen and (min-width: 40.0625em) and (max-width: 64em) {
-    .contact-wrapper {
-      padding: 2rem 0rem 6rem 0rem; } }
 
-.about-wrapper {
-  height: 100vh;
+.bg75-image-wrapper {
+  height: 75vh;
   width: 100%; }
-  @media only screen and (min-width: 64.0625em) {
-    .about-wrapper {
-      padding: 1.5rem; } }
   @media only screen and (min-width: 40.0625em) and (max-width: 64em) {
-    .about-wrapper {
-      padding: 2rem 0rem 6rem 0rem; } }
-
-.resume-wrapper {
-  height: 100vh;
-  width: 100%; }
-  @media only screen and (min-width: 64.0625em) {
-    .resume-wrapper {
-      padding: 1.5rem; } }
-  @media only screen and (min-width: 40.0625em) and (max-width: 64em) {
-    .resume-wrapper {
-      padding: 2rem 0rem 6rem 0rem; } }
-
-.photography-wrapper {
-  height: 100vh;
-  width: 100%; }
-  @media only screen and (min-width: 64.0625em) {
-    .photography-wrapper {
-      padding: 1.5rem; } }
-  @media only screen and (min-width: 40.0625em) and (max-width: 64em) {
-    .photography-wrapper {
-      padding: 2rem 0rem 6rem 0rem; } }
-
-.photoset-wrapper {
-  height: 100vh;
-  width: 100%; }
-  @media only screen and (min-width: 64.0625em) {
-    .photoset-wrapper {
-      padding: 1.5rem; } }
-  @media only screen and (min-width: 40.0625em) and (max-width: 64em) {
-    .photoset-wrapper {
+    .bg75-image-wrapper {
       padding: 2rem 0rem 6rem 0rem; } }
 
 .photoset-cover-wrapper {
   height: 60vh;
   width: 100%; }
-  @media only screen and (min-width: 64.0625em) {
-    .photoset-cover-wrapper {
-      padding: 1.5rem; } }
   @media only screen and (min-width: 40.0625em) and (max-width: 64em) {
     .photoset-cover-wrapper {
       padding: 2rem 0rem 6rem 0rem; } }
@@ -7040,7 +7006,7 @@ footer {
   background-image: url("https://res.cloudinary.com/sergeynikiforov/image/upload/v1449071680/000078160033_shjhht.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: 50% 100%;
+  background-position: 50% 50%;
   width: 100%;
   height: 100%; }
 
@@ -7080,7 +7046,7 @@ footer {
   background-image: url("/static/sn_app/images/ladefense.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: 50% 100%;
+  background-position: 50% 0%;
   width: 100%;
   height: 100%; }
 
@@ -7100,7 +7066,7 @@ footer {
   height: 100%; }
 
 .landing {
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-family: "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
   font-style: italic;
   font-weight: 300;
@@ -7110,7 +7076,7 @@ footer {
       font-size: 0.9rem; } }
   @media only screen and (max-width: 40em) {
     .landing a {
-      font-size: 0.8rem;
+      font-size: 0.9rem;
       line-height: 1.3; } }
   .landing a {
     color: #FFFFFF; }
@@ -7119,10 +7085,10 @@ footer {
   .landing h1 {
     font-weight: bold; }
   .landing h2 {
-    font-size: 1.1rem; }
+    font-size: 1rem; }
 
 .overlay p {
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-family: "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
   font-weight: 300; }
 
@@ -7188,10 +7154,22 @@ figure {
 
 @media only screen and (min-width: 64.0625em) {
   .large_screen_figure {
-    padding-left: 0px; } }
+    padding-left: 0px;
+    padding-right: 0px; } }
 
-.spiel {
-  margin: 4rem 0rem 5rem 0rem; }
+.about-me-section {
+  margin: 2rem 0rem 5rem 0rem; }
+  .about-me-section li {
+    margin-bottom: 0.7rem; }
+  @media only screen and (min-width: 64.0625em) {
+    .about-me-section {
+      font-size: 1.6rem; } }
+  @media only screen and (min-width: 40.0625em) and (max-width: 64em) {
+    .about-me-section {
+      font-size: 1.3rem; } }
+  @media only screen and (max-width: 40em) {
+    .about-me-section {
+      font-size: 1.2rem; } }
 
 .container-center {
   display: table; }
@@ -7237,6 +7215,9 @@ figure {
 .institution div h5 {
   margin-top: 0rem;
   font-family: "nimbus-sans", Helvetica, Roboto, Arial, sans-serif; }
+  @media only screen and (max-width: 40em) {
+    .institution div h5 {
+      font-size: 1.5rem; } }
   @media only screen and (min-width: 40.0625em) {
     .institution div h5 {
       font-size: 1.6rem; } }
@@ -7264,17 +7245,14 @@ figure {
   font-family: "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
   font-style: italic; }
   .position h6 {
-    font-style: italic;
     margin-bottom: 0px;
-    font-weight: 700; }
-    @media only screen and (min-width: 40.0625em) {
+    font-style: italic; }
+    @media only screen {
       .position h6 {
-        font-size: 1.1rem; } }
+        font-size: 1.2rem; } }
   .position p {
-    font-size: 1rem; }
-    @media only screen and (min-width: 40.0625em) {
-      .position p {
-        font-size: 1.1rem; } }
+    font-size: 1rem;
+    font-size: 1.1rem; }
 
 .my-alert-box {
   border-style: solid;
@@ -7311,9 +7289,6 @@ figure {
       opacity: 0.5; }
   .my-alert-box.alert-close {
     opacity: 0; }
-
-.page_header_wrapper_large {
-  padding: 0px; }
 
 @media only screen and (max-width: 40em) {
   .page_header {
@@ -7360,7 +7335,7 @@ figure {
 @media only screen and (min-width: 64.0625em) {
   .page_header {
     color: #FFFFFF;
-    font-size: 3rem;
+    font-size: 2.9rem;
     font-family: "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
     font-weight: bold;
     line-height: 1;
@@ -7374,9 +7349,27 @@ figure {
     margin-bottom: 0.5rem; } }
 
 .contact_details {
-  margin-bottom: 20px; }
+  margin-bottom: 2rem; }
   .contact_details p {
-    margin-bottom: 5px; }
+    margin-bottom: 0.3rem;
+    font-style: normal; }
+
+.social_networks {
+  margin-bottom: 2rem; }
+  .social_networks ul li {
+    font-family: "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    margin-bottom: 0.5rem; }
+    @media only screen and (max-width: 40em) {
+      .social_networks ul li {
+        font-size: 1.1rem; } }
+    @media only screen and (min-width: 40.0625em) and (max-width: 64em) {
+      .social_networks ul li {
+        font-size: 1.1rem; } }
+    @media only screen and (min-width: 64.0625em) {
+      .social_networks ul li {
+        font-size: 1.2rem; } }
 
 #change-bg-on-hover {
   -webkit-transition: 0.5s;
@@ -7420,7 +7413,7 @@ figure {
   padding-right: 2px; }
   @media only screen and (min-width: 64.0625em) {
     .transparent-button-small {
-      font-size: 1.1rem;
+      font-size: 1rem;
       padding: 0.3rem 0.3rem;
       margin: 0; } }
   @media only screen and (min-width: 40.0625em) and (max-width: 64em) {
@@ -7430,7 +7423,7 @@ figure {
       margin: 0; } }
   @media only screen and (max-width: 40em) {
     .transparent-button-small {
-      font-size: 0.8rem;
+      font-size: 0.9rem;
       padding: 0.1rem 0.1rem;
       margin: 0; } }
 
@@ -7666,7 +7659,7 @@ figure {
   font-style: italic; }
   @media only screen and (min-width: 64.0625em) {
     .image-order, .image-year {
-      font-size: 1.1rem;
+      font-size: 1rem;
       margin-top: 2rem; } }
   @media only screen and (min-width: 40.0625em) and (max-width: 64em) {
     .image-order, .image-year {
@@ -7674,26 +7667,25 @@ figure {
       padding-top: 0.2rem; } }
   @media only screen and (max-width: 40em) {
     .image-order, .image-year {
-      font-size: 0.8rem;
+      font-size: 0.9rem;
       padding-top: 0.4rem; } }
 
 .image-description {
-  padding-top: 0.8rem;
-  border-top: 1px solid #211C19;
+  border-top: 0px solid #211C19;
   color: #211C19; }
 
 .image-title {
-  font-weight: normal;
-  margin-bottom: 0.5rem; }
+  font-weight: bold;
+  margin-bottom: 0.3rem; }
   @media only screen and (min-width: 64.0625em) {
     .image-title {
-      font-size: 1.8rem; } }
+      font-size: 1.3rem; } }
   @media only screen and (min-width: 40.0625em) and (max-width: 64em) {
     .image-title {
-      font-size: 1.5rem; } }
+      font-size: 1.3rem; } }
   @media only screen and (max-width: 40em) {
     .image-title {
-      font-size: 1.5rem; } }
+      font-size: 1.3rem; } }
 
 #album-wrapper {
   margin: 2rem auto; }
@@ -7716,13 +7708,13 @@ figure {
   border-top: 1px solid #211C19; }
   @media only screen and (min-width: 64.0625em) {
     .album-description {
-      font-size: 1.8rem; } }
+      font-size: 1.5rem; } }
   @media only screen and (min-width: 40.0625em) and (max-width: 64em) {
     .album-description {
-      font-size: 1.4rem; } }
+      font-size: 1.3rem; } }
   @media only screen and (max-width: 40em) {
     .album-description {
-      font-size: 1.2rem; } }
+      font-size: 1.1rem; } }
 
 .image-number {
   font-family: "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
@@ -7730,19 +7722,22 @@ figure {
   margin-right: -0.7rem; }
   @media only screen and (min-width: 64.0625em) {
     .image-number {
-      font-size: 4.2rem; } }
+      font-size: 2.9rem; } }
   @media only screen and (min-width: 40.0625em) and (max-width: 64em) {
     .image-number {
-      font-size: 3.1rem; } }
+      font-size: 2.5rem; } }
   @media only screen and (max-width: 40em) {
     .image-number {
-      font-size: 2.5rem; } }
+      font-size: 2rem; } }
 
 .image-captions {
   margin-top: 1rem; }
   @media only screen and (max-width: 40em) {
     .image-captions {
-      margin-right: 0.5rem; } }
+      margin-left: 0.5rem; } }
+  @media only screen and (min-width: 40.0625em) and (max-width: 64em) {
+    .image-captions {
+      margin-left: 0.9rem; } }
 
 #nav-wrapper {
   margin-top: 3rem; }
@@ -7768,11 +7763,10 @@ figure {
 
 @media only screen and (max-width: 40em) {
   .thumbs {
-    padding: 5rem 0.5rem 1rem 0.5rem; } }
+    padding: 5rem 0rem 1rem 0rem; } }
 
 @media only screen and (min-width: 40.0625em) {
   .thumbs {
-    padding: 2.5rem;
     padding-top: 5rem; } }
 
 @media only screen and (max-width: 40em) {
@@ -7851,7 +7845,7 @@ figure {
 
 @media only screen and (min-width: 64.0625em) {
   .one-thumb {
-    margin-bottom: 17rem; } }
+    margin-bottom: 19rem; } }
 
 .more-albums-start {
   border-top: 1px solid #211C19;
@@ -7860,9 +7854,6 @@ figure {
 .more-albums-thumb {
   margin-bottom: 1rem; }
 
-#more-albums-wrapper {
-  margin: 2rem auto; }
-
 .more-albums-title {
   font-family: "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
   font-weight: 300;
@@ -7870,7 +7861,7 @@ figure {
   border-top: 1px solid #211C19; }
   @media only screen and (min-width: 64.0625em) {
     .more-albums-title {
-      font-size: 1.1rem;
+      font-size: 1rem;
       margin-top: 1.3rem;
       padding-top: 0.27083rem; } }
   @media only screen and (min-width: 40.0625em) and (max-width: 64em) {
@@ -7880,7 +7871,7 @@ figure {
       padding-top: 0.22917rem; } }
   @media only screen and (max-width: 40em) {
     .more-albums-title {
-      font-size: 0.8rem;
+      font-size: 0.9rem;
       margin-top: 0.7rem;
       padding-top: 0.14583rem; } }
 
@@ -7958,15 +7949,16 @@ figure {
 
 @media only screen and (min-width: 40.0625em) {
   .photoset-info {
-    margin-top: 13rem; } }
+    margin-top: 8rem;
+    margin-bottom: 1rem; } }
 
 @media only screen and (max-width: 40em) {
   .photoset-info {
-    margin-top: 7rem; } }
+    margin-top: 5rem; } }
 
 .photoset-thumb-title {
   font-family: "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
-  font-weight: normal; }
+  font-weight: bold; }
   @media only screen and (min-width: 64.0625em) {
     .photoset-thumb-title {
       font-size: 2.1rem; } }
@@ -7978,7 +7970,6 @@ figure {
       font-size: 1.5rem; } }
 
 .photoset-thumb-description {
-  border-top: 1px solid #211C19;
   padding-top: 1rem; }
 
 .black-color {
@@ -7998,7 +7989,7 @@ figure {
   margin-right: 1.5rem; }
   .sticky-sidebar p {
     margin-bottom: 1.2rem;
-    font-size: 1.1rem; }
+    font-size: 1rem; }
   .sticky-sidebar #sticky-sidebar-label {
     font-weight: bold;
     margin-bottom: 1.7rem; }
