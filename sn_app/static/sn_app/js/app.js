@@ -21064,9 +21064,40 @@ $(document).ready(function() {
     */
 });
 
-var SIZES = '(min-width: 1025px) 80vw, 100vw';
-
 var App = {};
+
+App.SIZES = '(min-width: 1025px) 80vw, 100vw';
+
+// transition functions (http://mikefowler.me/)
+App.transitionIn = function (passedview, callback) {
+
+  var view = passedview, delay;
+
+  var transitionIn = function() {
+    view.$el.addClass('is-visible');
+    view.$el.one('transitionend', function() {
+      if (_.isFunction(callback)) {
+        callback();
+      }
+    })
+  };
+
+  _.delay(transitionIn, 20);
+
+}
+
+App.transitionOut = function(passedview, callback) {
+
+  var view = passedview;
+
+  view.$el.removeClass('is-visible');
+  view.$el.one('transitionend', function() {
+    if (_.isFunction(callback)) {
+      callback();
+    };
+  });
+}
+
 
 // define Backbone.Model
 App.PhotoModel = Backbone.Model.extend({
@@ -21086,7 +21117,7 @@ App.PhotoModel = Backbone.Model.extend({
             imgSrc: null,
             prev_photoID: null,
             next_photoID: null,
-            sizes: SIZES
+            sizes: App.SIZES
         }
 });
 
@@ -21103,11 +21134,15 @@ App.PhotoCollection = Backbone.Collection.extend({
 App.PhotoView = Backbone.View.extend({
     el: '#photo-wrapper',
     template: _.template($('#photo-item-tmpl').html()),
+
     initialize: function() {
-        //this.listenTo(this.model, 'sync change', this.render);
-        //this.model.fetch();
         this.render();
+        // transitionIn only once loaded
+        $('#photo-wrapper img').load(function() {
+            App.transitionIn(App.photoView, null);
+        });
     },
+
     render: function() {
         var html = this.template(this.model.toJSON());
         this.$el.html(html);
@@ -21119,11 +21154,11 @@ App.PhotoView = Backbone.View.extend({
 App.OrderView = Backbone.View.extend({
     el: '#order-wrapper',
     template: _.template($('#order-tmpl').html()),
+
     initialize: function() {
-        //this.listenTo(this.model, 'sync change', this.render);
-        //this.model.fetch();
         this.render();
     },
+
     render: function() {
         var html = this.template(this.model.toJSON());
         this.$el.html(html);
@@ -21133,12 +21168,13 @@ App.OrderView = Backbone.View.extend({
 
 
 App.DescriptionView = Backbone.View.extend({
-    large: '#large-photo-description-wrapper',
+    el: '#large-photo-description-wrapper',
     template: _.template($('#photo-description-tmpl').html()),
+
     initialize: function() {
-        //this.listenTo(this.model, 'sync change', this.render);
         this.render();
     },
+
     render: function() {
         if (this.model.toJSON().description != 'No description') {
             var html_large = this.template(this.model.toJSON());
@@ -21146,31 +21182,23 @@ App.DescriptionView = Backbone.View.extend({
         else {
             var html_large = '<p> </p>';
         }
-        $(this.large).html(html_large);
+        this.$el.html(html_large);
         return this;
     }
 });
 
 // render two templates - for tap & top bars
 App.TitleView = Backbone.View.extend({
-    large_title: '#large-title-wrapper',
+    el: '#large-title-wrapper',
     template_large_title: _.template($('#large-photo-title-tmpl').html()),
+
     initialize: function() {
-        //this.listenTo(this.model, 'sync change', this.render);
         this.render();
     },
+
     render: function() {
-        /*
-        if (this.model.toJSON().title != 'Untitled') {
-            var html = this.template(this.model.toJSON());
-        }
-        else {
-            var html = '';
-        }
-        */
-        //this.model.attributes.title = this.model.attributes.title.toUpperCase();
         var html_large_title = this.template_large_title(this.model.toJSON());
-        $(this.large_title).html(html_large_title);
+        this.$el.html(html_large_title);
         return this;
     }
 });
@@ -21187,11 +21215,16 @@ App.GeneralView = Backbone.View.extend({
     },
     changePhoto: function(event) {
         if (event.target.id == 'next') {
-            this.router.navigate(App.photo.attributes.next_photoID, true);
+            // first tramsitionOut, then navigate
+            App.transitionOut(App.photoView, function(){
+                App.app.router.navigate(App.photomodel.attributes.next_photoID, true);
+            });
         } else {
-            this.router.navigate(App.photo.attributes.prev_photoID, true);
+            App.transitionOut(App.photoView, function() {
+                App.app.router.navigate(App.photomodel.attributes.prev_photoID, true);
+            });
         }
-    }
+    },
 });
 
 
@@ -21200,13 +21233,13 @@ App.PhotoRouter = Backbone.Router.extend({
         ':id': 'showPhoto'
     },
     showPhoto: function(id) {
-        App.photo = new App.PhotoModel(id);
-        App.photo.fetch({
+        App.photomodel = new App.PhotoModel(id);
+        App.photomodel.fetch({
             success: function() {
-                App.photoView = new App.PhotoView({model: App.photo});
-                App.orderView = new App.OrderView({model: App.photo});
-                App.photoTitleView = new App.TitleView({model: App.photo});
-                App.photoDescrView = new App.DescriptionView({model: App.photo});
+                App.photoView = new App.PhotoView({model: App.photomodel});
+                App.orderView = new App.OrderView({model: App.photomodel});
+                App.photoTitleView = new App.TitleView({model: App.photomodel});
+                App.photoDescrView = new App.DescriptionView({model: App.photomodel});
                 }
             });
     }

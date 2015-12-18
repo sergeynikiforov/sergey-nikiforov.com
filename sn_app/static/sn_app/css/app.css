@@ -7384,6 +7384,13 @@ figure {
       .social_networks ul li {
         font-size: 1.2rem; } }
 
+#photo-wrapper {
+  opacity: 0.0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s; }
+  #photo-wrapper.is-visible {
+    opacity: 1.0; }
+
 #change-bg-on-hover {
   -webkit-transition: 0.5s;
   transition: 0.5s; }
