@@ -11,20 +11,13 @@
             <div class="medium-10 large-10 medium-centered columns show-for-medium-up">
                 <header>
                     <nav id="navigation-bar-photo" class="top-bar" data-topbar role="navigation">
-                        <ul class="title-area">
+                        <ul class="title-area cl-effect-1">
                             <li class="name">
                                 <h1><a class="black-color" href="{% url 'sn_app:landing' %}">{{ person.first_name|upper}} {{ person.last_name|upper}}</a></h1>
                             </li>
                         </ul>
-                        <!--
-                        <section  class="top-bar-section show-for-large-up">
-                            <ul class="right text-right">
-                                <li class="black-color"><a href="{% url 'sn_app:photoset' active_photoset.slug %}">BACK TO THE ALBUM</a></li>
-                            </ul>
-                        </section>
-                        -->
                         <section class="top-bar-section show-for-medium-only">
-                            <ul class="right text-right">
+                            <ul class="right text-right cl-effect-1">
                                 <li class="black-color"><a href="{% url 'sn_app:photoset' active_photoset.slug %}">BACK TO THE ALBUM</a></li>
                             </ul>
                         </section>
@@ -60,7 +53,7 @@
             </div>
         </div>
         <aside id="navigation-bar" class="right-off-canvas-menu show-for-small-only">
-          <ul  class="off-canvas-list">
+          <ul class="off-canvas-list">
             <li><label>{{ person.first_name|upper }} {{ person.last_name|upper }}</label></li>
             <li><a href="{% url 'sn_app:landing' %}">HOME</a></li>
             <li><a href="{% url 'sn_app:about' %}">ABOUT</a></li>

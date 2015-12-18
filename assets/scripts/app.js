@@ -193,6 +193,7 @@ $.ajaxSetup({
 
 
 // change hero-image on photography page on hover
+/*
 $(document).ready(function() {
     var default_photo_bg_url = $('#change-bg-on-hover').css('background-image');
     $('.hover-background').hover(
@@ -205,7 +206,7 @@ $(document).ready(function() {
        }
     );
 });
-
+*/
 
 // waypoints use
 function changeTopBarFontColor() {
@@ -276,18 +277,4 @@ $(document).ready(function() {
         },
         offset: -5
     });
-    // change top-bar header
-    /*
-    var waypointsToggleTopBarHeader = $('.thumbs').waypoint({
-        handler: function(direction) {
-            if (direction == 'down') {
-                $('#top-bar-header').html($('.page_header').html());
-                $('#top-bar-header').attr('href', '#page-top');
-            } else {
-                $('#top-bar-header').html('PHOTOGRAPHY');
-            };
-        },
-        offset: 40
-    });
-    */
 });

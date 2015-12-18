@@ -27,8 +27,8 @@
 
 {% block body %}
     <div id="page-top"></div>
-    <div class="row show-for-large-up">
-        <section class="small-12 large_screen_figure large-centered columns">
+    <div class="show-for-large-up">
+        <section class="large_screen_figure">
             <div class="bg75-image-wrapper">
                 <div class="image-wrap">
                     <div id="change-bg-on-hover" class="photoset-image" style="background-image: url('{{ active_photoset.cover_photo.url }}');">
@@ -101,7 +101,7 @@
                                 <figcaption class="image-captions toggle-color-black">
                                     <div class="row">
                                         <div class="small-11 medium-10 small-centered columns text-left large-text-center">
-                                            <a href="{% url 'sn_app:photo_home' active_photoset.slug %}#{{photo.publicID}}"><h3 class="image-title">{{ photo.current_order }}. {{ photo.title }}</h3></a>
+                                            <h3 class="image-title"><a href="{% url 'sn_app:photo_home' active_photoset.slug %}#{{photo.publicID}}">{{ photo.current_order }}. {{ photo.title }}</a></h3>
                                         </div>
                                     </div>
                                 </figcaption>

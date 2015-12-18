@@ -20,7 +20,7 @@
                         <div class="medium-10 large-10 medium-centered columns show-for-medium-up">
                             <header>
                                 <nav id="navigation-bar" class="top-bar" data-topbar role="navigation">
-                                    <ul class="title-area">
+                                    <ul class="title-area cl-effect-1">
                                         <li class="name">
                                             <h1>{% block top_bar_title %}<a id="top-bar-header" href="{% url 'sn_app:landing' %}">{{ person.first_name|upper }} {{ person.last_name|upper }}</a>{% endblock top_bar_title %}</h1>
                                         </li>
@@ -28,7 +28,7 @@
                                     </ul>
                                     {% block top_bar_section %}
                                         <section  class="top-bar-section show-for-large-up">
-                                            <ul class="right text-right">
+                                            <ul class="right text-center cl-effect-1">
                                                 <li><a href="{% url 'sn_app:landing' %}">HOME</a></li>
                                                 <li><a href="{% url 'sn_app:about' %}">ABOUT</a></li>
                                                 <li><a href="{% url 'sn_app:resume' %}">RESUME</a></li>
@@ -40,7 +40,7 @@
                                             <ul class="right text-right">
                                                 <li class="has-dropdown">
                                                     <a href="#">MENU</a>
-                                                    <ul class="dropdown">
+                                                    <ul class="dropdown cl-effect-1">
                                                         <li><a href="{% url 'sn_app:landing' %}">HOME</a></li>
                                                         <li><a href="{% url 'sn_app:about' %}">ABOUT</a></li>
                                                         <li><a href="{% url 'sn_app:resume' %}">RESUME</a></li>
@@ -142,8 +142,8 @@
                     <div class="small-12 medium-10 small-centered columns">
                         <div id="footer-top-section" class="row">
                             <div class="small-12 medium-4 columns footer-column">
-                                <ul class="no-bullet">
-                                    <li class="footer-column-title"><a href="{% url 'sn_app:landing' %}">/{{ person.first_name|upper}} {{ person.last_name|upper}}/</a></li>
+                                <ul class="no-bullet cl-effect-1">
+                                    <li class="footer-column-title"><a href="{% url 'sn_app:landing' %}">{{ person.first_name|upper}} {{ person.last_name|upper}}</a></li>
                                     <li><a href="{% url 'sn_app:about' %}">ABOUT</a></li>
                                     <li><a href="{% url 'sn_app:resume' %}">RESUME</a></li>
                                     <li><a href="{% url 'sn_app:photography' %}">PHOTOGRAPHY</a></li>
@@ -151,8 +151,8 @@
                                 </ul>
                             </div>
                             <div class="small-12 medium-4 columns footer-column show-for-medium-up">
-                                <ul class="no-bullet">
-                                    <li class="footer-column-title">/SOCIAL NETWORKS/</li>
+                                <ul class="no-bullet cl-effect-1">
+                                    <li class="footer-column-title"><a href="{% url 'sn_app:contact' %}">SOCIAL NETWORKS</a></li>
                                     <li><a href="{{ person.facebook_link }}">FACEBOOK</a></li>
                                     <li><a href="{{ person.flickr_link }}">FLICKR</a></li>
                                     <li><a href="{{ person.instagram_link }}">INSTAGRAM</a></li>
@@ -160,8 +160,8 @@
                                 </ul>
                             </div>
                             <div class="small-12 medium-4 columns footer-column">
-                                <ul class="no-bullet">
-                                    <li class="footer-column-title"><a href="{% url 'sn_app:contact' %}">/WRITE TO ME/</a></li>
+                                <ul class="no-bullet cl-effect-1">
+                                    <li class="footer-column-title"><a href="{% url 'sn_app:contact' %}">WRITE TO ME</a></li>
                                     <li><a href="mailto:{{ person.email }}">{{ person.email }}</a></li>
                                 </ul>
                             </div>
@@ -171,7 +171,7 @@
                                 <p><a href="{% url 'sn_app:landing' %}">{{ person.first_name}} {{ person.last_name }}</a></p>
                                 <p>(c) 2015</p>
                             </div>
-                            <div class="small-5 columns text-right page-top-link">
+                            <div class="small-5 columns text-right page-top-link cl-effect-1">
                                 <a href="#page-top">BACK TO TOP</a>
                             </div>
                         </div>
