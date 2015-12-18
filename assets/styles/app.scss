@@ -360,13 +360,14 @@ $tab-bar-top-margin: 1rem;
 
 // tab-bar
 .tab-bar {
+    @include anchor-transition-hover(0.3s);
     .tab-bar-section {
         padding: 0px;
         h2 {
             padding: 1px 0px 0px 0px;
         }
     }
-    h2 > a {
+    .title {
         margin: 0px;
         padding: 0px;
         font-weight: $font-weight-bold;
@@ -388,18 +389,12 @@ $tab-bar-top-margin: 1rem;
             padding-top: 15px;
         }
     }
-    a {
-        font-size: $font-size-sans-serif-nav-large;
-        @media #{$small-only} {
-            font-size: $font-size-sans-serif-nav-small;
-        }
-    }
     a:hover {
         color: $red;
     }
 }
 
-// offset menu
+// offcanvas menu
 .right-off-canvas-menu {
 
     .off-canvas-list {
@@ -1031,16 +1026,6 @@ figure {
 //
 
 
-// fade out/fade in effects for image
-#photo-wrapper {
-    opacity: 0.0;
-    transition: 0.3s;
-    &.is-visible {
-        opacity: 1.0;
-    }
-}
-
-
 #change-bg-on-hover {
     transition: 0.5s;
 }
@@ -1099,6 +1084,11 @@ figure {
 
 // max height of an image on a single photo page
 #photo-wrapper {
+    opacity: 0.0;
+    transition: 0.3s;
+    &.is-visible {
+        opacity: 1.0;
+    }
     @media #{$large-up} {
         padding-top: 2rem;
         figure{
@@ -1139,12 +1129,25 @@ figure {
     }
      @media #{$small-only} {
         padding-top: 2rem;
-        figure{
-            @include viewport-unit(max-height, 100vh);
-            //min-height: 470px;
-            img {
+        margin-top: 1rem;
+        @media #{$portrait} {
+            figure{
+                @include viewport-unit(height, 55vh);
+                //min-height: 470px;
+                img {
+                    @include viewport-unit(max-height, 55vh);
+                    //min-height: 470px;
+                }
+            }
+        }
+        @media #{$landscape} {
+            figure{
                 @include viewport-unit(max-height, 100vh);
                 //min-height: 470px;
+                img {
+                    @include viewport-unit(max-height, 100vh);
+                    //min-height: 470px;
+                }
             }
         }
     }
@@ -1186,7 +1189,6 @@ figure {
 }
 
 .image-description {
-    //padding-top: 0.6rem;
     border-top: 0px solid $black;
     color: $black;
 }
@@ -1207,6 +1209,7 @@ figure {
 
 #album-wrapper {
     padding: 4rem 0rem;
+    @include anchor-transition-hover(0.3s);
 }
 
 .album-title {
@@ -1515,6 +1518,13 @@ figure {
 .cl-effect-1 a:focus::after {
     opacity: 1;
     transform: translateX(0px);
+}
+
+.fade-in {
+    transition: all 0.3s ease;
+    &:hover {
+        opacity: 0.9;
+    }
 }
 
 // END AINMATONS

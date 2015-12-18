@@ -95,8 +95,8 @@
                 <ul class="small-block-grid-1 medium-block-grid-1 large-block-grid-2">
                     {% for photo in photos %}
                         <li class="one-thumb text-center">
-                            <figure class="toggle-color-white" >
-                                <a href="{% url 'sn_app:photo_home' active_photoset.slug %}#{{photo.publicID}}">{% pictureCloudinary photo.publicID sizes="(min-width: 1025px) 60vw, 100vw" srcset="200w 400w 600w 800w 1000w 1200w 1400w 1600w 2000w 2400w 2800w 3200w" alt=photo.title %}
+                            <figure class="toggle-color-white">
+                                <a class="fade-in" href="{% url 'sn_app:photo_home' active_photoset.slug %}#{{photo.publicID}}">{% pictureCloudinary photo.publicID sizes="(min-width: 1025px) 60vw, 100vw" srcset="200w 400w 600w 800w 1000w 1200w 1400w 1600w 2000w 2400w 2800w 3200w" alt=photo.title %}
                                 </a>
                                 <figcaption class="image-captions toggle-color-black">
                                     <div class="row">
@@ -125,7 +125,7 @@
                         {% if photoset.title != active_photoset.title %}
                             <li class="more-albums-thumb">
                                 <figure>
-                                    <a href="{% url 'sn_app:photoset' photoset.slug %}">
+                                    <a class="fade-in" href="{% url 'sn_app:photoset' photoset.slug %}">
                                         {% pictureCloudinary photoset.cover_photo.publicID sizes="(min-width: 1025px) 35vw, (min-width: 641px) 50vw, 60vw" srcset="200w 400w 600w 800w 1000w 1200w 1400w 1600w 2000w 2400w 2800w 3200w" alt=photoset.title %}
                                     </a>
                                     <figcaption>

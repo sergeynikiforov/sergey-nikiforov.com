@@ -86,17 +86,19 @@
                 <div class="small-12 small-centered columns small_screen_figure medium_screen_figure toggle-color">
                     <figure>
                         <a href="{% url 'sn_app:photoset' photoset.slug %}">
+                            <div class="fade-in">
                             {% pictureCloudinary photoset.cover_photo.publicID sizes="(min-width: 1025px) 80vw, (min-width: 641px) 100vw, 100vw" srcset="200w 400w 600w 800w 1000w 1200w 1400w 1600w 2000w 2400w 2800w 3200w" alt=photoset.title %}
+                            </div>
                         </a>
                     </figure>
                 </div>
             </div>
             <div class="row show-for-large-up">
                 <div class="large-12 columns large_screen_figure toggle-color">
-                    <div class="photoset-cover-wrapper">
+                    <div class="photoset-cover-wrapper fade-in">
                         <div class="image-wrap">
                             <a href="{% url 'sn_app:photoset' photoset.slug %}">
-                                <div class="photography-image" style="background-image: url({{ photoset.cover_photo.url }})"></div>
+                                <div class="photoset-image" style="background-image: url({{ photoset.cover_photo.url }})"></div>
                             </a>
                         </div>
                     </div>

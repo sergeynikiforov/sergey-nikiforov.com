@@ -21040,7 +21040,7 @@ $(document).ready(function() {
     // toggle hero-nav
     var waypointsHeroNav = $('#page-top').waypoint({
         handler: function(direction) {
-            $('nav .page_header').animate({
+            $('#hero-nav .page_header').animate({
                 opacity: "toggle"
             }, 500);
             $('.landing').animate({

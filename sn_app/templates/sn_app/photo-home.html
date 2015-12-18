@@ -27,7 +27,7 @@
         </div>
         <div class="row">
             <div class="medium-10 large-10 medium-centered columns show-for-medium-up black-color">
-                <h2 class="page_header"><a href="{% url 'sn_app:photoset' active_photoset.slug %}">/{{ active_photoset.title|upper }}</a></h2>
+                <h2 class="page_header"><a href="{% url 'sn_app:photoset' active_photoset.slug %}">/{{ active_photoset.title|upper }}/</a></h2>
             </div>
         </div>
     </div>
@@ -43,7 +43,7 @@
                     <nav id="navigation-bar-photo" class="tab-bar">
                       <section class="left tab-bar-section">
                         <h2 class="title"><a class="black-color" href="{% url 'sn_app:landing' %}">{{ person.first_name|upper}} {{ person.last_name|upper}}</a></h2>
-                        <a href="{% url 'sn_app:photoset' active_photoset.slug %}"><h2 class="page_header black-color">/{{ active_photoset.title|upper }}</h2></a>
+                        <h2 class="page_header black-color"><a href="{% url 'sn_app:photoset' active_photoset.slug %}">/{{ active_photoset.title|upper }}/</a></h2>
                       </section>
                       <section class="right">
                         <a href="#idOfRightMenu" role="button" aria-controls="idOfRightMenu" aria-expanded="false" class="right-off-canvas-toggle transparent-button-small black-color">MENU</a>

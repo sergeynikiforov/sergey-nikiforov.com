@@ -7279,18 +7279,22 @@ th.hide-for-touch {
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease; }
 
+.tab-bar a {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease; }
+
 .tab-bar .tab-bar-section {
   padding: 0px; }
   .tab-bar .tab-bar-section h2 {
     padding: 1px 0px 0px 0px; }
 
-.tab-bar h2 > a {
+.tab-bar .title {
   margin: 0px;
   padding: 0px;
   font-weight: bold;
   font-size: 1rem; }
   @media only screen and (max-width: 40em) {
-    .tab-bar h2 > a {
+    .tab-bar .title {
       font-size: 0.9rem; } }
 
 .tab-bar .right a {
@@ -7303,12 +7307,6 @@ th.hide-for-touch {
     .tab-bar .right a {
       padding-right: 0;
       padding-left: 0; } }
-
-.tab-bar a {
-  font-size: 1rem; }
-  @media only screen and (max-width: 40em) {
-    .tab-bar a {
-      font-size: 0.9rem; } }
 
 .tab-bar a:hover {
   color: #C8280A; }
@@ -7807,13 +7805,6 @@ figure {
       -webkit-transition: all 0.3s ease;
       transition: all 0.3s ease; }
 
-#photo-wrapper {
-  opacity: 0.0;
-  -webkit-transition: 0.3s;
-  transition: 0.3s; }
-  #photo-wrapper.is-visible {
-    opacity: 1.0; }
-
 #change-bg-on-hover {
   -webkit-transition: 0.5s;
   transition: 0.5s; }
@@ -7873,12 +7864,18 @@ figure {
 .transparent-button-small.prev {
   margin-right: 3rem; }
 
-@media only screen and (min-width: 64.0625em) {
-  #photo-wrapper {
-    padding-top: 2rem; }
-    #photo-wrapper figure {
-      max-height: 84vh;
-      min-height: 500px; } }
+#photo-wrapper {
+  opacity: 0.0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s; }
+  #photo-wrapper.is-visible {
+    opacity: 1.0; }
+  @media only screen and (min-width: 64.0625em) {
+    #photo-wrapper {
+      padding-top: 2rem; }
+      #photo-wrapper figure {
+        max-height: 84vh;
+        min-height: 500px; } }
     @media only screen and (min-width: 64.0625em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
       #photo-wrapper figure {
         max-height: 860.16px; } }
@@ -7897,12 +7894,11 @@ figure {
     @media only screen and (min-width: 64.0625em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: landscape) {
       #photo-wrapper figure {
         max-height: 268.8px; } }
-
-@media only screen and (min-width: 64.0625em) {
-      #photo-wrapper figure img {
-        max-height: 84vh;
-        min-height: 500px;
-        padding-bottom: 3rem; } }
+  @media only screen and (min-width: 64.0625em) {
+        #photo-wrapper figure img {
+          max-height: 84vh;
+          min-height: 500px;
+          padding-bottom: 3rem; } }
       @media only screen and (min-width: 64.0625em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
         #photo-wrapper figure img {
           max-height: 860.16px; } }
@@ -8017,52 +8013,94 @@ figure {
       @media only screen and (min-width: 40.0625em) and (max-width: 64em) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: landscape) {
         #photo-wrapper figure img {
           max-height: 160px; } }
-
-@media only screen and (max-width: 40em) {
-  #photo-wrapper {
-    padding-top: 2rem; }
+  @media only screen and (max-width: 40em) {
+    #photo-wrapper {
+      padding-top: 2rem;
+      margin-top: 1rem; } }
+  @media only screen and (max-width: 40em) and (orientation: portrait) {
+    #photo-wrapper figure {
+      height: 55vh; } }
+  @media only screen and (max-width: 40em) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
+    #photo-wrapper figure {
+      height: 563.2px; } }
+  @media only screen and (max-width: 40em) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: landscape) {
+    #photo-wrapper figure {
+      height: 422.4px; } }
+  @media only screen and (max-width: 40em) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: portrait) {
+    #photo-wrapper figure {
+      height: 264px; } }
+  @media only screen and (max-width: 40em) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: landscape) {
+    #photo-wrapper figure {
+      height: 176px; } }
+  @media only screen and (max-width: 40em) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: portrait) {
+    #photo-wrapper figure {
+      height: 312.4px; } }
+  @media only screen and (max-width: 40em) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: landscape) {
+    #photo-wrapper figure {
+      height: 176px; } }
+  @media only screen and (max-width: 40em) and (orientation: portrait) {
+      #photo-wrapper figure img {
+        max-height: 55vh; } }
+    @media only screen and (max-width: 40em) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
+      #photo-wrapper figure img {
+        max-height: 563.2px; } }
+    @media only screen and (max-width: 40em) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: landscape) {
+      #photo-wrapper figure img {
+        max-height: 422.4px; } }
+    @media only screen and (max-width: 40em) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: portrait) {
+      #photo-wrapper figure img {
+        max-height: 264px; } }
+    @media only screen and (max-width: 40em) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: landscape) {
+      #photo-wrapper figure img {
+        max-height: 176px; } }
+    @media only screen and (max-width: 40em) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: portrait) {
+      #photo-wrapper figure img {
+        max-height: 312.4px; } }
+    @media only screen and (max-width: 40em) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: landscape) {
+      #photo-wrapper figure img {
+        max-height: 176px; } }
+  @media only screen and (max-width: 40em) and (orientation: landscape) {
     #photo-wrapper figure {
       max-height: 100vh; } }
-    @media only screen and (max-width: 40em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
-      #photo-wrapper figure {
-        max-height: 1024px; } }
-    @media only screen and (max-width: 40em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: landscape) {
-      #photo-wrapper figure {
-        max-height: 768px; } }
-    @media only screen and (max-width: 40em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: portrait) {
-      #photo-wrapper figure {
-        max-height: 480px; } }
-    @media only screen and (max-width: 40em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: landscape) {
-      #photo-wrapper figure {
-        max-height: 320px; } }
-    @media only screen and (max-width: 40em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: portrait) {
-      #photo-wrapper figure {
-        max-height: 568px; } }
-    @media only screen and (max-width: 40em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: landscape) {
-      #photo-wrapper figure {
-        max-height: 320px; } }
-
-@media only screen and (max-width: 40em) {
+  @media only screen and (max-width: 40em) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
+    #photo-wrapper figure {
+      max-height: 1024px; } }
+  @media only screen and (max-width: 40em) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: landscape) {
+    #photo-wrapper figure {
+      max-height: 768px; } }
+  @media only screen and (max-width: 40em) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: portrait) {
+    #photo-wrapper figure {
+      max-height: 480px; } }
+  @media only screen and (max-width: 40em) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: landscape) {
+    #photo-wrapper figure {
+      max-height: 320px; } }
+  @media only screen and (max-width: 40em) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: portrait) {
+    #photo-wrapper figure {
+      max-height: 568px; } }
+  @media only screen and (max-width: 40em) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: landscape) {
+    #photo-wrapper figure {
+      max-height: 320px; } }
+  @media only screen and (max-width: 40em) and (orientation: landscape) {
       #photo-wrapper figure img {
         max-height: 100vh; } }
-      @media only screen and (max-width: 40em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
-        #photo-wrapper figure img {
-          max-height: 1024px; } }
-      @media only screen and (max-width: 40em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: landscape) {
-        #photo-wrapper figure img {
-          max-height: 768px; } }
-      @media only screen and (max-width: 40em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: portrait) {
-        #photo-wrapper figure img {
-          max-height: 480px; } }
-      @media only screen and (max-width: 40em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: landscape) {
-        #photo-wrapper figure img {
-          max-height: 320px; } }
-      @media only screen and (max-width: 40em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: portrait) {
-        #photo-wrapper figure img {
-          max-height: 568px; } }
-      @media only screen and (max-width: 40em) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: landscape) {
-        #photo-wrapper figure img {
-          max-height: 320px; } }
+    @media only screen and (max-width: 40em) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
+      #photo-wrapper figure img {
+        max-height: 1024px; } }
+    @media only screen and (max-width: 40em) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: landscape) {
+      #photo-wrapper figure img {
+        max-height: 768px; } }
+    @media only screen and (max-width: 40em) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: portrait) {
+      #photo-wrapper figure img {
+        max-height: 480px; } }
+    @media only screen and (max-width: 40em) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: landscape) {
+      #photo-wrapper figure img {
+        max-height: 320px; } }
+    @media only screen and (max-width: 40em) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: portrait) {
+      #photo-wrapper figure img {
+        max-height: 568px; } }
+    @media only screen and (max-width: 40em) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: landscape) {
+      #photo-wrapper figure img {
+        max-height: 320px; } }
 
 @media only screen and (min-width: 64.0625em) {
   #photo-info-wrapper {
@@ -8136,6 +8174,9 @@ figure {
 
 #album-wrapper {
   padding: 4rem 0rem; }
+  #album-wrapper a {
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease; }
 
 .album-title {
   font-weight: bold;
@@ -8488,6 +8529,12 @@ figure {
   -webkit-transform: translateX(0px);
       -ms-transform: translateX(0px);
           transform: translateX(0px); }
+
+.fade-in {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease; }
+  .fade-in:hover {
+    opacity: 0.9; }
 
 html, body {
   -webkit-text-size-adjust: 100%; }
