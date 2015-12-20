@@ -26,7 +26,6 @@
 {% endblock off_canvas_tab_bar_image %}
 
 {% block body %}
-    <div id="page-top"></div>
     <div class="show-for-large-up">
         <section class="large_screen_figure">
             <div class="bg75-image-wrapper">
@@ -77,67 +76,87 @@
         </div>
     </div>
     <div class="toggle-color">
-        {% if photoset_description %}
-            <div id="album-wrapper" class="row">
-                <div class="small-12 medium-9 small-centered columns container-center">
+        <div id="album-wrapper" class="row">
+            <div class="small-12 medium-9 small-centered columns container-center">
+                {% if photoset_description %}
                     <div class="content-center">
                         <h3 class="album-title">{{ photoset_title }}</h3>
                         <p class="album-description">{{ photoset_description }}</p>
                         <p class="image-order"><a href="#thumbs-wrapper">SEE THE PHOTOS</a></p>
                     </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div id="make-fixed">
+        <div class="row">
+            <div id="fixed-wrapper" class="show-for-large-up">
+                <div class="large-3 columns container-center">
+                    <div id="sidebar-wrapper" class="text-center">
+                        <h3 class="album-title">/{{ photoset_title|upper }}/</h3>
+                        {% if photoset_description %}
+                            <p class="album-description text-center">{{ photoset_description }}</p>
+                        {% endif %}
+                        <p class="image-title-thumb">SOUTH-EAST ASIA</p>
+                        <p class="image-title-thumb"><a>MOSCOW</a></p>
+                        <p class="image-title-thumb"><a>PARIS</a></p>
+                        <p class="image-title-thumb"><a>NEPAL</a></p>
+                    </div>
                 </div>
             </div>
-        {% endif %}
-    </div>
-    {% if photos %}
-        <div id="thumbs-wrapper" class="row">
-            <div class="small-12 columns small_screen_figure medium_screen_figure large_screen_figure thumbs">
-                <ul class="small-block-grid-1 medium-block-grid-1 large-block-grid-2">
-                    {% for photo in photos %}
-                        <li class="one-thumb text-center">
-                            <figure class="toggle-color-white">
-                                <a class="fade-in" href="{% url 'sn_app:photo_home' active_photoset.slug %}#{{photo.publicID}}">{% pictureCloudinary photo.publicID sizes="(min-width: 1025px) 60vw, 100vw" srcset="200w 400w 600w 800w 1000w 1200w 1400w 1600w 2000w 2400w 2800w 3200w" alt=photo.title %}
-                                </a>
-                                <figcaption class="image-captions toggle-color-black">
-                                    <div class="row">
-                                        <div class="small-11 medium-10 small-centered columns text-left large-text-center">
-                                            <h3 class="image-title"><a href="{% url 'sn_app:photo_home' active_photoset.slug %}#{{photo.publicID}}">{{ photo.current_order }}. {{ photo.title }}</a></h3>
-                                        </div>
-                                    </div>
-                                </figcaption>
-                            </figure>
-                        </li>
-                    {% endfor %}
-                </ul>
-            </div>
-        </div>
-    {% endif %}
-    {% if photosets %}
-        <div class="row">
-            <div class="small-12 medium-10 medium-centered columns">
-                <h3 class="page_subheader more-albums-start">Other Albums:</h3>
-            </div>
-        </div>
-        <div id="more-albums-wrapper" class="row">
-            <div class="small-12 medium-10 medium-centered columns">
-                <ul class="more-albums-block-grid">
-                    {% for photoset in photosets %}
-                        {% if photoset.title != active_photoset.title %}
-                            <li class="more-albums-thumb">
-                                <figure>
-                                    <a class="fade-in" href="{% url 'sn_app:photoset' photoset.slug %}">
-                                        {% pictureCloudinary photoset.cover_photo.publicID sizes="(min-width: 1025px) 35vw, (min-width: 641px) 50vw, 60vw" srcset="200w 400w 600w 800w 1000w 1200w 1400w 1600w 2000w 2400w 2800w 3200w" alt=photoset.title %}
-                                    </a>
-                                    <figcaption>
-                                        <a href="{% url 'sn_app:photoset' photoset.slug %}">
-                                            <p class="more-albums-title">{{ photoset.title|upper }}</p>
+            {% if photos %}
+                <div id="thumbs-wrapper">
+                    <div id="thumbs" class="small-12 large-9 end columns small_screen_figure">
+                        <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-2">
+                            {% for photo in photos %}
+                                <li class="one-thumb text-center">
+                                    <figure>
+                                        <a href="{% url 'sn_app:photo_home' active_photoset.slug %}#{{photo.publicID}}">{% pictureCloudinary photo.publicID sizes="(min-width: 1025px) 40vw, (min-width: 1025px) 50vw, 100vw" srcset="200w 400w 600w 800w 1000w 1200w 1400w 1600w 2000w 2400w 2800w 3200w" alt=photo.title %}
                                         </a>
-                                    </figcaption>
-                                </figure>
-                            </li>
-                        {% endif %}
-                    {% endfor %}
-                </ul>
+                                        <figcaption class="image-captions">
+                                            <div class="row">
+                                                <div class="small-12 small-centered columns">
+                                                    <h3 class="image-title-thumb"><a href="{% url 'sn_app:photo_home' active_photoset.slug %}#{{photo.publicID}}">{{ photo.current_order }}. {{ photo.title }}</a></h3>
+                                                </div>
+                                            </div>
+                                        </figcaption>
+                                    </figure>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+    {% if photosets %}
+        <div id="more-albums-wrapper">
+            <div class="row">
+                <div class="small-12 medium-10 medium-centered columns">
+                    <h3 class="page_subheader more-albums-start">Other Albums:</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-12 medium-10 medium-centered columns">
+                    <ul class="more-albums-block-grid">
+                        {% for photoset in photosets %}
+                            {% if photoset.title != active_photoset.title %}
+                                <li class="more-albums-thumb">
+                                    <figure>
+                                        <a class="fade-in" href="{% url 'sn_app:photoset' photoset.slug %}">
+                                            {% pictureCloudinary photoset.cover_photo.publicID sizes="(min-width: 1025px) 35vw, (min-width: 641px) 50vw, 60vw" srcset="200w 400w 600w 800w 1000w 1200w 1400w 1600w 2000w 2400w 2800w 3200w" alt=photoset.title %}
+                                        </a>
+                                        <figcaption>
+                                            <a href="{% url 'sn_app:photoset' photoset.slug %}">
+                                                <p class="more-albums-title">{{ photoset.title|upper }}</p>
+                                            </a>
+                                        </figcaption>
+                                    </figure>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
             </div>
         </div>
     {% endif %}

@@ -1240,13 +1240,13 @@
         $instance.attr('aria-multiselectable','true');
       }
     },
-	
+
   	toggle : function(options) {
   		var options = typeof options !== 'undefined' ? options : {};
   		var selector = typeof options.selector !== 'undefined' ? options.selector : '';
   		var toggle_state = typeof options.toggle_state !== 'undefined' ? options.toggle_state : '';
   		var $accordion = typeof options.$accordion !== 'undefined' ? options.$accordion : this.S(this.scope).closest('[' + this.attr_name() + ']');
-  
+
   		var $items = $accordion.find('> dd' + selector + ', > li' + selector);
   		if ( $items.length < 1 ) {
   			if ( window.console ) {
@@ -1254,7 +1254,7 @@
   			}
   			return false;
   		}
-  
+
   		var S = this.S;
   		var active_class = this.settings.active_class;
   		$items.each(function() {
@@ -1265,18 +1265,18 @@
   			}
   		});
   	},
-  
+
   	open : function(options) {
   		var options = typeof options !== 'undefined' ? options : {};
   		options.toggle_state = 'open';
   		this.toggle(options);
   	},
-  
+
   	close : function(options) {
   		var options = typeof options !== 'undefined' ? options : {};
   		options.toggle_state = 'close';
   		this.toggle(options);
-  	},	
+  	},
 
     off : function () {},
 
@@ -2193,7 +2193,7 @@
         //get the actual width of the page and store it
         var actualBodyWidth;
         var windowWidth = window.innerWidth;
-        
+
         if (document.getElementsByClassName('row')[0]) {
           actualBodyWidth = document.getElementsByClassName('row')[0].clientWidth;
         } else {
@@ -2206,7 +2206,7 @@
         if (!this.hasClass('mega') && !s.ignore_repositioning) {
           var outerWidth = this.outerWidth();
           var o_left = t.offset().left;
-		  
+
           //miss top
           if (t.offset().top <= this.outerHeight()) {
             p.missTop = true;
@@ -2425,7 +2425,7 @@
       else {
         vals = group ? equalizer.find('['+this.attr_name()+'-watch="'+group+'"]:visible') : equalizer.find('['+this.attr_name()+'-watch]:visible');
       }
-      
+
       if (vals.length === 0) {
         return;
       }
@@ -3680,9 +3680,9 @@
 
     corners : function (el) {
       if (el.length === 0) {
-         return [false, false, false, false];   
+         return [false, false, false, false];
       }
-      
+
       var w = $(window),
           window_half = w.height() / 2,
           //using this to calculate since scroll may not have finished yet.
@@ -5566,12 +5566,12 @@
         if (!settings.is_hover || Modernizr.touch) {
           // if user did not pressed tab key, prevent default action
           var keyCode = e.keyCode || e.which;
-          if (keyCode !== 9) { 
+          if (keyCode !== 9) {
             e.preventDefault();
             e.stopPropagation();
           }
           self.toggle_active_tab(S(target).parent());
-          
+
         }
       };
 
@@ -5584,7 +5584,7 @@
           if (keyCode === 13 || keyCode === 32) { // enter or space
             var el = this;
             usual_tab_behavior(e, el);
-          } 
+          }
         })
         // Click event: tab title
         .on('click.fndtn.tab', '[' + this.attr_name() + '] > * > a', function(e) {
@@ -5873,7 +5873,7 @@
           if (/mouse/i.test(e.type) && self.ie_touch(e)) {
             return false;
           }
-          
+
           if ($this.hasClass('open')) {
             if (Modernizr.touch && /touchstart|MSPointerDown/i.test(e.type)) {
               e.preventDefault();
@@ -6007,7 +6007,7 @@
           'right' : (right) ? right : 'auto'
         }).end();
       };
-      
+
       var o_top = target.offset().top;
       var o_left = target.offset().left;
       var outerHeight = target.outerHeight();
@@ -6019,7 +6019,7 @@
         tip.addClass('tip-override');
         objPos(nub, -nubHeight, 'auto', 'auto', o_left);
       } else {
-        
+
         if (Foundation.rtl) {
           nub.addClass('rtl');
           o_left = o_left + target.outerWidth() - tip.outerWidth();
@@ -6030,11 +6030,11 @@
         if (nub.attr('style')) {
           nub.removeAttr('style');
         }
-        
+
         tip.removeClass('tip-override');
-        
+
         var tip_outerHeight = tip.outerHeight();
-        
+
         if (classes && classes.indexOf('tip-top') > -1) {
           if (Foundation.rtl) {
             nub.addClass('rtl');

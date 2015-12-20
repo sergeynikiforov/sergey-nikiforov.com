@@ -202,7 +202,6 @@ $tab-bar-top-margin: 1rem;
         margin-bottom: 0.3rem;
         @media #{$small-only} {
             font-size: $font-size-sans-serif-nav-small;
-
         }
         @media #{$medium-only} {
             font-size: $font-size-sans-serif-nav-medium;
@@ -224,12 +223,14 @@ $tab-bar-top-margin: 1rem;
 // transparency
 .fixed, .top-bar, .top-bar-section ul, .top-bar-section ul li, .top-bar-section li:not(.has-form) a:not(.button), .top-bar-section .dropdown li a, .top-bar-section .dropdown li:not(.has-form) a:not(.button), .top-bar-section li:not(.has-form) a:not(.button):hover, .toggle-topbar, .tab-bar, .left .tab-bar-section, .right-off-canvas-toggle {
     background: transparent !important;
+    //transition: 0.3s;
 }
 
 // white bg
 .white-bg {
     .fixed, .top-bar, .top-bar-section ul, .top-bar-section ul li, .top-bar-section li:not(.has-form) a:not(.button), .top-bar-section .dropdown li a, .top-bar-section .dropdown li:not(.has-form) a:not(.button), .top-bar-section li:not(.has-form) a:not(.button):hover, .toggle-topbar, .tab-bar, .left .tab-bar-section, .right-off-canvas-toggle {
-        background: $white !important;
+        background: gray !important;
+        //transition: 0.3s;
     }
 }
 
@@ -317,7 +318,7 @@ $tab-bar-top-margin: 1rem;
 
 .top-bar .top-bar-section .right {
     li {
-        @include anchor-transition-hover(0.3s);
+        //@include anchor-transition-hover(0.3s);
     }
     li a {
         //padding-right: 0.7rem;
@@ -333,7 +334,7 @@ $tab-bar-top-margin: 1rem;
         }
     }
     li.black-color {
-        @include anchor-transition-hover(0.3s);
+        //@include anchor-transition-hover(0.3s);
         a {
             color: $black;
             &:hover {
@@ -342,13 +343,13 @@ $tab-bar-top-margin: 1rem;
         }
         .dropdown li > a {
             color: $black;
-            transition: all 0.2s ease;
+            //transition: all 0.2s ease;
         }
     }
 }
 
 #top-bar-header {
-    transition: all 0.2s ease;
+    //transition: all 0.2s ease;
 }
 
 // END TOP-BAR
@@ -507,13 +508,13 @@ $tab-bar-top-margin: 1rem;
 }
 
 .photoset-cover-wrapper {
-    height: 60vh;
+    height: 40vh;
     width: 100%;
     @media #{$large-up} {
         //padding: 1.5rem;
     }
     @media #{$medium-only} {
-        padding: 2rem 0rem 6rem 0rem;
+        //padding: 2rem 0rem 6rem 0rem;
     }
 }
 
@@ -778,6 +779,13 @@ figure {
     display: table-cell;
     vertical-align: middle;
 }
+.container-center {
+    display: table;
+}
+.content-down {
+    display: table-cell;
+    vertical-align: bottom;
+}
 
 // END ABOUT ME
 //-----------------------------------------------------
@@ -922,7 +930,7 @@ figure {
         font-size: $font-size-sans-serif-page-header-small;
         font-family: $font-family-sans-serif;
         font-weight: $font-weight-bold;
-        line-height: 0.9;
+        //line-height: 0.9;
         margin-top: -0.5rem;
         margin-bottom: 1rem;
     }
@@ -931,7 +939,7 @@ figure {
         font-size: $font-size-sans-serif-page-header-small;
         font-family: $font-family-sans-serif;
         font-weight: $font-weight-bold;
-        line-height: 0.9;
+        //line-height: 0.9;
         margin-top: -0.9rem;
         margin-bottom: 0rem;
         &.black-color {
@@ -954,7 +962,7 @@ figure {
         font-size: $font-size-sans-serif-page-header-medium;
         font-family: $font-family-sans-serif;
         font-weight: $font-weight-bold;
-        line-height: 1;
+        //line-height: 1;
         margin-top: 0rem;
         margin-bottom: 0rem;
     }
@@ -974,7 +982,7 @@ figure {
         font-size: $font-size-sans-serif-page-header-large;
         font-family: $font-family-sans-serif;
         font-weight: $font-weight-bold;
-        line-height: 1;
+        //line-height: 1;
         margin-top: 0rem;
         margin-bottom: 0rem;
     }
@@ -1207,9 +1215,27 @@ figure {
     margin-bottom: 0.3rem;
 }
 
+.image-title-thumb {
+    font-weight: $font-weight-normal;
+    @media #{$large-up} {
+        font-size: $font-size-sans-serif-nav-large;
+    }
+    @media #{$medium-only} {
+        font-size: $font-size-sans-serif-nav-medium;
+    }
+    @media #{$small-only} {
+        font-size: $font-size-sans-serif-nav-small;
+    }
+    margin-bottom: 0.3rem;
+}
+
 #album-wrapper {
-    padding: 4rem 0rem;
+    padding: 5rem 0rem;
     @include anchor-transition-hover(0.3s);
+}
+
+#sidebar-wrapper {
+    @extend #album-wrapper;
 }
 
 .album-title {
@@ -1228,16 +1254,17 @@ figure {
 
 .album-description {
     padding-top: 0.8rem;
-    border-top: 1px solid $black;
+    //border-top: 1px solid $black;
+    /*
     @media #{$large-up} {
-        font-size: 1.5rem;//$font-size-sans-serif-page-subheader-large;
+        font-size: 1.1rem;//$font-size-sans-serif-page-subheader-large;
     }
     @media #{$medium-only} {
-        font-size: 1.3rem;//$font-size-sans-serif-page-subheader-medium;
+        font-size: 1rem;//$font-size-sans-serif-page-subheader-medium;
     }
     @media #{$small-only} {
-        font-size: 1.1rem;//$font-size-sans-serif-page-subheader-small;
-    }
+        font-size: 1rem;//$font-size-sans-serif-page-subheader-small;
+    }*/
 }
 
 
@@ -1263,12 +1290,16 @@ figure {
 .image-captions {
     @include anchor-transition-hover(0.3s);
 
-    margin-top: 1rem;
+    margin-top: 0.3rem;
     @media #{$small-only} {
         margin-left: 0.5rem;
     }
     @media #{$medium-only} {
-        margin-left: 0.9rem;
+        margin-left: 0.7rem;
+    }
+    @media #{$large-up} {
+        //margin-left: 0.9rem;
+        margin-top: 1rem;
     }
 }
 
@@ -1296,13 +1327,15 @@ figure {
 
 
 #thumbs-wrapper {
+    /*
     @media #{$xlarge-up} {
         padding-left: 2.5rem;
         padding-right: 2.5rem;
     }
+    */
 }
 
-.thumbs {
+#thumbs {
     //background: black;
     @media #{$small-only} {
         padding: 5rem 0rem 1rem 0rem;
@@ -1332,13 +1365,21 @@ figure {
         margin-bottom: 5rem;
     }
     @media #{$medium-only} {
-        margin-bottom: 13rem;
+        margin-bottom: 5rem;
     }
     @media #{$large-up} {
-        margin-bottom: 19rem;
+        margin-bottom: 7rem;
     }
 
 }
+
+.fixed-sidebar {
+    position: fixed;
+    top: 0;
+    z-index: 0;
+    transition: 0.5s;
+}
+
 
 // styling of "More Albums" section
 .more-albums-start {

@@ -37,6 +37,8 @@ $(function() {
  * taken from
  * http://stackoverflow.com/questions/2177983/how-to-make-div-follow-scrolling-smoothly-with-jquery
  */
+
+/*
 $(function() {
 
     var sidebar = $('.sticky-sidebar');
@@ -58,10 +60,11 @@ $(function() {
                 top: scrollTop < originalY
                         ? 0
                         : scrollTop - originalY + topMargin
-            }, 700);
+            }, 0);
         });
     }
 });
+*/
 
 
 /*
@@ -209,64 +212,255 @@ $(document).ready(function() {
 */
 
 // waypoints use
-function changeTopBarFontColor() {
+var MyWaypoints = {};
+
+MyWaypoints.changeTopBarFontColor = function () {
     $('#navigation-bar').toggleClass('black-color');
     $('#top-bar-sticky-page-header').toggleClass('black-color');
 }
 
-function turnTopBarFontColorBlack() {
+MyWaypoints.turnTopBarFontColorBlack = function () {
     $('#navigation-bar').addClass('black-color');
     $('#top-bar-sticky-page-header').addClass('black-color');
 }
 
-function turnTopBarFontColorWhite() {
+MyWaypoints.turnTopBarFontColorWhite = function () {
     $('#navigation-bar').removeClass('black-color');
     $('#top-bar-sticky-page-header').removeClass('black-color');
 }
 
-function changeTopBarBackgroundColor() {
+
+// sticky sidebar on photoset page
+var StickySidebar = {};
+
+StickySidebar.isSetUp = false;
+StickySidebar.isTopBarSetUp = false;
+
+StickySidebar.changeTopBarBackgroundColor = function () {
     $('#top-bar-wrapper').toggleClass('white-bg');
+    $('#top-bar-wrapper > .fixed').css('height', '70px');
 }
 
+StickySidebar.addTopBarBackgroundColor = function () {
+    $('#top-bar-wrapper').addClass('white-bg');
+    $('#top-bar-wrapper > .fixed').css('height', '70px');
+}
+
+StickySidebar.removeTopBarBackgroundColor = function () {
+    $('#top-bar-wrapper').removeClass('white-bg');
+    $('#top-bar-wrapper > .fixed').css('height', 'auto');
+}
+
+StickySidebar.setStickySidebarColumnHeight = function () {
+    // sets sidebar wrapper column equal to thumbs height
+    StickySidebar.thumbsHeight = $('#thumbs').outerHeight();
+    $('#fixed-wrapper > div').outerHeight(StickySidebar.thumbsHeight);
+}
+
+StickySidebar.setStickySidebarColumnWidth = function () {
+    if (StickySidebar.stickySidebarColumnWidth === undefined) {
+        StickySidebar.stickySidebarColumnWidth = $('#fixed-wrapper > div').outerWidth();
+        $('#fixed-wrapper > div').outerWidth(StickySidebar.stickySidebarColumnWidth);
+    } else {
+        if ($('.fixed-sidebar').length > 0) {
+            StickySidebar.stickySidebarColumnWidth = parseInt($('#thumbs').css('margin-left'));
+            $('#fixed-wrapper > div').outerWidth(StickySidebar.stickySidebarColumnWidth);
+        } else {
+            StickySidebar.stickySidebarColumnWidth = $(window).innerWidth() - $('#thumbs').outerWidth();
+            $('#fixed-wrapper > div').outerWidth(StickySidebar.stickySidebarColumnWidth);
+        };
+    }
+}
+
+// function is called whenever we scroll or resize
+StickySidebar.stickySidebar = function() {
+
+    StickySidebar.sidebarTop = $('#sidebar-wrapper').offset().top;
+    StickySidebar.sidebarHeight = $('#sidebar-wrapper').outerHeight();
+    StickySidebar.sidebarBottom = $('#sidebar-wrapper').outerHeight() + $('#sidebar-wrapper').offset().top;
+    StickySidebar.moreAlbumsTop = $('#more-albums-wrapper').offset().top;
+    StickySidebar.albumWrapperBottom = $('#album-wrapper').outerHeight() + $('#album-wrapper').offset().top;
+    StickySidebar.topbarBottom = $('#top-bar-wrapper > div').offset().top + $('#top-bar-wrapper > div').outerHeight();
+
+    // if sidebar is fixed
+    if (($('.fixed-sidebar').length > 0)) {
+
+        // if sidebar top is lower than album description, stay fixed, otherwise - unstick it
+        if (StickySidebar.sidebarTop < StickySidebar.albumWrapperBottom) {
+            $('#fixed-wrapper').removeClass('fixed-sidebar');
+            $('#thumbs-wrapper > div').removeClass('large-offset-3');
+        };
+        // if sidebar bottom is higher than more albums section - stay fixed, otherwise - unstick it
+        if ((StickySidebar.sidebarBottom > StickySidebar.moreAlbumsTop)) {
+            $('#fixed-wrapper').removeClass('fixed-sidebar');
+            $('#thumbs-wrapper > div').removeClass('large-offset-3');
+            $('#sidebar-wrapper').addClass('content-down');
+        };
+
+    } else {
+        // if sidebar is not fixed
+
+        // if we scroll from bottom, "pick up" sidebar from the bottom of its container, make it fixed, and take it with us =)
+        if ((StickySidebar.isTopBarSetUp == true) && (StickySidebar.topbarBottom <= $('#sidebar-wrapper > h3').offset().top)) {
+            //console.log('5');
+            $('#fixed-wrapper').addClass('fixed-sidebar');
+            $('#thumbs-wrapper > div').addClass('large-offset-3');
+            $('#sidebar-wrapper').removeClass('content-down');
+        }
+
+        // set sidebar where it should be if we reload the page in the middle of thumbnails
+        if ((StickySidebar.isTopBarSetUp == true) && (StickySidebar.topbarBottom > StickySidebar.sidebarTop) && (StickySidebar.topbarBottom + StickySidebar.sidebarHeight < StickySidebar.moreAlbumsTop)) {
+            //console.log('7');
+            $('#fixed-wrapper').addClass('fixed-sidebar');
+            $('#thumbs-wrapper > div').addClass('large-offset-3');
+            $('#sidebar-wrapper').removeClass('content-down');
+        }
+        /*
+        if (($('.white-bg').length > 0) && (StickySidebar.topbarBottom > StickySidebar.sidebarTop) && (StickySidebar.topbarBottom + StickySidebar.sidebarHeight >= StickySidebar.moreAlbumsTop)) {
+            console.log('8');
+            //$('#fixed-wrapper').removeClass('fixed-sidebar');
+            //$('#thumbs-wrapper > div').removeClass('large-offset-3');
+            //$('#sidebar-wrapper').addClass('content-down');
+        }
+
+        if ((StickySidebar.isTopBarSetUp == false) && (StickySidebar.topbarBottom > $('#sidebar-wrapper > h3').offset().top)) {
+            console.log('6');
+            $('#fixed-wrapper').addClass('fixed-sidebar');
+            $('#thumbs-wrapper > div').addClass('large-offset-3');
+            $('#sidebar-wrapper').removeClass('content-down');
+        };
+        */
+    };
+}
+
+// set up top bar for sticky sidebar, depending on its position and viewport width
+StickySidebar.setUpTopBar = function() {
+    StickySidebar.topbarBottom = $('#top-bar-wrapper > div').offset().top + $('#top-bar-wrapper > div').outerHeight();
+    StickySidebar.makeFixedTop = $('#make-fixed').offset().top;
+
+    // set a non-transparent bg for large screens, otherwise - remove whatever color it was
+    if (window.innerWidth > 1024) {
+
+        // if it's lower than the mark - set new bg, else - remove color
+        // + remove stickeness from sidebar when we're higher than the thumbnails
+        if (StickySidebar.topbarBottom >= StickySidebar.makeFixedTop) {
+            StickySidebar.addTopBarBackgroundColor();
+            StickySidebar.isTopBarSetUp = true;
+        } else {
+            $('#fixed-wrapper').removeClass('fixed-sidebar');
+            $('#thumbs-wrapper > div').removeClass('large-offset-3');
+            StickySidebar.removeTopBarBackgroundColor();
+            StickySidebar.isTopBarSetUp = false;
+        };
+    } else {
+        StickySidebar.removeTopBarBackgroundColor();
+        StickySidebar.isTopBarSetUp = false;
+    };
+
+}
+
+StickySidebar.setUpStickySidebar = function() {
+
+    // set it only on large screens && on page with thumbs & sidebar-wrapper
+    if ($('#sidebar-wrapper').length > 0 && $('#thumbs').length > 0 && window.innerWidth > 1024) {
+
+        StickySidebar.setUpTopBar();
+        StickySidebar.setStickySidebarColumnHeight();
+        StickySidebar.setStickySidebarColumnWidth();
+        StickySidebar.stickySidebar();
+
+        StickySidebar.isSetUp = true;
+
+    } else {
+        StickySidebar.isSetUp = false;
+    };
+}
+
+
+// toggle fixed class
+/*
+StickySidebar.waypointsMakeFixed = new Waypoint({
+    element: document.getElementById('make-fixed'),
+    handler: function(direction) {
+        if (direction == 'down') {
+            if (StickySidebar.topbarBottom < StickySidebar.sidebarBottom) {
+                $('#fixed-wrapper').addClass('fixed-sidebar');
+                $('#thumbs-wrapper > div').addClass('large-offset-3');
+                $('#sidebar-wrapper').removeClass('content-down');
+            };
+            StickySidebar.changeTopBarBackgroundColor();
+        } else {
+            $('#fixed-wrapper').removeClass('fixed-sidebar');
+            $('#thumbs-wrapper > div').removeClass('large-offset-3');
+            StickySidebar.changeTopBarBackgroundColor();
+        }
+    }
+});
+*/
+
 $(document).ready(function() {
+
+    // when ready, try to set up sticky sidebar
+    StickySidebar.setUpStickySidebar();
+
+    // if sidebar is set up - listen for scroll events
+    $(document).on('scroll', function() {
+        if (StickySidebar.isSetUp == true) {
+            StickySidebar.setUpTopBar();
+            StickySidebar.setStickySidebarColumnHeight();
+            StickySidebar.stickySidebar();
+        };
+    });
+
+    // when resized - set up again
+    $(window).on('resize', function() {
+        StickySidebar.setUpStickySidebar();
+        StickySidebar.setUpTopBar();
+    });
+
+
     // toggle top-bar font color whatever it is
-    var waypointsToggleFontColor = $('.toggle-color').waypoint({
+    MyWaypoints.waypointsToggleFontColor = $('.toggle-color').waypoint({
         handler: function(direction) {
-            changeTopBarFontColor();
+            MyWaypoints.changeTopBarFontColor();
         },
-        offset: 40
+        offset: 30
     });
+
     // toggle top-bar bg color whatever it is
-    var waypointsBackgroundColor = $('.toggle-bg').waypoint({
+    MyWaypoints.waypointsBackgroundColor = $('.toggle-bg').waypoint({
         handler: function(direction) {
-            changeTopBarBackgroundColor();
+            MyWaypoints.changeTopBarBackgroundColor();
         },
         offset: 40
     });
+
     // on move down make top-bar font color black, on up - white
-    var waypointsFontColorBlack = $('.toggle-color-black').waypoint({
+    MyWaypoints.waypointsFontColorBlack = $('.toggle-color-black').waypoint({
         handler: function(direction) {
             if (direction == 'down') {
-                turnTopBarFontColorBlack();
+                MyWaypoints.turnTopBarFontColorBlack();
             } else {
-                turnTopBarFontColorWhite();
+                MyWaypoints.turnTopBarFontColorWhite();
             };
         },
         offset: 40
     });
+
     // on down - white, on up - black
-    var waypointsFontColorWhite = $('.toggle-color-white').waypoint({
+    MyWaypoints.waypointsFontColorWhite = $('.toggle-color-white').waypoint({
         handler: function(direction) {
             if (direction == 'down') {
-                turnTopBarFontColorWhite();
+                MyWaypoints.turnTopBarFontColorWhite();
             } else {
-                turnTopBarFontColorBlack();
+                MyWaypoints.turnTopBarFontColorBlack();
             };
         },
         offset: 40
     });
+
     // toggle hero-nav
-    var waypointsHeroNav = $('#page-top').waypoint({
+    MyWaypoints.waypointsHeroNav = $('#page-top').waypoint({
         handler: function(direction) {
             $('#hero-nav .page_header').animate({
                 opacity: "toggle"
@@ -275,6 +469,6 @@ $(document).ready(function() {
                 opacity: "toggle"
             }, 500);
         },
-        offset: -5
+        offset: -10
     });
 });
