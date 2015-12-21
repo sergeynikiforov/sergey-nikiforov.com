@@ -1040,6 +1040,30 @@ figure {
 //-----------------------------------------------------
 //
 
+.photoset-block-grid {
+    @media #{$large-up} {
+        @include block-grid(
+                $per-row: 2,
+                $spacing: 2rem,
+                $base-style: true
+        );
+    }
+    @media #{$medium-only} {
+        @include block-grid(
+                $per-row: 2,
+                $spacing: 2rem,
+                $base-style: true
+        );
+    }
+    @media #{$small-only} {
+        @include block-grid(
+                $per-row: 1,
+                $spacing: 0rem,
+                $base-style: true
+        );
+    }
+}
+
 
 #change-bg-on-hover {
     transition: 0.5s;
@@ -1223,7 +1247,7 @@ figure {
 }
 
 .image-title-thumb {
-    font-weight: $font-weight-normal;
+    font-weight: $font-weight-thin;
     @media #{$large-up} {
         font-size: $font-size-sans-serif-nav-large;
     }
@@ -1238,12 +1262,6 @@ figure {
 
 #album-wrapper {
     padding: 5rem 0rem;
-    @include anchor-transition-hover(0.3s);
-}
-
-#sidebar-wrapper {
-    padding-top: 5rem;
-    padding-bottom: 0rem;
     @include anchor-transition-hover(0.3s);
 }
 
@@ -1291,20 +1309,18 @@ figure {
     @media #{$small-only} {
         font-size: $font-size-sans-serif-page-header-small;
     }
-
-
 }
 
 // image captions wrapper for photoset view
 .image-captions {
     @include anchor-transition-hover(0.3s);
-
-    margin-top: 0.3rem;
     @media #{$small-only} {
-        margin-left: 0.5rem;
+        margin-left: rem-calc(18);
+        margin-top: 0.5rem;
     }
     @media #{$medium-only} {
         margin-left: 0.7rem;
+        margin-top: 0.3rem;
     }
     @media #{$large-up} {
         //margin-left: 0.9rem;
@@ -1316,21 +1332,37 @@ figure {
     margin-top: 3rem;
 }
 
+// sticky sidebar for photoset page
+.fixed-sidebar {
+    position: fixed;
+    top: 0;
+    z-index: 0;
+    transition: 0.5s;
+}
 
-// animation 0.1=)
-.row.photoset-cover {
-    padding-bottom: 30px;
+#sidebar-wrapper {
+    padding-top: 5rem;
+    padding-bottom: 0rem;
+    @include anchor-transition-hover(0.3s);
+    font-family: $font-family-sans-serif;
+}
 
-    &:hover {
+.album-title-sidebar {
+    @extend .album-title;
+}
 
-        outline: solid 1px $black;
-        img {
-            transition: all 0.3s ease;
-            transform: scale(0.97);
+.num-photos-sidebar{
+    @extend .image-title-thumb;
+}
+
+.photoset-links-sidebar {
+    margin-top: 2rem;
+    font-weight: $font-weight-thin;
+    font-style: italic;
+    @media #{$large-up} {
+        p {
+            font-size: $font-size-sans-serif-page-subheader-medium - 0.3rem;
         }
-    }
-    img {
-        transition:all 0.3s ease;
     }
 }
 
@@ -1377,17 +1409,11 @@ figure {
         margin-bottom: 5rem;
     }
     @media #{$large-up} {
-        margin-bottom: 7rem;
+        margin-bottom: 5rem;
     }
 
 }
 
-.fixed-sidebar {
-    position: fixed;
-    top: 0;
-    z-index: 0;
-    transition: 0.5s;
-}
 
 
 // styling of "More Albums" section
@@ -1438,8 +1464,8 @@ figure {
     }
     @media #{$medium-only} {
         @include block-grid(
-                $per-row: 2,
-                $spacing: 5rem,
+                $per-row: 3,
+                $spacing: 3rem,
                 $base-style: true
         );
     }

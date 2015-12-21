@@ -91,25 +91,26 @@
             <div id="fixed-wrapper" class="show-for-large-up">
                 <div class="large-3 large-offset-1 columns container-center">
                     <div id="sidebar-wrapper">
-                        <div>
-                            <h3 class="album-title">/{{ photoset_title|upper }}/</h3>
-                            <p class="album-description">{{ active_photoset.num_photos }} photos</p>
-                            <p>{{ photoset_description }}</p>
-                            {% if photosets %}
-                                {% for photoset in photosets %}
-                                    {% if photoset.title != active_photoset.title %}
-                                        <p ><a href="{% url 'sn_app:photoset' photoset.slug %}">{{ photoset.title|upper }}</a></p>
-                                    {% endif %}
-                                {% endfor %}
-                            {% endif %}
+                        <div id="sidebar-content">
+                            <h3 class="album-title-sidebar">/{{ photoset_title|upper }}/</h3>
+                            <p class="num-photos-sidebar">{{ active_photoset.num_photos }} photos</p>
+                            <div class="photoset-links-sidebar">
+                                {% if photosets %}
+                                    {% for photoset in photosets %}
+                                        {% if photoset.title != active_photoset.title %}
+                                            <p><a href="{% url 'sn_app:photoset' photoset.slug %}">{{ photoset.title|upper }}</a></p>
+                                        {% endif %}
+                                    {% endfor %}
+                                {% endif %}
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
             {% if photos %}
                 <div id="thumbs-wrapper">
-                    <div id="thumbs" class="small-12 large-7 end columns small_screen_figure">
-                        <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-2">
+                    <div id="thumbs" class="small-12 medium-11 medium-centered large-uncentered large-7 end columns small_screen_figure">
+                        <ul class="photoset-block-grid">
                             {% for photo in photos %}
                                 <li class="one-thumb text-center">
                                     <figure>
@@ -117,7 +118,7 @@
                                         </a>
                                         <figcaption class="image-captions">
                                             <div class="row">
-                                                <div class="small-12 small-centered columns">
+                                                <div class="small-12 small-centered columns text-left">
                                                     <h3 class="image-title-thumb"><a href="{% url 'sn_app:photo_home' active_photoset.slug %}#{{photo.publicID}}">{{ photo.current_order }}. {{ photo.title }}</a></h3>
                                                 </div>
                                             </div>
