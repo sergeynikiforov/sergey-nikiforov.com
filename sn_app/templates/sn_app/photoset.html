@@ -91,8 +91,10 @@
             <div id="fixed-wrapper" class="show-for-large-up">
                 <div class="large-3 large-offset-1 columns container-center">
                     <div id="sidebar-wrapper">
+                        <div>
                             <h3 class="album-title">/{{ photoset_title|upper }}/</h3>
                             <p class="album-description">{{ active_photoset.num_photos }} photos</p>
+                            <p>{{ photoset_description }}</p>
                             {% if photosets %}
                                 {% for photoset in photosets %}
                                     {% if photoset.title != active_photoset.title %}
@@ -100,17 +102,18 @@
                                     {% endif %}
                                 {% endfor %}
                             {% endif %}
+                        </div>
                     </div>
                 </div>
             </div>
             {% if photos %}
                 <div id="thumbs-wrapper">
-                    <div id="thumbs" class="small-12 large-7 columns small_screen_figure">
+                    <div id="thumbs" class="small-12 large-7 end columns small_screen_figure">
                         <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-2">
                             {% for photo in photos %}
                                 <li class="one-thumb text-center">
                                     <figure>
-                                        <a href="{% url 'sn_app:photo_home' active_photoset.slug %}#{{photo.publicID}}">{% pictureCloudinary photo.publicID sizes="(min-width: 1025px) 40vw, (min-width: 1025px) 50vw, 100vw" srcset="200w 400w 600w 800w 1000w 1200w 1400w 1600w 2000w 2400w 2800w 3200w" alt=photo.title %}
+                                        <a href="{% url 'sn_app:photo_home' active_photoset.slug %}#{{photo.publicID}}">{% pictureCloudinary photo.publicID sizes="(min-width: 1025px) 30vw, (min-width: 641px) 50vw, 100vw" srcset="200w 400w 600w 800w 1000w 1200w 1400w 1600w 2000w 2400w 2800w 3200w" alt=photo.title %}
                                         </a>
                                         <figcaption class="image-captions">
                                             <div class="row">
