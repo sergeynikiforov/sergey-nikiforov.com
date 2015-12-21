@@ -225,13 +225,20 @@ $tab-bar-top-margin: 1rem;
     background: transparent !important;
     //transition: 0.3s;
 }
+.fixed {
+    transition: 0.3s;
+}
 
 // white bg
 .white-bg {
+    background: $black !important;
+    transition: 0.3s;
+    /*
     .fixed, .top-bar, .top-bar-section ul, .top-bar-section ul li, .top-bar-section li:not(.has-form) a:not(.button), .top-bar-section .dropdown li a, .top-bar-section .dropdown li:not(.has-form) a:not(.button), .top-bar-section li:not(.has-form) a:not(.button):hover, .toggle-topbar, .tab-bar, .left .tab-bar-section, .right-off-canvas-toggle {
         background: gray !important;
         //transition: 0.3s;
     }
+    */
 }
 
 #navigation-bar {
@@ -1235,7 +1242,9 @@ figure {
 }
 
 #sidebar-wrapper {
-    @extend #album-wrapper;
+    padding-top: 5rem;
+    padding-bottom: 0rem;
+    @include anchor-transition-hover(0.3s);
 }
 
 .album-title {

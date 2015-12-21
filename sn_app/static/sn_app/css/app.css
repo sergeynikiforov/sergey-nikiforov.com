@@ -7177,8 +7177,20 @@ th.hide-for-touch {
 .fixed, .top-bar, .top-bar-section ul, .top-bar-section ul li, .top-bar-section li:not(.has-form) a:not(.button), .top-bar-section .dropdown li a, .top-bar-section .dropdown li:not(.has-form) a:not(.button), .top-bar-section li:not(.has-form) a:not(.button):hover, .toggle-topbar, .tab-bar, .left .tab-bar-section, .right-off-canvas-toggle {
   background: transparent !important; }
 
-.white-bg .fixed, .white-bg .top-bar, .white-bg .top-bar-section ul, .white-bg .top-bar-section ul li, .white-bg .top-bar-section li:not(.has-form) a:not(.button), .white-bg .top-bar-section .dropdown li a, .white-bg .top-bar-section .dropdown li:not(.has-form) a:not(.button), .white-bg .top-bar-section li:not(.has-form) a:not(.button):hover, .white-bg .toggle-topbar, .white-bg .tab-bar, .white-bg .left .tab-bar-section, .white-bg .right-off-canvas-toggle {
-  background: gray !important; }
+.fixed {
+  -webkit-transition: 0.3s;
+  transition: 0.3s; }
+
+.white-bg {
+  background: #211C19 !important;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  /*
+    .fixed, .top-bar, .top-bar-section ul, .top-bar-section ul li, .top-bar-section li:not(.has-form) a:not(.button), .top-bar-section .dropdown li a, .top-bar-section .dropdown li:not(.has-form) a:not(.button), .top-bar-section li:not(.has-form) a:not(.button):hover, .toggle-topbar, .tab-bar, .left .tab-bar-section, .right-off-canvas-toggle {
+        background: gray !important;
+        //transition: 0.3s;
+    }
+    */ }
 
 @media only screen and (min-width: 40.0625em) and (max-width: 64em) {
   #navigation-bar {
@@ -8171,9 +8183,16 @@ figure {
     .image-title-thumb {
       font-size: 0.9rem; } }
 
-#album-wrapper, #sidebar-wrapper {
+#album-wrapper {
   padding: 5rem 0rem; }
-  #album-wrapper a, #sidebar-wrapper a {
+  #album-wrapper a {
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease; }
+
+#sidebar-wrapper {
+  padding-top: 5rem;
+  padding-bottom: 0rem; }
+  #sidebar-wrapper a {
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease; }
 

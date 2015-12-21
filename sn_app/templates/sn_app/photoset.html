@@ -30,7 +30,7 @@
         <section class="large_screen_figure">
             <div class="bg75-image-wrapper">
                 <div class="image-wrap">
-                    <div id="change-bg-on-hover" class="photoset-image" style="background-image: url('{{ active_photoset.cover_photo.url }}');">
+                    <div id="change-bg" class="photoset-image" style="background-image: url('{{ active_photoset.cover_photo.url }}');">
                         <div class="row">
                             <div class="small-12 medium-10 small-centered columns page_header_wrapper_large">
                                 <nav id="hero-nav" role="navigation">
@@ -75,38 +75,37 @@
             </div>
         </div>
     </div>
-    <div class="toggle-color">
-        <div id="album-wrapper" class="row">
-            <div class="small-12 medium-9 small-centered columns container-center">
-                {% if photoset_description %}
-                    <div class="content-center">
-                        <h3 class="album-title">{{ photoset_title }}</h3>
-                        <p class="album-description">{{ photoset_description }}</p>
-                        <p class="image-order"><a href="#thumbs-wrapper">SEE THE PHOTOS</a></p>
-                    </div>
-                {% endif %}
-            </div>
+    <div id="album-wrapper" class="row">
+        <div class="small-12 medium-9 small-centered columns container-center">
+            {% if photoset_description %}
+                <div class="content-center">
+                    <h3 class="album-title">{{ photoset_title }}</h3>
+                    <p class="album-description">{{ photoset_description }}</p>
+                    <p class="image-order"><a href="#thumbs-wrapper">SEE THE PHOTOS</a></p>
+                </div>
+            {% endif %}
         </div>
     </div>
     <div id="make-fixed">
         <div class="row">
             <div id="fixed-wrapper" class="show-for-large-up">
-                <div class="large-3 columns container-center">
-                    <div id="sidebar-wrapper" class="text-center">
-                        <h3 class="album-title">/{{ photoset_title|upper }}/</h3>
-                        {% if photoset_description %}
-                            <p class="album-description text-center">{{ photoset_description }}</p>
-                        {% endif %}
-                        <p class="image-title-thumb">SOUTH-EAST ASIA</p>
-                        <p class="image-title-thumb"><a>MOSCOW</a></p>
-                        <p class="image-title-thumb"><a>PARIS</a></p>
-                        <p class="image-title-thumb"><a>NEPAL</a></p>
+                <div class="large-3 large-offset-1 columns container-center">
+                    <div id="sidebar-wrapper">
+                            <h3 class="album-title">/{{ photoset_title|upper }}/</h3>
+                            <p class="album-description">{{ active_photoset.num_photos }} photos</p>
+                            {% if photosets %}
+                                {% for photoset in photosets %}
+                                    {% if photoset.title != active_photoset.title %}
+                                        <p ><a href="{% url 'sn_app:photoset' photoset.slug %}">{{ photoset.title|upper }}</a></p>
+                                    {% endif %}
+                                {% endfor %}
+                            {% endif %}
                     </div>
                 </div>
             </div>
             {% if photos %}
                 <div id="thumbs-wrapper">
-                    <div id="thumbs" class="small-12 large-9 end columns small_screen_figure">
+                    <div id="thumbs" class="small-12 large-7 columns small_screen_figure">
                         <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-2">
                             {% for photo in photos %}
                                 <li class="one-thumb text-center">
