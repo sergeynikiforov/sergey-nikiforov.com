@@ -346,11 +346,13 @@ StickySidebar.stickySidebar = function() {
 
 // set up top bar for sticky sidebar, depending on its position and viewport width
 StickySidebar.setUpTopBar = function() {
-    StickySidebar.topbarBottom = $('#top-bar-wrapper > div').offset().top + $('#top-bar-wrapper > div').outerHeight();
-    StickySidebar.topbarMarker = $('#change-bg').offset().top + $('#change-bg').outerHeight();
+
 
     // set a non-transparent bg for large screens, otherwise - remove whatever color it was
     if (window.innerWidth > 1024) {
+
+        StickySidebar.topbarBottom = $('#top-bar-wrapper > div').offset().top + $('#top-bar-wrapper > div').outerHeight();
+        StickySidebar.topbarMarker = $('#change-bg').offset().top + $('#change-bg').outerHeight();
 
         // if it's lower than the mark - set new bg, else - remove color
         if (StickySidebar.topbarBottom >= StickySidebar.topbarMarker) {
@@ -456,5 +458,10 @@ $(document).ready(function() {
             }, 500);
         },
         offset: -5
+    });
+
+    // refresh all waypoints using jquery mobile event
+    $(window).on("orientationchange", function(event) {
+        Waypoint.refreshAll();
     });
 });

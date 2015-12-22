@@ -6056,35 +6056,35 @@ blockquote p {
   -webkit-backface-visibility: hidden;
   background: #FFFFFF;
   color: #FFFFFF;
-  height: 2.8125rem;
-  line-height: 2.8125rem;
+  height: 2rem;
+  line-height: 2rem;
   position: relative; }
   .tab-bar h1, .tab-bar h2, .tab-bar h3, .tab-bar h4, .tab-bar h5, .tab-bar h6 {
     color: #211C19;
     font-weight: bold;
-    line-height: 2.8125rem;
+    line-height: 2rem;
     margin: 0; }
   .tab-bar h1, .tab-bar h2, .tab-bar h3, .tab-bar h4 {
     font-size: 1.125rem; }
 
 .left-small {
-  height: 2.8125rem;
+  height: 2rem;
   position: absolute;
   top: 0;
-  width: 2.8125rem;
+  width: 2rem;
   border-right: none;
   left: 0; }
 
 .right-small {
-  height: 2.8125rem;
+  height: 2rem;
   position: absolute;
   top: 0;
-  width: 2.8125rem;
+  width: 2rem;
   border-left: none;
   right: 0; }
 
 .tab-bar-section {
-  height: 2.8125rem;
+  height: 2rem;
   padding: 0 0.625rem;
   position: absolute;
   text-align: center;
@@ -6095,24 +6095,24 @@ blockquote p {
     text-align: right; }
   .tab-bar-section.left {
     left: 0;
-    right: 2.8125rem; }
+    right: 2rem; }
   .tab-bar-section.right {
-    left: 2.8125rem;
+    left: 2rem;
     right: 0; }
   .tab-bar-section.middle {
-    left: 2.8125rem;
-    right: 2.8125rem; }
+    left: 2rem;
+    right: 2rem; }
 
 .tab-bar .menu-icon {
   color: #211C19;
   display: block;
-  height: 2.8125rem;
+  height: 2rem;
   padding: 0;
   position: relative;
   text-indent: 2.1875rem;
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
-  width: 2.8125rem; }
+  width: 2rem; }
   .tab-bar .menu-icon span::after {
     content: "";
     display: block;
@@ -6120,7 +6120,7 @@ blockquote p {
     position: absolute;
     top: 50%;
     margin-top: -0.4375rem;
-    left: 0.96875rem;
+    left: 0.5625rem;
     box-shadow: 0 0 0 1px #211C19, 0 4px 0 1px #211C19, 0 8px 0 1px #211C19;
     width: 0.875rem; }
   .tab-bar .menu-icon span:hover:after {
@@ -7284,7 +7284,7 @@ th.hide-for-touch {
 .tab-bar .tab-bar-section {
   padding: 0px; }
   .tab-bar .tab-bar-section h2 {
-    padding: 1px 0px 0px 0px; }
+    padding: 8px 0px 0px 0px; }
 
 .tab-bar .title {
   margin: 0px;
@@ -7331,25 +7331,25 @@ th.hide-for-touch {
 #home-nav {
   margin-top: 2rem; }
 
-@media only screen and (min-width: 40.0625em) and (max-width: 64em) {
-  #hero-nav {
-    margin-top: 2.5rem; } }
-
-@media only screen and (min-width: 64.0625em) {
-  #hero-nav {
-    margin-top: 3rem; } }
-
-#hero-nav p {
-  font-weight: 300; }
-  #hero-nav p a {
-    -webkit-transition: all 0.3s ease;
-    transition: all 0.3s ease; }
+#hero-nav {
+  opacity: 0.0; }
   @media only screen and (min-width: 40.0625em) and (max-width: 64em) {
-    #hero-nav p {
-      font-size: 1.1rem; } }
+    #hero-nav {
+      margin-top: 3.3rem; } }
   @media only screen and (min-width: 64.0625em) {
-    #hero-nav p {
-      font-size: 1.3rem; } }
+    #hero-nav {
+      margin-top: 3.8rem; } }
+  #hero-nav p {
+    font-weight: 300; }
+    #hero-nav p a {
+      -webkit-transition: all 0.3s ease;
+      transition: all 0.3s ease; }
+    @media only screen and (min-width: 40.0625em) and (max-width: 64em) {
+      #hero-nav p {
+        font-size: 1.1rem; } }
+    @media only screen and (min-width: 64.0625em) {
+      #hero-nav p {
+        font-size: 1.3rem; } }
 
 @media only screen and (min-width: 40.0625em) and (max-width: 64em) {
   #hero-nav-no-header {
@@ -7378,9 +7378,6 @@ th.hide-for-touch {
 .bg75-image-wrapper {
   height: 75vh;
   width: 100%; }
-  @media only screen and (min-width: 40.0625em) and (max-width: 64em) {
-    .bg75-image-wrapper {
-      padding: 2rem 0rem 6rem 0rem; } }
 
 .photoset-cover-wrapper {
   height: 40vh;
@@ -7529,7 +7526,7 @@ th.hide-for-touch {
       top: 0;
       left: 0;
       right: 0;
-      margin-top: 0.5rem;
+      margin-top: 0.2rem;
       margin-left: 1.125rem;
       margin-right: 1.125rem; }
   .contact {
@@ -7717,6 +7714,7 @@ figure {
     font-size: 2rem;
     font-family: "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
     font-weight: bold;
+    line-height: 2rem;
     margin-top: -0.5rem;
     margin-bottom: 1rem; }
     .page_header a {
@@ -7727,7 +7725,8 @@ figure {
     font-size: 2rem;
     font-family: "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
     font-weight: bold;
-    margin-top: -0.9rem;
+    line-height: 2rem;
+    margin-top: -0.7rem;
     margin-bottom: 0rem; }
     .tab-bar .page_header.black-color {
       color: #211C19; }
@@ -7744,6 +7743,7 @@ figure {
     font-size: 2.5rem;
     font-family: "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
     font-weight: bold;
+    line-height: 2.5rem;
     margin-top: 0rem;
     margin-bottom: 0rem; }
     .page_header a {
@@ -7762,6 +7762,7 @@ figure {
     font-size: 2.9rem;
     font-family: "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
     font-weight: bold;
+    line-height: 2.9rem;
     margin-top: 0rem;
     margin-bottom: 0rem; }
     .page_header a {
@@ -8636,6 +8637,98 @@ figure {
   transition: all 0.3s ease; }
   .fade-in:hover {
     opacity: 0.9; }
+
+body {
+  overflow: hidden; }
+
+/* Preloader */
+#preloader {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: 1000; }
+
+@media only screen and (max-width: 40em) {
+  #mobile-preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    z-index: 1000;
+    /*
+        .cssload-container {
+            width: 100%;
+            height: 106px;
+            text-align: center;
+        }
+        .cssload-tube-tunnel {
+            width: 106px;
+            height: 106px;
+            margin: 0 auto;
+            border: 9px solid;
+            border-radius: 50%;
+            border-color: rgb(0,0,0);
+            animation: cssload-scale 1305ms infinite linear;
+        }
+        @keyframes cssload-scale {
+            0% { transform: scale(0); transform: scale(0); }
+            90% { transform: scale(0.7); transform: scale(0.7); }
+            100% { transform: scale(1); transform: scale(1); }
+        }
+        .cssload-loader {
+                width: 106px;
+                height: 106px;
+                border-radius: 50%;
+                margin: 6em;
+                display: inline-block;
+                position: relative;
+                vertical-align: middle;
+            background:rgba(33,28,25,0.94);
+        }
+        .cssload-loader,
+        .cssload-loader:before,
+        .cssload-loader:after {
+                animation: 2.2s infinite ease-in-out;
+        }
+        .cssload-loader:before,
+        .cssload-loader:after {
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                position: absolute;
+                top: 0;
+                left: 0;
+        }
+        .cssload-loader { animation-name: cssload-loader; }
+        @keyframes cssload-loader {
+                from { transform: scale(0); opacity: 1; }
+                to   { transform: scale(1); opacity: 0; }
+        }
+        #status {
+            //width:100vw;
+            //height:100vh;
+            position:absolute;
+            left:50%;
+            top:50%;
+            margin:-53px 0 0 -53px;
+        }
+        */ } }
+
+.page-onload {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-transform: translate(0, -10px);
+      -ms-transform: translate(0, -10px);
+          transform: translate(0, -10px); }
+
+#top-bar-wrapper {
+  opacity: 0.0; }
 
 html, body {
   -webkit-text-size-adjust: 100%; }

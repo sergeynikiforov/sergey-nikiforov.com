@@ -9,8 +9,40 @@
         <script>try{Typekit.load({ async: false });}catch(e){}</script>
         <script src="{% static 'modernizr/modernizr.js' %}"></script>
         <script src="{% static 'sn_app/js/picturefill.js' %}"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script type="text/javascript">
+            //<![CDATA[
+                $(window).load(function() {
+                    $('#preloader').delay(150).animate({opacity: 0.0}, 300, function() {
+                        if ($('#top-bar-wrapper').length > 0) {
+                            $('#preloader').hide(100);
+                            $('#top-bar-wrapper').animate({opacity: 1.0}, 100, function() {
+                                $('#hero-nav').animate({opacity: 1.0}, 150);
+                                $('#hero-nav').addClass('page-onload');
+                            });
+                        } else {
+                            $('#preloader').hide(100);
+                            $('#top-bar-wrapper').animate({opacity: 1.0}, 100);
+                            $('#hero-nav').animate({opacity: 1.0}, 150);
+                            $('#hero-nav').addClass('page-onload');
+                        }
+                    });
+                    $('#mobile-preloader').delay(400).fadeOut('slow');
+                    $('body').delay(750).css({'overflow':'visible'});
+                });
+            //]]>
+        </script>
     </head>
     <body>
+        <div id="mobile-preloader">
+            <div id="status" class="show-for-small-only">
+                <div class="wrapper">
+                    <div class="cssload-loader">
+                        &nbsp;
+                    </div>
+                </div>
+            </div>
+        </div>
         {% block header %}
             {% if person %}
             <div id="page-top"></div>
@@ -24,7 +56,6 @@
                                         <li class="name">
                                             <h1>{% block top_bar_title %}<a id="top-bar-header" href="{% url 'sn_app:landing' %}">{{ person.first_name|upper }} {{ person.last_name|upper }}</a>{% endblock top_bar_title %}</h1>
                                         </li>
-                                        <!--<li class="toggle-topbar"><a href="#"><span>Menu</span></a></li>-->
                                     </ul>
                                     {% block top_bar_section %}
                                         <section  class="top-bar-section show-for-large-up">

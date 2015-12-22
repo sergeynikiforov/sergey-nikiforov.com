@@ -372,7 +372,7 @@ $tab-bar-top-margin: 1rem;
     .tab-bar-section {
         padding: 0px;
         h2 {
-            padding: 1px 0px 0px 0px;
+            padding: 8px 0px 0px 0px;
         }
     }
     .title {
@@ -447,14 +447,14 @@ $tab-bar-top-margin: 1rem;
 }
 
 #hero-nav {
-
+    opacity: 0.0;
     @media #{$medium-only} {
-        margin-top: $top-bar-top-margin-medium + 1rem;
+        margin-top: $top-bar-top-margin-medium + 1.8rem;
         //margin-left: 0.9rem;
         //margin-right: 0.9rem;
     }
     @media #{$large-up} {
-        margin-top: $top-bar-top-margin-large + 1rem;
+        margin-top: $top-bar-top-margin-large + 1.8rem;
         //margin-left: 0.9rem;
         //margin-right: 0.9rem;
     }
@@ -510,7 +510,7 @@ $tab-bar-top-margin: 1rem;
         //padding: 1.5rem;
     }
     @media #{$medium-only} {
-        padding: 2rem 0rem 6rem 0rem;
+        //padding: 2rem 0rem 6rem 0rem;
     }
 }
 
@@ -703,7 +703,7 @@ $tab-bar-top-margin: 1rem;
             top: 0;
             left: 0;
             right: 0;
-            margin-top: 0.5rem;
+            margin-top: 0.2rem;
             margin-left: rem-calc(18);
             margin-right: rem-calc(18);
         }
@@ -937,7 +937,7 @@ figure {
         font-size: $font-size-sans-serif-page-header-small;
         font-family: $font-family-sans-serif;
         font-weight: $font-weight-bold;
-        //line-height: 0.9;
+        line-height: $font-size-sans-serif-page-header-small;
         margin-top: -0.5rem;
         margin-bottom: 1rem;
     }
@@ -946,8 +946,8 @@ figure {
         font-size: $font-size-sans-serif-page-header-small;
         font-family: $font-family-sans-serif;
         font-weight: $font-weight-bold;
-        //line-height: 0.9;
-        margin-top: -0.9rem;
+        line-height: $font-size-sans-serif-page-header-small;
+        margin-top: -0.7rem;
         margin-bottom: 0rem;
         &.black-color {
             color: $black;
@@ -969,7 +969,7 @@ figure {
         font-size: $font-size-sans-serif-page-header-medium;
         font-family: $font-family-sans-serif;
         font-weight: $font-weight-bold;
-        //line-height: 1;
+        line-height: $font-size-sans-serif-page-header-medium;
         margin-top: 0rem;
         margin-bottom: 0rem;
     }
@@ -989,7 +989,7 @@ figure {
         font-size: $font-size-sans-serif-page-header-large;
         font-family: $font-family-sans-serif;
         font-weight: $font-weight-bold;
-        //line-height: 1;
+        line-height: $font-size-sans-serif-page-header-large;
         margin-top: 0rem;
         margin-bottom: 0rem;
     }
@@ -1568,7 +1568,7 @@ figure {
 // ANIMATIONS
 //-----------------------------------------------------
 
-// 1
+// link on hover animation
 .cl-effect-1 a::before,
 .cl-effect-1 a::after {
     display: inline-block;
@@ -1601,6 +1601,102 @@ figure {
     &:hover {
         opacity: 0.9;
     }
+}
+
+body {
+    overflow: hidden;
+}
+
+/* Preloader */
+
+#preloader {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 1000;
+}
+
+#mobile-preloader {
+    @media #{$small-only} {
+        position:fixed;
+        top: 0;
+        left:0;
+        right: 0;
+        bottom: 0;
+        background-color: #fff;
+        z-index: 1000;
+        /*
+        .cssload-container {
+            width: 100%;
+            height: 106px;
+            text-align: center;
+        }
+        .cssload-tube-tunnel {
+            width: 106px;
+            height: 106px;
+            margin: 0 auto;
+            border: 9px solid;
+            border-radius: 50%;
+            border-color: rgb(0,0,0);
+            animation: cssload-scale 1305ms infinite linear;
+        }
+        @keyframes cssload-scale {
+            0% { transform: scale(0); transform: scale(0); }
+            90% { transform: scale(0.7); transform: scale(0.7); }
+            100% { transform: scale(1); transform: scale(1); }
+        }
+        .cssload-loader {
+                width: 106px;
+                height: 106px;
+                border-radius: 50%;
+                margin: 6em;
+                display: inline-block;
+                position: relative;
+                vertical-align: middle;
+            background:rgba(33,28,25,0.94);
+        }
+        .cssload-loader,
+        .cssload-loader:before,
+        .cssload-loader:after {
+                animation: 2.2s infinite ease-in-out;
+        }
+        .cssload-loader:before,
+        .cssload-loader:after {
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                position: absolute;
+                top: 0;
+                left: 0;
+        }
+        .cssload-loader { animation-name: cssload-loader; }
+        @keyframes cssload-loader {
+                from { transform: scale(0); opacity: 1; }
+                to   { transform: scale(1); opacity: 0; }
+        }
+        #status {
+            //width:100vw;
+            //height:100vh;
+            position:absolute;
+            left:50%;
+            top:50%;
+            margin:-53px 0 0 -53px;
+        }
+        */
+    }
+}
+
+.page-onload {
+    transition: 0.5s;
+    transform: translate(0, -10px);
+}
+
+#top-bar-wrapper {
+    opacity: 0.0;
 }
 
 // END AINMATONS

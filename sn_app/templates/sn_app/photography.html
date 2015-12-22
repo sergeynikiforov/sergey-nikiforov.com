@@ -9,11 +9,13 @@
 {% endblock off_canvas_tab_bar_page_header %}
 
 {% block off_canvas_tab_bar_page_links %}
+    <!--
     {% if photosets %}
         {% for photoset in photosets %}
             <p class="landing"><a href="#{{ photoset.slug }}">{{ photoset.title|upper }}</a></p>
         {% endfor %}
     {% endif %}
+    -->
 {% endblock off_canvas_tab_bar_page_links %}
 
 {% block off_canvas_tab_bar_image %}
@@ -24,13 +26,14 @@
 
 
 {% block body %}
-    <div id="page-top" class="show-for-large-up">
-        <div class="large_screen_figure">
+    <div class="show-for-medium-up">
+        <div class="medium_screen_figure large_screen_figure">
             <div class="bg75-image-wrapper">
                 <div class="image-wrap">
                     <div class="photography-image">
+                        <div id="preloader"></div>
                         <div class="row">
-                            <div class="small-12 medium-10 small-centered columns page_header_wrapper_large">
+                            <div class="medium-10 medium-centered columns ">
                                 <nav id="hero-nav" role="navigation">
                                     <h2 class="page_header">/PHOTOGRAPHY/</h2>
                                     {% if photosets %}
@@ -46,6 +49,7 @@
             </div>
         </div>
     </div>
+    <!--
     <div class="row show-for-medium-only">
         <div class="small-12 columns small_screen_figure medium_screen_figure">
             <div class="overlay_container">
@@ -69,6 +73,7 @@
             </div>
         </div>
     </div>
+    -->
     {% if photosets %}
         {% for photoset in photosets %}
         <section>
