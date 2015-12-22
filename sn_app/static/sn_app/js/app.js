@@ -13070,25 +13070,6 @@ StickySidebar.setUpStickySidebar = function() {
 
 $(document).ready(function() {
 
-    // when ready, try to set up sticky sidebar
-    StickySidebar.setUpStickySidebar();
-
-    // if sidebar is set up - listen for scroll events
-    $(document).on('scroll', function() {
-        if (StickySidebar.isSetUp) {
-            StickySidebar.setUpTopBar();
-            StickySidebar.setStickySidebarColumnHeight();
-            StickySidebar.stickySidebar();
-        };
-    });
-
-    // when resized - set up again
-    $(window).on('resize', function() {
-        StickySidebar.setUpStickySidebar();
-        StickySidebar.setUpTopBar();
-    });
-
-
     // toggle top-bar font color whatever it is
     MyWaypoints.waypointsToggleFontColor = $('.toggle-color').waypoint({
         handler: function(direction) {
@@ -13137,6 +13118,25 @@ $(document).ready(function() {
 
     // refresh all waypoints using jquery mobile event
     $(window).on("orientationchange", function(event) {
+        Waypoint.refreshAll();
+    });
+
+    // when ready, try to set up sticky sidebar
+    StickySidebar.setUpStickySidebar();
+
+    // if sidebar is set up - listen for scroll events
+    $(document).on('scroll', function() {
+        if (StickySidebar.isSetUp) {
+            StickySidebar.setUpTopBar();
+            StickySidebar.setStickySidebarColumnHeight();
+            StickySidebar.stickySidebar();
+        };
+    });
+
+    // when resized - set up again
+    $(window).on('resize', function() {
+        StickySidebar.setUpStickySidebar();
+        StickySidebar.setUpTopBar();
         Waypoint.refreshAll();
     });
 });

@@ -7100,18 +7100,36 @@ th.hide-for-touch {
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease; }
 
-@media only screen and (min-width: 40.0625em) {
-  #footer-top-section {
-    border-top: 2px solid #211C19;
-    margin-top: 3rem;
-    padding-top: 2rem; } }
+#footer-wrapper {
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  color: #FFFFFF;
+  margin-top: 2rem;
+  padding-top: 1rem; }
+  @media only screen and (min-width: 40.0625em) {
+    #footer-wrapper {
+      background-image: url("../images/footer.jpg");
+      background-position: 50% 10%; } }
+  @media only screen and (max-width: 40em) {
+    #footer-wrapper {
+      background-image: url("../images/footer-mobile.jpg");
+      background-position: 10% 50%; } }
 
-@media only screen and (max-width: 40em) {
-  #footer-top-section {
-    margin-top: 2rem; } }
+#footer-top-section {
+  color: #FFFFFF; }
+  @media only screen and (min-width: 40.0625em) {
+    #footer-top-section {
+      border-top: 0px solid #FFFFFF;
+      margin-top: 3rem;
+      padding-top: 2rem; } }
+  @media only screen and (max-width: 40em) {
+    #footer-top-section {
+      margin-top: 2rem; } }
 
 #footer-bottom-section {
-  border-top: 2px solid #211C19;
+  border-top: 0px solid #FFFFFF;
   margin-top: 2rem;
   margin-bottom: 5rem;
   padding-top: 2rem;
@@ -7120,7 +7138,7 @@ th.hide-for-touch {
   @media only screen and (max-width: 40em) {
     #footer-bottom-section {
       font-size: 0.9rem;
-      border-top: 0px solid #211C19;
+      border-top: 0px solid #FFFFFF;
       margin-top: 0rem;
       margin-bottom: 2rem; } }
   @media only screen and (min-width: 40.0625em) and (max-width: 64em) {
@@ -7134,12 +7152,20 @@ th.hide-for-touch {
     #footer-bottom-section .page-top-link a {
       -webkit-transition: all 0.3s ease;
       transition: all 0.3s ease; }
+    #footer-bottom-section .page-top-link a {
+      color: #FFFFFF; }
+      #footer-bottom-section .page-top-link a:hover {
+        color: #C8280A; }
   #footer-bottom-section .copyright p {
     font-weight: 300;
     margin-bottom: 0rem; }
     #footer-bottom-section .copyright p a {
       -webkit-transition: all 0.3s ease;
       transition: all 0.3s ease; }
+    #footer-bottom-section .copyright p a {
+      color: #FFFFFF; }
+      #footer-bottom-section .copyright p a:hover {
+        color: #C8280A; }
     @media only screen and (max-width: 40em) {
       #footer-bottom-section .copyright p {
         font-size: 0.9rem; } }
@@ -7151,6 +7177,8 @@ th.hide-for-touch {
         font-size: 1rem; } }
 
 .footer-column {
+  padding-left: 0.7rem;
+  padding-right: 0.7rem;
   font-family: "nimbus-sans", Helvetica, Roboto, Arial, sans-serif;
   font-weight: 300;
   font-style: italic; }
@@ -7160,10 +7188,14 @@ th.hide-for-touch {
     margin-bottom: 0.6rem; }
     @media only screen and (max-width: 40em) {
       .footer-column .footer-column-title {
-        border-top: 1px solid #211C19;
+        border-top: 0px solid #FFFFFF;
         padding-top: 0.5rem; } }
   .footer-column ul li {
-    margin-bottom: 0.3rem; }
+    margin-bottom: 0.2rem; }
+    .footer-column ul li a {
+      color: #FFFFFF; }
+      .footer-column ul li a:hover {
+        color: #C8280A; }
     @media only screen and (max-width: 40em) {
       .footer-column ul li {
         font-size: 0.9rem; } }

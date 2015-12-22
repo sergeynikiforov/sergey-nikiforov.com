@@ -133,10 +133,30 @@ $tab-bar-top-margin: 1rem;
     }
 }
 
+#footer-wrapper {
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    color: $white;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    @media #{$medium-up} {
+        background-image: url("../images/footer.jpg");
+        background-position: 50% 10%;
+    }
+    @media #{$small-only} {
+        background-image: url("../images/footer-mobile.jpg");
+        background-position: 10% 50%;
+    }
+}
+
 // main footer section
 #footer-top-section {
+    color: $white;
     @media #{$medium-up} {
-        border-top: 2px solid $black;
+        border-top: 0px solid $white;
         margin-top: 3rem;
         padding-top: 2rem;
     }
@@ -146,7 +166,7 @@ $tab-bar-top-margin: 1rem;
 }
 
 #footer-bottom-section {
-    border-top: 2px solid $black;
+    border-top: 0px solid $white;
     margin-top: 2rem;
     margin-bottom: 5rem;
     padding-top: 2rem;
@@ -154,7 +174,7 @@ $tab-bar-top-margin: 1rem;
     font-weight: $font-weight-thin;
     @media #{$small-only} {
         font-size: $font-size-sans-serif-nav-small;
-        border-top: 0px solid $black;
+        border-top: 0px solid $white;
         margin-top: 0rem;
         margin-bottom: 2rem;
     }
@@ -167,10 +187,22 @@ $tab-bar-top-margin: 1rem;
     .page-top-link {
         font-style: italic;
         @include anchor-transition-hover(0.3s);
+        a {
+            color: $white;
+            &:hover {
+                color: $red;
+            }
+        }
     }
     .copyright p {
         @include anchor-transition-hover(0.3s);
         font-weight: $font-weight-thin;
+        a {
+            color: $white;
+            &:hover {
+                color: $red;
+            }
+        }
         margin-bottom: 0rem;
         @media #{$small-only} {
             font-size: $font-size-sans-serif-nav-small;
@@ -186,12 +218,14 @@ $tab-bar-top-margin: 1rem;
 
 // column within footer-top-section
 .footer-column {
+    padding-left: 0.7rem;
+    padding-right: 0.7rem;
     .footer-column-title {
         font-weight: $font-weight-bold;
         font-style: normal;
         margin-bottom: 0.6rem;
         @media #{$small-only} {
-            border-top: 1px solid $black;
+            border-top: 0px solid $white;
             padding-top: 0.5rem;
         }
     }
@@ -199,7 +233,13 @@ $tab-bar-top-margin: 1rem;
     font-weight: $font-weight-thin;
     font-style: italic;
     ul li {
-        margin-bottom: 0.3rem;
+        a {
+            color: $white;
+            &:hover {
+                color: $red;
+            }
+        }
+        margin-bottom: 0.2rem;
         @media #{$small-only} {
             font-size: $font-size-sans-serif-nav-small;
         }
@@ -925,10 +965,6 @@ figure {
 
 
 // control sizes/position of headers/subheaders for the breakpoints
-
-.page_header_wrapper_large {
-    //padding: 0px;
-}
 
 @media #{$small-only} {
     .page_header {

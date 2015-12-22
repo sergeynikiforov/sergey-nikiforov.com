@@ -33,7 +33,7 @@
                         <div class="row">
                             <div class="small-12 medium-10 small-centered columns show-for-medium-up">
                                 <nav id="hero-nav" role="navigation">
-                                    <h2 class="page_header">/{{ person.first_name|upper }} {{ person.last_name|upper }}</h2>
+                                    <h2 class="page_header">/{{ person.first_name|upper }} {{ person.last_name|upper }}/</h2>
                                     <p class="landing"><a href="{% url 'sn_app:about' %}">ABOUT</a></p>
                                     <p class="landing"><a href="{% url 'sn_app:resume' %}">RESUME</a></p>
                                     <p class="landing"><a href="{% url 'sn_app:photography' %}">PHOTOGRAPHY</a></p>
@@ -48,8 +48,9 @@
     </div>
 {% endblock body %}
 {% block whats_next %}
-    <div id="whats-next" class="row show-for-small-only">
+    <div id="whats-next" class="row">
         <div class="small-12 medium-10 small-centered columns">
+            <h2 class="page_subheader">{{ person.first_name }} {{ person.last_name }}</h2>
             <ul class="no-bullet">
                 <li><a href="{% url 'sn_app:about' %}">ABOUT</a></li>
                 <li><a href="{% url 'sn_app:resume' %}">RESUME</a></li>
