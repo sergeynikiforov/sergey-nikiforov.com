@@ -210,25 +210,29 @@ $(document).ready(function() {
 
 
     // on move down make top-bar font color black, on up - white
-    MyWaypoints.waypointsFontColorBlack = $('.toggle-color-black').waypoint({
+    MyWaypoints.waypointsFontColorBlack = $('.medium-toggle-color-black').waypoint({
         handler: function(direction) {
-            if (direction == 'down') {
-                MyWaypoints.turnTopBarFontColorBlack();
-            } else {
-                MyWaypoints.turnTopBarFontColorWhite();
+            if (window.innerWidth <= 1024 && window.innerWidth > 640) {
+                if (direction == 'down') {
+                    MyWaypoints.turnTopBarFontColorBlack();
+                } else {
+                    MyWaypoints.turnTopBarFontColorWhite();
+                };
             };
         },
         offset: 40
     });
 
     // on down - white, on up - black
-    MyWaypoints.waypointsFontColorWhite = $('.toggle-color-white').waypoint({
+    MyWaypoints.waypointsFontColorWhite = $('.medium-toggle-color-white').waypoint({
         handler: function(direction) {
-            if (direction == 'down') {
-                MyWaypoints.turnTopBarFontColorWhite();
-            } else {
-                MyWaypoints.turnTopBarFontColorBlack();
-            };
+            if (window.innerWidth <= 1024 && window.innerWidth > 640) {
+                if (direction == 'down') {
+                    MyWaypoints.turnTopBarFontColorWhite();
+                } else {
+                    MyWaypoints.turnTopBarFontColorBlack();
+                };
+            }
         },
         offset: 40
     });

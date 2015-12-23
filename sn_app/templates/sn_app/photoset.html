@@ -167,7 +167,7 @@
         </div>
     </div>
     -->
-    <div id="album-wrapper" class="row">
+    <div id="album-wrapper" class="row medium-toggle-color-black">
         <div class="small-12 medium-9 small-centered columns container-center">
             {% if photoset_description %}
                 <div class="content-center">
@@ -201,16 +201,16 @@
             </div>
             {% if photos %}
                 <div id="thumbs-wrapper">
-                    <div id="thumbs" class="small-12 medium-11 medium-centered large-uncentered large-7 end columns small_screen_figure">
+                    <div id="thumbs" class="small-12 medium-12 medium-centered large-uncentered large-7 end columns small_screen_figure medium_screen_figure">
                         <ul class="photoset-block-grid">
                             {% for photo in photos %}
-                                <li class="one-thumb text-center">
+                                <li class="one-thumb text-center medium-toggle-color-white">
                                     <figure>
-                                        <a href="{% url 'sn_app:photo_home' active_photoset.slug %}#{{photo.publicID}}">{% pictureCloudinary photo.publicID sizes="(min-width: 1025px) 30vw, (min-width: 641px) 50vw, 100vw" srcset="200w 400w 600w 800w 1000w 1200w 1400w 1600w 2000w 2400w 2800w 3200w" alt=photo.title %}
+                                        <a href="{% url 'sn_app:photo_home' active_photoset.slug %}#{{photo.publicID}}">{% pictureCloudinary photo.publicID sizes="(min-width: 1025px) 30vw, (min-width: 641px) 100vw, 100vw" srcset="200w 400w 600w 800w 1000w 1200w 1400w 1600w 2000w 2400w 2800w 3200w" alt=photo.title %}
                                         </a>
-                                        <figcaption class="image-captions">
+                                        <figcaption class="image-captions medium-toggle-color-black">
                                             <div class="row">
-                                                <div class="small-12 small-centered columns text-left">
+                                                <div class="small-12 medium-10 large-12 small-centered columns text-left">
                                                     <h3 class="image-title-thumb"><a href="{% url 'sn_app:photo_home' active_photoset.slug %}#{{photo.publicID}}">{{ photo.current_order }}. {{ photo.title }}</a></h3>
                                                 </div>
                                             </div>

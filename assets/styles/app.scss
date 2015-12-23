@@ -1090,7 +1090,7 @@ figure {
     }
     @media #{$medium-only} {
         @include block-grid(
-                $per-row: 2,
+                $per-row: 1,
                 $spacing: 2rem,
                 $base-style: true
         );
@@ -1359,7 +1359,7 @@ figure {
         margin-top: 0.5rem;
     }
     @media #{$medium-only} {
-        margin-left: 0.7rem;
+        margin-left: rem-calc(18);
         margin-top: 0.3rem;
     }
     @media #{$large-up} {
