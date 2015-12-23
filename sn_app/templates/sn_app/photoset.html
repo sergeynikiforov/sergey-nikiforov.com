@@ -25,6 +25,95 @@
     </figure>
 {% endblock off_canvas_tab_bar_image %}
 
+{% block json_ld %}
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "CreativeWork",
+        "accountablePerson": {
+            "@type": "Person",
+            "name": "{{person.first_name }} {{ person.last_name }}",
+            "sameAs": "http://www.sergeynikiforov.com"
+        },
+        "author": {
+            "@type": "Person",
+            "name": "{{person.first_name }} {{ person.last_name }}",
+            "sameAs": "http://www.sergeynikiforov.com"
+        },
+        "copyrightHolder": {
+            "@type": "Person",
+            "name": "{{person.first_name }} {{ person.last_name }}",
+            "sameAs": "http://www.sergeynikiforov.com"
+        },
+        "name": "{{ photoset_title }}",
+        "text": "{{ photoset_description }}",
+        "hasPart": [
+            {% for photo in photos %}
+                {% if forloop.last %}
+                    {
+                        "@type": "Photograph",
+                        "name": "{{ photo.title }}",
+                        "text": "{{ photo.description }}",
+                        "author": {
+                            "@type": "Person",
+                            "name": "{{person.first_name }} {{ person.last_name }}",
+                            "sameAs": "http://www.sergeynikiforov.com"
+                        },
+                        "copyrightHolder": {
+                            "@type": "Person",
+                            "name": "{{person.first_name }} {{ person.last_name }}",
+                            "sameAs": "http://www.sergeynikiforov.com"
+                        },
+                        "copyrightYear": {{ photo.date_taken.year }},
+                        "sameAs": "{% url 'sn_app:photo_home' active_photoset.slug %}#{{photo.publicID}}"
+                    }
+                {% else %}
+                    {
+                        "@type": "Photograph",
+                        "name": "{{ photo.title }}",
+                        "text": "{{ photo.description }}",
+                        "author": {
+                            "@type": "Person",
+                            "name": "{{person.first_name }} {{ person.last_name }}",
+                            "sameAs": "http://www.sergeynikiforov.com"
+                        },
+                        "copyrightHolder": {
+                            "@type": "Person",
+                            "name": "{{person.first_name }} {{ person.last_name }}",
+                            "sameAs": "http://www.sergeynikiforov.com"
+                        },
+                        "copyrightYear": {{ photo.date_taken.year }},
+                        "thumbnailUrl": "{{ photo.thumbnail_url }}",
+                        "sameAs": "{% url 'sn_app:photo_home' active_photoset.slug %}#{{photo.publicID}}"
+                    },
+                {% endif %}
+            {% endfor %}
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "{% url 'sn_app:photography' %}",
+          "name": "Photography"
+        }
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@id": "{% url 'sn_app:photoset' active_photoset.slug %}",
+          "name": "{{ photoset_title }}"
+        }
+      }]
+    }
+    </script>
+{% endblock json_ld %}
+
 {% block body %}
     <div class="show-for-medium-up">
         <section class="medium_screen_figure large_screen_figure">
@@ -178,3 +267,7 @@
         </div>
     </div>
 {% endblock whats_next %}
+{% block js_scripts %}
+    <script src="{% static 'sn_app/js/app.min.js' %}"></script>
+    <script src="{% static 'sn_app/js/stickysidebar.min.js' %}"></script>
+{% endblock js_scripts %}

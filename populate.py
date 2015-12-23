@@ -30,6 +30,7 @@ def populate(photos_path, photoset_title=None):
     initial population of photoset
 
     #TODO - set 'date_taken' for Photo from EXIF using exifread
+          - set 'thumbnail_url'
     """
 
     # create photoset

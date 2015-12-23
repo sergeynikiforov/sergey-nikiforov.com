@@ -24,6 +24,22 @@
     </figure>
 {% endblock off_canvas_tab_bar_image %}
 
+{% block json_ld %}
+    <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "{% url 'sn_app:photography' %}",
+          "name": "Photography"
+        }
+      }]
+    }
+    </script>
+{% endblock json_ld %}
 
 {% block body %}
     <div class="show-for-medium-up">

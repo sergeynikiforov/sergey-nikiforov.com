@@ -1,14 +1,21 @@
 <!DOCTYPE html>{% load sn_app_extras %}{% load static %}{% load cloudinary %}
 <html class="no-js" lang="en">
     <head>
-        <meta charset="utf-8" />
+        <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{% block title %}Sergey Nikiforov{% endblock title %}</title>
-        <link rel="stylesheet" href="{% static 'sn_app/css/app.css' %}"/>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="author" content="Sergey Nikiforov">
+        <meta name="description" content="Sergey Nikiforov's personal site. Photography. Resume.">
+        <meta name="keywords" content="photography, resume, travel">
+        <meta name="google" content="notranslate">
+        <meta name="robots" content="index, follow">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <link rel="stylesheet" href="{% static 'sn_app/css/app.min.css' %}"/>
         <script src="https://use.typekit.net/mjs0gdv.js"></script>
         <script>try{Typekit.load({ async: false });}catch(e){}</script>
-        <script src="{% static 'modernizr/modernizr.js' %}"></script>
-        <script src="{% static 'sn_app/js/picturefill.js' %}"></script>
+        <script src="{% static 'sn_app/js/modernizr.min.js' %}"></script>
+        <script src="{% static 'sn_app/js/picturefill.min.js' %}"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
         <script type="text/javascript">
             //<![CDATA[
@@ -32,6 +39,35 @@
                 });
             //]]>
         </script>
+        {% block json_ld %}
+            <script type="application/ld+json">
+                {
+                    "@context": "http://schema.org",
+                    "@type": "Person",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressCountry": "RU",
+                        "addressLocality": "Moscow",
+                        "addressRegion": "Moscow"
+                    },
+                    "email": "mailto:{{ person.email }}",
+                    "name": "{{ person.first_name }} {{ person.last_name }}",
+                    "alumniOf": {
+                        "@type": "EducationalOrganization",
+                        "name": "Peoples' Friendship University of Russia",
+                        "sameAs": "http://www.rudn.ru/"
+                    },
+                    "telephone": "+7 (916) 323-6973",
+                    "url": "http://www.sergeynikiforov.com",
+                    "sameAs" : [
+                        "{{ person.facebook_link }}",
+                        "{{ person.flickr_link }}",
+                        "{{ person.instagram_link }}",
+                        "{{ person.linkedin_link }}"
+                      ]
+                }
+            </script>
+        {% endblock json_ld %}
     </head>
     <body>
         <div id="mobile-preloader">
@@ -152,6 +188,9 @@
         {% endblock offcanvas_open %}
         <main class="main-section">
             <article>
+                <!--[if lt IE 8]>
+                    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+                <![endif]-->
                 {% block body %}{% endblock body %}
             </article>
         </main>
@@ -217,6 +256,16 @@
         </div>
         {% endblock offcanvas_close %}
         {% block templates %}{% endblock templates %}
-        <script src="{% static 'sn_app/js/app.js' %}"></script>
+        {% block js_scripts %}
+            <script src="{% static 'sn_app/js/app.min.js' %}"></script>
+        {% endblock js_scripts %}
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+          ga('create', 'UA-38392366-2', 'auto');
+          ga('send', 'pageview');
+        </script>
     </body>
 </html>

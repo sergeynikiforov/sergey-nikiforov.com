@@ -124,7 +124,9 @@
 <script type="text/template" id="large-photo-title-tmpl">
     <h3 class="image-title show-for-large-up"><%= title %></h3> <h3 class="image-title hide-for-large-up"><%= title %> (<%= year %>)</h3>
 </script>
-<script type="text/template" id="tab-bar-photo-title-tmpl">
-    <h3><%= title %></h3>
-</script>
 {% endblock templates %}
+
+{% block js_scripts %}
+    <script src="{% static 'sn_app/js/app.min.js' %}"></script>
+    <script src="{% static 'sn_app/js/photoapp.min.js' %}"></script>
+{% endblock js_scripts %}

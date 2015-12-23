@@ -99,7 +99,22 @@ App.OrderView = Backbone.View.extend({
         return this;
     }
 });
+/*
+App.JsonLdView = Backbone.View.extend({
+    el: '#json-ld-tmpl',
+    template: _.template($('#json-ld-tmpl').html()),
 
+    initialize: function() {
+        this.render();
+    },
+
+    render: function() {
+        var html = this.template(this.model.toJSON());
+        this.$el.html(html);
+        return this;
+    }
+});
+*/
 
 App.DescriptionView = Backbone.View.extend({
     el: '#large-photo-description-wrapper',
@@ -174,6 +189,7 @@ App.PhotoRouter = Backbone.Router.extend({
                 App.orderView = new App.OrderView({model: App.photomodel});
                 App.photoTitleView = new App.TitleView({model: App.photomodel});
                 App.photoDescrView = new App.DescriptionView({model: App.photomodel});
+                //App.photoJsonLdView = new App.JsonLdView({model: App.photomodel});
                 }
             });
     }

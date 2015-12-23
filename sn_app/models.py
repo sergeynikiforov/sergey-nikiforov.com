@@ -129,6 +129,7 @@ class Photoset(models.Model):
 class Photo(models.Model):
     publicID = models.CharField(max_length=200)  # Cloudinary photo publicID
     url = models.URLField(default='http://www.example.com')
+    thumbnail_url = models.URLField(default='http://www.example.com/thumbnailURL')
     title = models.CharField(max_length=200, default='Untitled')
     description = models.TextField(max_length=2000, default='No description')
     date_taken = models.DateTimeField(default=timezone.now)

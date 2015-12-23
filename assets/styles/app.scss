@@ -1,6 +1,10 @@
 @import 'foundation/settings';
 @import 'foundation';
 
+body {
+    overflow: hidden;
+}
+
 // mixin to address iOS 7 issue with vh, vmin
 //
 @mixin viewport-unit($property, $value) {
@@ -1639,10 +1643,6 @@ figure {
     }
 }
 
-body {
-    overflow: hidden;
-}
-
 /* Preloader */
 
 #preloader {
@@ -1742,4 +1742,12 @@ body {
 // no text size increase when orientation changes
 html, body {
     -webkit-text-size-adjust: 100%;
+}
+
+.browserupgrade {
+    margin: 2rem;
+    background: #ccc;
+    color: black;
+    padding: 1rem;
+    font-family: sans-serif;
 }
