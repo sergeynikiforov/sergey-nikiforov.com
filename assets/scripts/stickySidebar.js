@@ -20,6 +20,7 @@ StickySidebar.changeTopBarBackgroundColor = function () {
 StickySidebar.addTopBarBackgroundColor = function () {
     $('#top-bar-wrapper > div').addClass('white-bg');
     $('#top-bar-wrapper > .fixed').css('height', '70px');
+    $('#navigation-bar').removeClass('black-color');
 }
 
 StickySidebar.removeTopBarBackgroundColor = function () {

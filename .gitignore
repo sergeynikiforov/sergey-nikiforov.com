@@ -6,4 +6,4 @@ flickr_keys.py
 auth.txt
 cloudinaryconfig.py
 cloudinaryConfig.js
-emailconfig.py
+config.py

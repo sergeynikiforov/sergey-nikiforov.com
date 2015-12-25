@@ -52,7 +52,7 @@ def pictureElement(publicID, sizes, srcset, alt):
 
 
 def main():
-    from cloudinaryconfig import cloud_name, api_key, api_secret
+    from config import cloud_name, api_key, api_secret
     cloudinary.config(
       cloud_name = cloud_name,
       api_key = api_key,
