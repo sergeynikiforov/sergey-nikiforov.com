@@ -1,0 +1,56 @@
+{% extends "sn_app/base.html" %}
+{% load sn_app_extras %}
+{% load staticfiles %}
+{% block title %}{% if person %}{{ person.first_name }} {{ person.last_name }}{% else %}Home{% endif %}{% endblock title %}
+{% block header %}<div id="page-top"></div>{% endblock header %}
+{% block offcanvas_visibility %} show-for-small-only {% endblock offcanvas_visibility %}
+{% block off_canvas_tab_bar_page_header %}{% endblock off_canvas_tab_bar_page_header %}
+{% block off_canvas_tab_bar_image %}
+    <figure>
+        <picture >
+            <!--<source media="(min-width: 1024px)"
+                    sizes="80vw"
+                    srcset="http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_200/v1443435200/landing/3G4A3942-Edit.jpg 200w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_400/v1443435200/landing/3G4A3942-Edit.jpg 400w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_600/v1443435200/landing/3G4A3942-Edit.jpg 600w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_800/v1443435200/landing/3G4A3942-Edit.jpg 800w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_1000/v1443435200/landing/3G4A3942-Edit.jpg 1000w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_1200/v1443435200/landing/3G4A3942-Edit.jpg 1200w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_1400/v1443435200/landing/3G4A3942-Edit.jpg 1400w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_1600/v1443435200/landing/3G4A3942-Edit.jpg 1600w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_2000/v1443435200/landing/3G4A3942-Edit.jpg 2000w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_2400/v1443435200/landing/3G4A3942-Edit.jpg 2400w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_3200/v1443435200/landing/3G4A3942-Edit.jpg 3200w">-->
+            <source media="(orientation: portrait)"
+                    sizes="100vw"
+                    srcset="http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_200/v1444042962/landing/goya3x4.jpg 200w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_400/v1444042962/landing/goya3x4.jpg 400w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_600/v1444042962/landing/goya3x4.jpg 600w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_800/v1444042962/landing/goya3x4.jpg 800w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_1000/v1444042962/landing/goya3x4.jpg 1000w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_1200/v1444042962/landing/goya3x4.jpg 1200w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_1600/v1444042962/landing/goya3x4.jpg 1600w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_2000/v1444042962/landing/goya3x4.jpg 2000w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_2400/v1444042962/landing/goya3x4.jpg 2400w">
+
+            <source media="(orientation: landscape) and (max-width: 640px) and (max-height: 400px)"
+                    sizes="100vw"
+                    srcset="http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_200/v1444042963/landing/goya16x10.jpg 200w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_400/v1444042963/landing/goya16x10.jpg 400w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_600/v1444042963/landing/goya16x10.jpg 600w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_800/v1444042963/landing/goya16x10.jpg 800w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_1000/v1444042963/landing/goya16x10.jpg 1000w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_1200/v1444042963/landing/goya16x10.jpg 1200w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_1280/v1444042963/landing/goya16x10.jpg 1280w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_1920/v1444042963/landing/goya16x10.jpg 1920w">
+            <img src="http://res.cloudinary.com/sergeynikiforov/image/upload/v1443435200/landing/3G4A3942-Edit.jpg" alt="Goya Street, Cadiz, Spain" sizes="100vw" srcset="http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_400/v1443435200/landing/3G4A3942-Edit.jpg 400w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_800/v1443435200/landing/3G4A3942-Edit.jpg 800w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_1200/v1443435200/landing/3G4A3942-Edit.jpg 1200w, http://res.cloudinary.com/sergeynikiforov/image/upload/c_fill,w_1600/v1443435200/landing/3G4A3942-Edit.jpg 1600w">
+        </picture>
+    </figure>
+{% endblock off_canvas_tab_bar_image %}
+{% block body %}
+    <script type="application/ld+json">
+        {
+          "@context" : "http://schema.org",
+          "@type" : "WebSite",
+          "name" : "sergeynikiforov.com",
+          "url" : "http://www.sergeynikiforov.com"
+        }
+    </script>
+    <div class="show-for-medium-up">
+        <section class="medium_screen_figure large_screen_figure">
+            <div class="bg100-image-wrapper">
+                <div class="image-wrap">
+                    <div class="home-image">
+                        <div id="preloader">
+                        </div>
+                        <div class="row">
+                            <div class="small-12 medium-10 small-centered columns show-for-medium-up">
+                                <nav id="hero-nav" role="navigation">
+                                    <h2 class="page_header">/{{ person.first_name|upper }} {{ person.last_name|upper }}/</h2>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock body %}
+{% block footer %}
+
+{% endblock footer %}

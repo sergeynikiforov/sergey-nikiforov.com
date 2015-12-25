@@ -1,0 +1,18 @@
+{% extends "sn_app/base.html" %}
+{% load sn_app_extras %}
+{% load staticfiles %}
+{% block title %}400{% endblock title %}
+
+{% block whats_next %}
+    <div id="error" class="row">
+        <div class="small-12 medium-10 small-centered columns">
+            <h2 class="page_subheader">400 Bad Request</h2>
+            <ul class="no-bullet">
+                <li><a href="{% url 'sn_app:about' %}">ABOUT</a></li>
+                <li><a href="{% url 'sn_app:resume' %}">SEE MY RESUME</a></li>
+                <li><a href="{% url 'sn_app:photography' %}">SEE MY PHOTOS</a></li>
+                <li><a href="{% url 'sn_app:contact' %}">GET IN TOUCH WITH ME</a></li>
+            </ul>
+        </div>
+    </div>
+{% endblock whats_next %}

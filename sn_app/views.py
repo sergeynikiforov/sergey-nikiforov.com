@@ -297,3 +297,78 @@ def photography(request):
     context_dict['person'] = person
 
     return render(request, 'sn_app/photography.html', context_dict)
+
+
+def my_page_not_found_view(request):
+    '''
+    Custom 404 view
+    '''
+    # create context dict
+    context_dict = {}
+
+    # get personal data
+    person = Person.objects.get(first_name='Sergey')
+
+    context_dict['person'] = person
+
+    return render(request, 'sn_app/404.html', context_dict)
+
+
+def my_error_view(request):
+    '''
+    Custom 500 view
+    '''
+    # create context dict
+    context_dict = {}
+
+    # get personal data
+    person = Person.objects.get(first_name='Sergey')
+
+    context_dict['person'] = person
+
+    return render(request, 'sn_app/500.html', context_dict)
+
+
+def my_permission_denied_view(request):
+    '''
+    Custom 403 view
+    '''
+    # create context dict
+    context_dict = {}
+
+    # get personal data
+    person = Person.objects.get(first_name='Sergey')
+
+    context_dict['person'] = person
+
+    return render(request, 'sn_app/403.html', context_dict)
+
+
+def my_bad_request_view(request):
+    '''
+    Custom 400 view
+    '''
+    # create context dict
+    context_dict = {}
+
+    # get personal data
+    person = Person.objects.get(first_name='Sergey')
+
+    context_dict['person'] = person
+
+    return render(request, 'sn_app/400.html', context_dict)
+
+
+def test(request):
+    '''
+    view for test page
+    '''
+    # get personal data
+    person = Person.objects.get(first_name='Sergey')
+
+    # context dictionary to pass to template
+    context_dict = {
+        'person': person
+    }
+
+    return render(request, 'sn_app/test.html', context_dict)

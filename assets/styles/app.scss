@@ -99,6 +99,7 @@ $tab-bar-top-margin: 1rem;
 // FOOTER SCSS
 //-----------------------------------------------------
 
+
 // 'What's next ' section
 #whats-next {
     @media #{$small-only} {
@@ -135,6 +136,12 @@ $tab-bar-top-margin: 1rem;
         }
         @include anchor-transition-hover(0.3s);
     }
+}
+
+
+#error {
+    @extend #whats-next;
+    padding-top: 4rem;
 }
 
 #footer-wrapper {

@@ -26,7 +26,7 @@ SECRET_KEY = config.SECRET_KEY
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.0.36']
 
 # cloudinary configuration settings
 import cloudinary
@@ -106,8 +106,8 @@ ROOT_URLCONF = 'sn_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        #'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
@@ -115,8 +115,14 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
+            'loaders': [
+                ('django.template.loaders.cached.Loader', [
+                    'django.template.loaders.filesystem.Loader',
+                    'django.template.loaders.app_directories.Loader',
+                ]),
+            ],
         },
-    },
+    }
 ]
 
 WSGI_APPLICATION = 'sn_project.wsgi.application'
@@ -133,6 +139,26 @@ DATABASES = {
             'read_default_file': '/home/sergeynikiforov/.my.cnf',
         },
     }
+}
+
+# logging
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'request_file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': (os.path.join(BASE_DIR, 'sn_app/logs/requests.log')),
+        },
+    },
+    'loggers': {
+        'django.request': {
+            'handlers': ['request_file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
 }
 
 
@@ -155,7 +181,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = '/var/www/sn_project/'
+STATIC_ROOT = '/home/www/sn_project/'
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',

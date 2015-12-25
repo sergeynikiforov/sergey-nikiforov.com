@@ -20,3 +20,11 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^sn_app/', include('sn_app.urls', namespace='sn_app'))
 ]
+
+handler404 = 'sn_app.views.my_page_not_found_view'
+
+handler500 = 'sn_app.views.my_error_view'
+
+handler403 = 'sn_app.views.my_permission_denied_view'
+
+handler400 = 'sn_app.views.my_bad_request_view'
