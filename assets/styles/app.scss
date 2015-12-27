@@ -144,6 +144,8 @@ $tab-bar-top-margin: 1rem;
     padding-top: 4rem;
 }
 
+
+
 #footer-wrapper {
 
     background-size: cover;
@@ -161,6 +163,10 @@ $tab-bar-top-margin: 1rem;
         background-image: url("../images/footer-mobile.jpg");
         background-position: 10% 50%;
     }
+}
+
+#footer-img {
+    @extend #footer-wrapper;
 }
 
 // main footer section

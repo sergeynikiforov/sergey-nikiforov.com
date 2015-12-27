@@ -69,10 +69,11 @@ StickySidebar.setStickySidebarColumnMargins = function () {
 
     // initial assingments, align with top-bar left
     StickySidebar.stickySidebarColumnLeftMargin = $('#header-wrapper').offset().left;
+    StickySidebar.stickySidebarColumnLeftMarginLargeScreensOffset = $('#make-fixed > div').offset().left;
 
     // if sidebar is fixed
     if (StickySidebar.isSidebarFixed) {
-        $('#fixed-wrapper > div').attr('style', 'margin-left:' + StickySidebar.stickySidebarColumnLeftMargin + 'px !important;');
+        $('#fixed-wrapper > div').attr('style', 'margin-left:' + (StickySidebar.stickySidebarColumnLeftMargin - StickySidebar.stickySidebarColumnLeftMarginLargeScreensOffset) + 'px !important;');
     } else { // if sidebar is not fixed
         $('#fixed-wrapper > div').css('margin-left', 'auto');
     };

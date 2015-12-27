@@ -207,42 +207,44 @@
                         </div>
                     </div>
                 {% endblock whats_next %}
-                <div id="footer-wrapper" class="row toggle-color">
-                    <div class="small-12 medium-10 small-centered columns">
-                        <div id="footer-top-section" class="row">
-                            <div class="small-12 medium-6 large-4 columns footer-column">
-                                <ul class="no-bullet cl-effect-1">
-                                    <li class="footer-column-title"><a href="{% url 'sn_app:landing' %}">{{ person.first_name|upper}} {{ person.last_name|upper}}</a></li>
-                                    <li><a href="{% url 'sn_app:about' %}">ABOUT</a></li>
-                                    <li><a href="{% url 'sn_app:resume' %}">RESUME</a></li>
-                                    <li><a href="{% url 'sn_app:photography' %}">PHOTOGRAPHY</a></li>
-                                    <li><a href="{% url 'sn_app:contact' %}">CONTACT ME</a></li>
-                                    <li class="show-for-small-only"><a href="#page-top">BACK TO TOP</a></li>
-                                </ul>
+                <div id="footer-img">
+                    <div class="row toggle-color">
+                        <div class="small-12 medium-10 small-centered columns">
+                            <div id="footer-top-section" class="row">
+                                <div class="small-12 medium-6 large-4 columns footer-column">
+                                    <ul class="no-bullet cl-effect-1">
+                                        <li class="footer-column-title"><a href="{% url 'sn_app:landing' %}">{{ person.first_name|upper}} {{ person.last_name|upper}}</a></li>
+                                        <li><a href="{% url 'sn_app:about' %}">ABOUT</a></li>
+                                        <li><a href="{% url 'sn_app:resume' %}">RESUME</a></li>
+                                        <li><a href="{% url 'sn_app:photography' %}">PHOTOGRAPHY</a></li>
+                                        <li><a href="{% url 'sn_app:contact' %}">CONTACT ME</a></li>
+                                        <li class="show-for-small-only"><a href="#page-top">BACK TO TOP</a></li>
+                                    </ul>
+                                </div>
+                                <div class="small-12 medium-6 large-4 columns footer-column show-for-medium-up">
+                                    <ul class="no-bullet cl-effect-1">
+                                        <li class="footer-column-title"><a href="{% url 'sn_app:contact' %}">SOCIAL NETWORKS</a></li>
+                                        <li><a href="{{ person.facebook_link }}">FACEBOOK</a></li>
+                                        <li><a href="{{ person.flickr_link }}">FLICKR</a></li>
+                                        <li><a href="{{ person.instagram_link }}">INSTAGRAM</a></li>
+                                        <li><a href="{{ person.linkedin_link }}">LINKEDIN</a></li>
+                                    </ul>
+                                </div>
+                                <div class="small-12 medium-4 large-4 columns footer-column hide-for-medium-only">
+                                    <ul class="no-bullet cl-effect-1">
+                                        <li class="footer-column-title"><a href="{% url 'sn_app:contact' %}">WRITE TO ME</a></li>
+                                        <li><a href="mailto:{{ person.email }}">{{ person.email }}</a></li>
+                                    </ul>
+                                </div>
                             </div>
-                            <div class="small-12 medium-6 large-4 columns footer-column show-for-medium-up">
-                                <ul class="no-bullet cl-effect-1">
-                                    <li class="footer-column-title"><a href="{% url 'sn_app:contact' %}">SOCIAL NETWORKS</a></li>
-                                    <li><a href="{{ person.facebook_link }}">FACEBOOK</a></li>
-                                    <li><a href="{{ person.flickr_link }}">FLICKR</a></li>
-                                    <li><a href="{{ person.instagram_link }}">INSTAGRAM</a></li>
-                                    <li><a href="{{ person.linkedin_link }}">LINKEDIN</a></li>
-                                </ul>
-                            </div>
-                            <div class="small-12 medium-4 large-4 columns footer-column hide-for-medium-only">
-                                <ul class="no-bullet cl-effect-1">
-                                    <li class="footer-column-title"><a href="{% url 'sn_app:contact' %}">WRITE TO ME</a></li>
-                                    <li><a href="mailto:{{ person.email }}">{{ person.email }}</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div id="footer-bottom-section" class="row">
-                            <div class="small-6 columns copyright">
-                                <p><a href="{% url 'sn_app:landing' %}">{{ person.first_name}} {{ person.last_name }}</a> (c) 2015</p>
-                                <p></p>
-                            </div>
-                            <div class="small-6 columns text-right page-top-link cl-effect-1 show-for-medium-up">
-                                <a href="#page-top">BACK TO TOP</a>
+                            <div id="footer-bottom-section" class="row">
+                                <div class="small-6 columns copyright">
+                                    <p><a href="{% url 'sn_app:landing' %}">{{ person.first_name}} {{ person.last_name }}</a> (c) 2015</p>
+                                    <p></p>
+                                </div>
+                                <div class="small-6 columns text-right page-top-link cl-effect-1 show-for-medium-up">
+                                    <a href="#page-top">BACK TO TOP</a>
+                                </div>
                             </div>
                         </div>
                     </div>
