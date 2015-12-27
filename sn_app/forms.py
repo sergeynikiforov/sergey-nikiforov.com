@@ -36,7 +36,8 @@ class ContactMeForm(forms.ModelForm):
                                                 'placeholder':'your message...',
                                                 'maxlength': '2000',
                                                 'aria-label': 'Your message',
-                                                'required': 'required'
+                                                'required': 'required',
+                                                'pattern': '^.{1,2000}$'
                                                 }
                                                 )
                             )

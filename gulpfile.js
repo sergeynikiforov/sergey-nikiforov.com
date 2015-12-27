@@ -72,6 +72,7 @@ gulp.task('scripts', function() {
     return gulp.src([
             paths.bower + '/fastclick/lib/fastclick.js',
             paths.bower + '/foundation/js/foundation.js',
+            paths.bower + '/foundation/js/foundation/foundation.alert.js',
             paths.bower + '/waypoints/lib/jquery.waypoints.js',
             paths.assets + '/scripts/jquery.mobile.custom.js',
             paths.assets + '/scripts/app.js'

@@ -6,6 +6,7 @@ $(document).foundation({
       }
 });
 
+
 /* smooth scroll
  * snippet taken from
  * https://css-tricks.com/snippets/jquery/smooth-scrolling/
@@ -81,7 +82,7 @@ $('#post-form').on('valid.fndtn.abide', function(event){
 function contact_post() {
 
     $.ajax({
-        url : "/sn_app/contact", // the endpoint
+        url : "/contact/", // the endpoint
         type : "POST", // http method
         data : {
             name    : $('#post-name').val(),

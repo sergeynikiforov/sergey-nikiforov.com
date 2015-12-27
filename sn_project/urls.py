@@ -18,7 +18,7 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^sn_app/', include('sn_app.urls', namespace='sn_app'))
+    url(r'^[/]{0,1}', include('sn_app.urls', namespace='sn_app'))
 ]
 
 handler404 = 'sn_app.views.my_page_not_found_view'
