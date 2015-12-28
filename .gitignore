@@ -6,3 +6,6 @@ auth.txt
 cloudinaryconfig.py
 cloudinaryConfig.js
 config.py
+*.sql
+*.log
+sn_app/logs

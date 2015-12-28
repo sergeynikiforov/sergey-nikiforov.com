@@ -7,6 +7,37 @@ $(document).foundation({
 });
 
 
+// smart resize from Paul Irish
+// http://www.paulirish.com/2009/throttled-smartresize-jquery-event-handler/
+(function($,sr){
+
+  // debouncing function from John Hann
+  // http://unscriptable.com/index.php/2009/03/20/debouncing-javascript-methods/
+  var debounce = function (func, threshold, execAsap) {
+      var timeout;
+
+      return function debounced () {
+          var obj = this, args = arguments;
+          function delayed () {
+              if (!execAsap)
+                  func.apply(obj, args);
+              timeout = null;
+          };
+
+          if (timeout)
+              clearTimeout(timeout);
+          else if (execAsap)
+              func.apply(obj, args);
+
+          timeout = setTimeout(delayed, threshold || 100);
+      };
+  }
+  // smartresize
+  jQuery.fn[sr] = function(fn){  return fn ? this.bind('resize', debounce(fn)) : this.trigger(sr); };
+
+})(jQuery,'smartresize');
+
+
 /* smooth scroll
  * snippet taken from
  * https://css-tricks.com/snippets/jquery/smooth-scrolling/
@@ -239,7 +270,8 @@ $(document).ready(function() {
     });
 
     // toggle hero-nav
-    MyWaypoints.waypointsHeroNav = $('#page-top').waypoint({
+    MyWaypoints.waypointsHeroNav = new Waypoint({
+        element: document.getElementById('page-top'),
         handler: function(direction) {
             $('#hero-nav .page_header').animate({
                 opacity: "toggle"
@@ -253,10 +285,12 @@ $(document).ready(function() {
 
     // refresh all waypoints using jquery mobile event
     $(window).on("orientationchange", function(event) {
+        //console.log(event);
         Waypoint.refreshAll();
     });
 
-    $(window).on('resize', function() {
+    $(window).smartresize(function(event) {
+        //console.log(event);
         Waypoint.refreshAll();
     });
 });

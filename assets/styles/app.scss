@@ -15,6 +15,7 @@ body {
   @if (index((vw, vh, vmin, vmax), $unit) != null) {
     $devices: (
       (768px, 1024px), // iPad (all versions)
+      (1024px, 768px),
       (320px, 480px),  // iPhone 4
       (320px, 568px)   // iPhone 5, 5C, 5S
     );
@@ -572,13 +573,12 @@ $tab-bar-top-margin: 1rem;
 }
 
 .photoset-cover-wrapper {
-    height: 40vh;
     width: 100%;
     @media #{$large-up} {
-        //padding: 1.5rem;
+        @include viewport-unit(height, 40vh);
     }
     @media #{$medium-only} {
-        //padding: 2rem 0rem 6rem 0rem;
+        @include viewport-unit(height, 40vh);
     }
 }
 
@@ -1312,10 +1312,12 @@ figure {
     margin-bottom: 0.3rem;
 }
 
+// photoset page
 #album-wrapper {
     padding: 5rem 0rem;
     @include anchor-transition-hover(0.3s);
 }
+
 
 .album-title {
     font-weight: $font-weight-bold;
@@ -1546,8 +1548,12 @@ figure {
 
 // photoset thumbs for 'photography' page
 .photoset-info {
-    @media #{$medium-up} {
-        padding-top: 8rem;
+    @media #{$large-up} {
+        padding-top: 11rem;
+        margin-bottom: 1rem;
+    }
+    @media #{$medium-only} {
+        padding-top: 9rem;
         margin-bottom: 1rem;
     }
     @media #{$small-only} {

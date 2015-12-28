@@ -73,8 +73,8 @@ gulp.task('scripts', function() {
             paths.bower + '/fastclick/lib/fastclick.js',
             paths.bower + '/foundation/js/foundation.js',
             paths.bower + '/foundation/js/foundation/foundation.alert.js',
-            paths.bower + '/waypoints/lib/jquery.waypoints.js',
             paths.assets + '/scripts/jquery.mobile.custom.js',
+            paths.bower + '/waypoints/lib/jquery.waypoints.js',
             paths.assets + '/scripts/app.js'
             //paths.assets + '/scripts/myStickyFooter.js',
              ])

@@ -56,6 +56,7 @@ INSTALLED_APPS = (
 )
 
 # CACHING
+"""
 CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
@@ -67,9 +68,9 @@ CACHES = {
 }
 
 CACHE_MIDDLEWARE_ALIAS = 'my_cache'
-CACHE_MIDDLEWARE_SECONDS = 300
+CACHE_MIDDLEWARE_SECONDS = 10
+"""
 
-APPEND_SLASH=False
 # compressor
 COMPRESS_ENABLED = True
 
@@ -89,7 +90,7 @@ BOWER_INSTALLED_APPS = (
 
 
 MIDDLEWARE_CLASSES = (
-    'django.middleware.cache.UpdateCacheMiddleware',
+    #'django.middleware.cache.UpdateCacheMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -98,10 +99,11 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    'django.middleware.cache.FetchFromCacheMiddleware',
+    #'django.middleware.cache.FetchFromCacheMiddleware',
 )
 
 ROOT_URLCONF = 'sn_project.urls'
+APPEND_SLASH = False
 
 TEMPLATES = [
     {
