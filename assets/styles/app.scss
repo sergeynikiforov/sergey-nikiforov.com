@@ -1173,7 +1173,6 @@ figure {
     margin-right: 3rem;
 }
 
-
 // max height of an image on a single photo page
 #photo-wrapper {
     opacity: 0.0;
@@ -1378,6 +1377,20 @@ figure {
     @media #{$large-up} {
         //margin-left: 0.9rem;
         margin-top: 1rem;
+    }
+}
+
+.photo-error-msg {
+    font-family: $font-family-sans-serif;
+    font-weight: $font-weight-thin;
+    @media #{$large-up} {
+        font-size: $font-size-sans-serif-page-subheader-large;
+    }
+    @media #{$medium-only} {
+        font-size: $font-size-sans-serif-page-subheader-medium;
+    }
+    @media #{$small-only} {
+        font-size: $font-size-sans-serif-page-subheader-small;
     }
 }
 

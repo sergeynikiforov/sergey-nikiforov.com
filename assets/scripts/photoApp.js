@@ -152,6 +152,23 @@ App.TitleView = Backbone.View.extend({
     }
 });
 
+App.ErrorView = Backbone.View.extend({
+    el: '#error-wrapper',
+    err_string: '<div id="error" class="row">
+                    <div class="small-12 medium-10 medium-centered text-left columns">
+                        <p class="photo-error-msg">Sorry, I haven\'t taken this photo yet...</p>
+                    </div>
+                </div>',
+    initialize: function() {
+        this.render();
+    },
+
+    render: function() {
+        this.$el.html(this.err_string);
+        return this;
+    }
+});
+
 
 App.GeneralView = Backbone.View.extend({
     el: 'body',
@@ -173,26 +190,43 @@ App.GeneralView = Backbone.View.extend({
                 App.app.router.navigate(App.photomodel.attributes.prev_photoID, true);
             });
         }
-    },
+    }
 });
 
 
 App.PhotoRouter = Backbone.Router.extend({
     routes: {
-        ':id': 'showPhoto'
+        ':id': 'showPhoto',
+        '': 'showPhoto'
     },
     showPhoto: function(id) {
-        App.photomodel = new App.PhotoModel(id);
-        App.photomodel.fetch({
-            success: function() {
-                App.photoView = new App.PhotoView({model: App.photomodel});
-                App.orderView = new App.OrderView({model: App.photomodel});
-                App.photoTitleView = new App.TitleView({model: App.photomodel});
-                App.photoDescrView = new App.DescriptionView({model: App.photomodel});
-                //App.photoJsonLdView = new App.JsonLdView({model: App.photomodel});
-                }
+        if (id !== null) {
+            App.photomodel = new App.PhotoModel(id);
+            App.photomodel.fetch({
+                success: function() {
+                    $('#error-wrapper').hide();
+                    $('#photo-wrapper').show();
+                    $('#photo-info-wrapper').show();
+                    App.photoView = new App.PhotoView({model: App.photomodel});
+                    App.orderView = new App.OrderView({model: App.photomodel});
+                    App.photoTitleView = new App.TitleView({model: App.photomodel});
+                    App.photoDescrView = new App.DescriptionView({model: App.photomodel});
+                    },
+                error: function() {
+                        $('#photo-wrapper').hide();
+                        $('#photo-info-wrapper').hide();
+                        $('#error-wrapper').show();
+                        App.errorView = new App.ErrorView();
+                    }
             });
-    }
+        } else {
+            $('#error-wrapper').show();
+            $('#photo-wrapper').hide();
+            $('#photo-info-wrapper').hide();
+            App.errorView = new App.ErrorView();
+        }
+
+    },
 });
 
 

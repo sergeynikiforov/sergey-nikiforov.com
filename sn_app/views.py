@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.http import JsonResponse
 from django.core.mail import EmailMessage
 from models import Person, Education, Job, OnlineCourse, Photo, PhotoInPhotoset, Photoset
+from django.core.exceptions import ObjectDoesNotExist
 from forms import ContactMeForm
 import json
 import cloudinary
@@ -163,17 +164,13 @@ def photo_dict(photoset, photo, srcset="200w 400w 600w 800w 1000w 1200w 1400w 16
     context_dict['year'] = photo.date_taken.year
 
     # get prev/next photoID + order info
-    try:
-        photos = PhotoInPhotoset.objects.filter(photoset=photoset).order_by('order')
-        photos = [i.photo.publicID for i in photos]
-        qty = len(photos)
-        current_photo_index = photos.index(photo.publicID)
-        context_dict['order'] = '{current} / {total}'.format(current=current_photo_index+1, total=photoset.num_photos)
-        context_dict['prev_photoID'] = photos[(current_photo_index - 1) % qty]
-        context_dict['next_photoID'] = photos[(current_photo_index + 1) % qty]
-
-    except Photoset.DoesNotExist, Photo.DoesNotExist:
-        pass
+    photos = PhotoInPhotoset.objects.filter(photoset=photoset).order_by('order')
+    photos = [i.photo.publicID for i in photos]
+    qty = len(photos)
+    current_photo_index = photos.index(photo.publicID)
+    context_dict['order'] = '{current} / {total}'.format(current=current_photo_index+1, total=photoset.num_photos)
+    context_dict['prev_photoID'] = photos[(current_photo_index - 1) % qty]
+    context_dict['next_photoID'] = photos[(current_photo_index + 1) % qty]
 
     # populate with info for <picture> elt
     srcsetWebp = ''
@@ -201,12 +198,12 @@ def photo_api(request, photoset_slug='', photoID=''):
     '''
     view for a single photo response
     '''
+    current_photo = get_object_or_404(Photo, publicID=photoID)
 
-    current_photo = Photo.objects.get(publicID=photoID)
     current_photo.num_views += 1
     current_photo.save()
 
-    active_photoset = Photoset.objects.get(slug=photoset_slug)
+    active_photoset = get_object_or_404(Photoset, slug=photoset_slug)
 
     context_dict = photo_dict(active_photoset, current_photo)
 
@@ -218,7 +215,7 @@ def photoset_api(request, photoset_slug=''):
     view for a photoset response
     '''
     # get all photos for the photoset
-    active_photoset = Photoset.objects.get(slug=photoset_slug)
+    active_photoset = get_object_or_404(Photoset, slug=photoset_slug)
     photos = Photo.objects.filter(photosets__title__exact=active_photoset.title).order_by('id')
 
     result = [photo_dict(active_photoset, photo) for photo in photos]
@@ -245,30 +242,26 @@ def photoset(request, photoset_slug=''):
     context_dict['photosets'] = photosets
 
     # get active photoset
-    try:
-        active_photoset = Photoset.objects.get(slug=photoset_slug)
-        context_dict['photoset_title'] = active_photoset.title
+    active_photoset = get_object_or_404(Photoset, slug=photoset_slug)
+    context_dict['photoset_title'] = active_photoset.title
 
-        # get description if not none
-        if active_photoset.description != 'none':
-            context_dict['photoset_description'] = active_photoset.description
+    # get description if not none
+    if active_photoset.description != 'none':
+        context_dict['photoset_description'] = active_photoset.description
 
-        # retrieve photos for the active photoset
-        photos_in_photoset = PhotoInPhotoset.objects.filter(photoset=active_photoset).order_by('order')
-        for index, photo_in_photoset in enumerate(photos_in_photoset):
-            photo_in_photoset.photo.current_order = index + 1
-        photos = [i.photo for i in photos_in_photoset]
-        context_dict['photos'] = photos
+    # retrieve photos for the active photoset
+    photos_in_photoset = PhotoInPhotoset.objects.filter(photoset=active_photoset).order_by('order')
+    for index, photo_in_photoset in enumerate(photos_in_photoset):
+        photo_in_photoset.photo.current_order = index + 1
+    photos = [i.photo for i in photos_in_photoset]
+    context_dict['photos'] = photos
 
-        # add photoset to context dict
-        context_dict['active_photoset'] = active_photoset
+    # add photoset to context dict
+    context_dict['active_photoset'] = active_photoset
 
-        # increment views counter
-        active_photoset.num_views += 1
-        active_photoset.save()
-
-    except Photoset.DoesNotExist:
-        pass
+    # increment views counter
+    active_photoset.num_views += 1
+    active_photoset.save()
 
     # get personal data
     person = get_object_or_404(Person, first_name='Sergey')
