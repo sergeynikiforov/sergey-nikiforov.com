@@ -12,9 +12,11 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+import pwd
 import config
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+USER_HOME_DIR = pwd.getpwuid(os.getuid()).pw_dir
 
 
 # Quick-start development settings - unsuitable for production
@@ -26,7 +28,7 @@ SECRET_KEY = config.SECRET_KEY
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.0.36']
+ALLOWED_HOSTS = ['192.168.0.191']
 
 # cloudinary configuration settings
 import cloudinary
@@ -56,7 +58,7 @@ INSTALLED_APPS = (
 )
 
 # CACHING
-"""
+
 CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
@@ -69,7 +71,7 @@ CACHES = {
 
 CACHE_MIDDLEWARE_ALIAS = 'my_cache'
 CACHE_MIDDLEWARE_SECONDS = 10
-"""
+
 
 # compressor
 COMPRESS_ENABLED = True
@@ -90,7 +92,7 @@ BOWER_INSTALLED_APPS = (
 
 
 MIDDLEWARE_CLASSES = (
-    #'django.middleware.cache.UpdateCacheMiddleware',
+    'django.middleware.cache.UpdateCacheMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -99,7 +101,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    #'django.middleware.cache.FetchFromCacheMiddleware',
+    'django.middleware.cache.FetchFromCacheMiddleware',
 )
 
 ROOT_URLCONF = 'sn_project.urls'
@@ -138,7 +140,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'OPTIONS': {
             'charset': 'utf8mb4',
-            'read_default_file': '/home/sergeynikiforov/.my.cnf',
+            'read_default_file': os.path.join(USER_HOME_DIR, '.my.cnf'),
         },
     }
 }
@@ -183,7 +185,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = '/home/www/sn_project/'
+STATIC_ROOT = os.path.join(USER_HOME_DIR,'www/sergey-nikiforov.com/media')
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',

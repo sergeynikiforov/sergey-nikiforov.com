@@ -286,6 +286,7 @@ $(document).ready(function() {
     // refresh all waypoints using jquery mobile event
     $(window).on("orientationchange", function(event) {
         //console.log(event);
+        $(window).trigger('smartresize');
         Waypoint.refreshAll();
     });
 
