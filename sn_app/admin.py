@@ -4,7 +4,7 @@ import models
 class PersonAdmin(admin.ModelAdmin):
     fieldsets = [
         ('Bio', {'fields': ['first_name', 'last_name', 'birthdate']}),
-        ('Contact Info', {'fields': ['address', 'telephone', 'email']}),
+        ('Contact Info', {'fields': ['address', 'telephone', 'email', 'resume_link']}),
         ('Social Networks', {'fields': ['facebook_link', 'linkedin_link', 'instagram_link', 'flickr_link', 'github_link', 'twitter_link']}),
         ('Other', {'fields': ['skills_json', 'hobbies_json']})
     ]

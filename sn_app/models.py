@@ -11,6 +11,7 @@ class Person(models.Model):
     address = models.CharField(max_length=500)
     email = models.EmailField()
     telephone = models.CharField(max_length=50)
+    resume_link = models.URLField(default='http://www.example.com')
     facebook_link = models.URLField(max_length=300)
     linkedin_link = models.URLField(max_length=300)
     instagram_link = models.URLField(max_length=300)

@@ -22,8 +22,34 @@ cloudinary.config(
   api_secret = api_secret
 )
 
+# for exif
+import exifread
+import pytz
+from datetime import datetime
+
+
 # path to dir containing photos
-PHOTOPATH = '/home/sergeynikiforov/Dropbox/img_assets/test2/'
+PHOTOPATH = '/home/sergeynikiforov/Dropbox/assets_sn.com/my-site-final-images/photosets/spain/'
+
+def dateTimeFromExif(path_to_file):
+    """
+    helper function
+    expects path to photo with EXIF data
+
+    returns datetime.datetime object from EXIF DateTimeOriginal field
+    """
+    with open(path_to_file, 'rb') as f:
+        moscow_time = pytz.timezone('Europe/Moscow')
+        tags = exifread.process_file(f, details=False)
+        # try DateTimeOriginal if taken with digicam, otherwise - DateTimeDigitized (i.e. scanned film)
+        try:
+            dateTimeOriginal = tags['EXIF DateTimeOriginal'].values
+        except KeyError:
+            dateTimeOriginal = tags['EXIF DateTimeDigitized'].values
+        dateTimeObject = datetime.strptime(dateTimeOriginal, '%Y:%m:%d %H:%M:%S')
+        dateTimeObject = dateTimeObject.replace(tzinfo=moscow_time)
+        return dateTimeObject
+
 
 def populate(photos_path, photoset_title=None):
     """
@@ -50,8 +76,11 @@ def populate(photos_path, photoset_title=None):
         uploaded_photo = cloudinary.uploader.upload(photo)
         print('Photo uploaded. ID: %s' % uploaded_photo['public_id'])
 
+        photo_datetime = dateTimeFromExif(photo)
+        photo_thumb = cloudinary.CloudinaryImage(uploaded_photo['public_id']).build_url(secure=True, width=640, crop='fit')
+
         # save info in Photo table
-        photo_db_instance = Photo.objects.create(publicID=uploaded_photo['public_id'], url=uploaded_photo['secure_url'])
+        photo_db_instance = Photo.objects.create(publicID=uploaded_photo['public_id'], url=uploaded_photo['secure_url'], date_taken=photo_datetime, thumbnail_url=photo_thumb)
 
         # add photo to photoset
         ps = PhotoInPhotoset(photoset=photoset, photo=photo_db_instance, order=order_counter)

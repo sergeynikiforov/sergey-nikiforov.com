@@ -70,7 +70,7 @@ CACHES = {
 }
 
 CACHE_MIDDLEWARE_ALIAS = 'my_cache'
-CACHE_MIDDLEWARE_SECONDS = 10
+CACHE_MIDDLEWARE_SECONDS = 300
 
 
 # compressor
@@ -185,7 +185,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = os.path.join(USER_HOME_DIR,'www/sergey-nikiforov.com/media')
+STATIC_ROOT = os.path.join(USER_HOME_DIR,'www/sergey-nikiforov.com/static')
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',

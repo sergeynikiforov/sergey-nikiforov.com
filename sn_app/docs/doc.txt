@@ -27,7 +27,7 @@ Deployment guide. CentOS 7.
             sudo timedatectl list-timezones | grep Moscow
             sudo timedatectl set-timezone region/timezone
             sudo timedatectl
-            
+
             sudo yum install ntp
             sudo systemctl start ntpd
             sudo systemctl enable ntpd
@@ -39,7 +39,7 @@ Deployment guide. CentOS 7.
             sudo sh -c 'echo "/swapfile none swap sw 0 0" >> /etc/fstab'
         - Take a Snapshot of your Current Configuration
             sudo poweroff
-            
+
 1. Apache server + mod_wsgi
     a. Apache install
         sudo yum install httpd
@@ -51,10 +51,10 @@ Deployment guide. CentOS 7.
         sudo ./configure --with-python=/home/vagrant/.virtualenvs/sn_project/bin/python (virtualenv)
         sudo make
         sudo make install
-        
+
         in httpd.conf add a line:
         LoadModule wsgi_module /usr/lib64/httpd/modules/mod_wsgi.so
-        
+
         sudo systemctl restart httpd
     c. configure vhosts.conf in /etc/httpd/conf.d/
     """
@@ -65,13 +65,13 @@ Deployment guide. CentOS 7.
                 Alias /robots.txt /home/vagrant/www/sergey-nikiforov.com/media/robots.txt
                 Alias /favicon.ico /home/vagrant/www/sergey-nikiforov.com/media/favicon.ico
 
-                Alias /static/ /home/vagrant/www/sergey-nikiforov.com/media/
+                Alias /static/ /home/vagrant/www/sergey-nikiforov.com/static/
 
-                <Directory /home/vagrant/www/sergey-nikiforov.com/media>
+                <Directory /home/vagrant/www/sergey-nikiforov.com/static>
                     Require all granted
                 </Directory>
 
-    
+
                 Alias /static/admin/ /usr/lib/python2.7/site-packages/django/contrib/admin/static/admin/
                 <Directory /home/.virtualenvs/sn_project/lib/python2.7/site-packages/django/contrib/admin/static/admin>
                     Require all granted
@@ -80,7 +80,7 @@ Deployment guide. CentOS 7.
                 WSGIDaemonProcess sergey-nikiforov processes=2 threads=15 python-path=/home/vagrant/django_projects/sergey-nikiforov.com:/home/vagrant/.virtualenvs/sn_project/lib/python2.7/site-packages
                 WSGIProcessGroup sergey-nikiforov
                 WSGIScriptAlias / /home/vagrant/django_projects/sergey-nikiforov.com/sn_project/wsgi.py process-group=sergey-nikiforov
-                
+
                 <Directory /home/vagrant/django_projects/sergey-nikiforov.com/sn_project>
                     <Files wsgi.py>
                         Require all granted
@@ -133,11 +133,12 @@ Deployment guide. CentOS 7.
             mysql> create database appdb;
             mysql> grant all on appdb.* to 'appuser'@'localhost' identified by 'password';
             mysql> quit
-            
+
      d. sudo yum install python-devel mysql-devel
      e. if mariadb - mysql_secure_installation
         innodb_file_format = BARRACUDA
         innodb_large_prefix = ON
+    f. add user info to ~/.my.cnf
 
 
 2. virtualenvwrapper (http://thecodeship.com/deployment/deploy-django-apache-virtualenv-and-mod_wsgi/)
@@ -145,6 +146,7 @@ Deployment guide. CentOS 7.
        sudo vim ~/.bash_profile
        export WORKON_HOME=$HOME/.virtualenvs
        source /usr/bin/virtualenvwrapper.sh
+
        source ~/.bash_profile
        mkvirtualenv myprojectenv --no-site-packages
     b. git clone ...
