@@ -9,18 +9,11 @@
 {% endblock off_canvas_tab_bar_page_header %}
 
 {% block off_canvas_tab_bar_page_links %}
-    <!--
-    {% if photosets %}
-        {% for photoset in photosets %}
-            <p class="landing"><a href="#{{ photoset.slug }}">{{ photoset.title|upper }}</a></p>
-        {% endfor %}
-    {% endif %}
-    -->
 {% endblock off_canvas_tab_bar_page_links %}
 
 {% block off_canvas_tab_bar_image %}
     <figure>
-        {% pictureCloudinary "photography_xddfkp" sizes="(min-width: 1025px) 90vw, (min-width: 641px) 100vw, 100vw" srcset="200w 400w 600w 800w 1000w 1200w 1400w 1600w 2000w 2400w 2800w 3200w" alt="photography hero image" %}
+        {% pictureCloudinary '3G4A0108-Edit-Edit-1_jyzumy' sizes="100vw" srcset="200w 400w 600w 800w 1000w 1200w 1400w 1600w 2000w 2400w 2800w 3200w" alt='my silhouette, Barcelona, Catalonia' %}
     </figure>
 {% endblock off_canvas_tab_bar_image %}
 
@@ -65,31 +58,6 @@
             </div>
         </div>
     </div>
-    <!--
-    <div class="row show-for-medium-only">
-        <div class="small-12 columns small_screen_figure medium_screen_figure">
-            <div class="overlay_container">
-                <figure>
-                    {% pictureCloudinary "photography_xddfkp" sizes="(min-width: 1025px) 90vw, (min-width: 641px) 100vw, 100vw" srcset="200w 400w 600w 800w 1000w 1200w 1400w 1600w 2000w 2400w 2800w 3200w" alt="photography hero image" %}
-                </figure>
-                <div class="overlay">
-                    <div class="row">
-                        <div class="medium-10 small-centered columns">
-                            <nav id="hero-nav" role="navigation">
-                                <h2 class="page_header">/PHOTOGRAPHY/</h2>
-                                {% if photosets %}
-                                    {% for photoset in photosets %}
-                                        <p class="landing"><a href="#{{ photoset.slug }}">{{ photoset.title|upper }}</a></p>
-                                    {% endfor %}
-                                {% endif %}
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    -->
     {% if photosets %}
         {% for photoset in photosets %}
         <section>

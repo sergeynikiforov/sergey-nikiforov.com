@@ -9,7 +9,7 @@
 
 {% block off_canvas_tab_bar_image %}
     <figure>
-        <img src="{% static 'sn_app/images/ladefense.jpg' %}" alt="La Defense, Paris">
+        {% pictureCloudinary 'IMG_7963-Edit-Edit-1_xl3iu1' sizes="100vw" srcset="200w 400w 600w 800w 1000w 1200w 1400w 1600w 2000w 2400w 2800w 3200w" alt='La Defense, Paris' %}
     </figure>
 {% endblock off_canvas_tab_bar_image %}
 
@@ -37,31 +37,6 @@
             </div>
         </section>
     </div>
-    <!--
-    <div class="row hide-for-large-up">
-        <div class="small-12 columns small_screen_figure medium_screen_figure show-for-medium-only">
-            <div class="overlay_container">
-                <figure>
-                    <img src="{% static 'sn_app/images/ladefense.jpg' %}" alt="La Defense, Paris">
-                </figure>
-                <div class="overlay">
-                    <div class="row">
-                        <div class="medium-10 small-centered columns">
-                            <nav id="hero-nav" role="navigation">
-                                <h2 class="page_header">/RESUME/</h2>
-                                <p class="landing"><a href="#contact">CONTACT DETAILS</a></p>
-                                <p class="landing"><a href="#education">EDUCATION</a></p>
-                                <p class="landing"><a href="#courses">ONLINE COURSES</a></p>
-                                <p class="landing"><a href="#work">WORK EXPERIENCE</a></p>
-                                <p class="landing"><a href="#skills">SKILLS</a></p>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    -->
     <div class="row">
         <!--
         <div class="large-2 columns hide-for-small-up">
