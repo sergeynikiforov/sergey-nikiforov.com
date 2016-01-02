@@ -52,7 +52,6 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'djangobower',
-    'compressor',
     'cloudinary',
     'sn_app'
 )
@@ -129,7 +128,7 @@ TEMPLATES = [
     }
 ]
 
-WSGI_APPLICATION = 'sn_project.wsgi.application'
+WSGI_APPLICATION = 'sn_project.apache.wsgi.application'
 
 
 # Database
@@ -190,8 +189,7 @@ STATIC_ROOT = os.path.join(USER_HOME_DIR,'www/sergey-nikiforov.com/static')
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'djangobower.finders.BowerFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    'compressor.finders.CompressorFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder'
 )
 
 # EMAIL settings

@@ -129,7 +129,7 @@
         <div class="medium_screen_figure large_screen_figure">
             <div class="bg75-image-wrapper">
                 <div class="image-wrap">
-                    <div id="change-bg" class="photoset-image" style="background-image: url('{{ active_photoset.cover_photo.url }}');">
+                    <div id="change-bg" class="photoset-image" style="background-image: url('{{ active_photoset.cover_photo.medium_url }}');">
                         <div id="preloader"></div>
                         <div class="row">
                             <div class="medium-10 medium-centered columns page_header_wrapper_large">
@@ -150,33 +150,6 @@
             </div>
         </div>
     </div>
-    <!--
-    <div class="row show-for-medium-only">
-        <div class="small-12 columns small_screen_figure medium_screen_figure">
-            <div class="overlay_container">
-                <figure>
-                    {% pictureCloudinary active_photoset.cover_photo.publicID sizes="(min-width: 1025px) 90vw, (min-width: 641px) 100vw, 100vw" srcset="200w 400w 600w 800w 1000w 1200w 1400w 1600w 2000w 2400w 2800w 3200w" alt=active_photoset.cover_photo.title %}
-                </figure>
-                <div class="overlay">
-                    <div class="row">
-                        <div class="medium-10 small-centered columns">
-                            <nav id="hero-nav" role="navigation">
-                                <h2 class="page_header">/{{ photoset_title|upper }}/</h2>
-                                {% if photosets %}
-                                    {% for photoset in photosets %}
-                                        {% if photoset.title != active_photoset.title %}
-                                            <p class="landing"><a href="{% url 'sn_app:photoset' photoset.slug %}">{{ photoset.title|upper }}</a></p>
-                                        {% endif %}
-                                    {% endfor %}
-                                {% endif %}
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    -->
     <div id="album-wrapper" class="row medium-toggle-color-black">
         <div class="small-12 medium-9 small-centered columns container-center">
             {% if photoset_description %}

@@ -156,15 +156,15 @@ $tab-bar-top-margin: 1rem;
     margin-top: 2rem;
     padding-top: 1rem;
     @media #{$large-up} {
-        background-image: url("https://res.cloudinary.com/sergeynikiforov/image/upload/c_fit,q_85,w_3200/v1451499214/IMG_8040-Edit-Edit-1_yx2dvq.jpg");
+        background-image: url("https://res.cloudinary.com/sergeynikiforov/image/upload/c_fit,q_80,w_2800/v1451499214/IMG_8040-Edit-Edit-1_yx2dvq.jpg");
         background-position: 50% 25%;
     }
     @media #{$medium-only} {
-        background-image: url("https://res.cloudinary.com/sergeynikiforov/image/upload/c_fit,q_85,w_2048/v1451499214/IMG_8040-Edit-Edit-1_yx2dvq.jpg");
+        background-image: url("https://res.cloudinary.com/sergeynikiforov/image/upload/c_fit,q_80,w_1600/v1451499214/IMG_8040-Edit-Edit-1_yx2dvq.jpg");
         background-position: 50% 10%;
     }
     @media #{$small-only} {
-        background-image: url("https://res.cloudinary.com/sergeynikiforov/image/upload/ar_4:4,c_fill,g_north_west,q_85,w_1280/v1451499214/IMG_8040-Edit-Edit-1_yx2dvq.jpg");
+        background-image: url("https://res.cloudinary.com/sergeynikiforov/image/upload/ar_4:4,c_fill,g_north_west,q_80,w_1024/v1451499214/IMG_8040-Edit-Edit-1_yx2dvq.jpg");
         background-position: 10% 50%;
     }
 }
@@ -608,10 +608,10 @@ $tab-bar-top-margin: 1rem;
 
 .home-image {
     @media #{$medium-only} {
-        background-image: url("https://res.cloudinary.com/sergeynikiforov/image/upload/c_fit,q_85,w_2048/v1451498375/3G4A3942-Edit-1_mypv4c.jpg");
+        background-image: url("https://res.cloudinary.com/sergeynikiforov/image/upload/c_fit,q_80,w_1600/v1451498375/3G4A3942-Edit-1_mypv4c.jpg");
     }
     @media #{$large-up} {
-        background-image: url("https://res.cloudinary.com/sergeynikiforov/image/upload/c_fit,q_85,w_3200/v1451498375/3G4A3942-Edit-1_mypv4c.jpg");
+        background-image: url("https://res.cloudinary.com/sergeynikiforov/image/upload/c_fit,q_80,w_2800/v1451498375/3G4A3942-Edit-1_mypv4c.jpg");
     }
     background-size: cover;
     background-repeat: no-repeat;
@@ -621,12 +621,14 @@ $tab-bar-top-margin: 1rem;
 }
 
 .contact-image {
-    @media #{$medium-only} {
-        background-image: url("https://res.cloudinary.com/sergeynikiforov/image/upload/c_fit,q_85,w_2048/v1451498105/3G4A3215-Edit-2-1_l7rges.jpg");
+    @media #{$medium-up} {
+        background-image: url("https://res.cloudinary.com/sergeynikiforov/image/upload/c_fit,q_80,w_2048/v1451498105/3G4A3215-Edit-2-1_l7rges.jpg");
     }
+    /*
     @media #{$large-up} {
-        background-image: url("https://res.cloudinary.com/sergeynikiforov/image/upload/c_fit,q_85,w_3200/v1451498105/3G4A3215-Edit-2-1_l7rges.jpg");
+        background-image: url("https://res.cloudinary.com/sergeynikiforov/image/upload/c_fit,q_80,w_3200/v1451498105/3G4A3215-Edit-2-1_l7rges.jpg");
     }
+    */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 100%;
@@ -635,12 +637,14 @@ $tab-bar-top-margin: 1rem;
 }
 
 .about-image {
-    @media #{$medium-only} {
-        background-image: url("https://res.cloudinary.com/sergeynikiforov/image/upload/c_fit,q_85,w_2048/v1451496375/Untitled-6-1_mfanal.jpg");
+    @media #{$medium-up} {
+        background-image: url("https://res.cloudinary.com/sergeynikiforov/image/upload/c_fit,q_80,w_2048/v1451496375/Untitled-6-1_mfanal.jpg");
     }
+    /*
     @media #{$large-up} {
-        background-image: url("https://res.cloudinary.com/sergeynikiforov/image/upload/c_fit,q_85,w_3200/v1451496375/Untitled-6-1_mfanal.jpg");
+        background-image: url("https://res.cloudinary.com/sergeynikiforov/image/upload/c_fit,q_80,w_3200/v1451496375/Untitled-6-1_mfanal.jpg");
     }
+    */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 50%;
@@ -649,12 +653,14 @@ $tab-bar-top-margin: 1rem;
 }
 
 .about-image-lombok {
-    @media #{$medium-only} {
-        background-image: url("http://res.cloudinary.com/sergeynikiforov/image/upload/c_fit,q_85,w_2048/v1451496379/3G4A8760-Edit-3-Edit-2-1_fmxcnv.jpg");
+    @media #{$medium-up} {
+        background-image: url("http://res.cloudinary.com/sergeynikiforov/image/upload/c_fit,q_80,w_2048/v1451496379/3G4A8760-Edit-3-Edit-2-1_fmxcnv.jpg");
     }
+    /*
     @media #{$large-up} {
-        background-image: url("http://res.cloudinary.com/sergeynikiforov/image/upload/c_fit,q_85,w_3200/v1451496379/3G4A8760-Edit-3-Edit-2-1_fmxcnv.jpg");
+        background-image: url("http://res.cloudinary.com/sergeynikiforov/image/upload/c_fit,q_80,w_3200/v1451496379/3G4A8760-Edit-3-Edit-2-1_fmxcnv.jpg");
     }
+    */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 100%;
@@ -663,12 +669,14 @@ $tab-bar-top-margin: 1rem;
 }
 
 .about-image-selfie {
-    @media #{$medium-only} {
-        background-image: url("https://res.cloudinary.com/sergeynikiforov/image/upload/c_fit,q_85,w_2048/v1451496379/3G4A2572-1_clnzps.jpg");
+    @media #{$medium-up} {
+        background-image: url("https://res.cloudinary.com/sergeynikiforov/image/upload/c_fit,q_80,w_2048/v1451496379/3G4A2572-1_clnzps.jpg");
     }
+    /*
     @media #{$large-up} {
-        background-image: url("https://res.cloudinary.com/sergeynikiforov/image/upload/c_fit,q_85,w_3200/v1451496379/3G4A2572-1_clnzps.jpg");
+        background-image: url("https://res.cloudinary.com/sergeynikiforov/image/upload/c_fit,q_80,w_3200/v1451496379/3G4A2572-1_clnzps.jpg");
     }
+    */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 100%;
@@ -677,12 +685,14 @@ $tab-bar-top-margin: 1rem;
 }
 
 .about-image-road {
-    @media #{$medium-only} {
-        background-image: url("https://res.cloudinary.com/sergeynikiforov/image/upload/c_fit,q_85,w_2048/v1451496378/IMG_3822-1_u3dujb.jpg");
+    @media #{$medium-up} {
+        background-image: url("https://res.cloudinary.com/sergeynikiforov/image/upload/c_fit,q_80,w_2048/v1451496378/IMG_3822-1_u3dujb.jpg");
     }
+    /*
     @media #{$large-up} {
-        background-image: url("https://res.cloudinary.com/sergeynikiforov/image/upload/c_fit,q_85,w_3200/v1451496378/IMG_3822-1_u3dujb.jpg");
+        background-image: url("https://res.cloudinary.com/sergeynikiforov/image/upload/c_fit,q_80,w_3200/v1451496378/IMG_3822-1_u3dujb.jpg");
     }
+    */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 100%;
@@ -691,12 +701,14 @@ $tab-bar-top-margin: 1rem;
 }
 
 .about-image-sinai-mountains {
-    @media #{$medium-only} {
-        background-image: url("https://res.cloudinary.com/sergeynikiforov/image/upload/c_fit,q_85,w_2048/v1451496373/IMG_3712-Edit-1_aggatn.jpg");
+    @media #{$medium-up} {
+        background-image: url("https://res.cloudinary.com/sergeynikiforov/image/upload/c_fit,q_80,w_2048/v1451496373/IMG_3712-Edit-1_aggatn.jpg");
     }
+    /*
     @media #{$large-up} {
-        background-image: url("https://res.cloudinary.com/sergeynikiforov/image/upload/c_fit,q_85,w_3200/v1451496373/IMG_3712-Edit-1_aggatn.jpg");
+        background-image: url("https://res.cloudinary.com/sergeynikiforov/image/upload/c_fit,q_80,w_3200/v1451496373/IMG_3712-Edit-1_aggatn.jpg");
     }
+    */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 100%;
@@ -705,12 +717,14 @@ $tab-bar-top-margin: 1rem;
 }
 
 .resume-image {
-    @media #{$medium-only} {
-        background-image: url("https://res.cloudinary.com/sergeynikiforov/image/upload/c_fit,q_85,w_2048/v1451498984/IMG_7963-Edit-Edit-1_xl3iu1.jpg");
+    @media #{$medium-up} {
+        background-image: url("https://res.cloudinary.com/sergeynikiforov/image/upload/c_fit,q_80,w_2048/v1451498984/IMG_7963-Edit-Edit-1_xl3iu1.jpg");
     }
+    /*
     @media #{$large-up} {
-        background-image: url("https://res.cloudinary.com/sergeynikiforov/image/upload/c_fit,q_85,w_3200/v1451498984/IMG_7963-Edit-Edit-1_xl3iu1.jpg");
+        background-image: url("https://res.cloudinary.com/sergeynikiforov/image/upload/c_fit,q_80,w_3200/v1451498984/IMG_7963-Edit-Edit-1_xl3iu1.jpg");
     }
+    */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 0%;
@@ -719,12 +733,14 @@ $tab-bar-top-margin: 1rem;
 }
 
 .photography-image {
-    @media #{$medium-only} {
-        background-image: url("https://res.cloudinary.com/sergeynikiforov/image/upload/c_fit,q_85,w_2048/v1451498659/3G4A0108-Edit-Edit-1_jyzumy.jpg");
+    @media #{$medium-up} {
+        background-image: url("https://res.cloudinary.com/sergeynikiforov/image/upload/c_fit,q_80,w_2048/v1451498659/3G4A0108-Edit-Edit-1_jyzumy.jpg");
     }
+    /*
     @media #{$large-up} {
-        background-image: url("https://res.cloudinary.com/sergeynikiforov/image/upload/c_fit,q_85,w_3200/v1451498659/3G4A0108-Edit-Edit-1_jyzumy.jpg");
+        background-image: url("https://res.cloudinary.com/sergeynikiforov/image/upload/c_fit,q_80,w_3200/v1451498659/3G4A0108-Edit-Edit-1_jyzumy.jpg");
     }
+    */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 50%;

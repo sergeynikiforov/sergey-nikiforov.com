@@ -34,8 +34,8 @@ def pictureElement(publicID, sizes, srcset, alt):
     # construct srcset for Webp & jpeg images
     for src in srcset:
         width = int(src[:-1])
-        srcsetWebp += '{photo_url} {src_width}, '.format(photo_url=cloudinary.CloudinaryImage(publicID).build_url(format="webp", width=width, crop="fill", quality=85), src_width=src)
-        srcsetJpg += '{photo_url} {src_width}, '.format(photo_url=cloudinary.CloudinaryImage(publicID).build_url(format="jpg", width=width, crop="fill", quality=85), src_width=src)
+        srcsetWebp += '{photo_url} {src_width}, '.format(photo_url=cloudinary.CloudinaryImage(publicID).build_url(format="webp", width=width, crop="fill", quality=80), src_width=src)
+        srcsetJpg += '{photo_url} {src_width}, '.format(photo_url=cloudinary.CloudinaryImage(publicID).build_url(format="jpg", width=width, crop="fill", quality=80), src_width=src)
 
     # remove trailing commas
     srcsetWebp = srcsetWebp[:-2]

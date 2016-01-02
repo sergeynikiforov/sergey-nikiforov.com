@@ -3,6 +3,8 @@ from django.utils import timezone
 from django.template.defaultfilters import slugify
 #import datetime
 
+import cloudinary
+
 
 class Person(models.Model):
     first_name = models.CharField(max_length=50)
@@ -127,15 +129,23 @@ class Photoset(models.Model):
         return '"%s" photoset with %i photos, viewed %i time(s)' % (self.title, self.num_photos, self.num_views)
 
 
+
 class Photo(models.Model):
     publicID = models.CharField(max_length=200)  # Cloudinary photo publicID
     url = models.URLField(default='http://www.example.com')
     thumbnail_url = models.URLField(default='http://www.example.com/thumbnailURL')
+    medium_url = models.URLField(default='http://www.example.com/mediumURL')
+    large_url = models.URLField(default='http://www.example.com/largeURL')
     title = models.CharField(max_length=200, default='Untitled')
     description = models.TextField(max_length=2000, default='No description')
     date_taken = models.DateTimeField(default=timezone.now)
     num_views = models.PositiveIntegerField(default=0)
     photosets = models.ManyToManyField(Photoset, through='PhotoInPhotoset')
+
+    def save(self, *args, **kwargs):
+        self.medium_url = cloudinary.CloudinaryImage(self.publicID).build_url(secure=True, width=2048, crop="fit")
+        self.large_url = cloudinary.CloudinaryImage(self.publicID).build_url(secure=True, width=3200, crop="fit")
+        super(Photo, self).save(*args, **kwargs)
 
     def __unicode__(self):
         return '"%s" photo %s, viewed %i time(s)' % (self.title, self.publicID, self.num_views)

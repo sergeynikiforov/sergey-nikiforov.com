@@ -1,8 +1,7 @@
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, get_object_or_404
 from django.http import JsonResponse
 from django.core.mail import EmailMessage
 from models import Person, Education, Job, OnlineCourse, Photo, PhotoInPhotoset, Photoset
-from django.core.exceptions import ObjectDoesNotExist
 from forms import ContactMeForm
 import json
 import cloudinary
