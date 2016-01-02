@@ -190,8 +190,8 @@ STATIC_ROOT = os.path.join(USER_HOME_DIR,'www/sergey-nikiforov.com/static')
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'djangobower.finders.BowerFinder',
-    'compressor.finders.CompressorFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'compressor.finders.CompressorFinder',
 )
 
 # EMAIL settings

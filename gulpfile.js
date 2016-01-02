@@ -13,12 +13,13 @@ var autoprefixer = require('gulp-autoprefixer');
 var uglify = require('gulp-uglify');
 var minify = require('gulp-minify');
 
-var gzip_options = {
+gzip({gzipOptions: {
     threshold: '1kb',
     gzipOptions: {
         level: 9
+        }
     }
-};
+});
 
 // paths for bower and assets
 var paths = {
@@ -60,6 +61,8 @@ gulp.task('sass', function() {
     .pipe(autoprefixer())
     // minify
     .pipe(minifycss())
+    // gzip
+    //.pipe(gzip())
     // put into destination dir
     .pipe(gulp.dest('./sn_app/static/sn_app/css'))
     // run reload
@@ -82,6 +85,8 @@ gulp.task('scripts', function() {
     .pipe(concat('app.min.js'))
     // uglify
     .pipe(uglify())
+    // gzip
+    //.pipe(gzip())
     // put into dest dir
     .pipe(gulp.dest('./sn_app/static/sn_app/js'))
     // run reload
@@ -102,6 +107,8 @@ gulp.task('photoapp', function() {
     .pipe(concat('photoapp.min.js'))
     // uglify
     .pipe(uglify())
+    // gzip
+    //.pipe(gzip())
     // put into dest dir
     .pipe(gulp.dest('./sn_app/static/sn_app/js'))
 });
@@ -118,6 +125,8 @@ gulp.task('modernizr', function() {
     .pipe(concat('modernizr.min.js'))
     // uglify
     .pipe(uglify())
+    // gzip
+    //.pipe(gzip())
     // put into dest dir
     .pipe(gulp.dest('./sn_app/static/sn_app/js'))
 });
@@ -134,6 +143,8 @@ gulp.task('sidebar', function() {
     .pipe(concat('stickysidebar.min.js'))
     // uglify
     .pipe(uglify())
+    // gzip
+    //.pipe(gzip())
     // put into dest dir
     .pipe(gulp.dest('./sn_app/static/sn_app/js'))
 });

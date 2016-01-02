@@ -99,22 +99,7 @@ App.OrderView = Backbone.View.extend({
         return this;
     }
 });
-/*
-App.JsonLdView = Backbone.View.extend({
-    el: '#json-ld-tmpl',
-    template: _.template($('#json-ld-tmpl').html()),
 
-    initialize: function() {
-        this.render();
-    },
-
-    render: function() {
-        var html = this.template(this.model.toJSON());
-        this.$el.html(html);
-        return this;
-    }
-});
-*/
 
 App.DescriptionView = Backbone.View.extend({
     el: '#large-photo-description-wrapper',
@@ -125,11 +110,14 @@ App.DescriptionView = Backbone.View.extend({
     },
 
     render: function() {
-        if (this.model.toJSON().description != 'No description') {
-            var html_large = this.template(this.model.toJSON());
+        var model_json = this.model.toJSON();
+        if (model_json.description != 'No description') {
+            var html_large = this.template(model_json);
         }
         else {
-            var html_large = '<p> </p>';
+            model_json.description = '';
+            var html_large = this.template(model_json);
+
         }
         this.$el.html(html_large);
         return this;
