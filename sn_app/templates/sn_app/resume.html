@@ -3,6 +3,13 @@
 {% load staticfiles %}
 {% block title %}Resume{% endblock title %}
 
+{% block open_graph %}
+    <meta property="og:title" content="{{person.first_name }} {{ person.last_name }}. Resume." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://{{ request.get_host }}{% url 'sn_app:resume' %}" />
+    <meta property="og:image" content="https://res.cloudinary.com/sergeynikiforov/image/upload/c_fit,q_85,w_1024/v1451498984/IMG_7963-Edit-Edit-1_xl3iu1.jpg" />
+{% endblock open_graph %}
+
 {% block off_canvas_tab_bar_page_header %}
     <h2 class="page_header">/RESUME/</h2>
 {% endblock off_canvas_tab_bar_page_header %}

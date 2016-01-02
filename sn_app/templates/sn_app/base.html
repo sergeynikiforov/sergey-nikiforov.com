@@ -1,15 +1,21 @@
 <!DOCTYPE html>{% load sn_app_extras %}{% load static %}{% load cloudinary %}
 <html class="no-js" lang="en">
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>{% block title %}Sergey Nikiforov{% endblock title %}</title>
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <meta name="author" content="Sergey Nikiforov">
-        <meta name="description" content="Sergey Nikiforov's personal site. Photography. Resume.">
-        <meta name="keywords" content="photography, resume, travel">
-        <meta name="google" content="notranslate">
-        <meta name="robots" content="index, follow">
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <meta name="author" content="Sergey Nikiforov" />
+        <meta name="description" content="Sergey Nikiforov's personal site. Photography. Resume." />
+        <meta name="keywords" content="photography, resume, travel" />
+        <meta name="google" content="notranslate" />
+        <meta name="robots" content="index, follow" />
+        {% block open_graph %}
+            <meta property="og:title" content="Sergey Nikiforov" />
+            <meta property="og:type" content="website" />
+            <meta property="og:url" content="http://{{ request.get_host }}{% url 'sn_app:landing' %}" />
+            <meta property="og:image" content="https://res.cloudinary.com/sergeynikiforov/image/upload/c_fit,q_85,w_1024/v1451498375/3G4A3942-Edit-1_mypv4c.jpg" />
+        {% endblock open_graph %}
         <link rel="apple-touch-icon-precomposed" sizes="57x57" href="http://www.sergey-nikiforov.com/apple-touch-icon-57x57.png" />
         <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://www.sergey-nikiforov.com/apple-touch-icon-114x114.png" />
         <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://www.sergey-nikiforov.com/apple-touch-icon-72x72.png" />
