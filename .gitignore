@@ -9,3 +9,4 @@ config.py
 *.sql
 *.log
 sn_app/logs
+*.conf

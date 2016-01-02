@@ -104,7 +104,7 @@ Deployment guide. CentOS 7.
         - For MySQL 5.7 only: At the initial start up of the server, the following happens, given that the data directory of the server is empty: ... A superuser account 'root'@'localhost' is created. A password for the superuser is set and stored in the error log file. To reveal it, use the following command:
             sudo grep 'temporary password' /var/log/mysqld.log
         - Change the root password as soon as possible by logging in with the generated, temporary password and set a custom password for the superuser account:
-            shell> mysql -uroot -pudo apt-get install libmariadbclient-dev
+            shell> mysql -uroot -p
             mysql> ALTER USER 'root'@'localhost' IDENTIFIED BY 'MyNewPass4!';
         - The MySQL daemon should be enabled to start on boot:
             sudo /usr/bin/systemctl enable mysqld

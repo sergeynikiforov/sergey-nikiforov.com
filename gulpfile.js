@@ -62,7 +62,7 @@ gulp.task('sass', function() {
     // minify
     .pipe(minifycss())
     // gzip
-    //.pipe(gzip())
+    .pipe(gzip())
     // put into destination dir
     .pipe(gulp.dest('./sn_app/static/sn_app/css'))
     // run reload
@@ -86,7 +86,7 @@ gulp.task('scripts', function() {
     // uglify
     .pipe(uglify())
     // gzip
-    //.pipe(gzip())
+    .pipe(gzip())
     // put into dest dir
     .pipe(gulp.dest('./sn_app/static/sn_app/js'))
     // run reload
@@ -108,7 +108,7 @@ gulp.task('photoapp', function() {
     // uglify
     .pipe(uglify())
     // gzip
-    //.pipe(gzip())
+    .pipe(gzip())
     // put into dest dir
     .pipe(gulp.dest('./sn_app/static/sn_app/js'))
 });
@@ -126,7 +126,7 @@ gulp.task('modernizr', function() {
     // uglify
     .pipe(uglify())
     // gzip
-    //.pipe(gzip())
+    .pipe(gzip())
     // put into dest dir
     .pipe(gulp.dest('./sn_app/static/sn_app/js'))
 });
@@ -144,7 +144,7 @@ gulp.task('sidebar', function() {
     // uglify
     .pipe(uglify())
     // gzip
-    //.pipe(gzip())
+    .pipe(gzip())
     // put into dest dir
     .pipe(gulp.dest('./sn_app/static/sn_app/js'))
 });
