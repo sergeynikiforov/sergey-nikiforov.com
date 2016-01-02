@@ -215,17 +215,17 @@ $(document).ready(function() {
 var MyWaypoints = {};
 
 MyWaypoints.changeTopBarFontColor = function () {
-    $('#navigation-bar').toggleClass('black-color');
+    $('#navigation-top-bar').toggleClass('black-color');
     $('#top-bar-sticky-page-header').toggleClass('black-color');
 }
 
 MyWaypoints.turnTopBarFontColorBlack = function () {
-    $('#navigation-bar').addClass('black-color');
+    $('#navigation-top-bar').addClass('black-color');
     $('#top-bar-sticky-page-header').addClass('black-color');
 }
 
 MyWaypoints.turnTopBarFontColorWhite = function () {
-    $('#navigation-bar').removeClass('black-color');
+    $('#navigation-top-bar').removeClass('black-color');
     $('#top-bar-sticky-page-header').removeClass('black-color');
 }
 

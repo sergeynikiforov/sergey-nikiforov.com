@@ -315,6 +315,18 @@ $tab-bar-top-margin: 1rem;
     }
 }
 
+#navigation-top-bar {
+    @extend #navigation-bar;
+}
+
+#navigation-tab-bar {
+    @extend #navigation-bar;
+}
+
+#navigation-off-canvas-bar {
+    @extend #navigation-tab-bar;
+}
+
 #navigation-bar-photo {
     @media #{$medium-only} {
         margin-top: $top-bar-top-margin-medium;
@@ -324,6 +336,10 @@ $tab-bar-top-margin: 1rem;
         margin-left: -10px;
         margin-right: -10px;
     }
+}
+
+#navigation-tab-bar-photo {
+    @extend #navigation-bar-photo;
 }
 
 
@@ -1630,7 +1646,7 @@ figure {
 
 .black-color {
     color: $black;
-    ul li h1 a, section ul li a {
+    ul li h1 a, div ul li a {
         color: $black !important;
         &:hover {
             color: $red !important;

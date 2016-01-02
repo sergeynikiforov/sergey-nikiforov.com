@@ -15,22 +15,22 @@
 
 {% block body %}
     <div class="show-for-medium-up">
-        <section class="medium_screen_figure large_screen_figure">
+        <div class="medium_screen_figure large_screen_figure">
             <div class="bg75-image-wrapper">
                 <div class="image-wrap">
                     <div class="about-image">
                         <div id="preloader"></div>
                         <div class="row">
                             <div class="medium-10 medium-centered columns">
-                                <nav id="hero-nav" role="navigation">
+                                <div id="hero-nav">
                                     <h2 class="page_header">/ABOUT-ME/</h2>
-                                </nav>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
     </div>
     <!--
     <div class="row show-for-medium-only">
@@ -52,110 +52,118 @@
         </div>
     </div>
     -->
-    <div class="row">
-        <div class="small-12 medium-8 small-centered columns vh-style container-center toggle-color">
-            <div class="content-center">
-                <h2 class="page_subheader text-center">Hello!</h2>
-                <ul class="about-me-section no-bullet text-center">
-                    <li>My name is Sergey.</li>
-                    <li>I like things that work flawlessly and look beautiful.</li>
-                    <li>I like to build such things.</li>
-                    <li>I like to contribute to projects that have meaning and stand out.</li>
-                    <li>I like to teach and learn.</li>
-                    <li>I'm one of those who unites people into groups rather than divides them into ones.</li>
-                    <li>I like to make this world a better place.</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="row hide-for-large-up">
-        <div class="small-12 large-12 small-centered columns small_screen_figure medium_screen_figure text-center toggle-color">
-            <figure>
-                {% pictureCloudinary '3G4A8760-Edit-3-Edit-2-1_fmxcnv' sizes="100vw" srcset="200w 400w 600w 800w 1000w 1200w 1400w 1600w 2000w 2400w 2800w 3200w" alt='picture of me, Lombok island, Indonesia' %}
-            </figure>
-        </div>
-    </div>
-    <div class="row show-for-large-up">
-        <div class="small-12 large_screen_figure large-centered columns toggle-color">
-            <div class="bg100-image-wrapper show-for-large-up">
-                <div class="image-wrap">
-                    <div class="about-image-lombok"></div>
+    <section>
+        <div class="row">
+            <div class="small-12 medium-8 small-centered columns vh-style container-center toggle-color">
+                <div class="content-center">
+                    <h2 class="page_subheader text-center">Hello!</h2>
+                    <ul class="about-me-section no-bullet text-center">
+                        <li>My name is Sergey.</li>
+                        <li>I like things that work flawlessly and look beautiful.</li>
+                        <li>I like to build such things.</li>
+                        <li>I like to contribute to projects that have meaning and stand out.</li>
+                        <li>I like to teach and learn.</li>
+                        <li>I'm one of those who unites people into groups rather than divides them into ones.</li>
+                        <li>I like to make this world a better place.</li>
+                    </ul>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="row">
-        <section class="small-12 medium-6 small-centered columns vh-style text-center container-center toggle-color">
-            <div class="content-center">
-                <h2 class="page_subheader">I take pictures...</h2>
-                <p class="about-me-section">...since I was 13 or so when my parents presented me Olympus point-and-shoot 35-mm camera. Photography became my second nature since then and it’s my way of exploring the world.</p>
+        <div class="row hide-for-large-up">
+            <div class="small-12 large-12 small-centered columns small_screen_figure medium_screen_figure text-center toggle-color">
+                <figure>
+                    {% pictureCloudinary '3G4A8760-Edit-3-Edit-2-1_fmxcnv' sizes="100vw" srcset="200w 400w 600w 800w 1000w 1200w 1400w 1600w 2000w 2400w 2800w 3200w" alt='picture of me, Lombok island, Indonesia' %}
+                </figure>
             </div>
-        </section>
-    </div>
-    <div class="row hide-for-large-up">
-        <div class="small-12 large-10 small-centered columns small_screen_figure medium_screen_figure text-center toggle-color">
-            <figure>
-                {% pictureCloudinary '3G4A2572-1_clnzps' sizes="100vw" srcset="200w 400w 600w 800w 1000w 1200w 1400w 1600w 2000w 2400w 2800w 3200w" alt='Seville selfie' %}
-            </figure>
         </div>
-    </div>
-    <div class="row show-for-large-up">
-        <div class="small-12 large_screen_figure large-centered columns toggle-color">
-            <div class="bg100-image-wrapper">
-                <div class="image-wrap">
-                    <div class="about-image-selfie"></div>
+        <div class="row show-for-large-up">
+            <div class="small-12 large_screen_figure large-centered columns toggle-color">
+                <div class="bg100-image-wrapper show-for-large-up">
+                    <div class="image-wrap">
+                        <div class="about-image-lombok"></div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="row">
-        <section class="small-12 medium-6 small-centered columns vh-style text-center container-center toggle-color">
-            <div class="content-center">
-                <h2 class="page_subheader">I like travelling</h2>
-                <p class="about-me-section">Road is life. And it’s never enough.</p>
-            </div>
-        </section>
-    </div>
-    <div class="row hide-for-large-up">
-        <div class="small-12 large-10 small-centered columns small_screen_figure medium_screen_figure text-center toggle-color">
-            <figure>
-                {% pictureCloudinary 'IMG_3822-1_u3dujb' sizes="100vw" srcset="200w 400w 600w 800w 1000w 1200w 1400w 1600w 2000w 2400w 2800w 3200w" alt='Night road' %}
-            </figure>
-        </div>
-    </div>
-    <div class="row show-for-large-up">
-        <div class="small-12 large_screen_figure large-centered columns toggle-color">
-            <div class="bg100-image-wrapper">
-                <div class="image-wrap">
-                    <div class="about-image-road"></div>
+    </section>
+    <section>
+        <div class="row">
+            <div class="small-12 medium-6 small-centered columns vh-style text-center container-center toggle-color">
+                <div class="content-center">
+                    <h2 class="page_subheader">I take pictures...</h2>
+                    <p class="about-me-section">...since I was 13 or so when my parents presented me Olympus point-and-shoot 35-mm camera. Photography became my second nature since then and it’s my way of exploring the world.</p>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="row">
-        <section class="small-12 medium-6 small-centered columns vh-style text-center container-center toggle-color">
-            <div class="content-center">
-                <h2 class="page_subheader">I enjoy running</h2>
-                <p class="about-me-section">This is how I meditate.</p>
+        <div class="row hide-for-large-up">
+            <div class="small-12 large-10 small-centered columns small_screen_figure medium_screen_figure text-center toggle-color">
+                <figure>
+                    {% pictureCloudinary '3G4A2572-1_clnzps' sizes="100vw" srcset="200w 400w 600w 800w 1000w 1200w 1400w 1600w 2000w 2400w 2800w 3200w" alt='Seville selfie' %}
+                </figure>
             </div>
-        </section>
-    </div>
-    <div class="row hide-for-large-up">
-        <div class="small-12 large-10 small-centered columns small_screen_figure medium_screen_figure text-center toggle-color">
-            <figure>
-                {% pictureCloudinary 'IMG_3822-1_u3dujb' sizes="100vw" srcset="200w 400w 600w 800w 1000w 1200w 1400w 1600w 2000w 2400w 2800w 3200w" alt='view from Mount Sinai at the crack of dawn' %}
-            </figure>
         </div>
-    </div>
-    <div class="row show-for-large-up">
-        <div class="small-12 large_screen_figure large-centered columns toggle-color">
-            <div class="bg100-image-wrapper">
-                <div class="image-wrap">
-                    <div class="about-image-sinai-mountains"></div>
+        <div class="row show-for-large-up">
+            <div class="small-12 large_screen_figure large-centered columns toggle-color">
+                <div class="bg100-image-wrapper">
+                    <div class="image-wrap">
+                        <div class="about-image-selfie"></div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+    <section>
+        <div class="row">
+            <div class="small-12 medium-6 small-centered columns vh-style text-center container-center toggle-color">
+                <div class="content-center">
+                    <h2 class="page_subheader">I like travelling</h2>
+                    <p class="about-me-section">Road is life. And it’s never enough.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row hide-for-large-up">
+            <div class="small-12 large-10 small-centered columns small_screen_figure medium_screen_figure text-center toggle-color">
+                <figure>
+                    {% pictureCloudinary 'IMG_3822-1_u3dujb' sizes="100vw" srcset="200w 400w 600w 800w 1000w 1200w 1400w 1600w 2000w 2400w 2800w 3200w" alt='Night road' %}
+                </figure>
+            </div>
+        </div>
+        <div class="row show-for-large-up">
+            <div class="small-12 large_screen_figure large-centered columns toggle-color">
+                <div class="bg100-image-wrapper">
+                    <div class="image-wrap">
+                        <div class="about-image-road"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="row">
+            <div class="small-12 medium-6 small-centered columns vh-style text-center container-center toggle-color">
+                <div class="content-center">
+                    <h2 class="page_subheader">I enjoy running</h2>
+                    <p class="about-me-section">This is how I meditate.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row hide-for-large-up">
+            <div class="small-12 large-10 small-centered columns small_screen_figure medium_screen_figure text-center toggle-color">
+                <figure>
+                    {% pictureCloudinary 'IMG_3712-Edit-1_aggatn' sizes="100vw" srcset="200w 400w 600w 800w 1000w 1200w 1400w 1600w 2000w 2400w 2800w 3200w" alt='view from Mount Sinai at the crack of dawn' %}
+                </figure>
+            </div>
+        </div>
+        <div class="row show-for-large-up">
+            <div class="small-12 large_screen_figure large-centered columns toggle-color">
+                <div class="bg100-image-wrapper">
+                    <div class="image-wrap">
+                        <div class="about-image-sinai-mountains"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock body %}
 {% block whats_next %}
     <div id="whats-next" class="row toggle-color">

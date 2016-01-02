@@ -43,14 +43,14 @@
                         <div id="preloader"></div>
                         <div class="row">
                             <div class="medium-10 medium-centered columns ">
-                                <nav id="hero-nav" role="navigation">
+                                <div id="hero-nav">
                                     <h2 class="page_header">/PHOTOGRAPHY/</h2>
                                     {% if photosets %}
                                         {% for photoset in photosets %}
                                             <p class="landing"><a id="{{ photoset.cover_photo.url }}" class="hover-background" href="#{{ photoset.slug }}">{{ photoset.title|upper }}</a></p>
                                         {% endfor %}
                                     {% endif %}
-                                </nav>
+                                </div>
                             </div>
                         </div>
                     </div>

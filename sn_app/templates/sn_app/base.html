@@ -107,14 +107,14 @@
                     <div class="row">
                         <div id="header-wrapper" class="medium-10 large-10 medium-centered columns show-for-medium-up">
                             <header>
-                                <nav id="navigation-bar" class="top-bar" data-topbar role="navigation">
+                                <nav id="navigation-top-bar" class="top-bar" data-topbar>
                                     <ul class="title-area cl-effect-1">
                                         <li class="name">
                                             <h1>{% block top_bar_title %}<a id="top-bar-header" href="{% url 'sn_app:landing' %}">{{ person.first_name|upper }} {{ person.last_name|upper }}</a>{% endblock top_bar_title %}</h1>
                                         </li>
                                     </ul>
                                     {% block top_bar_section %}
-                                        <section  class="top-bar-section show-for-large-up">
+                                        <div class="top-bar-section show-for-large-up">
                                             <ul class="right text-center cl-effect-1">
                                                 <li><a href="{% url 'sn_app:landing' %}">HOME</a></li>
                                                 <li><a href="{% url 'sn_app:about' %}">ABOUT</a></li>
@@ -122,8 +122,8 @@
                                                 <li><a href="{% url 'sn_app:photography' %}">PHOTOGRAPHY</a></li>
                                                 <li><a href="{% url 'sn_app:contact' %}">CONTACT ME</a></li>
                                             </ul>
-                                        </section>
-                                        <section class="top-bar-section show-for-medium-only">
+                                        </div>
+                                        <div class="top-bar-section show-for-medium-only">
                                             <ul class="right text-right">
                                                 <li class="has-dropdown">
                                                     <a href="#">MENU</a>
@@ -136,7 +136,7 @@
                                                     </ul>
                                                 </li>
                                             </ul>
-                                        </section>
+                                        </div>
                                     {% endblock top_bar_section %}
                                 </nav>
                             </header>
@@ -157,18 +157,18 @@
                     <div class="small-12 medium-10 small-centered columns small_screen_figure">
                         <div class="overlay_container {% block offcanvas_visibility %} show-for-small-only {% endblock offcanvas_visibility %}">
                             <div class="overlay">
-                                <nav id="navigation-bar" class="tab-bar">
-                                  <section class="left tab-bar-section">
+                                <nav id="navigation-tab-bar" class="tab-bar">
+                                  <div class="left tab-bar-section">
                                     <h2 class="title">{% block tab_bar_title %}<a href="{% url 'sn_app:landing' %}">{{ person.first_name|upper }} {{ person.last_name|upper }}</a>{% endblock tab_bar_title %}</h2>
 
                                     {% block off_canvas_tab_bar_page_header %}
                                     {% endblock off_canvas_tab_bar_page_header %}
 
                                     {% block off_canvas_tab_bar_page_links %}{% endblock off_canvas_tab_bar_page_links %}
-                                  </section>
-                                  <section class="right">
-                                    <a href="#idOfRightMenu" role="button" aria-controls="idOfRightMenu" aria-expanded="false" class="right-off-canvas-toggle transparent-button-small">MENU</a>
-                                  </section>
+                                  </div>
+                                  <div class="right">
+                                    <a href="navigation-off-canvas-bar" role="button" aria-controls="navigation-off-canvas-bar" aria-expanded="false" class="right-off-canvas-toggle transparent-button-small">MENU</a>
+                                  </div>
                                 </nav>
                             </div>
                             {% block off_canvas_tab_bar_image %}
@@ -180,9 +180,9 @@
                     </div>
                 </div>
 
-                <aside id="navigation-bar" class="right-off-canvas-menu show-for-small-only">
+                <aside id="navigation-off-canvas-bar" class="right-off-canvas-menu show-for-small-only">
                   <ul  class="off-canvas-list">
-                    <li><label>{{ person.first_name|upper }} {{ person.last_name|upper }}</label></li>
+                    <li><h6><label>{{ person.first_name|upper }} {{ person.last_name|upper }}</label></h6></li>
                     <li><a href="{% url 'sn_app:landing' %}">HOME</a></li>
                     <li><a href="{% url 'sn_app:about' %}">ABOUT</a></li>
                     <li><a href="{% url 'sn_app:resume' %}">RESUME</a></li>

@@ -9,7 +9,8 @@ class ContactMeForm(forms.ModelForm):
                                                     'id': 'post-name',
                                                     'placeholder': 'your name',
                                                     'name': 'name',
-                                                    'required autocomplete': 'name',
+                                                    'required': 'required',
+                                                    'autocomplete': 'on',
                                                     'maxlength': '100',
                                                     'aria-label': 'Your name'
                                                     }
@@ -22,7 +23,8 @@ class ContactMeForm(forms.ModelForm):
                                                     'id': 'post-email',
                                                     'placeholder':'email@example.com',
                                                     'name': 'email',
-                                                    'required autocomplete': 'email',
+                                                    'required': 'required',
+                                                    'autocomplete': 'on',
                                                     'maxlength': '254',
                                                     'aria-label': 'Your email'
                                                     }
@@ -36,8 +38,8 @@ class ContactMeForm(forms.ModelForm):
                                                 'placeholder':'your message...',
                                                 'maxlength': '2000',
                                                 'aria-label': 'Your message',
-                                                'required': 'required',
-                                                'pattern': '^.{1,2000}$'
+                                                'required': 'required'
+                                                #'pattern': '^.{1,2000}$'
                                                 }
                                                 )
                             )
