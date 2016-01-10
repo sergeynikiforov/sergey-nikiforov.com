@@ -15,7 +15,7 @@ def key(d, key_name):
 
 # custom tag to render <picture> element from Cloudinary pictureID
 @register.simple_tag
-def pictureCloudinary(publicID, sizes, srcset, alt):
+def pictureCloudinary(publicID, sizes, srcset, alt, portrait=False):
     """
     constructs HTML5 <picture> element with passed
     sizes, srcset and alt parameters from Cloudinary publicID image
@@ -31,7 +31,28 @@ def pictureCloudinary(publicID, sizes, srcset, alt):
                 sizes="(min-width: 640px) 60vw, 100vw"
                 srcset="opera-200.jpg 200w, ...">
         </picture>
+
+    if 'portrait is set':
+        <picture>
+            <source
+                media = "(orientation: portrait)"
+                sizes="(min-width: 640px) 60vw, 100vw"
+                srcset="opera-200-1x1.webp 200w, ..."
+                type="image/webp">
+            <source
+                sizes="(min-width: 640px) 60vw, 100vw"
+                srcset="opera-200.webp 200w, ..."
+                type="image/webp">
+            <source
+                media = "(orientation: portrait)"
+                sizes="(min-width: 640px) 60vw, 100vw"
+                srcset="opera-200-1x1.jpg 200w, ...">
+            <img
+                src="opera-400.jpg" alt="The Oslo Opera House"
+                sizes="(min-width: 640px) 60vw, 100vw"
+                srcset="opera-200.jpg 200w, ...">
+        </picture>
     """
-    # generator expr from srcset string
-    srcset = (i for i in srcset.split())
-    return cloudinaryResponsive.pictureElement(publicID, sizes, srcset, alt)
+    # list from srcset string
+    srcset = [i for i in srcset.split()]
+    return cloudinaryResponsive.pictureElement(publicID, sizes, srcset, alt, portrait)

@@ -29,7 +29,7 @@
 
 {% block off_canvas_tab_bar_image %}
     <figure>
-        {% pictureCloudinary active_photoset.cover_photo.publicID sizes="(min-width: 1025px) 90vw, (min-width: 641px) 100vw, 100vw" srcset="200w 400w 600w 800w 1000w 1200w 1400w 1600w 2000w 2400w 2800w 3200w" alt=active_photoset.cover_photo.title %}
+        {% pictureCloudinary active_photoset.cover_photo.publicID sizes="(min-width: 1025px) 90vw, (min-width: 641px) 100vw, 100vw" srcset="200w 400w 600w 800w 1000w 1200w 1400w 1600w 2000w 2400w 2800w 3200w" alt=active_photoset.cover_photo.title portrait=True %}
     </figure>
 {% endblock off_canvas_tab_bar_image %}
 
