@@ -1,4 +1,5 @@
 from django.contrib import admin
+from forms import PhotoAdminForm
 import models
 
 class PersonAdmin(admin.ModelAdmin):
@@ -15,12 +16,16 @@ class ContactMeAdmin(admin.ModelAdmin):
 class PhotosetAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
 
+class PhotoAdmin(admin.ModelAdmin):
+    form = PhotoAdminForm
+
+
 admin.site.register(models.Person, PersonAdmin)
 admin.site.register(models.Employer)
 admin.site.register(models.Job)
 admin.site.register(models.Education)
 admin.site.register(models.OnlineCourse)
 admin.site.register(models.ContactMe, ContactMeAdmin)
-admin.site.register(models.Photo)
+admin.site.register(models.Photo, PhotoAdmin)
 admin.site.register(models.Photoset, PhotosetAdmin)
 admin.site.register(models.PhotoInPhotoset)

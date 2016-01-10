@@ -1,5 +1,15 @@
 from django import forms
-from models import ContactMe
+from models import ContactMe, Photo
+from widgets import PhotoAdminThumbWidget
+
+class PhotoAdminForm(forms.ModelForm):
+
+    class Meta:
+        model = Photo
+        fields = '__all__'
+        widgets = {
+            'thumbnail_url': PhotoAdminThumbWidget(),
+        }
 
 class ContactMeForm(forms.ModelForm):
     name = forms.CharField(
