@@ -26,9 +26,9 @@ USER_HOME_DIR = pwd.getpwuid(os.getuid()).pw_dir
 SECRET_KEY = config.SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config.DEBUG
 
-ALLOWED_HOSTS = ['192.168.0.191']
+ALLOWED_HOSTS = ['www.sergey-nikiforov.com', 'www.sergeynikiforov.co', 'sergey-nikiforov.com', 'sergeynikiforov.co']
 
 # cloudinary configuration settings
 import cloudinary
@@ -71,9 +71,6 @@ CACHES = {
 CACHE_MIDDLEWARE_ALIAS = 'my_cache'
 CACHE_MIDDLEWARE_SECONDS = 300
 
-
-# compressor
-COMPRESS_ENABLED = True
 
 # bower
 BOWER_COMPONENTS_ROOT = BASE_DIR
@@ -139,7 +136,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'OPTIONS': {
             'charset': 'utf8mb4',
-            'read_default_file': os.path.join(USER_HOME_DIR, '.my.cnf'),
+            'read_default_file': config.DB_CONFIG_FILE,
         },
     }
 }
@@ -200,3 +197,4 @@ EMAIL_HOST = config.EMAIL_HOST
 EMAIL_PORT = config.EMAIL_PORT
 EMAIL_HOST_USER = config.EMAIL_HOST_USER
 EMAIL_HOST_PASSWORD = config.EMAIL_HOST_PASSWORD
+DEFAULT_FROM_EMAIL = config.DEFAULT_FROM_EMAIL

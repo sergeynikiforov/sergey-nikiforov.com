@@ -78,6 +78,8 @@ def populate(photos_path, photoset_title=None):
 
         photo_datetime = dateTimeFromExif(photo)
         photo_thumb = cloudinary.CloudinaryImage(uploaded_photo['public_id']).build_url(secure=True, width=640, crop='fit')
+        self.medium_url = cloudinary.CloudinaryImage(uploaded_photo['public_id']).build_url(secure=True, width=2048, crop="fit")
+        self.large_url = cloudinary.CloudinaryImage(uploaded_photo['public_id']).build_url(secure=True, width=3200, crop="fit")
 
         # save info in Photo table
         photo_db_instance = Photo.objects.create(publicID=uploaded_photo['public_id'], url=uploaded_photo['secure_url'], date_taken=photo_datetime, thumbnail_url=photo_thumb)
