@@ -31,6 +31,7 @@
                             <div class="medium-10 medium-centered columns">
                                 <div id="hero-nav">
                                     <h2 class="page_header">/RESUME/</h2>
+                                    <p class="landing"><a href="#summary">SUMMARY</a></p>
                                     <p class="landing"><a href="#contact">CONTACT DETAILS</a></p>
                                     <p class="landing"><a href="#education">EDUCATION</a></p>
                                     <p class="landing"><a href="#courses">ONLINE COURSES</a></p>
@@ -45,20 +46,18 @@
         </div>
     </div>
     <div class="row">
-        <!--
-        <div class="large-2 columns hide-for-small-up">
-            <nav class="side-nav text-right sticky-sidebar" role="navigation" title="Resume">
-                <header><h6 id="sticky-sidebar-label"><a href="#page-top">/RESUME/</a></h6></header>
-                <p><a href="#contact">CONTACT DETAILS</a></p>
-                <p><a href="#education">EDUCATION</a></p>
-                <p><a href="#courses">ONLINE COURSES</a></p>
-                <p><a href="#work">WORK</a></p>
-                <p><a href="#skills">SKILLS</a></p>
-            </nav>
-        </div>
-        -->
         <div class="small-12 medium-10 large-10 xlarge-8 medium-centered large-centered columns toggle-color">
             {% if person %}
+                <div class="row">
+                    <article class="small-12 columns">
+                        <div class="article_header_panel text-center">
+                            <header id="summary">
+                                <h2>SUMMARY</h2>
+                            </header>
+                        </div>
+                        <p id="resume-summary">A recent convert to all things IT, I started out in banking sales, then worked for a brokerage firm: engaged initially in customer service and later (following promotion) as a mentor for new employees. After six incredible months at Sochi Olympics where I worked for the Organizing Committee I decided to change my career completely - I wanted to learn coding. Now I am a beginner in Python programming interested in Web development, machine learning and computer science in general.</p>
+                    </article>
+                </div>
                 <div class="row">
                     <article class="small-12 columns">
                         <div class="article_header_panel text-center">
@@ -67,7 +66,7 @@
                             </header>
                         </div>
                             <ul class="no-bullet contact_details">
-                                <li>{{ person.first_name }} {{ person.last_name}}</li>
+                                <li>{{ person.first_name }} {{ person.last_name }}</li>
                                 <li>{{ person.address }}</li>
                                 <li><a href="mailto:{{ person.email }}">{{ person.email }}</a></li>
                                 <li>{{ person.telephone }}</li>
@@ -92,7 +91,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="small-12 medium-10 large-8 medium-offset-2 large-offset-4 columns">
+                            <div class="small-12 columns">
                                 <ul>
                                     {% for degree in education %}
                                         <li>{{ degree.degree }} in {{ degree.major }}, {{ degree.end_date.year }};</li>

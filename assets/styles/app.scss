@@ -904,7 +904,7 @@ figure {
         margin-bottom: 0.7rem;
     }
     @media #{$large-up} {
-        font-size: 1.6rem;//$font-size-sans-serif-page-subheader-large;
+        font-size: 1.5rem;//$font-size-sans-serif-page-subheader-large;
     }
     @media #{$medium-only} {
         font-size: 1.3rem;//$font-size-sans-serif-page-subheader-medium;
@@ -943,7 +943,7 @@ figure {
 .article_header_panel {
   @include panel(
     // Sets the panel background color. Default: $panel-pg
-    $bg: $black,
+    $bg: white,
     // Sets the panel padding amount. Default: $panel-padding
     $padding: 2px,
     // Sets the font color based on the darkness of the bg & resets header line-heights for panels. Default: $panel-header-adjust
@@ -951,22 +951,29 @@ figure {
   );
 
   @media #{$small-only} {
-        margin-left: -18px;
-        margin-right: -18px;
+        //margin-left: -18px;
+        //margin-right: -18px;
     }
-
-  border: 0px;
-  margin-bottom: 1rem;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: 1px solid $black;
+  margin-bottom: 2rem;
   margin-top: 6rem;
 
   header h2 {
-    font-weight: $font-weight-thin - 100;
+    font-weight: $font-weight-bold;
     font-size: $font-size-custom-panel-large;
     margin: 1px;
+    color: $black;
     @media #{$small-only} {
         font-size: $font-size-custom-panel-small;
     }
   }
+}
+
+#resume-summary {
+    margin: 2rem auto;
 }
 
 // fonts & margins & padding for resume headers
