@@ -134,6 +134,7 @@ WSGI_APPLICATION = 'sn_project.apache.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'sn_app_db',
         'OPTIONS': {
             'charset': 'utf8mb4',
             'read_default_file': config.DB_CONFIG_FILE,
