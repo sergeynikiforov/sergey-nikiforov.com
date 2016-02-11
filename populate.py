@@ -13,7 +13,7 @@ from sn_app.models import Photo, Photoset, PhotoInPhotoset
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
-from cloudinaryconfig import cloud_name, api_key, api_secret
+from config import cloud_name, api_key, api_secret
 
 # set Cloudinary configuration
 cloudinary.config(
@@ -29,7 +29,7 @@ from datetime import datetime
 
 
 # path to dir containing photos
-PHOTOPATH = '/home/sergeynikiforov/Dropbox/assets_sn.com/my-site-final-images/photosets/spain/'
+#PHOTOPATH = '/home/dissolved/Documents/sea/'
 
 def dateTimeFromExif(path_to_file):
     """
@@ -64,7 +64,7 @@ def populate(photos_path, photoset_title=None):
         photoset, created = Photoset.objects.get_or_create(title=photoset_title, description='none')
 
     # get a list of photos
-    photos = [os.path.join(PHOTOPATH, f) for f in os.listdir(PHOTOPATH) if os.path.isfile(os.path.join(PHOTOPATH, f))]
+    photos = [os.path.join(photos_path, f) for f in os.listdir(photos_path) if os.path.isfile(os.path.join(photos_path, f))]
 
     # set order counter
     order_counter = 0
@@ -78,11 +78,11 @@ def populate(photos_path, photoset_title=None):
 
         photo_datetime = dateTimeFromExif(photo)
         photo_thumb = cloudinary.CloudinaryImage(uploaded_photo['public_id']).build_url(secure=True, width=640, crop='fit')
-        self.medium_url = cloudinary.CloudinaryImage(uploaded_photo['public_id']).build_url(secure=True, width=2048, crop="fit")
-        self.large_url = cloudinary.CloudinaryImage(uploaded_photo['public_id']).build_url(secure=True, width=3200, crop="fit")
+        medium_url = cloudinary.CloudinaryImage(uploaded_photo['public_id']).build_url(secure=True, width=2048, crop="fit")
+        large_url = cloudinary.CloudinaryImage(uploaded_photo['public_id']).build_url(secure=True, width=3200, crop="fit")
 
         # save info in Photo table
-        photo_db_instance = Photo.objects.create(publicID=uploaded_photo['public_id'], url=uploaded_photo['secure_url'], date_taken=photo_datetime, thumbnail_url=photo_thumb)
+        photo_db_instance = Photo.objects.create(publicID=uploaded_photo['public_id'], url=uploaded_photo['secure_url'], date_taken=photo_datetime, thumbnail_url=photo_thumb, medium_url=medium_url, large_url=large_url)
 
         # add photo to photoset
         ps = PhotoInPhotoset(photoset=photoset, photo=photo_db_instance, order=order_counter)
@@ -98,11 +98,11 @@ def populate(photos_path, photoset_title=None):
 
 
 def main():
-    if len(sys.argv) != 2:
-        sys.exit('usage: populate.py photoset_name')
+    if len(sys.argv) != 3:
+        sys.exit('usage: populate.py photos_path photoset_name')
     else:
         print('Starting populate.py...')
-        populate(PHOTOPATH, sys.argv[1])
+        populate(sys.argv[1], sys.argv[2])
         return 0
 
 
