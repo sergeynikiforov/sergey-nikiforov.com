@@ -130,10 +130,9 @@
             <div class="bg75-image-wrapper">
                 <div class="image-wrap">
                     <div id="change-bg" class="photoset-image" style="background-image: url('{{ active_photoset.cover_photo.medium_url }}');">
-                        <div id="preloader"></div>
                         <div class="row">
                             <div class="medium-10 medium-centered columns page_header_wrapper_large">
-                                <div id="hero-nav" role="navigation">
+                                <div id="hero-nav" class="page-onload" style="opacity: 1.0;" role="navigation">
                                     <h2 class="page_header">/{{ photoset_title|upper }}/</h2>
                                     {% if photosets %}
                                         {% for photoset in photosets %}
@@ -252,5 +251,10 @@
 {% endblock whats_next %}
 {% block js_scripts %}
     <script src="{% static 'sn_app/js/app.min.js' %}"></script>
+    <script>
+        if ($('#top-bar-wrapper').length > 0) {
+            $('#top-bar-wrapper').css({'opacity':'1.0'});
+        }
+    </script>
     <script src="{% static 'sn_app/js/stickysidebar.min.js' %}"></script>
 {% endblock js_scripts %}
