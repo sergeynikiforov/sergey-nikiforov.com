@@ -1550,10 +1550,10 @@ figure {
     figure {
         img {
             @media #{$small-only} {
-                @include viewport-unit(max-height, 100vh);
+                //@include viewport-unit(max-height, 100vh);
             }
             @media #{$medium-only} {
-                @include viewport-unit(max-height, 100vh);
+                //@include viewport-unit(max-height, 100vh);
             }
             @media #{$large-up} {
                 @include viewport-unit(max-height, 80vh);
@@ -1760,9 +1760,11 @@ figure {
 }
 
 .fade-in {
-    transition: all 0.3s ease;
-    &:hover {
-        opacity: 0.9;
+    @media #{$large-up} {
+        transition: all 0.3s ease;
+        &:hover {
+            opacity: 0.9;
+        }
     }
 }
 
