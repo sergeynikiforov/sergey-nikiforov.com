@@ -267,7 +267,7 @@
                             </div>
                             <div id="footer-bottom-section" class="row">
                                 <div class="small-6 columns copyright">
-                                    <p><a href="{% url 'sn_app:landing' %}">{{ person.first_name}} {{ person.last_name }}</a> (c) 2016</p>
+                                    <p><a href="{% url 'sn_app:landing' %}">{{ person.first_name}} {{ person.last_name }}</a> (c) {% now "Y" %}</p>
                                     <p></p>
                                 </div>
                                 <div class="small-6 columns text-right page-top-link cl-effect-1 show-for-medium-up">

@@ -13,3 +13,4 @@ sn_app/logs
 *.conf
 mypol.te
 mypol.pp
+.idea/
