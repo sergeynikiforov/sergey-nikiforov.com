@@ -14,3 +14,5 @@ sn_app/logs
 mypol.te
 mypol.pp
 .idea/
+.DS_Store
+node_modules/
