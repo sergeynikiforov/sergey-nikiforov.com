@@ -217,7 +217,6 @@ App.PhotoRouter = Backbone.Router.extend({
     },
 });
 
-
 $(function() {
     App.app = new App.GeneralView();
     App.hist = Backbone.history.start();

@@ -34,11 +34,11 @@ ALLOWED_HOSTS = ['www.sergey-nikiforov.com', 'www.sergeynikiforov.co', 'sergey-n
 import cloudinary
 
 cloudinary.config(
-  cloud_name = config.cloud_name,
-  api_key = config.api_key,
-  api_secret = config.api_secret,
-  cdn_subdomain = True,
-  secure = True
+  cloud_name=config.cloud_name,
+  api_key=config.api_key,
+  api_secret=config.api_secret,
+  cdn_subdomain=True,
+  secure=True
 )
 
 
