@@ -1,7 +1,6 @@
 from django.db import models
 from django.utils import timezone
 from django.template.defaultfilters import slugify
-#import datetime
 
 import cloudinary
 

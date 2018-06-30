@@ -55,9 +55,7 @@
                                 <h2>SUMMARY</h2>
                             </header>
                         </div>
-                        <p id="resume-summary">I'm a software developer with a passion to excel and able to deliver solid results. I'm very enthusiastic about learning new technologies and even more about teaching them, I love to dig deeper and crack the core of the problem. I advocate for a clear, well-documented and tested code.
-
-                            I currently specialize in web development and my primary language today is Python, although I'm quite comfortable across various layers of the web stack. When I'm not at work, I'm either digging into Linux internals with some systems programming book or playing with Scheme/JavaScript/C++ or whatever I found interesting.</p>
+                        <p id="resume-summary">Enthusiastic software developer with a passion to excel and able to deliver strong results. Currently specialises in backend development, although comfortable across various layers of the stack. Solid background in client-facing and management positions.</p>
                     </article>
                 </div>
                 <div class="row">
@@ -150,7 +148,11 @@
                                 <div class="row">
                                     <div class="small-12 columns position">
                                         <h6>{{ job.position }}</h6>
-                                        <p>{{ job.start_date|date:"M, Y" }} - {{ job.end_date|date:"M, Y" }}</p>
+                                        {% if job.end_date.year < 2020  %}
+                                            <p>{{ job.start_date|date:"M, Y" }} - {{ job.end_date|date:"M, Y" }}</p>
+                                        {% else %}
+                                            <p>{{ job.start_date|date:"M, Y" }} - till now</p>
+                                        {% endif %}
                                     </div>
                                 </div>
                                 <div class="row">
